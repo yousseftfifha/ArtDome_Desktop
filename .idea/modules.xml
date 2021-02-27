@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ArtDome_Desktop.iml" filepath="$PROJECT_DIR$/ArtDome_Desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Quality-Overflow.iml" filepath="$PROJECT_DIR$/.idea/Quality-Overflow.iml" />
     </modules>
   </component>
 </project>
