@@ -41,17 +41,22 @@ public class AddCart  implements Initializable {
     private void AddToCart(ActionEvent actionEvent) throws IOException {
 
         try {
+            CartCRUD cartCRUD=new CartCRUD ();
 
-            CartCRUD cartCRUD = new CartCRUD ();
-            Oeuvre oeuvre=new Oeuvre (0,"faza",5.f);
-            Oeuvre oeuvre1=new Oeuvre (1,"faza1",5.f);
-            Oeuvre oeuvre2=new Oeuvre (2,"faza2",5.f);
+            List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
+            List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
 
+            Cart cart=new Cart(0);
+            Cart cart1=new Cart(1);
 
-//            Oeuvre oeuvre = new Oeuvre (oeuvres.get (0).getID_Oeuvre (),oeuvres.get (0).getNomOeuvre (),oeuvres.get (0).getPrixOeuvre ());
-//            Cart cart1 = new Cart (oeuvre2.getID_Oeuvre (), 2);
-//            cartCRUD.AddCart (cart1);
-            System.out.println (oeuvre1.getID_Oeuvre ());
+            cartCRUD.AddCart (cart,oeuvre1.get (0));
+            cartCRUD.AddCart (cart,oeuvre2.get (0));
+            cartCRUD.AddCart (cart1,oeuvre2.get (0));
+
+            cartCRUD.updateQuantity (cart,oeuvre1.get (0));
+
+            cartCRUD.DeletCart (cart1);
+
             FXMLLoader loader = new FXMLLoader (getClass ().getResource ("ShowCart.fxml"));
             Parent root = loader.load ();
             ShowCart showCart = loader.getController ();

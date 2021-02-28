@@ -1,6 +1,7 @@
 package Gui;
 
 import Entities.Cart;
+import Entities.Oeuvre;
 import Services.CartCRUD;
 import Tests.FxTest;
 import com.jfoenix.controls.JFXButton;
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,6 +42,10 @@ public class ShowCart  implements Initializable {
     private TableColumn<Cart,Integer>  Quantity;
     @FXML
     private JFXButton back;
+    @FXML
+    private TableColumn<Oeuvre,String> NomOeuvre;
+    @FXML
+    private TableColumn<Oeuvre,Float> PrixOeuvre;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,6 +60,12 @@ public class ShowCart  implements Initializable {
         Quantity.setCellValueFactory (
                 new PropertyValueFactory<Cart,Integer> ("Quantiy")
         );
+        Quantity.setCellValueFactory (
+                new PropertyValueFactory<Cart,Integer> ("NomOeuvre")
+        );
+        Quantity.setCellValueFactory (
+                new PropertyValueFactory<Cart,Integer> ("PrixOeuvre")
+        );
         buildData ();
 
     }
@@ -63,6 +75,7 @@ public class ShowCart  implements Initializable {
         try{
             CartCRUD cartCRUD = new CartCRUD ();
             List<Cart> cartList = cartCRUD.readAll ();
+            Map<Cart, Oeuvre> cartList1 = cartCRUD.ReadAllOeuvrse ();
             data.addAll(cartList);
             table.setItems(data);
         }

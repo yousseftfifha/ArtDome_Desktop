@@ -6,15 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-
 <AnchorPane prefHeight="611.0" prefWidth="783.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ShowCart">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="544.0" layoutX="42.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" width="711.0" />
-      <TableView fx:id="table" layoutX="82.0" layoutY="80.0" prefHeight="430.0" prefWidth="600.0">
+      <TableView fx:id="table" layoutX="82.0" layoutY="80.0" prefHeight="247.0" prefWidth="442.0">
         <columns>
           <TableColumn fx:id="CartID" prefWidth="99.19998168945312" text="CartID" />
           <TableColumn fx:id="ProductID" prefWidth="78.40003967285156" text="OeuvreID" />
             <TableColumn fx:id="Quantity" prefWidth="76.80000305175781" text="Quantity" />
+            <TableColumn fx:id="NomOeuvre" prefWidth="108.0" text="Nom Oeuvre" />
+            <TableColumn fx:id="PrixOeuvre" prefWidth="75.0" text="Prix Oeuvre" />
         </columns>
       </TableView>
       <JFXButton fx:id="back" layoutX="97.0" layoutY="529.0" onAction="#backToMain" text="Back" />
