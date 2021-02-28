@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 28 fév. 2021 à 13:42
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Hôte : 127.0.0.1
+-- Généré le : Dim 28 fév. 2021 à 16:20
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `artdome`
+-- Base de données : `artdome`
 --
 
 -- --------------------------------------------------------
@@ -28,8 +27,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `blog`
 --
 
-DROP TABLE IF EXISTS `blog`;
-CREATE TABLE IF NOT EXISTS `blog` (
+CREATE TABLE `blog` (
   `blog_id` int(11) NOT NULL,
   `date_post` date NOT NULL,
   `id_artist` int(11) NOT NULL
@@ -41,8 +39,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
 -- Structure de la table `cart`
 --
 
-DROP TABLE IF EXISTS `cart`;
-CREATE TABLE IF NOT EXISTS `cart` (
+CREATE TABLE `cart` (
   `CartId` int(11) NOT NULL,
   `OeuvreId` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
@@ -74,13 +71,11 @@ INSERT INTO `cart` (`CartId`, `OeuvreId`, `Quantity`) VALUES
 -- Structure de la table `categorie`
 --
 
-DROP TABLE IF EXISTS `categorie`;
-CREATE TABLE IF NOT EXISTS `categorie` (
-  `ID_Cat` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categorie` (
+  `ID_Cat` int(11) NOT NULL,
   `Type` varchar(30) NOT NULL,
   `Description` text NOT NULL,
-  `NomCat` varchar(40) NOT NULL,
-  PRIMARY KEY (`ID_Cat`)
+  `NomCat` varchar(40) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -89,19 +84,18 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 -- Structure de la table `event`
 --
 
-DROP TABLE IF EXISTS `event`;
-CREATE TABLE IF NOT EXISTS `event` (
-  `code_event` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `event` (
+  `code_event` int(11) NOT NULL,
   `nom_event` varchar(30) NOT NULL,
   `theme_event` varchar(30) NOT NULL,
-  `date_event` date NOT NULL,
+  `etat` varchar(50) NOT NULL,
+  `date` date NOT NULL,
   `nb_participant` int(11) NOT NULL,
   `nb_max_part` int(11) NOT NULL,
   `image` varchar(80) NOT NULL,
   `video` varchar(80) NOT NULL,
   `code_espace` int(11) NOT NULL,
-  `code_artiste` int(11) NOT NULL,
-  PRIMARY KEY (`code_event`)
+  `code_artiste` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -110,9 +104,8 @@ CREATE TABLE IF NOT EXISTS `event` (
 -- Structure de la table `exposition`
 --
 
-DROP TABLE IF EXISTS `exposition`;
-CREATE TABLE IF NOT EXISTS `exposition` (
-  `code_expo` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `exposition` (
+  `code_expo` int(11) NOT NULL,
   `nom_expo` varchar(30) NOT NULL,
   `theme_expo` varchar(30) NOT NULL,
   `code_espace` int(11) NOT NULL,
@@ -120,8 +113,7 @@ CREATE TABLE IF NOT EXISTS `exposition` (
   `date_expo` date NOT NULL,
   `nb_participant` int(11) NOT NULL,
   `nb_max_participant` int(11) NOT NULL,
-  `code_oeuvre` int(11) NOT NULL,
-  PRIMARY KEY (`code_expo`)
+  `code_oeuvre` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -130,8 +122,7 @@ CREATE TABLE IF NOT EXISTS `exposition` (
 -- Structure de la table `forum`
 --
 
-DROP TABLE IF EXISTS `forum`;
-CREATE TABLE IF NOT EXISTS `forum` (
+CREATE TABLE `forum` (
   `forum_id` int(11) NOT NULL,
   `theme` varchar(30) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -144,13 +135,11 @@ CREATE TABLE IF NOT EXISTS `forum` (
 -- Structure de la table `oeuvre`
 --
 
-DROP TABLE IF EXISTS `oeuvre`;
-CREATE TABLE IF NOT EXISTS `oeuvre` (
-  `ID_Oeuvre` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `oeuvre` (
+  `ID_Oeuvre` int(11) NOT NULL,
   `NomOeuvre` varchar(30) NOT NULL,
   `PrixOeuvre` float NOT NULL,
-  `ID_Artiste` int(11) NOT NULL,
-  PRIMARY KEY (`ID_Oeuvre`)
+  `ID_Artiste` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -159,17 +148,15 @@ CREATE TABLE IF NOT EXISTS `oeuvre` (
 -- Structure de la table `orders`
 --
 
-DROP TABLE IF EXISTS `orders`;
-CREATE TABLE IF NOT EXISTS `orders` (
-  `OrderID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `orders` (
+  `OrderID` int(11) NOT NULL,
   `UserName` varchar(30) NOT NULL,
   `DueAmount` float NOT NULL,
   `InnoNumber` int(11) NOT NULL,
   `TotalQty` int(11) NOT NULL,
   `OrderDate` varchar(70) NOT NULL,
   `Status` int(11) NOT NULL,
-  `AddressId` int(11) NOT NULL,
-  PRIMARY KEY (`OrderID`)
+  `AddressId` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -178,17 +165,15 @@ CREATE TABLE IF NOT EXISTS `orders` (
 -- Structure de la table `pending_orders`
 --
 
-DROP TABLE IF EXISTS `pending_orders`;
-CREATE TABLE IF NOT EXISTS `pending_orders` (
-  `OrderID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pending_orders` (
+  `OrderID` int(11) NOT NULL,
   `UserName` varchar(30) DEFAULT NULL,
   `InnoNumber` int(11) DEFAULT NULL,
   `OeuvreID` int(11) DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
   `Status` varchar(30) DEFAULT NULL,
-  `AddressID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`OrderID`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+  `AddressID` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `pending_orders`
@@ -220,13 +205,11 @@ INSERT INTO `pending_orders` (`OrderID`, `UserName`, `InnoNumber`, `OeuvreID`, `
 -- Structure de la table `reservation`
 --
 
-DROP TABLE IF EXISTS `reservation`;
-CREATE TABLE IF NOT EXISTS `reservation` (
-  `code_reservation` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reservation` (
+  `code_reservation` int(11) NOT NULL,
   `id_client` int(11) NOT NULL,
   `nb_place` int(11) NOT NULL,
-  `code_event` int(11) NOT NULL,
-  PRIMARY KEY (`code_reservation`)
+  `code_event` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -235,13 +218,11 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 -- Structure de la table `reservation_expo`
 --
 
-DROP TABLE IF EXISTS `reservation_expo`;
-CREATE TABLE IF NOT EXISTS `reservation_expo` (
-  `code_reservationE` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reservation_expo` (
+  `code_reservationE` int(11) NOT NULL,
   `id_client` int(11) NOT NULL,
   `nb_placeE` int(11) NOT NULL,
-  `code_expo` int(11) NOT NULL,
-  PRIMARY KEY (`code_reservationE`)
+  `code_expo` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -250,9 +231,8 @@ CREATE TABLE IF NOT EXISTS `reservation_expo` (
 -- Structure de la table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `ID` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
   `datenaissance` date NOT NULL,
@@ -260,9 +240,124 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(30) NOT NULL,
   `numero` int(11) NOT NULL,
   `image` varchar(80) NOT NULL,
-  `role` varchar(30) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `role` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  ADD PRIMARY KEY (`ID_Cat`);
+
+--
+-- Index pour la table `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`code_event`);
+
+--
+-- Index pour la table `exposition`
+--
+ALTER TABLE `exposition`
+  ADD PRIMARY KEY (`code_expo`);
+
+--
+-- Index pour la table `oeuvre`
+--
+ALTER TABLE `oeuvre`
+  ADD PRIMARY KEY (`ID_Oeuvre`);
+
+--
+-- Index pour la table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`OrderID`);
+
+--
+-- Index pour la table `pending_orders`
+--
+ALTER TABLE `pending_orders`
+  ADD PRIMARY KEY (`OrderID`);
+
+--
+-- Index pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`code_reservation`);
+
+--
+-- Index pour la table `reservation_expo`
+--
+ALTER TABLE `reservation_expo`
+  ADD PRIMARY KEY (`code_reservationE`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  MODIFY `ID_Cat` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `event`
+--
+ALTER TABLE `event`
+  MODIFY `code_event` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `exposition`
+--
+ALTER TABLE `exposition`
+  MODIFY `code_expo` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `oeuvre`
+--
+ALTER TABLE `oeuvre`
+  MODIFY `ID_Oeuvre` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `pending_orders`
+--
+ALTER TABLE `pending_orders`
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `code_reservation` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `reservation_expo`
+--
+ALTER TABLE `reservation_expo`
+  MODIFY `code_reservationE` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
