@@ -2,33 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
-      <change afterPath="$PROJECT_DIR$/GFX/agencies.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/icons8_500px_64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/icons8_Handshake_64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/icons8_Share_64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/icons8_US_Dollar_64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/icons8_Workflow_64px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/projections.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/projects.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/reliabilty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/shopping-cart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/CartItem.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GFX/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GFX/samba.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/CheckOutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/PendingOrderScene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/PendingOrderSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Oeuvre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Oeuvre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddCart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/CrudTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/CrudTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/FxTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/FxTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Oeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Oeuvre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/ShowCart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/ShowCart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/ShowCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/ShowCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/AddCart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/AddCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/ShowCart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/ShowCart.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/CartCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CartCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/CrudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/CrudTest.java" afterDir="false" />
@@ -222,7 +222,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Drapo-Dashboard-JavaFX-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Gui" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.1778697" />
@@ -232,9 +232,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\out\production\GFX" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\GFX" />
-      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui" />
     </key>
   </component>
   <component name="RunManager" selected="Application.FxTest">
@@ -371,7 +371,7 @@
       <workItem from="1614503183312" duration="29476000" />
       <workItem from="1614539656920" duration="488000" />
       <workItem from="1614598646675" duration="7448000" />
-      <workItem from="1614618303882" duration="856000" />
+      <workItem from="1614618303882" duration="11532000" />
     </task>
     <servers />
   </component>

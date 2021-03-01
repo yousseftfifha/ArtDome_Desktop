@@ -31,11 +31,11 @@ public class CrudTest {
 //        cartCRUD.AddCart (cart,oeuvre2.get (0));
 //        cartCRUD.AddCart (cart1,oeuvre2.get (0));
 
-        cartCRUD.updateQuantity (cart,oeuvre1.get (0));
+        cartCRUD.updateQuantity (0,oeuvre1.get (0));
 
 //        cartCRUD.DeletCart (cart1);
 
-        ordersCRUD.AddFromCart (0,cart);
+        ordersCRUD.AddFromCart (0);
 
         List<Orders> orders=ordersCRUD.readAllOrders ();
 
@@ -44,6 +44,8 @@ public class CrudTest {
 //        ordersCRUD.DeletOrders (orders.get (0).getOrderID ());
 
         cartCRUD.DeletCart (cart);
+        int i= cartCRUD.count ();
+        System.out.println (i);
 
 
     }

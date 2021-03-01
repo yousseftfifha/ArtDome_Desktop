@@ -30,7 +30,7 @@ public class OrdersCRUD {
     public OrdersCRUD() {
         connection = MyConnection.getInstance ().getConnection ();
     }
-    public void AddFromCart(int UserID,Cart cart){
+    public void AddFromCart(int UserID){
         int nombreAleatoire = 1000000 + (int)(Math.random() * ((9999999 - 1000000) + 1));
         int orID = 1000 + (int)(Math.random() * ((9999 - 1000) + 1));
         float total_prix;

@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.CartItem">
+<AnchorPane id="anchor" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.PendingOrderSceneController">
     <children>
         <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -56,21 +56,21 @@
                         <Insets top="60.0" />
                     </VBox.margin>
                 </Label>
-            <JFXButton fx:id="home" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#HandleHomeBtn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/home.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
+                <JFXButton fx:id="home" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#HandleHomeBtn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/home.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
                 <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Users" textFill="#5b5858">
                     <font>
                         <Font size="13.0" />
@@ -193,56 +193,46 @@
         <ScrollPane layoutX="251.0" layoutY="146.0" prefHeight="469.0" prefWidth="1019.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="146.0">
 
 
-                <Pane layoutX="29.0" layoutY="22.0" prefHeight="526.0" prefWidth="896.0" style="-fx-background-color: #fff;">
-                    <children>
-                        <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="41.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../GFX/shopping-cart.png" />
-                            </image>
-                        </ImageView>
-                        <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
-                        <Label layoutX="123.0" layoutY="18.0" text="Your Cart" textFill="#3a1c9d">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="725.0" layoutY="33.0" textFill="#aeacac">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="123.0" layoutY="51.0" text="Ref: 20178" textFill="#b2b0b0">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <TableView fx:id="CartTable" layoutX="41.0" layoutY="112.0" prefHeight="346.0" prefWidth="763.0">
-                            <columns>
-                                <TableColumn fx:id="CartID" prefWidth="236.7999725341797" text="CartID" />
-                                <TableColumn fx:id="OeuvreID" minWidth="0.0" prefWidth="275.20001220703125" text="OeuvreID" />
-                                <TableColumn fx:id="Quantity" minWidth="0.0" prefWidth="249.5999755859375" text="Quantity" />
-                            </columns>
-                        </TableView>
-               <JFXButton fx:id="CheckOut" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="615.0" layoutY="38.0" onAction="#CheckOutBtnHandle" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="CheckOut" textFill="#5b5858">
-                  <font>
-                     <Font size="13.0" />
-                  </font>
-                  <graphic>
-                     <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+            <Pane layoutX="29.0" layoutY="22.0" prefHeight="526.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+                <children>
+                    <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="41.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
+                            <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
                         </image>
-                     </ImageView>
-                  </graphic>
-                  <padding>
-                     <Insets left="50.0" />
-                  </padding>
-               </JFXButton>
-                    </children>
-                    <effect>
-                        <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
-                    </effect>
-                </Pane>
+                    </ImageView>
+                    <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+                    <Label layoutX="123.0" layoutY="18.0" text="Your Pending Orders" textFill="#3a1c9d">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="725.0" layoutY="33.0" textFill="#aeacac">
+                        <font>
+                            <Font name="System Bold" size="36.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="123.0" layoutY="51.0" text="Ref: 20178" textFill="#b2b0b0">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <TableView fx:id="PendIngable" layoutX="41.0" layoutY="112.0" prefHeight="346.0" prefWidth="763.0">
+                        <columns>
+                            <TableColumn fx:id="OrderID1" prefWidth="98.4000244140625" text="OrderID" />
+                            <TableColumn fx:id="UserName1" minWidth="0.0" prefWidth="134.39996337890625" text="UserName" />
+                            <TableColumn fx:id="InnoNumber1" prefWidth="123.20001220703125" text="InnoNumber" />
+                            <TableColumn fx:id="OeuvreID1" prefWidth="88.0" text="OeuvreID" />
+                            <TableColumn fx:id="Quantity1" prefWidth="92.0" text="Quantity" />
+                            <TableColumn fx:id="Status1" prefWidth="113.60003662109375" text="Status" />
+                            <TableColumn fx:id="AdressId1" minWidth="9.5999755859375" prefWidth="112.800048828125" text="AdressId" />
+                        </columns>
+                    </TableView>
+
+                </children>
+                <effect>
+                    <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+                </effect>
+            </Pane>
 
         </ScrollPane>
         <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />

@@ -106,13 +106,13 @@ public class CartCRUD {
         }
 
     }
-    public  void updateQuantity (Cart cart ,Oeuvre oeuvre)
+    public  void updateQuantity (int id ,Oeuvre oeuvre)
     {
         String req="UPDATE cart SET Quantity=Quantity+? WHERE CartId =? and OeuvreId=?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
             preparedStatement.setInt (1,1) ;
-            preparedStatement.setInt (2,cart.getCartId ()) ;
+            preparedStatement.setInt (2,id) ;
             preparedStatement.setInt (3,oeuvre.getID_Oeuvre ()) ;
 
             preparedStatement.executeUpdate() ;
@@ -183,6 +183,23 @@ public class CartCRUD {
         }
         return list;
     }
+    public int count ()
+    {
+        int count=0;
+        List<Cart> list =new ArrayList<>() ;
+        String req = "select * from cart ";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                result.toString();
+                count++;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
 
+    }
 
 }
