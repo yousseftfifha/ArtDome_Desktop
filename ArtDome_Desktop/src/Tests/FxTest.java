@@ -15,18 +15,14 @@ import java.util.logging.Logger;
  */
 public class FxTest extends Application {
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
 
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("../Gui/AddCart.fxml"));
-            Scene scene = new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("../Gui/HomeScene.fxml"));
 
-            primaryStage.setTitle("ArtDome");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(FxTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Scene scene = new Scene(root);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**

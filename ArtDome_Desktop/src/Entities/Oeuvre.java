@@ -13,6 +13,11 @@ public class Oeuvre {
     public Oeuvre() {
     }
 
+    public Oeuvre(String nomOeuvre, float prixOeuvre) {
+        NomOeuvre = nomOeuvre;
+        PrixOeuvre = prixOeuvre;
+    }
+
     public Oeuvre(int ID_Oeuvre, String nomOeuvre, float prixOeuvre) {
         this.ID_Oeuvre = ID_Oeuvre;
         NomOeuvre = nomOeuvre;

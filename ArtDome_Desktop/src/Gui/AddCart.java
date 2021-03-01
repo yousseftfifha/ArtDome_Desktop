@@ -27,10 +27,7 @@ public class AddCart  implements Initializable {
 
     @FXML
     private Button addToCart;
-    @FXML
-    private Button addToCart1;
-    @FXML
-    private Button addToCart2;
+   
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

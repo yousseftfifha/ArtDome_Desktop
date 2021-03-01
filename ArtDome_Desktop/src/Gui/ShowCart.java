@@ -3,7 +3,6 @@ package Gui;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Services.CartCRUD;
-import Tests.FxTest;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,20 +11,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author tfifha youssef
@@ -39,13 +32,10 @@ public class ShowCart  implements Initializable {
     @FXML
     private TableColumn<Cart,Integer>  ProductID;
     @FXML
-    private TableColumn<Cart,Integer>  Quantity;
+    private TableColumn<Cart, Integer> Quantity;
     @FXML
     private JFXButton back;
-    @FXML
-    private TableColumn<Oeuvre,String> NomOeuvre;
-    @FXML
-    private TableColumn<Oeuvre,Float> PrixOeuvre;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -58,25 +48,23 @@ public class ShowCart  implements Initializable {
                 new PropertyValueFactory<Cart,Integer> ("OeuvreID")
         );
         Quantity.setCellValueFactory (
-                new PropertyValueFactory<Cart,Integer> ("Quantiy")
+                new PropertyValueFactory<Cart, Integer> ("Quantiy")
         );
-        Quantity.setCellValueFactory (
-                new PropertyValueFactory<Cart,Integer> ("NomOeuvre")
-        );
-        Quantity.setCellValueFactory (
-                new PropertyValueFactory<Cart,Integer> ("PrixOeuvre")
-        );
+
         buildData ();
 
     }
     private ObservableList<Cart> data;
+
     public void buildData(){
         data = FXCollections.observableArrayList();
+
         try{
             CartCRUD cartCRUD = new CartCRUD ();
             List<Cart> cartList = cartCRUD.readAll ();
-            Map<Cart, Oeuvre> cartList1 = cartCRUD.ReadAllOeuvrse ();
+
             data.addAll(cartList);
+
             table.setItems(data);
         }
         catch(Exception e){

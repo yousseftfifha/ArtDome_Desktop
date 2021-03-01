@@ -159,7 +159,18 @@ public class OrdersCRUD {
             preparedStatement.executeUpdate() ;
 
         } catch (SQLException ex) {
-            System.out.println ("Probleme lors de l'update de quantite");
+            System.out.println ("Probleme lors de l'update du statut de l'ordre");
+        }
+        String req1="UPDATE pending_orders SET Status=? WHERE OrderID =?" ;
+        try {
+            preparedStatement=connection.prepareStatement (req1);
+            preparedStatement.setString (1,str); ;
+            preparedStatement.setInt (2,orders.getOrderID ()) ;
+
+            preparedStatement.executeUpdate() ;
+
+        } catch (SQLException ex) {
+            System.out.println ("Probleme lors de l'update de du statut du pending order");
         }
     }
     public  void DeletOrders (int id)

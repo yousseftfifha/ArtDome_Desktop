@@ -76,6 +76,22 @@ public class CartCRUD {
         }
         return list;
     }
+    public List<Oeuvre> readOeuvre() {
+        String req = "select NomOeuvre,PrixOeuvre from oeuvre";
+
+        List<Oeuvre> list=new ArrayList<>();
+        try {
+            statement = connection.createStatement();
+            resultSet= statement.executeQuery(req);
+            while(resultSet.next()){
+                list.add(new Oeuvre (resultSet.getString (1), resultSet.getInt (2)));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
     public  void DeletCart (Cart cart)
     {
         String req="DELETE  from Cart where  CartId =?" ;
