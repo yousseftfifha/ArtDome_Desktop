@@ -17,6 +17,10 @@ public class Orders {
     private String Status;
     private int AddressID;
 
+    public Orders(int orderID) {
+        OrderID = orderID;
+    }
+
     public Orders() {
     }
 

@@ -92,12 +92,26 @@ public class CartCRUD {
         }
         return list;
     }
-    public  void DeletCart (Cart cart)
+    public  void DeletCart (int id)
     {
         String req="DELETE  from Cart where  CartId =?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setInt(1,cart.getCartId ());
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate ();
+
+        } catch (SQLException ex) {
+            System.out.println ("Probleme lors de la supprision du panier");
+
+        }
+
+    }
+    public  void DeletOeuvreCart (int id)
+    {
+        String req="DELETE  from Cart where OeuvreId =?" ;
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            preparedStatement.setInt(1,id);
             preparedStatement.executeUpdate ();
 
         } catch (SQLException ex) {
@@ -136,6 +150,27 @@ public class CartCRUD {
                         result.getInt(1),
                         result.getInt (2),
                         result.getInt (3)
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    public  List<Cart> FillCombo ()
+    {
+        List<Cart> list =new ArrayList<>() ;
+        String req = "select OeuvreId from cart ";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+
+                list.add(new Cart (
+                        result.getInt(1)
+
                 ));
             }
         } catch (SQLException ex) {

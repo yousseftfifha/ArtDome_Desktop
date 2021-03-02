@@ -39,11 +39,11 @@ public class CrudTest {
 
         List<Orders> orders=ordersCRUD.readAllOrders ();
 
-        ordersCRUD.updateOrderStatus ( orders.get (0),"confirmed");
+//        ordersCRUD.updateOrderStatus ( orders.get (0),"confirmed");
 
 //        ordersCRUD.DeletOrders (orders.get (0).getOrderID ());
 
-        cartCRUD.DeletCart (cart);
+//        cartCRUD.DeletCart (cart);
         int i= cartCRUD.count ();
         System.out.println (i);
 

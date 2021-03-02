@@ -83,7 +83,7 @@ public class HomeSceneController implements Initializable {
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
-        dialogStage.setTitle("ArtDome - Home");
+        dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
         dialogStage.show();
     }

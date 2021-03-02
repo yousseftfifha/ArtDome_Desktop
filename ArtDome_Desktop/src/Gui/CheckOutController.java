@@ -4,6 +4,9 @@ import Entities.Cart;
 import Entities.Orders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -48,6 +52,12 @@ public class CheckOutController implements Initializable {
     private TableColumn AdressId;
     @FXML
     private TableView CheckOutTable;
+    @FXML
+    private JFXButton changeButoon;
+    @FXML
+    private JFXTextField statusOrder;
+    @FXML
+    private JFXComboBox comboboxOrderID;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -76,6 +86,12 @@ public class CheckOutController implements Initializable {
         AdressId.setCellValueFactory (
                 new PropertyValueFactory<Orders,Integer> ("AddressID")
         );
+        OrdersCRUD ordersCRUD = new OrdersCRUD ();
+        List<Orders> ordersList = ordersCRUD.combofill ();
+        for (Orders orders:ordersList){
+            comboboxOrderID.getItems ().add(orders.getOrderID ());
+
+        }
         buildData ();
     }
     private ObservableList<Orders> data;
@@ -116,5 +132,15 @@ public class CheckOutController implements Initializable {
         dialogStage.setTitle("ArtDome - PendingOrders");
         dialogStage.setScene(scene);
         dialogStage.show();
+    }
+
+
+    @FXML
+    private void Changevalue(ActionEvent actionEvent) {
+        String newstatus=statusOrder.getText ();
+        int id= (int) comboboxOrderID.getValue ();
+        OrdersCRUD ordersCRUD = new OrdersCRUD ();
+        ordersCRUD.updateOrderStatus(id,newstatus);
+
     }
 }

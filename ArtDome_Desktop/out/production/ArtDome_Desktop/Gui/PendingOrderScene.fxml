@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Label?>
@@ -173,7 +174,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
+                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleOrdBTn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -211,11 +212,6 @@
                             <Font name="System Bold" size="36.0" />
                         </font>
                     </Label>
-                    <Label layoutX="123.0" layoutY="51.0" text="Ref: 20178" textFill="#b2b0b0">
-                        <font>
-                            <Font size="14.0" />
-                        </font>
-                    </Label>
                     <TableView fx:id="PendIngable" layoutX="41.0" layoutY="112.0" prefHeight="346.0" prefWidth="763.0">
                         <columns>
                             <TableColumn fx:id="OrderID1" prefWidth="98.4000244140625" text="OrderID" />
@@ -227,6 +223,8 @@
                             <TableColumn fx:id="AdressId1" minWidth="9.5999755859375" prefWidth="112.800048828125" text="AdressId" />
                         </columns>
                     </TableView>
+               <JFXTextField fx:id="searchP" layoutX="155.0" layoutY="47.0" />
+               <JFXButton fx:id="ref" layoutX="97.0" layoutY="60.0" onAction="#serchMethod" text="Ref:" />
 
                 </children>
                 <effect>

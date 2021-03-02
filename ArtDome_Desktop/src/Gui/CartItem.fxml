@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
@@ -174,7 +175,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
+                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#hnadleordBtn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -232,6 +233,22 @@
                      <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <padding>
+                     <Insets left="50.0" />
+                  </padding>
+               </JFXButton>
+               <JFXComboBox fx:id="idCart" layoutX="454.0" layoutY="39.0" />
+               <JFXButton fx:id="OrdersB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="338.0" layoutY="30.0" onAction="#deleteCartId" prefHeight="43.0" prefWidth="117.0" ripplerFill="#bfadf8" text="Delete" textFill="#5b5858">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+                  <graphic>
+                     <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../GFX/trash-can_38501.png" />
                         </image>
                      </ImageView>
                   </graphic>

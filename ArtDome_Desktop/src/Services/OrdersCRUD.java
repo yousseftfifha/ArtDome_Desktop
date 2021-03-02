@@ -5,6 +5,7 @@ import Entities.Oeuvre;
 import Entities.Orders;
 import Entities.PendingOrders;
 import Tools.MyConnection;
+import javafx.scene.control.ComboBox;
 
 import java.sql.*;
 import java.text.DateFormat;
@@ -49,6 +50,7 @@ public class OrdersCRUD {
         ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
 
         Map<Cart,Oeuvre> cartOeuvreMap=cartCRUD.ReadAllOeuvrse ();
+
         for(Cart i : cartOeuvreMap.keySet()){
             total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
             String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
@@ -63,7 +65,7 @@ public class OrdersCRUD {
                 preparedStatement.setString (6,"pending");
                 preparedStatement.setInt (7,1);
                 preparedStatement.executeUpdate ();
-
+                cartCRUD.DeletCart (i.getCartId ());
 
             } catch (SQLException throwables) {
                 System.out.println ("Probleme lors de l'ajout de la pending order");
@@ -124,6 +126,25 @@ public class OrdersCRUD {
         }
         return list;
     }
+    public  List<Orders> combofill ()
+    {
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select OrderID from orders ";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1)
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
     public  List<Orders> selectOrderById (int id)
     {
         List<Orders> list =new ArrayList<>() ;
@@ -151,13 +172,39 @@ public class OrdersCRUD {
         return list;
 
     }
-    public  void updateOrderStatus (Orders orders ,String str)
+    public  List<PendingOrders> selectPendById (int id)
+    {
+        List<PendingOrders> list =new ArrayList<>() ;
+        String req = "select * from pending_orders where OrderID=?";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            preparedStatement.setInt(1,id);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new PendingOrders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getInt (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getInt (7)
+
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    public  void updateOrderStatus (int id ,String str)
     {
         String req="UPDATE orders SET Status=? WHERE OrderID =?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
             preparedStatement.setString (1,str); ;
-            preparedStatement.setInt (2,orders.getOrderID ()) ;
+            preparedStatement.setInt (2,id) ;
 
             preparedStatement.executeUpdate() ;
 
@@ -168,7 +215,7 @@ public class OrdersCRUD {
         try {
             preparedStatement=connection.prepareStatement (req1);
             preparedStatement.setString (1,str); ;
-            preparedStatement.setInt (2,orders.getOrderID ()) ;
+            preparedStatement.setInt (2,id) ;
 
             preparedStatement.executeUpdate() ;
 

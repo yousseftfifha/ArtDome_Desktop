@@ -3,6 +3,7 @@ package Gui;
 import Entities.Cart;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +36,9 @@ public class CartItem implements Initializable {
     private TableColumn Quantity;
     Stage dialogStage = new Stage();
     Scene scene;
+    @FXML
+    private JFXComboBox idCart;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
             CartTable.setEditable (true);
@@ -48,6 +52,12 @@ public class CartItem implements Initializable {
             Quantity.setCellValueFactory (
                     new PropertyValueFactory<Cart,Integer> ("Quantiy")
             );
+        CartCRUD cartCRUD = new CartCRUD ();
+        List<Cart> carts = cartCRUD.FillCombo ();
+        for (Cart cart:carts){
+            idCart.getItems ().add(cart.getCartId ());
+
+        }
             buildData ();
     }
     private ObservableList<Cart> data;
@@ -90,5 +100,25 @@ public class CartItem implements Initializable {
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
         dialogStage.show();
+    }
+
+    @FXML
+    private void hnadleordBtn(ActionEvent actionEvent) throws IOException {
+        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        ordersCRUD.AddFromCart (0);
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void deleteCartId(ActionEvent keyEvent) {
+        CartCRUD cartCRUD = new CartCRUD ();
+
+        cartCRUD.DeletOeuvreCart ((Integer) idCart.getValue ());
     }
 }
