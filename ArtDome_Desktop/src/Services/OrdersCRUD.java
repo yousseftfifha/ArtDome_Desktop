@@ -33,7 +33,8 @@ public class OrdersCRUD {
     public void AddFromCart(int UserID){
         int nombreAleatoire = 1000000 + (int)(Math.random() * ((9999999 - 1000000) + 1));
         int orID = 1000 + (int)(Math.random() * ((9999 - 1000) + 1));
-        float total_prix;
+        float total_prix=0;
+        int quantitytot=0;
         CartCRUD cartCRUD = new CartCRUD ();
 //        List<Cart> carts = cartCRUD.selectCartById (cart.getCartId ());
 ////        List<Oeuvre> oeuvres = cartCRUD.ReadAllOeuvrse();
@@ -49,8 +50,9 @@ public class OrdersCRUD {
 
         Map<Cart,Oeuvre> cartOeuvreMap=cartCRUD.ReadAllOeuvrse ();
         for(Cart i : cartOeuvreMap.keySet()){
-            total_prix=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
+            total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
             String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
+            quantitytot+=i.getQuantiy ();
             try {
                 preparedStatement = connection.prepareStatement(request);
                 preparedStatement.setInt (1,orID);
@@ -66,25 +68,26 @@ public class OrdersCRUD {
             } catch (SQLException throwables) {
                 System.out.println ("Probleme lors de l'ajout de la pending order");
             }
-            String request1="INSERT INTO orders(OrderID,UserName,DueAmount,InnoNumber,TotalQty,OrderDate,Status,AddressId)"+"VALUES(?,?,?,?,?,?,?,?) ";
 
-            try {
-                preparedStatement = connection.prepareStatement(request1);
-                preparedStatement.setInt (1,orID);
-                preparedStatement.setString (2,"youssef");
-                preparedStatement.setFloat (3,total_prix);
-                preparedStatement.setInt (4,nombreAleatoire);
-                preparedStatement.setInt (5,cartOeuvreMap.get (i).getID_Oeuvre ());
-                preparedStatement.setString (6,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME) );
-                preparedStatement.setString (7,"pending");
-                preparedStatement.setInt (8,1);
-                preparedStatement.executeUpdate ();
+        }
+        String request1="INSERT INTO orders(OrderID,UserName,DueAmount,InnoNumber,TotalQty,OrderDate,Status,AddressId)"+"VALUES(?,?,?,?,?,?,?,?) ";
+
+        try {
+            preparedStatement = connection.prepareStatement(request1);
+            preparedStatement.setInt (1,orID);
+            preparedStatement.setString (2,"youssef");
+            preparedStatement.setFloat (3,total_prix);
+            preparedStatement.setInt (4,nombreAleatoire);
+            preparedStatement.setInt (5,quantitytot);
+            preparedStatement.setString (6,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME) );
+            preparedStatement.setString (7,"pending");
+            preparedStatement.setInt (8,1);
+            preparedStatement.executeUpdate ();
 
 
-            } catch (SQLException throwables) {
-                System.out.println ("Probleme lors de l'ajout du l'order");
-                throwables.printStackTrace ();
-            }
+        } catch (SQLException throwables) {
+            System.out.println ("Probleme lors de l'ajout du l'order");
+            throwables.printStackTrace ();
         }
 
 

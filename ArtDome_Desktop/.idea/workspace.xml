@@ -2,37 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
-      <change afterPath="$PROJECT_DIR$/GFX/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GFX/samba.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/CheckOutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/PendingOrderScene.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/PendingOrderSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddCart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddCart.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/ShowCart.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/CrudTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/CrudTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/FxTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/FxTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/AddCart.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/AddCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/ShowCart.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/ShowCart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/CartCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CartCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PendingOrderScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/PendingOrderScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/CrudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/CrudTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/FxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/FxTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,15 +277,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -371,7 +345,8 @@
       <workItem from="1614503183312" duration="29476000" />
       <workItem from="1614539656920" duration="488000" />
       <workItem from="1614598646675" duration="7448000" />
-      <workItem from="1614618303882" duration="11532000" />
+      <workItem from="1614618303882" duration="11662000" />
+      <workItem from="1614699525243" duration="1673000" />
     </task>
     <servers />
   </component>
