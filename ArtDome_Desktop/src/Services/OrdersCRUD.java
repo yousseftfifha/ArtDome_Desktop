@@ -67,6 +67,7 @@ public class OrdersCRUD {
                 preparedStatement.executeUpdate ();
                 cartCRUD.DeletCart (i.getCartId ());
 
+
             } catch (SQLException throwables) {
                 System.out.println ("Probleme lors de l'ajout de la pending order");
             }
@@ -145,6 +146,7 @@ public class OrdersCRUD {
         return list;
 
     }
+
     public  List<Orders> selectOrderById (int id)
     {
         List<Orders> list =new ArrayList<>() ;

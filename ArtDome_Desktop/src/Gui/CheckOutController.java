@@ -136,11 +136,18 @@ public class CheckOutController implements Initializable {
 
 
     @FXML
-    private void Changevalue(ActionEvent actionEvent) {
+    private void Changevalue(ActionEvent actionEvent) throws IOException {
         String newstatus=statusOrder.getText ();
         int id= (int) comboboxOrderID.getValue ();
         OrdersCRUD ordersCRUD = new OrdersCRUD ();
         ordersCRUD.updateOrderStatus(id,newstatus);
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+        dialogStage.show();
 
     }
 }

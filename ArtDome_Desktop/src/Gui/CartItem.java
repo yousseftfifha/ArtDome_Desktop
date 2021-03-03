@@ -43,6 +43,7 @@ public class CartItem implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
             CartTable.setEditable (true);
 
+
             CartID.setCellValueFactory (
                     new PropertyValueFactory<Cart,Integer> ("CartId")
             );
@@ -55,7 +56,7 @@ public class CartItem implements Initializable {
         CartCRUD cartCRUD = new CartCRUD ();
         List<Cart> carts = cartCRUD.FillCombo ();
         for (Cart cart:carts){
-            idCart.getItems ().add(cart.getCartId ());
+            idCart.getItems ().add(cart.getOeuvreID ());
 
         }
             buildData ();
@@ -109,16 +110,24 @@ public class CartItem implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
         dialogStage.show();
     }
 
     @FXML
-    private void deleteCartId(ActionEvent keyEvent) {
+    private void deleteCartId(ActionEvent keyEvent) throws IOException {
         CartCRUD cartCRUD = new CartCRUD ();
-
+//        cartCRUD.DeletOeuvreCart ((Integer) idCart.getValue ());
         cartCRUD.DeletOeuvreCart ((Integer) idCart.getValue ());
+
+        Node source = (Node) keyEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
+        dialogStage.setTitle("ArtDome - Cart");
+        dialogStage.setScene(scene);
+        dialogStage.show();
     }
 }

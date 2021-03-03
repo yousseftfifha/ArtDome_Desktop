@@ -4,28 +4,31 @@ package Entities;
  * @author tfifha youssef
  */
 public class Cart {
-    private int CartId;
+    private String CartId;
     private int OeuvreID;
     private int Quantity;
 
     public Cart() {
     }
-    public Cart(int cartId) {
+    public Cart(String cartId) {
         CartId = cartId;
     }
 
+    public Cart(int oeuvreID) {
+        OeuvreID = oeuvreID;
+    }
 
-    public Cart(int cartId, int oeuvreID, int quantity) {
+    public Cart(String  cartId, int oeuvreID, int quantity) {
         CartId = cartId;
         OeuvreID = oeuvreID;
         Quantity = quantity;
     }
 
-    public int getCartId() {
+    public String getCartId() {
         return CartId;
     }
 
-    public void setCartId(int cartId) {
+    public void setCartId(String cartId) {
         CartId= cartId;
     }
 

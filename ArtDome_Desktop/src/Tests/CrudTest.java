@@ -24,14 +24,14 @@ public class CrudTest {
         List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
 //        List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
 
-        Cart cart=new Cart(0);
+        Cart cart=new Cart("youssef");
 //        Cart cart1=new Cart(1);
 
         cartCRUD.AddCart (cart,oeuvre1.get (0));
 //        cartCRUD.AddCart (cart,oeuvre2.get (0));
 //        cartCRUD.AddCart (cart1,oeuvre2.get (0));
 
-        cartCRUD.updateQuantity (0,oeuvre1.get (0));
+        cartCRUD.updateQuantity ("youssef",oeuvre1.get (0));
 
 //        cartCRUD.DeletCart (cart1);
 

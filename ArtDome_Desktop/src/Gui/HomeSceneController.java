@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -50,6 +51,7 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handleBtnOrder(ActionEvent actionEvent) throws IOException {
+       
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
@@ -67,12 +69,12 @@ public class HomeSceneController implements Initializable {
             List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
             List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
 
-            Cart cart=new Cart(0);
+            Cart cart=new Cart("youssef");
 
             cartCRUD.AddCart (cart,oeuvre1.get (0));
             cartCRUD.AddCart (cart,oeuvre2.get (0));
 
-            cartCRUD.updateQuantity (0,oeuvre1.get (0));
+            cartCRUD.updateQuantity ("youssef",oeuvre1.get (0));
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
     }

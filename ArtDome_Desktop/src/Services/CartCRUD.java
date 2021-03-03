@@ -31,7 +31,7 @@ public class CartCRUD {
         String request="INSERT INTO CART(CartId,OeuvreId,Quantity)"+"VALUES(?,?,?) ";
         try {
             preparedStatement = connection.prepareStatement(request);
-            preparedStatement.setInt (1,cart.getCartId ());
+            preparedStatement.setString (1,cart.getCartId ());
             preparedStatement.setInt (2,oeuvre.getID_Oeuvre ());
             preparedStatement.setInt (3,1);
             preparedStatement.executeUpdate ();
@@ -68,7 +68,7 @@ public class CartCRUD {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                list.add(new Cart (resultSet.getInt(1), resultSet.getInt (2), resultSet.getInt (3)));
+                list.add(new Cart (resultSet.getString (1), resultSet.getInt (2), resultSet.getInt (3)));
             }
 
         } catch (SQLException ex) {
@@ -92,12 +92,12 @@ public class CartCRUD {
         }
         return list;
     }
-    public  void DeletCart (int id)
+    public  void DeletCart (String id)
     {
         String req="DELETE  from Cart where  CartId =?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setString (1,id);
             preparedStatement.executeUpdate ();
 
         } catch (SQLException ex) {
@@ -120,13 +120,13 @@ public class CartCRUD {
         }
 
     }
-    public  void updateQuantity (int id ,Oeuvre oeuvre)
+    public  void updateQuantity (String id ,Oeuvre oeuvre)
     {
         String req="UPDATE cart SET Quantity=Quantity+? WHERE CartId =? and OeuvreId=?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
             preparedStatement.setInt (1,1) ;
-            preparedStatement.setInt (2,id) ;
+            preparedStatement.setString (2,id); ;
             preparedStatement.setInt (3,oeuvre.getID_Oeuvre ()) ;
 
             preparedStatement.executeUpdate() ;
@@ -147,7 +147,7 @@ public class CartCRUD {
             while (result.next()){
                 result.toString();
                 list.add(new Cart (
-                        result.getInt(1),
+                        result.getString (1),
                         result.getInt (2),
                         result.getInt (3)
                 ));
@@ -169,7 +169,7 @@ public class CartCRUD {
             while (result.next()){
 
                 list.add(new Cart (
-                        result.getInt(1)
+                        result.getInt (1)
 
                 ));
             }
@@ -208,7 +208,7 @@ public class CartCRUD {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                Cart cart=new Cart (resultSet.getInt (1),resultSet.getInt (2),resultSet.getInt (3));
+                Cart cart=new Cart (resultSet.getString (1),resultSet.getInt (2),resultSet.getInt (3));
                 Oeuvre oeuvre=new Oeuvre (resultSet.getInt(4), resultSet.getString (5), resultSet.getInt (6));
                 list.put (cart,oeuvre);
             }

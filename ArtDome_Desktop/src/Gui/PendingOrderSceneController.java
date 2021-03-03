@@ -1,9 +1,11 @@
 package Gui;
 
 import Entities.Oeuvre;
+import Entities.Orders;
 import Entities.PendingOrders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,6 +50,8 @@ public class PendingOrderSceneController implements Initializable {
     private TableColumn AdressId1;
     @FXML
     private JFXTextField searchP;
+    @FXML
+    private JFXComboBox searchOrd;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -73,6 +77,12 @@ public class PendingOrderSceneController implements Initializable {
         AdressId1.setCellValueFactory (
                 new PropertyValueFactory<PendingOrders,Integer> ("AddressID")
         );
+        OrdersCRUD ordersCRUD = new OrdersCRUD ();
+        List<Orders> ordersList = ordersCRUD.combofill ();
+        for (Orders orders:ordersList){
+            searchOrd.getItems ().add(orders.getOrderID ());
+
+        }
         buildData ();
     }
     private ObservableList<PendingOrders> data;
@@ -97,7 +107,7 @@ public class PendingOrderSceneController implements Initializable {
     private void HandleHomeBtn(ActionEvent actionEvent) throws IOException {
         CartCRUD cartCRUD=new CartCRUD ();
         List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
-        cartCRUD.updateQuantity (0,oeuvre1.get (0));
+        cartCRUD.updateQuantity ("youssef",oeuvre1.get (0));
 
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
@@ -121,13 +131,13 @@ public class PendingOrderSceneController implements Initializable {
 
     @FXML
     private void serchMethod(ActionEvent inputMethodEvent) {
-        String rID=searchP.getText ();
+        int id= (int) searchOrd.getValue ();
         data = FXCollections.observableArrayList();
 
         try{
             OrdersCRUD ordersCRUD = new OrdersCRUD ();
 //            List<PendingOrders> pendingOrders = ordersCRUD.readAllpendingOrders ();
-              List<PendingOrders> pendingOrders = ordersCRUD.selectPendById (Integer.parseInt (rID));
+              List<PendingOrders> pendingOrders = ordersCRUD.selectPendById (Integer.parseInt (String.valueOf (id)));
             data.addAll(pendingOrders);
             PendIngable.setItems(data);
         }
