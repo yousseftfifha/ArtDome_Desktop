@@ -6,7 +6,9 @@ import Entities.Orders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
 import Tools.MyConnection;
+import Tools.SendEmail;
 
+import javax.mail.MessagingException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +17,7 @@ import java.util.Map;
  * @author tfifha youssef
  */
 public class CrudTest {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, MessagingException {
         MyConnection myConnection=MyConnection.getInstance ();//connection
 
         CartCRUD cartCRUD=new CartCRUD ();
@@ -47,6 +49,7 @@ public class CrudTest {
         int i= cartCRUD.count ();
         System.out.println (i);
 
+        SendEmail.sendMail ("youssef.tfifha@esprit.tn","OrderConfirmation","vous avez ajouter une nouvelle commande ");
 
     }
 }

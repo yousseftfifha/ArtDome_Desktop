@@ -5,8 +5,10 @@ import Entities.Oeuvre;
 import Entities.Orders;
 import Entities.PendingOrders;
 import Tools.MyConnection;
+import Tools.SendEmail;
 import javafx.scene.control.ComboBox;
 
+import javax.mail.MessagingException;
 import java.sql.*;
 import java.text.DateFormat;
 import java.time.ZonedDateTime;
@@ -31,7 +33,7 @@ public class OrdersCRUD {
     public OrdersCRUD() {
         connection = MyConnection.getInstance ().getConnection ();
     }
-    public void AddFromCart(int UserID){
+    public void AddFromCart(int UserID) throws MessagingException {
         int nombreAleatoire = 1000000 + (int)(Math.random() * ((9999999 - 1000000) + 1));
         int orID = 1000 + (int)(Math.random() * ((9999 - 1000) + 1));
         float total_prix=0;
@@ -93,6 +95,18 @@ public class OrdersCRUD {
             throwables.printStackTrace ();
         }
 
+        String message="Bonjour Mr/Mme " +System.lineSeparator()+
+                "Vous avez ajouter une nouvelle commande a " +ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME)+
+                System.lineSeparator()+
+                " Order ID: "+orID+
+                " User:Youssef: "+
+                " prix a payer: "+total_prix+
+                " quantite total: "+quantitytot+
+                " status: Pending "
+                +System.lineSeparator()
+                +" Cordialement "+System.lineSeparator()+" Bonne journee";
+
+        SendEmail.sendMail ("youssef.tfifha@esprit.tn","New Order Confirmation",message);
 
     }
     public List<PendingOrders> readAllpendingOrders() {

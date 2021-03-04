@@ -1,8 +1,10 @@
 package Gui;
 
 import Entities.Cart;
+import Entities.Orders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import Tools.SendEmail;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,13 +14,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import javax.mail.MessagingException;
 import java.io.IOException;
 import java.net.URL;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -91,7 +97,7 @@ public class CartItem implements Initializable {
     }
 
     @FXML
-    private void CheckOutBtnHandle(ActionEvent actionEvent) throws IOException {
+    private void CheckOutBtnHandle(ActionEvent actionEvent) throws IOException, MessagingException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         ordersCRUD.AddFromCart (0);
         Node source = (Node) actionEvent.getSource();
@@ -101,19 +107,29 @@ public class CartItem implements Initializable {
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
         dialogStage.show();
+        Alert alert=new Alert (Alert.AlertType.INFORMATION);
+        alert.setTitle ("Add Order");
+        alert.setHeaderText ("Add Order");
+        alert.setContentText ("Vous avez ajouter une  commande: ");
+        alert.showAndWait ();
+
     }
 
     @FXML
-    private void hnadleordBtn(ActionEvent actionEvent) throws IOException {
+    private void hnadleordBtn(ActionEvent actionEvent) throws IOException, MessagingException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         ordersCRUD.AddFromCart (0);
+
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+
         dialogStage.show();
+
+
     }
 
     @FXML

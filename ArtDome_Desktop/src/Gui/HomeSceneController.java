@@ -3,6 +3,7 @@ package Gui;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Services.CartCRUD;
+import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
@@ -51,7 +53,7 @@ public class HomeSceneController implements Initializable {
 
     @FXML
     private void handleBtnOrder(ActionEvent actionEvent) throws IOException {
-       
+
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
@@ -77,6 +79,12 @@ public class HomeSceneController implements Initializable {
             cartCRUD.updateQuantity ("youssef",oeuvre1.get (0));
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
+        Alert alert=new Alert (Alert.AlertType.INFORMATION);
+        alert.setTitle ("Add To Cart");
+        alert.setHeaderText ("Add To Cart");
+        alert.setContentText ("Vous avez ajouter deux oeuvre: "+oeuvre1.get (0).getNomOeuvre ()+" et "+oeuvre2.get (0).getNomOeuvre ());
+        alert.showAndWait ();
+
     }
 
     @FXML
