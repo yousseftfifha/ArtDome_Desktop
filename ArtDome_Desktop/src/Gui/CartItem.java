@@ -4,6 +4,7 @@ import Entities.Cart;
 import Entities.Orders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import Tools.PDF;
 import Tools.SendEmail;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
@@ -133,7 +134,6 @@ public class CartItem implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
-
         dialogStage.show();
 
 

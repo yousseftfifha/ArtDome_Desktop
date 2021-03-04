@@ -2,6 +2,8 @@ package Gui;
 
 import Entities.Orders;
 import Services.OrdersCRUD;
+import Tools.PDF;
+import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -163,5 +165,11 @@ public class OrderDashController implements Initializable {
         dialogStage.setScene(scene);
 
         dialogStage.show();
+    }
+
+    @FXML
+    private void GenererPdf(ActionEvent actionEvent) throws IOException, DocumentException {
+            PDF pdf=new PDF ();
+            pdf.pdfGeneration ();
     }
 }

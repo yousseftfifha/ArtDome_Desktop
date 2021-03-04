@@ -205,5 +205,6 @@
       <JFXButton fx:id="changeButoon" layoutX="590.0" layoutY="160.0" onAction="#Changevalue" text="change Order Status of:" />
       <JFXTextField fx:id="statusOrder" layoutX="731.0" layoutY="160.0" />
       <JFXComboBox fx:id="comboboxOrderID" layoutX="874.0" layoutY="160.0" />
+      <JFXButton layoutX="1016.0" layoutY="160.0" onAction="#GenererPdf" text="Generer un PDF" />
     </children>
 </AnchorPane>

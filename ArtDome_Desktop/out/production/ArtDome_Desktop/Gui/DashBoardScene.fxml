@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
@@ -189,14 +189,6 @@
                 </JFXButton>
             </children>
         </VBox>
-      <AreaChart layoutX="264.0" layoutY="162.0" prefHeight="198.0" prefWidth="302.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </AreaChart>
       <BarChart layoutX="870.0" layoutY="162.0" prefHeight="198.0" prefWidth="302.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
@@ -205,14 +197,6 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <LineChart layoutX="264.0" layoutY="359.0" prefHeight="234.0" prefWidth="292.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </LineChart>
       <LineChart layoutX="880.0" layoutY="365.0" prefHeight="222.0" prefWidth="292.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
@@ -221,5 +205,21 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
+      <Pane layoutX="334.0" layoutY="222.0" prefHeight="272.0" prefWidth="401.0">
+         <children>
+            <ImageView fitHeight="122.0" fitWidth="157.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../GFX/Wikipedia-globe-icon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="162.0" layoutY="42.0" prefHeight="53.0" prefWidth="147.0" text="Wikipidia">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="searchbutton" layoutX="14.0" layoutY="163.0" onAction="#searchForTerm" prefHeight="43.0" prefWidth="114.0" text="Search" />
+            <JFXTextField fx:id="term" layoutX="120.0" layoutY="172.0" />
+         </children>
+      </Pane>
     </children>
 </AnchorPane>
