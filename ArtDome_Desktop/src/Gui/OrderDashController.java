@@ -1,8 +1,6 @@
 package Gui;
 
-import Entities.Cart;
 import Entities.Orders;
-import Services.CartCRUD;
 import Services.OrdersCRUD;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -18,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -30,10 +27,9 @@ import java.util.ResourceBundle;
 /**
  * @author tfifha youssef
  */
-public class CheckOutController implements Initializable {
+public class OrderDashController implements Initializable {
     Stage dialogStage = new Stage();
     Scene scene;
-
     @FXML
     private TableColumn OrderID;
     @FXML
@@ -51,17 +47,28 @@ public class CheckOutController implements Initializable {
     @FXML
     private TableColumn AdressId;
     @FXML
-    private TableView CheckOutTable;
+    private TableView OrderTable;
     @FXML
     private JFXButton changeButoon;
     @FXML
     private JFXTextField statusOrder;
     @FXML
     private JFXComboBox comboboxOrderID;
+    @FXML
+    private void HomeHandle(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("DashBoardScene.fxml")));
+        dialogStage.setTitle("ArtDome - Dashboard");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        CheckOutTable.setEditable (true);
+
+        OrderTable.setEditable (true);
         OrderID.setCellValueFactory (
                 new PropertyValueFactory<Orders,Integer> ("OrderID")
         );
@@ -86,6 +93,12 @@ public class CheckOutController implements Initializable {
         AdressId.setCellValueFactory (
                 new PropertyValueFactory<Orders,Integer> ("AddressID")
         );
+        OrdersCRUD ordersCRUD = new OrdersCRUD ();
+        List<Orders> ordersList = ordersCRUD.combofill ();
+        for (Orders orders:ordersList){
+            comboboxOrderID.getItems ().add(orders.getOrderID ());
+
+        }
 
         buildData ();
     }
@@ -99,36 +112,24 @@ public class CheckOutController implements Initializable {
 
             data.addAll(ordersList);
 
-            CheckOutTable.setItems(data);
+            OrderTable.setItems(data);
         }
         catch(Exception e){
             e.printStackTrace();
             System.out.println("Error on Building Data");
         }
     }
-    @FXML
-    private void HandleHomeBtn(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("HomeScene.fxml")));
-        dialogStage.setTitle("ArtDome - Checkout");
-        dialogStage.setScene(scene);
-        dialogStage.show();
-    }
-
 
     @FXML
-    private void handleClick(MouseEvent mouseEvent) throws IOException {
+    private void pend(MouseEvent mouseEvent) throws IOException {
         Node source = (Node) mouseEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("PendingOrderScene.fxml")));
-        dialogStage.setTitle("ArtDome - PendingOrders");
+        scene = new Scene (FXMLLoader.load(getClass().getResource("DashPendOrd.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Pending Orders");
         dialogStage.setScene(scene);
         dialogStage.show();
     }
-
 
     @FXML
     private void Changevalue(ActionEvent actionEvent) throws IOException {
@@ -139,10 +140,9 @@ public class CheckOutController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OrderDash.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
         dialogStage.show();
-
     }
 }

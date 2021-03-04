@@ -145,4 +145,15 @@ public class PendingOrderSceneController implements Initializable {
             e.printStackTrace();
             System.out.println("Error on Building Data");
         }    }
+
+    @FXML
+    private void HomeHandle(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("DashBoardScene.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }

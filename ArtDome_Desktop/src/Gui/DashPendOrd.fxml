@@ -1,39 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.CheckOutController">
+<AnchorPane id="anchor" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.DashPendOrderSceneController">
     <children>
         <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label layoutX="628.0" layoutY="42.0" text="Art" textFill="#f01717">
-                    <font>
-                        <Font size="36.0" />
-                    </font>
-                </Label>
                 <Label layoutX="694.0" layoutY="101.0" text="Since 2021" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
-                    </font>
-                </Label>
-                <Label layoutX="676.0" layoutY="42.0" text="Dome" textFill="WHITE">
-                    <font>
-                        <Font size="36.0" />
                     </font>
                 </Label>
                 <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
@@ -41,9 +29,19 @@
                         <Image url="@../../GFX/logo.png" />
                     </image>
                 </ImageView>
+                <Label layoutX="764.0" layoutY="37.0" text="Board" textFill="WHITE">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+                <Label layoutX="685.0" layoutY="37.0" text="Dash" textFill="#f01717">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
             </children>
         </Pane>
-        <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+        <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fd746c;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
             <children>
                 <Label prefHeight="30.0" prefWidth="252.0" text="Navigation List" textFill="#171717">
                     <font>
@@ -56,7 +54,7 @@
                         <Insets top="60.0" />
                     </VBox.margin>
                 </Label>
-                <JFXButton fx:id="home" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#HandleHomeBtn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+                <JFXButton fx:id="OrdersB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#HomeHandle" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Home" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -71,7 +69,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Users" textFill="#5b5858">
+                <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Users" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -89,7 +87,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
+                <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Oeuvres" textFill="WHITE">
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>
@@ -107,7 +105,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
+                <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Event" textFill="WHITE">
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>
@@ -125,7 +123,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
+                <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Exposition" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -143,7 +141,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
+                <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Blog" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -158,7 +156,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="Forum" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Forum" textFill="#5b5858">
+                <JFXButton fx:id="Forum" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Forum" textFill="#fffdfd">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -173,7 +171,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
+                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#ordhandle" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="My Orders" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -190,52 +188,19 @@
                 </JFXButton>
             </children>
         </VBox>
-        <ScrollPane layoutX="251.0" layoutY="146.0" prefHeight="469.0" prefWidth="1019.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="146.0">
-
-
-            <Pane layoutX="29.0" layoutY="22.0" prefHeight="526.0" prefWidth="896.0" style="-fx-background-color: #fff;">
-                <children>
-                    <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="41.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                        </image>
-                    </ImageView>
-                    <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
-                    <Label layoutX="123.0" layoutY="18.0" text="Your Orders" textFill="#3a1c9d">
-                        <font>
-                            <Font name="System Bold" size="18.0" />
-                        </font>
-                    </Label>
-                    <Label layoutX="725.0" layoutY="33.0" textFill="#aeacac">
-                        <font>
-                            <Font name="System Bold" size="36.0" />
-                        </font>
-                    </Label>
-                    <Label layoutX="123.0" layoutY="51.0" text="Ref: 20178" textFill="#b2b0b0">
-                        <font>
-                            <Font size="14.0" />
-                        </font>
-                    </Label>
-                    <TableView fx:id="CheckOutTable" layoutX="14.0" layoutY="105.0" onMouseClicked="#handleClick" prefHeight="346.0" prefWidth="846.0">
-                        <columns>
-                            <TableColumn fx:id="OrderID" prefWidth="79.20004272460938" text="OrderID" />
-                            <TableColumn fx:id="UserName" minWidth="0.0" prefWidth="123.199951171875" text="UserName" />
-                            <TableColumn fx:id="DueAmount" minWidth="0.0" prefWidth="115.99993896484375" text="DueAmount" />
-                     <TableColumn fx:id="InnoNumber" prefWidth="97.60003662109375" text="InnoNumber" />
-                     <TableColumn fx:id="TotalQty" prefWidth="78.39996337890625" text="TotalQty" />
-                     <TableColumn fx:id="OrderDate" prefWidth="218.4000244140625" text="OrderDate" />
-                     <TableColumn fx:id="Status" prefWidth="56.7999267578125" text="Status" />
-                     <TableColumn fx:id="AdressId" minWidth="9.5999755859375" prefWidth="74.4000244140625" text="AdressId" />
-                        </columns>
-                    </TableView>
-                    
-                </children>
-                <effect>
-                    <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
-                </effect>
-            </Pane>
-
-        </ScrollPane>
-        <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+        <PieChart layoutX="913.0" layoutY="373.0" prefHeight="206.0" prefWidth="258.0" />
+        <TableView fx:id="PendIngabledash" layoutX="278.0" layoutY="222.0" prefHeight="346.0" prefWidth="763.0" stylesheets="@style.css">
+            <columns>
+                <TableColumn fx:id="OrderID2" prefWidth="98.4000244140625" text="OrderID" />
+                <TableColumn fx:id="UserName2" minWidth="0.0" prefWidth="134.39996337890625" text="UserName" />
+                <TableColumn fx:id="InnoNumber2" prefWidth="123.20001220703125" text="InnoNumber" />
+                <TableColumn fx:id="OeuvreID2" prefWidth="88.0" text="OeuvreID" />
+                <TableColumn fx:id="Quantity2" prefWidth="92.0" text="Quantity" />
+                <TableColumn fx:id="Status2" prefWidth="113.60003662109375" text="Status" />
+                <TableColumn fx:id="AdressId2" minWidth="9.5999755859375" prefWidth="112.800048828125" text="AdressId" />
+            </columns>
+        </TableView>
+      <JFXButton fx:id="ref" layoutX="278.0" layoutY="168.0" onAction="#searchdetails" text="ref:" />
+      <JFXComboBox fx:id="comboref" layoutX="312.0" layoutY="168.0" />
     </children>
 </AnchorPane>
