@@ -28,12 +28,13 @@ public class CartCRUD {
         connection = MyConnection.getInstance ().getConnection ();
     }
     public void AddCart(Cart cart,Oeuvre oeuvre){
-        String request="INSERT INTO CART(CartId,OeuvreId,Quantity)"+"VALUES(?,?,?) ";
+        String request="INSERT INTO CART(CartId,OeuvreId,NomOeuvre,Quantity)"+"VALUES(?,?,?,?) ";
         try {
             preparedStatement = connection.prepareStatement(request);
             preparedStatement.setString (1,cart.getCartId ());
             preparedStatement.setInt (2,oeuvre.getID_Oeuvre ());
-            preparedStatement.setInt (3,1);
+            preparedStatement.setString (3,oeuvre.getNomOeuvre ());
+            preparedStatement.setInt (4,1);
             preparedStatement.executeUpdate ();
 
 
@@ -68,7 +69,7 @@ public class CartCRUD {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                list.add(new Cart (resultSet.getString (1), resultSet.getInt (2), resultSet.getInt (3)));
+                list.add(new Cart (resultSet.getString (1), resultSet.getInt (2), resultSet.getInt (3),resultSet.getString (4)));
             }
 
         } catch (SQLException ex) {
@@ -208,8 +209,8 @@ public class CartCRUD {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                Cart cart=new Cart (resultSet.getString (1),resultSet.getInt (2),resultSet.getInt (3));
-                Oeuvre oeuvre=new Oeuvre (resultSet.getInt(4), resultSet.getString (5), resultSet.getInt (6));
+                Cart cart=new Cart (resultSet.getString (1),resultSet.getInt (2),resultSet.getInt (3),resultSet.getString (4));
+                Oeuvre oeuvre=new Oeuvre (resultSet.getInt(5), resultSet.getString (6), resultSet.getInt (7));
                 list.put (cart,oeuvre);
             }
 

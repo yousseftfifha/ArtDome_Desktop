@@ -7,6 +7,30 @@ public class Cart {
     private String CartId;
     private int OeuvreID;
     private int Quantity;
+    private String NomOeuvre;
+
+    public Cart(String cartId, int oeuvreID, int quantity, String nomOeuvre) {
+        CartId = cartId;
+        OeuvreID = oeuvreID;
+        Quantity = quantity;
+        NomOeuvre = nomOeuvre;
+    }
+
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
+    }
+
+    public String getNomOeuvre() {
+        return NomOeuvre;
+    }
+
+    public void setNomOeuvre(String nomOeuvre) {
+        NomOeuvre = nomOeuvre;
+    }
 
     public Cart() {
     }
@@ -52,9 +76,10 @@ public class Cart {
     @Override
     public String toString() {
         return "Cart{" +
-                "CartId=" + CartId +
-                ", ProductID=" + OeuvreID +
-                ", Quantiy=" + Quantity +
+                "CartId='" + CartId + '\'' +
+                ", OeuvreID=" + OeuvreID +
+                ", Quantity=" + Quantity +
+                ", NomOeuvre='" + NomOeuvre + '\'' +
                 '}';
     }
 

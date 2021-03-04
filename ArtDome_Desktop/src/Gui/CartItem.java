@@ -40,6 +40,8 @@ public class CartItem implements Initializable {
     private TableColumn OeuvreID;
     @FXML
     private TableColumn Quantity;
+    @FXML
+    private TableColumn Nom;
     Stage dialogStage = new Stage();
     Scene scene;
     @FXML
@@ -56,9 +58,14 @@ public class CartItem implements Initializable {
             OeuvreID.setCellValueFactory (
                     new PropertyValueFactory<Cart,Integer> ("OeuvreID")
             );
-            Quantity.setCellValueFactory (
-                    new PropertyValueFactory<Cart,Integer> ("Quantiy")
+        Quantity.setCellValueFactory (
+                new PropertyValueFactory<Cart,Integer> ("Quantiy")
+        );
+            Nom.setCellValueFactory (
+                    new PropertyValueFactory<Cart,Integer> ("NomOeuvre")
             );
+
+
         CartCRUD cartCRUD = new CartCRUD ();
         List<Cart> carts = cartCRUD.FillCombo ();
         for (Cart cart:carts){
@@ -144,6 +151,11 @@ public class CartItem implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
         dialogStage.setTitle("ArtDome - Cart");
         dialogStage.setScene(scene);
+        Alert alert=new Alert (Alert.AlertType.WARNING);
+        alert.setTitle ("Delete Cart");
+        alert.setHeaderText ("Add To Cart");
+        alert.setContentText ("Vous avez supprimer une oeuvre du panier! ");
+        alert.showAndWait ();
         dialogStage.show();
     }
 }

@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -134,15 +135,33 @@ public class OrderDashController implements Initializable {
     @FXML
     private void Changevalue(ActionEvent actionEvent) throws IOException {
         String newstatus=statusOrder.getText ();
+        int done=1;
+        if (!newstatus.equals ("cancelled") && !newstatus.equals ("confirmed") ){
+            Alert alert=new Alert (Alert.AlertType.ERROR);
+            alert.setTitle ("Statue of Order");
+            alert.setHeaderText ("Statue of Order");
+            alert.setContentText ("Vous avez choisi un choix erroné repeter");
+            alert.showAndWait ();
+            done=0;
+        }
         int id= (int) comboboxOrderID.getValue ();
         OrdersCRUD ordersCRUD = new OrdersCRUD ();
-        ordersCRUD.updateOrderStatus(id,newstatus);
+        if (done==1){
+            ordersCRUD.updateOrderStatus(id,newstatus);
+            Alert alert=new Alert (Alert.AlertType.WARNING);
+            alert.setTitle ("Statue of Order");
+            alert.setHeaderText ("Statue of Order");
+            alert.setContentText ("Vous avez modifier le statut de la commande: "+id+" a "+newstatus);
+            alert.showAndWait ();
+        }
+
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("OrderDash.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+
         dialogStage.show();
     }
 }

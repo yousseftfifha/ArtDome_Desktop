@@ -190,7 +190,7 @@
             </children>
         </VBox>
         <PieChart layoutX="913.0" layoutY="373.0" prefHeight="206.0" prefWidth="258.0" />
-      <TableView fx:id="OrderTable" layoutX="263.0" layoutY="195.0" onMouseClicked="#pend" prefHeight="413.0" prefWidth="846.0" stylesheets="@style.css">
+      <TableView fx:id="OrderTable" layoutX="263.0" layoutY="195.0" onMouseClicked="#pend" prefHeight="414.0" prefWidth="928.0" stylesheets="@style.css">
          <columns>
             <TableColumn fx:id="OrderID" prefWidth="79.20004272460938" text="OrderID" />
             <TableColumn fx:id="UserName" minWidth="0.0" prefWidth="123.199951171875" text="UserName" />
@@ -198,8 +198,8 @@
             <TableColumn fx:id="InnoNumber" prefWidth="97.60003662109375" text="InnoNumber" />
             <TableColumn fx:id="TotalQty" prefWidth="78.39996337890625" text="TotalQty" />
             <TableColumn fx:id="OrderDate" prefWidth="218.4000244140625" text="OrderDate" />
-            <TableColumn fx:id="Status" prefWidth="56.7999267578125" text="Status" />
-            <TableColumn fx:id="AdressId" minWidth="9.5999755859375" prefWidth="74.4000244140625" text="AdressId" />
+            <TableColumn fx:id="Status" prefWidth="124.800048828125" text="Status" />
+            <TableColumn fx:id="AdressId" minWidth="9.5999755859375" prefWidth="78.39990234375" text="AdressId" />
          </columns>
       </TableView>
       <JFXButton fx:id="changeButoon" layoutX="590.0" layoutY="160.0" onAction="#Changevalue" text="change Order Status of:" />
