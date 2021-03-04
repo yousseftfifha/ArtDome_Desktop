@@ -257,6 +257,7 @@
                      <Insets left="50.0" />
                   </padding>
                </JFXButton>
+               <JFXButton layoutX="531.0" layoutY="39.0" onAction="#update" text="+" />
                     </children>
                     <effect>
                         <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />

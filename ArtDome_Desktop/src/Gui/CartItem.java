@@ -158,4 +158,18 @@ public class CartItem implements Initializable {
         alert.showAndWait ();
         dialogStage.show();
     }
+
+    @FXML
+    private void update(ActionEvent actionEvent) throws IOException {
+        CartCRUD cartCRUD=new CartCRUD ();
+
+        cartCRUD.updateQuantity ("youssef", (Integer) idCart.getValue ());
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
+        dialogStage.setTitle("ArtDome - Cart");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }

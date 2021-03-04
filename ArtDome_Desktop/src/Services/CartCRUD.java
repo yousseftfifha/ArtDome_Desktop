@@ -121,14 +121,14 @@ public class CartCRUD {
         }
 
     }
-    public  void updateQuantity (String id ,Oeuvre oeuvre)
+    public  void updateQuantity (String id ,int idoeuvre)
     {
         String req="UPDATE cart SET Quantity=Quantity+? WHERE CartId =? and OeuvreId=?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
             preparedStatement.setInt (1,1) ;
             preparedStatement.setString (2,id); ;
-            preparedStatement.setInt (3,oeuvre.getID_Oeuvre ()) ;
+            preparedStatement.setInt (3,idoeuvre) ;
 
             preparedStatement.executeUpdate() ;
 

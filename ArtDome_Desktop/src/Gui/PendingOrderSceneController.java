@@ -107,7 +107,7 @@ public class PendingOrderSceneController implements Initializable {
     private void HandleHomeBtn(ActionEvent actionEvent) throws IOException {
         CartCRUD cartCRUD=new CartCRUD ();
         List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
-        cartCRUD.updateQuantity ("youssef",oeuvre1.get (0));
+        cartCRUD.updateQuantity ("youssef",oeuvre1.get (0).getID_Oeuvre ());
 
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();

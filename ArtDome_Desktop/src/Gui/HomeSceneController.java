@@ -76,7 +76,7 @@ public class HomeSceneController implements Initializable {
             cartCRUD.AddCart (cart,oeuvre1.get (0));
             cartCRUD.AddCart (cart,oeuvre2.get (0));
 
-            cartCRUD.updateQuantity ("youssef",oeuvre1.get (0));
+            cartCRUD.updateQuantity ("youssef",oeuvre1.get (0).getID_Oeuvre ());
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
         Alert alert=new Alert (Alert.AlertType.INFORMATION);
