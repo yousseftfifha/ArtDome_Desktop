@@ -315,4 +315,21 @@ public class OrdersCRUD {
         System.err.println(count);
         return  count;
     }
+    public List<Orders> Rechercher(String s)
+    {
+
+        List<Orders> myList=new ArrayList<Orders>();
+        try {
+            String req1="SELECT * from orders WHERE  orders.Status LIKE '%\"+ s+\"%' or orders.OrderID LIKE '%\"+ s+\"%' ";
+            Statement st2=connection.createStatement();
+            ResultSet rs=st2.executeQuery(req1);
+            while (rs.next())
+            {
+                myList.add(new Orders (resultSet.getInt(1), resultSet.getString (2), resultSet.getFloat (3),resultSet.getInt (4),resultSet.getInt (5),resultSet.getString (6),resultSet.getString (7),resultSet.getInt (8)));
+            }
+
+        }catch (SQLException ex){System.out.println("error");}
+        return myList;
+
+    }
 }

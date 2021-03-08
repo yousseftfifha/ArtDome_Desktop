@@ -22,6 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import tray.notification.NotificationType;
@@ -62,6 +63,8 @@ public class CheckOutController implements Initializable {
     private JFXButton changeButoon;
     @FXML
     private JFXTextField statusOrder;
+    @FXML
+    private JFXTextField rech;
     @FXML
     private JFXComboBox comboboxOrderID;
 
@@ -174,5 +177,49 @@ public class CheckOutController implements Initializable {
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndWait();
+    }
+
+
+
+    @FXML
+    private void rechercherOrder(KeyEvent keyEvent) {
+
+        data = FXCollections.observableArrayList();
+
+        try{
+            OrdersCRUD ordersCRUD = new OrdersCRUD ();
+            List<Orders> ordersList = ordersCRUD.Rechercher (keyEvent.getText ());
+            System.out.println (keyEvent.getText ());
+            System.out.println (ordersList);
+
+            data.addAll(ordersList);
+
+            CheckOutTable.setItems(data);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Error on Building Data");
+        }
+
+    }
+
+    @FXML
+    private void rechercherOrder1(InputMethodEvent inputMethodEvent) {
+        data = FXCollections.observableArrayList();
+
+        try{
+            OrdersCRUD ordersCRUD = new OrdersCRUD ();
+            List<Orders> ordersList = ordersCRUD.Rechercher (inputMethodEvent.toString ());
+            System.out.println (inputMethodEvent.toString ());
+            System.out.println (ordersList);
+
+            data.addAll(ordersList);
+
+            CheckOutTable.setItems(data);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Error on Building Data");
+        }
     }
 }
