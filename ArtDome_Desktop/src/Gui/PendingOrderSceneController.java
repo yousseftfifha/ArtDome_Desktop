@@ -115,6 +115,7 @@ public class PendingOrderSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("HomeScene.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
+
         dialogStage.show();
     }
 

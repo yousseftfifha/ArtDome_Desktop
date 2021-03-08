@@ -21,6 +21,7 @@ public class DashFxTest extends Application  {
             Scene scene = new Scene(root);
 
             primaryStage.setScene(scene);
+            primaryStage.setTitle("ArtDome - DashBoard");
 
             primaryStage.show();
         }

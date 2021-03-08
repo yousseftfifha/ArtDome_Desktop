@@ -27,7 +27,7 @@
                 </Label>
                 <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../GFX/logo.png" />
+                        <Image url="@../GFX/logo.png" />
                     </image>
                 </ImageView>
                 <Label layoutX="764.0" layoutY="37.0" text="Board" textFill="WHITE">
@@ -62,7 +62,7 @@
                     <graphic>
                         <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/home.png" />
+                                <Image url="@../GFX/home.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -77,7 +77,7 @@
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/icons8_Share_64px.png" />
+                                <Image url="@../GFX/icons8_Share_64px.png" />
                             </image>
                             <viewport>
                                 <Rectangle2D />
@@ -98,7 +98,7 @@
                     <graphic>
                         <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/projects.png" />
+                                <Image url="@../GFX/projects.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -116,7 +116,7 @@
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/reliabilty.png" />
+                                <Image url="@../GFX/reliabilty.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -131,7 +131,7 @@
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/projections.png" />
+                                <Image url="@../GFX/projections.png" />
                             </image>
                             <viewport>
                                 <Rectangle2D />
@@ -149,7 +149,7 @@
                     <graphic>
                         <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/icons8_Workflow_64px.png" />
+                                <Image url="@../GFX/icons8_Workflow_64px.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -164,7 +164,7 @@
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/agencies.png" />
+                                <Image url="@../GFX/agencies.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -179,7 +179,7 @@
                     <graphic>
                         <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
+                                <Image url="@../GFX/icons8_US_Dollar_64px.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -206,5 +206,6 @@
       <JFXTextField fx:id="statusOrder" layoutX="731.0" layoutY="160.0" />
       <JFXComboBox fx:id="comboboxOrderID" layoutX="874.0" layoutY="160.0" />
       <JFXButton layoutX="1016.0" layoutY="160.0" onAction="#GenererPdf" text="Generer un PDF" />
+      <JFXButton layoutX="364.0" layoutY="160.0" onAction="#stats" text="statistique" />
     </children>
 </AnchorPane>

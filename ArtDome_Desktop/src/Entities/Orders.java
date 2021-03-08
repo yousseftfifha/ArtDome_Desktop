@@ -21,6 +21,10 @@ public class Orders {
         OrderID = orderID;
     }
 
+    public Orders(float dueAmount) {
+        DueAmount = dueAmount;
+    }
+
     public Orders() {
     }
 

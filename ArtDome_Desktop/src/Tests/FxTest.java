@@ -21,7 +21,7 @@ public class FxTest extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../Gui/HomeScene.fxml"));
 
         Scene scene = new Scene(root);
-
+        primaryStage.setTitle("ArtDome - Home");
         primaryStage.setScene(scene);
 
         primaryStage.show();

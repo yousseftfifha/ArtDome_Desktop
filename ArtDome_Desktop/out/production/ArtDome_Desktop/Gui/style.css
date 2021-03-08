@@ -2,7 +2,7 @@
 .head-background
 {
     -fx-background-color: linear-gradient(to left,#ffafbd ,#ffc3a0);
-    -fx-background-image: url("../../GFX/faza.jpg");
+    -fx-background-image: url("../GFX/faza.jpg");
 }
 .table-view {
     -fx-background-color: transparent;

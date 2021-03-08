@@ -18,6 +18,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,6 +49,16 @@ public class HomeSceneController implements Initializable {
         CartCRUD cartCRUD=new CartCRUD ();
         int i=cartCRUD.count ();
         CartNumber.setText (""+i);
+
+        String title = "Welcome to ArtDome ";
+        String message = "ArtDome is a Desktop application that provides to artists the opportunity to" +
+                "share their works and gain money";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
 
     }
 
@@ -79,11 +91,14 @@ public class HomeSceneController implements Initializable {
             cartCRUD.updateQuantity ("youssef",oeuvre1.get (0).getID_Oeuvre ());
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
-        Alert alert=new Alert (Alert.AlertType.INFORMATION);
-        alert.setTitle ("Add To Cart");
-        alert.setHeaderText ("Add To Cart");
-        alert.setContentText ("Vous avez ajouter deux oeuvre: "+oeuvre1.get (0).getNomOeuvre ()+" et "+oeuvre2.get (0).getNomOeuvre ());
-        alert.showAndWait ();
+        String title = "Cart ";
+        String message = "Vous avez ajouter deux oeuvre: "+oeuvre1.get (0).getNomOeuvre ()+" et "+oeuvre2.get (0).getNomOeuvre ();
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
 
     }
 

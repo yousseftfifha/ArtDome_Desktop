@@ -2,6 +2,7 @@ package Gui;
 
 import Entities.Orders;
 import Services.OrdersCRUD;
+import Tools.Charts;
 import Tools.PDF;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
@@ -21,11 +22,16 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author tfifha youssef
@@ -150,11 +156,15 @@ public class OrderDashController implements Initializable {
         OrdersCRUD ordersCRUD = new OrdersCRUD ();
         if (done==1){
             ordersCRUD.updateOrderStatus(id,newstatus);
-            Alert alert=new Alert (Alert.AlertType.WARNING);
-            alert.setTitle ("Statue of Order");
-            alert.setHeaderText ("Statue of Order");
-            alert.setContentText ("Vous avez modifier le statut de la commande: "+id+" a "+newstatus);
-            alert.showAndWait ();
+
+            String title = "Statue of Order ";
+            String message = "Vous avez modifier le statut de la commande: "+id+" a "+newstatus;
+
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle(title);
+            tray.setMessage(message);
+            tray.setNotificationType(NotificationType.SUCCESS);
+            tray.showAndWait();
         }
 
         Node source = (Node) actionEvent.getSource();
@@ -171,5 +181,27 @@ public class OrderDashController implements Initializable {
     private void GenererPdf(ActionEvent actionEvent) throws IOException, DocumentException {
             PDF pdf=new PDF ();
             pdf.pdfGeneration ();
+        String title = "PDF ";
+        String message = "You PDF  has been Generated";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
+    }
+
+    @FXML
+    private void stats(ActionEvent actionEvent) {
+
+        Charts CC;
+        try {
+            CC = new Charts ("statistique commandes","statut commandes ");
+            CC.pack();
+            CC.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            CC.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(DashBoardSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

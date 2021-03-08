@@ -5,6 +5,7 @@ import Entities.Orders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
 import Tools.PDF;
+import Tools.Print;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -23,8 +24,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -144,9 +148,31 @@ public class CheckOutController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+        String title = "Order ";
+        String message = "the status of order has been updated";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
         dialogStage.show();
 
     }
 
 
+    @FXML
+    private void print(ActionEvent actionEvent) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        Print print=new Print ();
+
+        print.printNode (CheckOutTable);
+        String title = "Print table";
+        String message = "You Table  has been Printed";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
+    }
 }

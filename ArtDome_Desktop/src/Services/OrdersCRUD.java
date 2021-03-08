@@ -5,7 +5,11 @@ import Entities.Oeuvre;
 import Entities.Orders;
 import Entities.PendingOrders;
 import Tools.MyConnection;
+import Tools.SMS;
 import Tools.SendEmail;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.ComboBox;
 
 import javax.mail.MessagingException;
@@ -107,6 +111,8 @@ public class OrdersCRUD {
                 +" Cordialement "+System.lineSeparator()+" Bonne journee";
 
         SendEmail.sendMail ("youssef.tfifha@esprit.tn","New Order Confirmation",message);
+        SMS sendtext=new SMS ();
+        sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
 
     }
     public List<PendingOrders> readAllpendingOrders() {
@@ -262,5 +268,51 @@ public class OrdersCRUD {
 
         }
 
+    }
+
+    public ObservableList<PieChart.Data> getData(){
+        ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+        String req = "SELECT Status  from orders ";
+        try {
+            statement = connection.createStatement();
+            resultSet= statement.executeQuery(req);
+            while(resultSet.next()){
+                data.add(new PieChart.Data (resultSet.getString("Status"),1));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+
+        return data;
+    }
+    public List<Orders> readprice() {
+        String req = "select DueAmount from orders  order by OrderDate desc limit 1";
+
+        List<Orders> list=new ArrayList<> ();
+        try {
+            statement = connection.createStatement();
+            resultSet= statement.executeQuery(req);
+            while(resultSet.next()){
+                list.add(new Orders (resultSet.getFloat (1)));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    public int getCount(String cond) throws SQLException
+    {
+        Statement s = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_READ_ONLY);
+        ResultSet r = s
+                .executeQuery("SELECT * FROM orders Where Status = " + "'"+cond+"'");
+        r.last();
+        int count = r.getRow();
+        r.beforeFirst();
+        System.err.println(count);
+        return  count;
     }
 }

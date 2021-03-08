@@ -5,6 +5,7 @@ import Entities.Orders;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
 import Tools.PDF;
+import Tools.Payment;
 import Tools.SendEmail;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
@@ -20,6 +21,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
@@ -111,15 +114,18 @@ public class CartItem implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("payement.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
         dialogStage.show();
-        Alert alert=new Alert (Alert.AlertType.INFORMATION);
-        alert.setTitle ("Add Order");
-        alert.setHeaderText ("Add Order");
-        alert.setContentText ("Vous avez ajouter une  commande: ");
-        alert.showAndWait ();
+        String title = "Order ";
+        String message = "You Order  has been Added";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
 
     }
 
@@ -127,7 +133,8 @@ public class CartItem implements Initializable {
     private void hnadleordBtn(ActionEvent actionEvent) throws IOException, MessagingException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         ordersCRUD.AddFromCart (0);
-
+//        Payment payment=new Payment ();
+//        payment.payement (150);
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
@@ -151,11 +158,14 @@ public class CartItem implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
         dialogStage.setTitle("ArtDome - Cart");
         dialogStage.setScene(scene);
-        Alert alert=new Alert (Alert.AlertType.WARNING);
-        alert.setTitle ("Delete Cart");
-        alert.setHeaderText ("Add To Cart");
-        alert.setContentText ("Vous avez supprimer une oeuvre du panier! ");
-        alert.showAndWait ();
+        String title = "Cart ";
+        String message = "une oeuvre a ete supprimé";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
         dialogStage.show();
     }
 
@@ -170,6 +180,14 @@ public class CartItem implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
         dialogStage.setTitle("ArtDome - Cart");
         dialogStage.setScene(scene);
+        String title = "Cart ";
+        String message = "you have updated the quantity of the product";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
         dialogStage.show();
     }
 }
