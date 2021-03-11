@@ -326,7 +326,7 @@ public class OrdersCRUD {
 
         List<Orders> myList=new ArrayList<Orders>();
         try {
-            String req1="SELECT * from orders WHERE  orders.Status LIKE '%\"+ s+\"%' or orders.OrderID LIKE '%\"+ s+\"%' ";
+            String req1="SELECT * from orders WHERE  orders.Status LIKE "+s+"or orders.OrderID LIKE "+s+"or InnoNumber LIKE "+s;
             Statement st2=connection.createStatement();
             ResultSet rs=st2.executeQuery(req1);
             while (rs.next())

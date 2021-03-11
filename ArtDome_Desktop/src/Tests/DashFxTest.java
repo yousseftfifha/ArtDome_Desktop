@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class DashFxTest extends Application  {
             Scene scene = new Scene(root);
 
             primaryStage.setScene(scene);
+            primaryStage.getIcons ().add (new Image ("GFX/logo.png"));
             primaryStage.setTitle("ArtDome - DashBoard");
 
             primaryStage.show();

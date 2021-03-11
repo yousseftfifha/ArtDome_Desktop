@@ -3,11 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/payement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/PayementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/PayementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/DashFxTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/DashFxTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/FxTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/FxTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CheckOutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/DashFxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/DashFxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/FxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/FxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/PDF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +207,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../java/jar_files/httpclient-4.5.1.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Tests" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -214,6 +223,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Tests" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\out\production\GFX" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\GFX" />
@@ -222,7 +232,7 @@
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FxTest">
+  <component name="RunManager" selected="Application.DashFxTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -327,8 +337,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FxTest" />
         <item itemvalue="Application.DashFxTest" />
+        <item itemvalue="Application.FxTest" />
         <item itemvalue="Application.PaymentTest" />
       </list>
     </recent_temporary>
@@ -375,7 +385,7 @@
       <workItem from="1615379169909" duration="7977000" />
       <workItem from="1615451221643" duration="2266000" />
       <workItem from="1615456757590" duration="548000" />
-      <workItem from="1615467579210" duration="8538000" />
+      <workItem from="1615467579210" duration="14293000" />
     </task>
     <servers />
   </component>

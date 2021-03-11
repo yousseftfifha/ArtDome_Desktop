@@ -229,8 +229,29 @@
                      <TableColumn fx:id="AdressId" minWidth="9.5999755859375" prefWidth="74.4000244140625" text="AdressId" />
                         </columns>
                     </TableView>
-               <JFXButton layoutX="499.0" layoutY="39.0" onAction="#print" text="Print" />
-               <JFXTextField fx:id="rech" layoutX="603.0" layoutY="39.0" onInputMethodTextChanged="#rechercherOrder1" onKeyTyped="#rechercherOrder" />
+               <JFXButton layoutX="304.0" layoutY="33.0" onAction="#print" prefHeight="30.0" prefWidth="96.0" text="Print">
+                  <font>
+                     <Font size="18.0" />
+                  </font></JFXButton>
+               <JFXTextField fx:id="rech" layoutX="555.0" layoutY="34.0">
+                  <font>
+                     <Font size="18.0" />
+                  </font></JFXTextField>
+               <ImageView fitHeight="30.0" fitWidth="48.0" layoutX="304.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../GFX/Print_icon-icons.com_55835.png" />
+                  </image>
+               </ImageView>
+               <JFXButton layoutX="448.0" layoutY="34.0" onAction="#rechereche" prefHeight="39.0" prefWidth="109.0" text="Search">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </JFXButton>
+               <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="530.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../GFX/seo-social-web-network-internet_340_icon-icons.com_61497.png" />
+                  </image>
+               </ImageView>
                     
                 </children>
                 <effect>

@@ -181,37 +181,13 @@ public class CheckOutController implements Initializable {
     }
 
 
-
     @FXML
-    private void rechercherOrder(KeyEvent keyEvent) {
-
+    private void rechereche(ActionEvent actionEvent) {
         data = FXCollections.observableArrayList();
 
         try{
             OrdersCRUD ordersCRUD = new OrdersCRUD ();
-            List<Orders> ordersList = ordersCRUD.Rechercher (keyEvent.getText ());
-            System.out.println (keyEvent.getText ());
-            System.out.println (ordersList);
-
-            data.addAll(ordersList);
-
-            CheckOutTable.setItems(data);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            System.out.println("Error on Building Data");
-        }
-
-    }
-
-    @FXML
-    private void rechercherOrder1(InputMethodEvent inputMethodEvent) {
-        data = FXCollections.observableArrayList();
-
-        try{
-            OrdersCRUD ordersCRUD = new OrdersCRUD ();
-            List<Orders> ordersList = ordersCRUD.Rechercher (inputMethodEvent.toString ());
-            System.out.println (inputMethodEvent.toString ());
+            List<Orders> ordersList = ordersCRUD.Rechercher (rech.getText ());
             System.out.println (ordersList);
 
             data.addAll(ordersList);
