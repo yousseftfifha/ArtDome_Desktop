@@ -1,25 +1,18 @@
 package Services;
 
-import Entities.Cart;
-import Entities.Oeuvre;
-import Entities.Orders;
-import Entities.PendingOrders;
+import Entities.*;
 import Tools.MyConnection;
-import Tools.SMS;
 import Tools.SendEmail;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.ComboBox;
 
 import javax.mail.MessagingException;
 import java.sql.*;
-import java.text.DateFormat;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,7 +49,7 @@ public class OrdersCRUD {
         ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
 
         Map<Cart,Oeuvre> cartOeuvreMap=cartCRUD.ReadAllOeuvrse ();
-
+        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
         for(Cart i : cartOeuvreMap.keySet()){
             total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
             String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
@@ -64,7 +57,7 @@ public class OrdersCRUD {
             try {
                 preparedStatement = connection.prepareStatement(request);
                 preparedStatement.setInt (1,orID);
-                preparedStatement.setString (2,"youssef");
+                preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+""+LoggedInUser.get (0).getPrenom ());
                 preparedStatement.setInt (3,nombreAleatoire);
                 preparedStatement.setInt (4,cartOeuvreMap.get (i).getID_Oeuvre ());
                 preparedStatement.setInt (5,i.getQuantiy ());
@@ -84,7 +77,7 @@ public class OrdersCRUD {
         try {
             preparedStatement = connection.prepareStatement(request1);
             preparedStatement.setInt (1,orID);
-            preparedStatement.setString (2,"youssef");
+            preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+""+LoggedInUser.get (0).getPrenom ());
             preparedStatement.setFloat (3,total_prix);
             preparedStatement.setInt (4,nombreAleatoire);
             preparedStatement.setInt (5,quantitytot);
@@ -111,9 +104,22 @@ public class OrdersCRUD {
                 +" Cordialement "+System.lineSeparator()+" Bonne journee";
 
         SendEmail.sendMail ("youssef.tfifha@esprit.tn","New Order Confirmation",message);
-        SMS sendtext=new SMS ();
-        sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
-
+//        SMS sendtext=new SMS ();
+//        sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+//        HttpConfig httpConfig = HttpConfig.defaultConfig();
+//        VonageClient client = new VonageClient .Builder()
+//                .apiKey("049842c0")
+//                .apiSecret("Ecc52Nxze8uDZvhQ")
+//                .httpConfig(httpConfig)
+//                .build();
+//
+//        SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage(
+//                "ArtDome",
+//                "21620245989",
+//                message));
+//        for (SmsSubmissionResponseMessage response : responses.getMessages()) {
+//            System.out.println(response);
+//        }
     }
     public List<PendingOrders> readAllpendingOrders() {
         String req = "select * from pending_orders";

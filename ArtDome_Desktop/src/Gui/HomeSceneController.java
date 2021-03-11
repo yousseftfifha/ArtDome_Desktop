@@ -2,6 +2,7 @@ package Gui;
 
 import Entities.Cart;
 import Entities.Oeuvre;
+import Entities.User;
 import Services.CartCRUD;
 import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
@@ -18,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
@@ -58,7 +60,7 @@ public class HomeSceneController implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
 
     }
 
@@ -82,13 +84,15 @@ public class HomeSceneController implements Initializable {
 
             List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
             List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
+            List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+            Cart cart=new Cart(LoggedInUser.get (0));
 
-            Cart cart=new Cart("youssef");
+
 
             cartCRUD.AddCart (cart,oeuvre1.get (0));
             cartCRUD.AddCart (cart,oeuvre2.get (0));
 
-            cartCRUD.updateQuantity ("youssef",oeuvre1.get (0).getID_Oeuvre ());
+            cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (),oeuvre1.get (0).getID_Oeuvre ());
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
         String title = "Cart ";
@@ -98,7 +102,7 @@ public class HomeSceneController implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
 
     }
 

@@ -2,13 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/client_6_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/httpclient_4_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArtDome_Desktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArtDome_Desktop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrderDashController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrderDashController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/CrudTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/Charts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/Charts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/SMS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CartItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CheckOutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrderDashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrderDashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PayementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/PayementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/CartCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CartCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/CrudTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Charts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Charts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/SMS.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +226,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../java/jar_files/jcommon-1.0.23.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../java/jar_files/httpclient-4.5.1.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -211,7 +238,7 @@
     <property name="project.structure.proportion" value="0.1778697" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -249,14 +276,6 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration name="CrudTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tests.CrudTest" />
-      <module name="ArtDome_Desktop" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DashFxTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tests.DashFxTest" />
       <module name="ArtDome_Desktop" />
@@ -269,16 +288,6 @@
       <option name="MAIN_CLASS_NAME" value="Tests.FxTest" />
       <module name="ArtDome_Desktop" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml " />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ArtDome.Main" />
-      <module name="ArtDome_Desktop" />
-      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml " />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -297,15 +306,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -342,8 +349,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.CrudTest" />
       <item itemvalue="Application.FxTest" />
       <item itemvalue="Application.DashFxTest" />
       <item itemvalue="Application.PaymentTest" />
@@ -353,7 +358,6 @@
         <item itemvalue="Application.FxTest" />
         <item itemvalue="Application.DashFxTest" />
         <item itemvalue="Application.PaymentTest" />
-        <item itemvalue="Application.CrudTest" />
       </list>
     </recent_temporary>
   </component>
@@ -392,7 +396,14 @@
       <workItem from="1615150383134" duration="674000" />
       <workItem from="1615215213559" duration="267000" />
       <workItem from="1615215544053" duration="1866000" />
-      <workItem from="1615217868777" duration="16051000" />
+      <workItem from="1615217868777" duration="16165000" />
+      <workItem from="1615235505258" duration="1118000" />
+      <workItem from="1615237340684" duration="742000" />
+      <workItem from="1615238122231" duration="1029000" />
+      <workItem from="1615379169909" duration="7977000" />
+      <workItem from="1615451221643" duration="2266000" />
+      <workItem from="1615456757590" duration="548000" />
+      <workItem from="1615467579210" duration="5506000" />
     </task>
     <servers />
   </component>

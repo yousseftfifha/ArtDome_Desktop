@@ -2,6 +2,7 @@ package Gui;
 
 import Entities.Cart;
 import Entities.Orders;
+import Entities.User;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
 import Tools.PDF;
@@ -21,6 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
@@ -110,7 +112,9 @@ public class CartItem implements Initializable {
     @FXML
     private void CheckOutBtnHandle(ActionEvent actionEvent) throws IOException, MessagingException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        ordersCRUD.AddFromCart (0);
+        CartCRUD cartCRUD=new CartCRUD ();
+        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        ordersCRUD.AddFromCart (LoggedInUser.get (0).getId ());
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
@@ -125,14 +129,14 @@ public class CartItem implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
 
     }
 
     @FXML
     private void hnadleordBtn(ActionEvent actionEvent) throws IOException, MessagingException {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        ordersCRUD.AddFromCart (0);
+//        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+//        ordersCRUD.AddFromCart (0);
 //        Payment payment=new Payment ();
 //        payment.payement (150);
         Node source = (Node) actionEvent.getSource();
@@ -165,15 +169,15 @@ public class CartItem implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
         dialogStage.show();
     }
 
     @FXML
     private void update(ActionEvent actionEvent) throws IOException {
         CartCRUD cartCRUD=new CartCRUD ();
-
-        cartCRUD.updateQuantity ("youssef", (Integer) idCart.getValue ());
+        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (), (Integer) idCart.getValue ());
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
@@ -187,7 +191,31 @@ public class CartItem implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
         dialogStage.show();
+    }
+
+    @FXML
+    private void update1(ActionEvent actionEvent) throws IOException {
+        CartCRUD cartCRUD=new CartCRUD ();
+        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        cartCRUD.updateQuantity1 (LoggedInUser.get (0).getEmail (), (Integer) idCart.getValue ());
+
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
+        dialogStage.setTitle("ArtDome - Cart");
+        dialogStage.setScene(scene);
+        String title = "Cart ";
+        String message = "you have updated the quantity of the product";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss (Duration.millis (3200));
+        dialogStage.show();
+
     }
 }

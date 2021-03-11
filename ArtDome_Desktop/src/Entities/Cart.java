@@ -1,13 +1,29 @@
 package Entities;
 
+import java.util.List;
+
 /**
  * @author tfifha youssef
  */
 public class Cart {
     private String CartId;
+    private User LoggedInUser;
     private int OeuvreID;
+    private List<Oeuvre> oeuvre;
     private int Quantity;
     private String NomOeuvre;
+
+    public Cart(User LoggedInUser) {
+        this.LoggedInUser = LoggedInUser;
+    }
+
+    public Cart(String cartId, User LoggedInUser, int oeuvreID, int quantity, String nomOeuvre) {
+        CartId = cartId;
+        this.LoggedInUser = LoggedInUser;
+        OeuvreID = oeuvreID;
+        Quantity = quantity;
+        NomOeuvre = nomOeuvre;
+    }
 
     public Cart(String cartId, int oeuvreID, int quantity, String nomOeuvre) {
         CartId = cartId;
@@ -48,6 +64,14 @@ public class Cart {
         Quantity = quantity;
     }
 
+    public List<Oeuvre> getOeuvre() {
+        return oeuvre;
+    }
+
+    public void setOeuvre(List<Oeuvre> oeuvre) {
+        this.oeuvre = oeuvre;
+    }
+
     public String getCartId() {
         return CartId;
     }
@@ -71,6 +95,14 @@ public class Cart {
     public void setQuantiy(int quantiy) {
         Quantity=quantiy;
 
+    }
+
+    public User getLoggedInUser() {
+        return LoggedInUser;
+    }
+
+    public void setLoggedInUser(User loggedInUser) {
+        this.LoggedInUser = loggedInUser;
     }
 
     @Override

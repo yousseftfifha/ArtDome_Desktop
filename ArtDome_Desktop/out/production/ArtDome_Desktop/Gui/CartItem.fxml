@@ -220,9 +220,9 @@
                         </Label>
                         <TableView fx:id="CartTable" layoutX="41.0" layoutY="112.0" prefHeight="346.0" prefWidth="763.0">
                             <columns>
-                                <TableColumn fx:id="CartID" prefWidth="134.4000244140625" text="CartID" />
-                                <TableColumn fx:id="OeuvreID" minWidth="0.0" prefWidth="108.00009155273438" text="OeuvreID" />
-                     <TableColumn fx:id="Nom" prefWidth="278.39996337890625" text="Nom Oeuvre" />
+                                <TableColumn fx:id="CartID" prefWidth="206.4000244140625" text="CartID" />
+                                <TableColumn fx:id="OeuvreID" minWidth="0.0" prefWidth="134.4000244140625" text="OeuvreID" />
+                     <TableColumn fx:id="Nom" prefWidth="183.20001220703125" text="Nom Oeuvre" />
                      <TableColumn fx:id="Quantity" prefWidth="228.00006103515625" text="Quantity" />
                             </columns>
                         </TableView>
@@ -258,6 +258,7 @@
                   </padding>
                </JFXButton>
                <JFXButton layoutX="531.0" layoutY="39.0" onAction="#update" text="+" />
+               <JFXButton layoutX="555.0" layoutY="39.0" onAction="#update1" text="-" />
                     </children>
                     <effect>
                         <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />

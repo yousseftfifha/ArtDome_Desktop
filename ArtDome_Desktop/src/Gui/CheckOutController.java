@@ -25,6 +25,7 @@ import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
@@ -157,8 +158,8 @@ public class CheckOutController implements Initializable {
         TrayNotification tray = new TrayNotification();
         tray.setTitle(title);
         tray.setMessage(message);
-        tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.setNotificationType(NotificationType.INFORMATION);
+        tray.showAndDismiss (Duration.millis (3200));
         dialogStage.show();
 
     }
@@ -175,8 +176,8 @@ public class CheckOutController implements Initializable {
         TrayNotification tray = new TrayNotification();
         tray.setTitle(title);
         tray.setMessage(message);
-        tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.setNotificationType(NotificationType.INFORMATION);
+        tray.showAndDismiss (Duration.millis (3200));
     }
 
 

@@ -12,12 +12,14 @@ import javafx.scene.Scene;
 import javafx.scene.chart.Chart;
 import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,6 +52,7 @@ public class DashBoardSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        
         String title = "Dashboard ArtDome";
         String message = "Welcome to ArtDome Dashboard where you can manage everything";
 
@@ -57,6 +60,6 @@ public class DashBoardSceneController implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
     }
 }

@@ -5,9 +5,11 @@ import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
+import org.jfree.data.xml.PieDatasetHandler;
 import org.jfree.util.Rotation;
 
 import java.sql.SQLException;
@@ -36,16 +38,17 @@ public class Charts extends JFrame {
         rslt.setValue("Confirmed",of.getCount("confirmed"));
         rslt.setValue("Pending",of.getCount("pending"));
         rslt.setValue("Cancelled",of.getCount("cancelled"));
+
         return rslt;
     }
     private JFreeChart createChart(PieDataset dataset, String title)
     {
-        JFreeChart chart= ChartFactory.createPieChart3D(title, dataset,true,true,false);
-        PiePlot3D plot=(PiePlot3D)chart.getPlot();
-        plot.setStartAngle(0);
-        plot.setDirection(Rotation.CLOCKWISE);
-        plot.setForegroundAlpha(0.5f);
-        return chart;
+        JFreeChart chart1=ChartFactory.createPieChart(title,dataset);
+        PiePlot plot1=(PiePlot) chart1.getPlot ();
+        plot1.setStartAngle (0);
+        plot1.setDirection (Rotation.CLOCKWISE);
+        plot1.setForegroundAlpha (0.5f);
+        return chart1;
 
     }
 

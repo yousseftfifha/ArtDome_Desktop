@@ -23,6 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
@@ -87,7 +88,8 @@ public class PayementController implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
+
         dialogStage.show();
                
     }

@@ -2,10 +2,12 @@ package Services;
 
 import Entities.Cart;
 import Entities.Oeuvre;
+import Entities.User;
 import Tools.MyConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +33,7 @@ public class CartCRUD {
         String request="INSERT INTO CART(CartId,OeuvreId,NomOeuvre,Quantity)"+"VALUES(?,?,?,?) ";
         try {
             preparedStatement = connection.prepareStatement(request);
-            preparedStatement.setString (1,cart.getCartId ());
+            preparedStatement.setString (1,cart.getLoggedInUser ().getEmail ());
             preparedStatement.setInt (2,oeuvre.getID_Oeuvre ());
             preparedStatement.setString (3,oeuvre.getNomOeuvre ());
             preparedStatement.setInt (4,1);
@@ -124,6 +126,22 @@ public class CartCRUD {
     public  void updateQuantity (String id ,int idoeuvre)
     {
         String req="UPDATE cart SET Quantity=Quantity+? WHERE CartId =? and OeuvreId=?" ;
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            preparedStatement.setInt (1,1) ;
+            preparedStatement.setString (2,id); ;
+            preparedStatement.setInt (3,idoeuvre) ;
+
+            preparedStatement.executeUpdate() ;
+
+        } catch (SQLException ex) {
+            System.out.println ("Probleme lors de l'update de quantite");
+        }
+
+    }
+    public  void updateQuantity1 (String id ,int idoeuvre)
+    {
+        String req="UPDATE cart SET Quantity=Quantity-? WHERE CartId =? and OeuvreId=?" ;
         try {
             preparedStatement=connection.prepareStatement (req);
             preparedStatement.setInt (1,1) ;
@@ -237,5 +255,20 @@ public class CartCRUD {
         return count;
 
     }
+    public List<User> readLoggedInUser() {
+        String req = "select * from user";
 
+        List<User> list=new ArrayList<>();
+        try {
+            statement = connection.createStatement();
+            resultSet= statement.executeQuery(req);
+            while(resultSet.next()){
+                list.add(new User (resultSet.getInt (1), resultSet.getString (2), resultSet.getString (3),resultSet.getDate (4),resultSet.getString (5),resultSet.getString (6),resultSet.getInt (7),resultSet.getString (8),resultSet.getString (9)));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
 }

@@ -22,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
@@ -145,11 +146,15 @@ public class OrderDashController implements Initializable {
         String newstatus=statusOrder.getText ();
         int done=1;
         if (!newstatus.equals ("cancelled") && !newstatus.equals ("confirmed") ){
-            Alert alert=new Alert (Alert.AlertType.ERROR);
-            alert.setTitle ("Statue of Order");
-            alert.setHeaderText ("Statue of Order");
-            alert.setContentText ("Vous avez choisi un choix erroné repeter");
-            alert.showAndWait ();
+
+            String title = "Statue of Order ";
+            String message = "Vous avez choisi un choix erroné repeter";
+
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle(title);
+            tray.setMessage(message);
+            tray.setNotificationType(NotificationType.ERROR);
+            tray.showAndDismiss (Duration.millis (3200));
             done=0;
         }
         int id= (int) comboboxOrderID.getValue ();
@@ -164,7 +169,7 @@ public class OrderDashController implements Initializable {
             tray.setTitle(title);
             tray.setMessage(message);
             tray.setNotificationType(NotificationType.SUCCESS);
-            tray.showAndWait();
+            tray.showAndDismiss (Duration.millis (3200));
         }
 
         Node source = (Node) actionEvent.getSource();
@@ -188,7 +193,8 @@ public class OrderDashController implements Initializable {
         tray.setTitle(title);
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndWait();
+        tray.showAndDismiss (Duration.millis (3200));
+
     }
 
     @FXML
