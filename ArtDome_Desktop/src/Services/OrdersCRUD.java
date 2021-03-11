@@ -57,7 +57,7 @@ public class OrdersCRUD {
             try {
                 preparedStatement = connection.prepareStatement(request);
                 preparedStatement.setInt (1,orID);
-                preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+""+LoggedInUser.get (0).getPrenom ());
+                preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom ());
                 preparedStatement.setInt (3,nombreAleatoire);
                 preparedStatement.setInt (4,cartOeuvreMap.get (i).getID_Oeuvre ());
                 preparedStatement.setInt (5,i.getQuantiy ());
@@ -77,7 +77,7 @@ public class OrdersCRUD {
         try {
             preparedStatement = connection.prepareStatement(request1);
             preparedStatement.setInt (1,orID);
-            preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+""+LoggedInUser.get (0).getPrenom ());
+            preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom ());
             preparedStatement.setFloat (3,total_prix);
             preparedStatement.setInt (4,nombreAleatoire);
             preparedStatement.setInt (5,quantitytot);

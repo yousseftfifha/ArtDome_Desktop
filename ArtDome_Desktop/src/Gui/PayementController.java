@@ -8,10 +8,13 @@ package Gui;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.Orders;
+import Entities.User;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
 import Tools.MyConnection;
 import Tools.Payment;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -50,6 +53,19 @@ public class PayementController implements Initializable {
     private Button boutonpayer;
     @FXML
     private TextField montant;
+    @FXML
+    private TextField First;
+    @FXML
+    private TextField Last;
+    @FXML
+    private TextField Number;
+    @FXML
+    private TextField Card;
+    @FXML
+    private TextField CVC;
+    @FXML
+    private JFXDatePicker Date;
+
 
     /**
      * Initializes the controller class.
@@ -59,15 +75,29 @@ public class PayementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         MyConnection myConnection = MyConnection.getInstance ();
+        CartCRUD cartCRUD=new CartCRUD ();
+        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+
+        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        List<Orders> LastOrder=ordersCRUD.readprice();
+        usermail.setText (LoggedInUser.get (0).getEmail ());
+        montant.setText (String.valueOf (((int) LastOrder.get (0).getDueAmount ())));
+        First.setText (LoggedInUser.get (0).getPrenom ());
+        Last.setText (LoggedInUser.get (0).getNom ());
+        Number.setText (String.valueOf (LoggedInUser.get (0).getNumero ()));
+        Card.setText ("**** **** **** 5556");
+        CVC.setText ("101");
+
 
     }
 
     @FXML
     private void payerService(ActionEvent event) throws IOException {
+
         Payment P=new Payment();
         P.RetrieveCustomer ();
-        int jml = Integer.parseInt(montant.getText());
-        P.payement (jml);
+        Integer Dueamount = Integer.parseInt(montant.getText());
+        P.payement (Dueamount);
            try {
     Desktop.getDesktop().browse(new URL("https://dashboard.stripe.com/test/customers/cus_J4vLHqM4VkGLnH?fbclid=IwAR0Qq32Mve6E-ETXw1HRGN8U35vckgJQz4-Sq11Ht5Xw2-Egv-ebZwNLq6Y").toURI());
 } catch (IOException e) {
