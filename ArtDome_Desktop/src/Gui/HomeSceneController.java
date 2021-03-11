@@ -82,21 +82,24 @@ public class HomeSceneController implements Initializable {
 
             CartCRUD cartCRUD=new CartCRUD ();
 
-            List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
-            List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
+//            List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
+//            List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
+            List<Oeuvre> oeuvres=cartCRUD.readOeuvre ();
+
             List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
             Cart cart=new Cart(LoggedInUser.get (0));
+             cart.setOeuvre1 (oeuvres);
+            for (Oeuvre oeuvre :cart.getListOeuvre ()){
+                cartCRUD.AddCart (cart,oeuvre);
+            }
 
 
 
-            cartCRUD.AddCart (cart,oeuvre1.get (0));
-            cartCRUD.AddCart (cart,oeuvre2.get (0));
-
-            cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (),oeuvre1.get (0).getID_Oeuvre ());
+            cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (),/*oeuvre1.get (0).getID_Oeuvre ()*/cart.getListOeuvre ().get (0).getID_Oeuvre ());
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
         String title = "Cart ";
-        String message = "Vous avez ajouter deux oeuvre: "+oeuvre1.get (0).getNomOeuvre ()+" et "+oeuvre2.get (0).getNomOeuvre ();
+        String message = "Vous avez ajouter deux oeuvre: "+cart.getListOeuvre ().get (0).getID_Oeuvre ()+" et "+cart.getListOeuvre ().get (1).getID_Oeuvre ();
 
         TrayNotification tray = new TrayNotification();
         tray.setTitle(title);

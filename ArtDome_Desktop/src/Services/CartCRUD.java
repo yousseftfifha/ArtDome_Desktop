@@ -80,14 +80,14 @@ public class CartCRUD {
         return list;
     }
     public List<Oeuvre> readOeuvre() {
-        String req = "select NomOeuvre,PrixOeuvre from oeuvre";
+        String req = "select * from oeuvre";
 
         List<Oeuvre> list=new ArrayList<>();
         try {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                list.add(new Oeuvre (resultSet.getString (1), resultSet.getInt (2)));
+                list.add(new Oeuvre (resultSet.getInt (1), resultSet.getString (2),resultSet.getFloat (3),resultSet.getInt (4)));
             }
 
         } catch (SQLException ex) {

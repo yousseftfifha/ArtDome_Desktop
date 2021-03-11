@@ -9,6 +9,7 @@ public class Cart {
     private String CartId;
     private User LoggedInUser;
     private int OeuvreID;
+    private Oeuvre Oeuvre;
     private List<Oeuvre> oeuvre;
     private int Quantity;
     private String NomOeuvre;
@@ -30,6 +31,10 @@ public class Cart {
         OeuvreID = oeuvreID;
         Quantity = quantity;
         NomOeuvre = nomOeuvre;
+    }
+
+    public void setOeuvre(Entities.Oeuvre oeuvre) {
+        Oeuvre = oeuvre;
     }
 
     public int getQuantity() {
@@ -64,11 +69,15 @@ public class Cart {
         Quantity = quantity;
     }
 
-    public List<Oeuvre> getOeuvre() {
+    public Oeuvre getOeuvre() {
+        return Oeuvre;
+    }
+    public List<Oeuvre> getListOeuvre() {
         return oeuvre;
     }
 
-    public void setOeuvre(List<Oeuvre> oeuvre) {
+
+    public void setOeuvre1(List<Oeuvre> oeuvre) {
         this.oeuvre = oeuvre;
     }
 

@@ -9,8 +9,15 @@ public class Oeuvre {
     private int ID_Oeuvre;
     private String NomOeuvre;
     private float PrixOeuvre;
-
+    private int ID_Artiste;
     public Oeuvre() {
+    }
+
+    public Oeuvre(int ID_Oeuvre, String nomOeuvre, float prixOeuvre, int ID_Artiste) {
+        this.ID_Oeuvre = ID_Oeuvre;
+        NomOeuvre = nomOeuvre;
+        PrixOeuvre = prixOeuvre;
+        this.ID_Artiste = ID_Artiste;
     }
 
     public Oeuvre(String nomOeuvre, float prixOeuvre) {

@@ -190,7 +190,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <VBox layoutX="209.0" layoutY="234.0" prefHeight="278.0" prefWidth="163.0">
+      <VBox layoutX="396.0" layoutY="212.0" prefHeight="278.0" prefWidth="163.0">
          <children>
             <Label prefHeight="38.0" prefWidth="163.0" text="Amount">
                <font>
@@ -229,7 +229,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="375.0" layoutY="234.0" prefHeight="398.0" prefWidth="274.0">
+      <VBox layoutX="568.0" layoutY="212.0" prefHeight="398.0" prefWidth="274.0">
          <children>
             <JFXTextField fx:id="montant" prefHeight="26.0" prefWidth="274.0">
                <font>
@@ -266,12 +266,12 @@
             </JFXButton>
          </children>
       </VBox>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="685.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="922.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../GFX/click%20to%20pay.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="158.0" fitWidth="231.0" layoutX="685.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="158.0" fitWidth="231.0" layoutX="922.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../GFX/SRC-Network-Logo_FINAL.jpg" />
          </image>
