@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="668.0" prefWidth="1163.0" style="-fx-background-color: #ffff;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.gui.AddEventController">
+   <children>
+      <VBox layoutX="570.0" layoutY="158.0" prefHeight="256.0" prefWidth="163.0" spacing="8.0">
+         <children>
+            <TextField fx:id="tfnom" />
+            <TextField fx:id="tftheme" prefHeight="25.0" prefWidth="154.0" />
+            <ComboBox fx:id="tfetat" prefHeight="25.0" prefWidth="166.0" visibleRowCount="2" />
+            <DatePicker fx:id="tfdate" />
+            <Spinner fx:id="tfnbmax" editable="true" prefHeight="25.0" prefWidth="164.0" />
+            <TextField fx:id="tfcodeespace" />
+            <Button mnemonicParsing="false" onAction="#addimage" prefHeight="25.0" prefWidth="165.0" text="Feuilleter" />
+            <Button mnemonicParsing="false" onAction="#addvideo" prefHeight="25.0" prefWidth="169.0" text="Feuilleter" />
+         </children>
+      </VBox>
+      <TableView fx:id="tve" layoutX="331.0" layoutY="458.0" onMouseClicked="#getfromtv" prefHeight="206.0" prefWidth="707.0">
+         <columns>
+            <TableColumn fx:id="colnom" prefWidth="66.0" text="Nom" />
+            <TableColumn fx:id="coltheme" prefWidth="69.0" text="Théme" />
+            <TableColumn fx:id="coletat" prefWidth="56.0" text="Etat" />
+            <TableColumn fx:id="coldate" prefWidth="77.0" text="Date" />
+            <TableColumn fx:id="colcodeespace" prefWidth="116.0" text="Code éspace" />
+            <TableColumn fx:id="colnbpart" prefWidth="142.0" text="Nombre de participants" />
+            <TableColumn fx:id="colnbmax" prefWidth="168.0" text="Nombre max de participants" />
+            <TableColumn fx:id="colimage" prefWidth="75.0" text="Image" />
+            <TableColumn fx:id="colvideo" prefWidth="71.0" text="Video" />
+         </columns>
+      </TableView>
+      <VBox layoutX="804.0" layoutY="214.0" prefHeight="200.0" prefWidth="117.0" spacing="30.0">
+         <children>
+            <JFXButton fx:id="AddButton" onAction="#AddEvent" prefHeight="27.0" prefWidth="119.0" text="  Ajouter">
+               <graphic>
+                  <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/add.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="UpdateButton" onAction="#UpdateEvent" prefHeight="27.0" prefWidth="121.0" text=" Modifier">
+               <graphic>
+                  <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/refresh.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="DeleteButton" onAction="#DeleteEvent" prefHeight="27.0" prefWidth="124.0" text="Supprimer">
+               <graphic>
+                  <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/delete.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <TextField fx:id="tfcodeee" layoutX="577.0" layoutY="42.0" prefWidth="149.0" visible="false" />
+      <TextField fx:id="tfimage" layoutX="63.0" layoutY="40.0" visible="false" />
+      <TextField fx:id="tfvideo" layoutX="82.0" layoutY="301.0" visible="false" />
+      <TextField fx:id="search" layoutX="445.0" layoutY="425.0" prefHeight="25.0" prefWidth="353.0" />
+      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="145.0" prefWidth="1170.0" styleClass="head-background" stylesheets="@../../../../Quality-Overflow-main-20210305T200956Z-001/Quality-Overflow-main/QualityDome/src/Gui/style.css">
+         <children>
+            <Label layoutX="628.0" layoutY="42.0" text="Art" textFill="#f01717">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="694.0" layoutY="101.0" text="Since 2021" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="676.0" layoutY="42.0" text="Dome" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <VBox layoutY="143.0" prefHeight="525.0" prefWidth="252.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="Navigation List" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Users" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8_Share_64px.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/reliabilty.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/projections.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8_Workflow_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="Forum" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Forum" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8_US_Dollar_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <VBox layoutX="379.0" layoutY="166.0" prefHeight="200.0" prefWidth="170.0" spacing="15.0">
+         <children>
+            <Label text="Nom">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Thème">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Etat">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Date">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Nombre max de participants">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Code éspace">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Image">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Video">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <JFXButton fx:id="chart" layoutX="1016.0" layoutY="166.0" onAction="#piechart" prefHeight="27.0" prefWidth="119.0" text="Show Chart" />
+      <JFXButton fx:id="ViewRes" layoutX="1016.0" layoutY="201.0" onAction="#ViewRes" prefHeight="27.0" prefWidth="119.0" text="View Reservations" />
+      <JFXButton fx:id="RechercheButton" layoutX="817.0" layoutY="424.0" onAction="#SearchEvent" prefHeight="27.0" prefWidth="121.0" text="Rechercher">
+         <graphic>
+            <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/refresh.png" />
+               </image>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
