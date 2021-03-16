@@ -199,4 +199,15 @@ public class CheckOutController implements Initializable {
             System.out.println("Error on Building Data");
         }
     }
+
+    @FXML
+    private void gotoouevre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }

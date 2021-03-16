@@ -8,6 +8,7 @@ import Services.OrdersCRUD;
 import Tools.PDF;
 import Tools.Payment;
 import Tools.SendEmail;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -218,5 +219,16 @@ public class CartItem implements Initializable {
         tray.showAndDismiss (Duration.millis (3200));
         dialogStage.show();
 
+    }
+
+    @FXML
+    private void gotooeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
     }
 }

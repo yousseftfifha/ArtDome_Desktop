@@ -138,6 +138,39 @@ public class PayementController implements Initializable {
         dialogStage.show();
                
     }
+
+    @FXML
+    private void gotoorders(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotooeuvre(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void goTohome(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("HomeScene.fxml")));
+        dialogStage.setTitle("ArtDome - Home");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }
 
 

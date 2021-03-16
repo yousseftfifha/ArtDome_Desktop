@@ -186,7 +186,7 @@
             </children>
         </VBox>
       <AnchorPane fx:id="content" layoutX="250.0" layoutY="195.0" prefHeight="422.0" prefWidth="1006.0" />
-      <JFXButton fx:id="MyCart" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="960.0" layoutY="161.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Cart" textFill="#5b5858">
+      <JFXButton fx:id="MyCart" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="960.0" layoutY="161.0" onAction="#goToCart" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Cart" textFill="#5b5858">
          <font>
             <Font size="13.0" />
          </font>

@@ -87,9 +87,6 @@ public class HomeSceneController implements Initializable {
                 cartCRUD.AddCart (cart,oeuvre);
             }
 
-
-
-            cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (),/*oeuvre1.get (0).getID_Oeuvre ()*/cart.getListOeuvre ().get (0).getID_Oeuvre ());
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
         String title = "Cart ";

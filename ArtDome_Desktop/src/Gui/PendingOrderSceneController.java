@@ -157,4 +157,15 @@ public class PendingOrderSceneController implements Initializable {
         dialogStage.setScene(scene);
         dialogStage.show();
     }
+
+    @FXML
+    private void GoToOeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Home");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }

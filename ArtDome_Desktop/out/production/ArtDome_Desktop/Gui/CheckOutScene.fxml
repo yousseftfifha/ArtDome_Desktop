@@ -90,7 +90,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
+                <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoouevre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>
