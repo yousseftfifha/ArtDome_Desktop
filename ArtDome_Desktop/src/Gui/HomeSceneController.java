@@ -121,4 +121,15 @@ public class HomeSceneController implements Initializable {
         dialogStage.setScene(scene);
         dialogStage.show();
     }
+
+    @FXML
+    private void goToExpos(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("AddExposition.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }

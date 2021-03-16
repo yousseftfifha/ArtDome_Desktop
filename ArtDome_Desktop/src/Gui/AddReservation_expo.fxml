@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AddReservation_expoController">
+   <children>
+      <ImageView fitHeight="690.0" fitWidth="900.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GFX/faza.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4b76abbd" height="545.0" layoutX="36.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="826.0" />
+      <VBox layoutX="251.0" layoutY="130.0" prefHeight="144.0" prefWidth="122.0" spacing="15.0">
+         <children>
+            <Label text="Nom">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Prénom">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Télèphone">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Email">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Nombre de place">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox cache="true" layoutX="385.0" layoutY="125.0" prefHeight="104.0" prefWidth="167.0" spacing="4.0">
+         <children>
+            <TextField fx:id="nom_client" />
+            <TextField fx:id="prenom_client" />
+            <TextField fx:id="telephone" />
+            <TextField fx:id="email" />
+            <Spinner fx:id="nb_place" editable="true" prefHeight="26.0" prefWidth="168.0" />
+         </children>
+         <effect>
+            <InnerShadow choke="0.1" height="29.56" radius="13.925" width="28.14">
+               <input>
+                  <Glow level="0.0" />
+               </input>
+            </InnerShadow>
+         </effect>
+      </VBox>
+      <Button fx:id="AddButtonR" blendMode="DIFFERENCE" cache="true" layoutX="706.0" layoutY="128.0" mnemonicParsing="false" onAction="#AddReservationE" prefHeight="28.0" prefWidth="134.0" text="Ajouter" textAlignment="RIGHT" textFill="#22b75e">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </Button>
+      <Button fx:id="UpdateButtonR" blendMode="DIFFERENCE" layoutX="706.0" layoutY="239.0" mnemonicParsing="false" onAction="#UpdateReservationE" prefHeight="26.0" prefWidth="134.0" text="Modifier" textAlignment="RIGHT" textFill="#1c9de2">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </Button>
+      <Button fx:id="DeleteButtonR" blendMode="DIFFERENCE" cache="true" layoutX="703.0" layoutY="544.0" mnemonicParsing="false" onAction="#DeleteReservationE" prefHeight="30.0" prefWidth="134.0" text="supprimer" textAlignment="RIGHT" textFill="#bd1313" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </Button>
+      <ImageView fitHeight="18.0" fitWidth="23.0" layoutX="716.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GFX/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="716.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GFX/add.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="716.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GFX/refresh.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tveR" layoutX="67.0" layoutY="316.0" onMouseClicked="#getfromtv" prefHeight="258.0" prefWidth="595.0">
+         <columns>
+            <TableColumn fx:id="colcode" prefWidth="67.20001602172852" text="Code " />
+            <TableColumn fx:id="colnomClient" prefWidth="81.60003662109375" text="Nom client " />
+            <TableColumn fx:id="colprenomClient" prefWidth="91.99993896484375" text="Prénom client " />
+            <TableColumn fx:id="coltelephone" prefWidth="87.20001220703125" text="Télèphone" />
+            <TableColumn fx:id="colemail" prefWidth="149.59994506835938" text="Email" />
+            <TableColumn fx:id="colnbPlace" prefWidth="116.79998779296875" text="Nombre de place" />
+         </columns>
+         <effect>
+            <InnerShadow choke="0.18" radius="15.3625" width="42.45">
+               <input>
+                  <Glow />
+               </input>
+            </InnerShadow>
+         </effect>
+      </TableView>
+      <TextField fx:id="codeeeExpo" layoutX="63.0" layoutY="90.0" prefHeight="26.0" prefWidth="155.0" visible="false" />
+      <TextField fx:id="codeeeReservation" layoutX="63.0" layoutY="129.0" prefHeight="26.0" prefWidth="155.0" visible="false" />
+      <Button fx:id="back" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#BACK" prefHeight="26.0" prefWidth="31.0" text="&lt;-" />
+      <Label blendMode="DARKEN" contentDisplay="CENTER" layoutX="251.0" layoutY="67.0" text="Réservations Exposition" textAlignment="CENTER" textFill="#820d0d">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>
