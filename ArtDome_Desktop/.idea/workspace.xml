@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jar_files__1_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/OeuvreItem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/OeuvreItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArtDome_Desktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArtDome_Desktop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Oeuvre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Oeuvre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrderDashController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrderDashController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CartCRUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDF.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/Oeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Oeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrderDashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrderDashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PayementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/PayementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/CartCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CartCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/PDF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +213,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../java/jar_files (1)" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -383,7 +394,11 @@
       <workItem from="1615451221643" duration="2266000" />
       <workItem from="1615456757590" duration="548000" />
       <workItem from="1615467579210" duration="14433000" />
-      <workItem from="1615485681955" duration="2149000" />
+      <workItem from="1615485681955" duration="2893000" />
+      <workItem from="1615498154901" duration="243000" />
+      <workItem from="1615536237946" duration="6135000" />
+      <workItem from="1615840051363" duration="4903000" />
+      <workItem from="1615894807370" duration="9365000" />
     </task>
     <servers />
   </component>

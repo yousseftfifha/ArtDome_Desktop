@@ -10,7 +10,16 @@ public class Oeuvre {
     private String NomOeuvre;
     private float PrixOeuvre;
     private int ID_Artiste;
+    private String Image;
     public Oeuvre() {
+    }
+
+    public Oeuvre(int ID_Oeuvre, String nomOeuvre, float prixOeuvre, int ID_Artiste, String image) {
+        this.ID_Oeuvre = ID_Oeuvre;
+        NomOeuvre = nomOeuvre;
+        PrixOeuvre = prixOeuvre;
+        this.ID_Artiste = ID_Artiste;
+        Image = image;
     }
 
     public Oeuvre(int ID_Oeuvre, String nomOeuvre, float prixOeuvre, int ID_Artiste) {
@@ -53,6 +62,14 @@ public class Oeuvre {
 
     public void setPrixOeuvre(float prixOeuvre) {
         PrixOeuvre = prixOeuvre;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
     }
 
     @Override

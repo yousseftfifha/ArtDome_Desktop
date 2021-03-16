@@ -5,6 +5,8 @@ import Services.OrdersCRUD;
 import Tools.Charts;
 import Tools.PDF;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfDocument;
+import com.itextpdf.text.pdf.PdfException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -27,7 +29,10 @@ import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -183,9 +188,17 @@ public class OrderDashController implements Initializable {
     }
 
     @FXML
-    private void GenererPdf(ActionEvent actionEvent) throws IOException, DocumentException {
+    private void GenererPdf(ActionEvent actionEvent) throws IOException, DocumentException, URISyntaxException {
             PDF pdf=new PDF ();
             pdf.pdfGeneration ();
+        if (Desktop.isDesktopSupported()) {
+            try {
+                File myFile = new File("orders.pdf");
+                Desktop.getDesktop().open(myFile);
+            } catch (IOException ex) {
+                // no application registered for PDFs
+            }
+        }
         String title = "PDF ";
         String message = "You PDF  has been Generated";
 

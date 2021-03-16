@@ -13,6 +13,7 @@ import Services.CartCRUD;
 import Services.OrdersCRUD;
 import Tools.MyConnection;
 import Tools.Payment;
+import Tools.SendEmail;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
@@ -30,6 +31,8 @@ import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -37,6 +40,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 /**
@@ -94,17 +99,27 @@ public class PayementController implements Initializable {
     @FXML
     private void payerService(ActionEvent event) throws IOException {
 
-        Payment P=new Payment();
-        P.RetrieveCustomer ();
-        Integer Dueamount = Integer.parseInt(montant.getText());
-        P.payement (Dueamount);
-           try {
-    Desktop.getDesktop().browse(new URL("https://dashboard.stripe.com/test/customers/cus_J4vLHqM4VkGLnH?fbclid=IwAR0Qq32Mve6E-ETXw1HRGN8U35vckgJQz4-Sq11Ht5Xw2-Egv-ebZwNLq6Y").toURI());
-} catch (IOException e) {
-    e.printStackTrace();
-} catch (URISyntaxException e) {
-    e.printStackTrace();
-}
+
+        ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
+        emailExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                Payment P=new Payment();
+                P.RetrieveCustomer ();
+                Integer Dueamount = Integer.parseInt(montant.getText());
+                P.payement (Dueamount);
+                try {
+                    Desktop.getDesktop().browse(new URL("https://dashboard.stripe.com/test/customers/cus_J4vLHqM4VkGLnH?fbclid=IwAR0Qq32Mve6E-ETXw1HRGN8U35vckgJQz4-Sq11Ht5Xw2-Egv-ebZwNLq6Y").toURI());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        emailExecutor.shutdown();
+
+
         Node source = (Node) event.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();

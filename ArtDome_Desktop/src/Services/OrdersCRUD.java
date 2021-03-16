@@ -3,17 +3,29 @@ package Services;
 import Entities.*;
 import Tools.MyConnection;
 import Tools.SendEmail;
+import com.teknikindustries.bulksms.SMS;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.vonage.client.HttpConfig;
+import com.vonage.client.VonageClient;
+import com.vonage.client.sms.SmsSubmissionResponse;
+import com.vonage.client.sms.SmsSubmissionResponseMessage;
+import com.vonage.client.sms.messages.TextMessage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
 import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+import java.io.IOException;
 import java.sql.*;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -96,30 +108,42 @@ public class OrdersCRUD {
                 "Vous avez ajouter une nouvelle commande a " +ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME)+
                 System.lineSeparator()+
                 " Order ID: "+orID+
-                " User:Youssef: "+
+                " User: "+LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom ()+
                 " prix a payer: "+total_prix+
                 " quantite total: "+quantitytot+
                 " status: Pending "
                 +System.lineSeparator()
                 +" Cordialement "+System.lineSeparator()+" Bonne journee";
+        ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
+        emailExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    SendEmail.sendMail ("youssef.tfifha@esprit.tn","New Order Confirmation",message);
+                } catch (AddressException e) {
+                    e.printStackTrace ();
+                } catch (MessagingException e) {
+                    e.printStackTrace ();
+                }
+                SMS sendtext=new SMS ();
+                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+                HttpConfig httpConfig = HttpConfig.defaultConfig();
+                VonageClient client = new VonageClient .Builder()
+                        .apiKey("049842c0")
+                        .apiSecret("Ecc52Nxze8uDZvhQ")
+                        .httpConfig(httpConfig)
+                        .build();
 
-        SendEmail.sendMail ("youssef.tfifha@esprit.tn","New Order Confirmation",message);
-//        SMS sendtext=new SMS ();
-//        sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
-//        HttpConfig httpConfig = HttpConfig.defaultConfig();
-//        VonageClient client = new VonageClient .Builder()
-//                .apiKey("049842c0")
-//                .apiSecret("Ecc52Nxze8uDZvhQ")
-//                .httpConfig(httpConfig)
-//                .build();
-//
-//        SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage(
-//                "ArtDome",
-//                "21620245989",
-//                message));
-//        for (SmsSubmissionResponseMessage response : responses.getMessages()) {
-//            System.out.println(response);
-//        }
+                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
+                        "ArtDome",
+                        "21620245989",
+                        message));
+
+            }
+        });
+        emailExecutor.shutdown();
+
+
     }
     public List<PendingOrders> readAllpendingOrders() {
         String req = "select * from pending_orders";
