@@ -1,13 +1,16 @@
-package Gui.OrdersCart;
+package Gui.DashOrdersCart;
 
-import Entities.Cart;
 import Entities.Orders;
 import Entities.PendingOrders;
 import Entities.User;
+import Gui.DashBoardSceneController;
 import Gui.Oeuvre.OeuvreItem;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import Tools.Charts;
+import Tools.PDF;
 import Tools.Print;
+import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -20,7 +23,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -29,10 +31,13 @@ import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -41,7 +46,7 @@ import java.util.logging.Logger;
 /**
  * @author tfifha youssef
  */
-public class OrdersController implements Initializable {
+public class DashBoardOrders  implements Initializable {
     Stage dialogStage = new Stage ();
     Scene scene;
     @FXML
@@ -60,10 +65,9 @@ public class OrdersController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         try {
-            CartCRUD cartCRUD = new CartCRUD ();
-            List<User> LoggedInUser = cartCRUD.readLoggedInUser ();
+
             OrdersCRUD ordersCRUD = new OrdersCRUD ();
-            List<Orders> ordersList = ordersCRUD.selectOrderByUser (LoggedInUser.get (0).getEmail ());
+            List<Orders> ordersList = ordersCRUD.readAllOrders ();
             ShowOrders (ordersList);
         } catch (Exception ex) {
             Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
@@ -195,16 +199,54 @@ public class OrdersController implements Initializable {
             JFXButton showDetails = new JFXButton ("Show Details");
             showDetails.setMinWidth (200);
             showDetails.setStyle ("-fx-background-color: none; -fx-text-fill: #03568b; -fx-border-color: #03568b;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
+            
+            JFXButton Valider = new JFXButton ("Confirm");
+            Valider.setMinWidth (200);
+            Valider.setStyle ("-fx-background-color: none; -fx-text-fill: #03568b; -fx-border-color: #03568b;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
+
+            JFXButton Cancel = new JFXButton ("Cancel");
+            Cancel.setMinWidth (200);
+            Cancel.setStyle ("-fx-background-color: none; -fx-text-fill: #03568b; -fx-border-color: #03568b;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
 
             Label space = new Label("");
             space.setMinHeight(20);
+            Label space1 = new Label("");
+            space.setMinHeight(20);
             btn.getChildren ().add (showDetails);
             btn.getChildren().add(space);
+            btn.getChildren ().add (Valider);
+            btn.getChildren ().add (space1);
+            btn.getChildren ().add (Cancel);
 
 
 
             /* Action listeners  */
-
+            Valider.setOnAction (new EventHandler<ActionEvent> () {
+                @Override
+                public void handle(ActionEvent event) {
+                    OrdersCRUD ordersCRUD=new OrdersCRUD ();
+                    ordersCRUD.updateOrderStatus(orders.getOrderID (),"confirmed");
+                    try {
+                        List<Orders> ordersList = ordersCRUD.readAllOrders ();
+                        ShowOrders (ordersList);
+                    } catch (Exception ex) {
+                        Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
+                    }
+                }
+            });
+            Cancel.setOnAction (new EventHandler<ActionEvent> () {
+                @Override
+                public void handle(ActionEvent event) {
+                    OrdersCRUD ordersCRUD=new OrdersCRUD ();
+                    ordersCRUD.updateOrderStatus(orders.getOrderID (),"cancelled");
+                    try {
+                        List<Orders> ordersList = ordersCRUD.readAllOrders ();
+                        ShowOrders (ordersList);
+                    } catch (Exception ex) {
+                        Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
+                    }
+                }
+            });
 
             showDetails.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
@@ -385,40 +427,19 @@ public class OrdersController implements Initializable {
         Node source = (Node) actionEvent.getSource ();
         dialogStage = (Stage) source.getScene ().getWindow ();
         dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../HomeScene.fxml")));
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../DashBoardScene.fxml")));
         dialogStage.setTitle ("ArtDome - Home");
         dialogStage.setScene (scene);
         dialogStage.show ();
     }
 
-    @FXML
-    private void gotooeuvre(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Oeuvre/OeuvreItem.fxml")));
-        dialogStage.setTitle ("ArtDome - Oeuvre");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
-
-    @FXML
-    private void gotoexpo(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Exposition/AddExposition.fxml")));
-        dialogStage.setTitle ("ArtDome - Exposition");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
 
     @FXML
     private void gotoorders(ActionEvent actionEvent) throws IOException {
         Node source = (Node) actionEvent.getSource ();
         dialogStage = (Stage) source.getScene ().getWindow ();
         dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("Orders.fxml")));
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("DashBoardOrders.fxml")));
         dialogStage.setTitle ("ArtDome - Orders");
         dialogStage.setScene (scene);
         dialogStage.show ();
@@ -454,5 +475,42 @@ public class OrdersController implements Initializable {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         List<Orders> ordersList1=ordersCRUD.Rechercherstatus (String.valueOf (status.getValue ()));
         ShowOrders (ordersList1);
+    }
+
+    @FXML
+    private void GenererPdf(ActionEvent actionEvent) throws IOException, DocumentException, URISyntaxException {
+        PDF pdf=new PDF ();
+        pdf.pdfGeneration ();
+        if (Desktop.isDesktopSupported()) {
+            try {
+                File myFile = new File("orders.pdf");
+                Desktop.getDesktop().open(myFile);
+            } catch (IOException ex) {
+                // no application registered for PDFs
+            }
+        }
+        String title = "PDF ";
+        String message = "You PDF  has been Generated";
+
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle(title);
+        tray.setMessage(message);
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss (Duration.millis (3200));
+
+    }
+
+    @FXML
+    private void stats(ActionEvent actionEvent) {
+
+        Charts CC;
+        try {
+            CC = new Charts ("statistique commandes","statut commandes ");
+            CC.pack();
+            CC.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            CC.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(DashBoardSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

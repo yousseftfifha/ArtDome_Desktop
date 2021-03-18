@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Label?>
@@ -184,7 +186,7 @@
                 </JFXButton>
             </children>
         </VBox>
-        <AnchorPane fx:id="content" layoutX="251.0" layoutY="216.0" prefHeight="422.0" prefWidth="1006.0" />
+        <AnchorPane fx:id="content" layoutX="251.0" layoutY="216.0" prefHeight="422.0" prefWidth="1050.0" />
       <ImageView fitHeight="70.0" fitWidth="76.0" layoutX="270.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
@@ -205,5 +207,8 @@
             <Image url="@../../GFX/Print_icon-icons.com_55835.png" />
          </image>
       </ImageView>
+      <JFXButton layoutX="672.0" layoutY="176.0" onAction="#searchOrder" text="Search" />
+      <JFXTextField fx:id="search" layoutX="754.0" layoutY="176.0" />
+      <JFXComboBox fx:id="status" layoutX="938.0" layoutY="175.0" onAction="#Click" prefHeight="26.0" prefWidth="135.0" />
     </children>
 </AnchorPane>

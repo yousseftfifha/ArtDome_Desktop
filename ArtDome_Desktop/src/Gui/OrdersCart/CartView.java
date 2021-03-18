@@ -5,6 +5,7 @@ import Entities.User;
 import Gui.Oeuvre.OeuvreItem;
 import Services.CartCRUD;
 import Services.OrdersCRUD;
+import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -25,6 +26,7 @@ import tray.notification.TrayNotification;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -298,7 +300,7 @@ public class CartView implements Initializable {
     }
 
     @FXML
-    private void check(ActionEvent actionEvent) throws IOException, MessagingException {
+    private void check(ActionEvent actionEvent) throws IOException, MessagingException, URISyntaxException, DocumentException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         CartCRUD cartCRUD=new CartCRUD ();
         List<User> LoggedInUser=cartCRUD.readLoggedInUser ();

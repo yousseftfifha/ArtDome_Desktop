@@ -32,7 +32,7 @@ public class DashBoardSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("DashOrdersCart/OrderDash.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("DashOrdersCart/DashBoardOrders.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Orders");
         dialogStage.setScene(scene);
         dialogStage.show();

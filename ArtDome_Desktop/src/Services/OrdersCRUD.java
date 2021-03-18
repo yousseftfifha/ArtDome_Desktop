@@ -2,7 +2,9 @@ package Services;
 
 import Entities.*;
 import Tools.MyConnection;
+import Tools.PDF;
 import Tools.SendEmail;
+import com.itextpdf.text.DocumentException;
 import com.teknikindustries.bulksms.SMS;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -17,7 +19,10 @@ import javafx.scene.chart.PieChart;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -42,11 +47,13 @@ public class OrdersCRUD {
     public OrdersCRUD() {
         connection = MyConnection.getInstance ().getConnection ();
     }
-    public void AddFromCart(int UserID) throws MessagingException {
+    public void AddFromCart(int UserID) throws MessagingException, DocumentException, IOException, URISyntaxException {
         int nombreAleatoire = 1000000 + (int)(Math.random() * ((9999999 - 1000000) + 1));
         int orID = 1000 + (int)(Math.random() * ((9999 - 1000) + 1));
         float total_prix=0;
         int quantitytot=0;
+        int oeuvreid=0;
+        int qua=0;
         CartCRUD cartCRUD = new CartCRUD ();
 //        List<Cart> carts = cartCRUD.selectCartById (cart.getCartId ());
 ////        List<Oeuvre> oeuvres = cartCRUD.ReadAllOeuvrse();
@@ -66,6 +73,8 @@ public class OrdersCRUD {
             total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
             String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
             quantitytot+=i.getQuantiy ();
+            oeuvreid=cartOeuvreMap.get (i).getID_Oeuvre ();
+            qua=i.getQuantiy ();
             try {
                 preparedStatement = connection.prepareStatement(request);
                 preparedStatement.setInt (1,orID);
@@ -75,6 +84,7 @@ public class OrdersCRUD {
                 preparedStatement.setInt (5,i.getQuantiy ());
                 preparedStatement.setString (6,"pending");
                 preparedStatement.setInt (7,1);
+
                 preparedStatement.executeUpdate ();
                 cartCRUD.DeletCart (i.getCartId ());
 
@@ -83,19 +93,24 @@ public class OrdersCRUD {
                 System.out.println ("Probleme lors de l'ajout de la pending order");
             }
 
+
         }
+        List<PendingOrders> pendingOrdersList=new ArrayList<> ();
+        PendingOrders pendingOrders=new PendingOrders (orID,LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom (),nombreAleatoire,oeuvreid,qua,"pending",1);
+        pendingOrdersList.add (pendingOrders);
         String request1="INSERT INTO orders(OrderID,UserName,DueAmount,InnoNumber,TotalQty,OrderDate,Status,AddressId)"+"VALUES(?,?,?,?,?,?,?,?) ";
 
         try {
             preparedStatement = connection.prepareStatement(request1);
             preparedStatement.setInt (1,orID);
-            preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom ());
+            preparedStatement.setString (2,LoggedInUser.get (0).getEmail ());
             preparedStatement.setFloat (3,total_prix);
             preparedStatement.setInt (4,nombreAleatoire);
             preparedStatement.setInt (5,quantitytot);
             preparedStatement.setString (6,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME) );
             preparedStatement.setString (7,"pending");
             preparedStatement.setInt (8,1);
+
             preparedStatement.executeUpdate ();
 
 
@@ -103,7 +118,19 @@ public class OrdersCRUD {
             System.out.println ("Probleme lors de l'ajout du l'order");
             throwables.printStackTrace ();
         }
-
+        Orders orders= new Orders (orID,LoggedInUser.get (0).getEmail (),total_prix,nombreAleatoire,quantitytot,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME), "pending", 1);
+        List<Orders> ordersList=new ArrayList<> ();
+        ordersList.add (orders);
+        PDF pdf=new PDF ();
+        pdf.FactureGeneration(ordersList,pendingOrdersList);
+        if (Desktop.isDesktopSupported()) {
+            try {
+                File myFile = new File("Facture.pdf");
+                Desktop.getDesktop().open(myFile);
+            } catch (IOException ex) {
+                // no application registered for PDFs
+            }
+        }
         String message="Bonjour Mr/Mme " +System.lineSeparator()+
                 "Vous avez ajouter une nouvelle commande a " +ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME)+
                 System.lineSeparator()+
@@ -345,21 +372,88 @@ public class OrdersCRUD {
         System.err.println(count);
         return  count;
     }
-    public List<Orders> Rechercher(String s)
+    public List<Orders> Rechercher(int id)
     {
 
-        List<Orders> myList=new ArrayList<Orders>();
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select * from orders where OrderID = ? or InnoNumber=? ";
         try {
-            String req1="SELECT * from orders WHERE  orders.Status LIKE "+s+"or orders.OrderID LIKE "+s+"or InnoNumber LIKE "+s;
-            Statement st2=connection.createStatement();
-            ResultSet rs=st2.executeQuery(req1);
-            while (rs.next())
-            {
-                myList.add(new Orders (resultSet.getInt(1), resultSet.getString (2), resultSet.getFloat (3),resultSet.getInt (4),resultSet.getInt (5),resultSet.getString (6),resultSet.getString (7),resultSet.getInt (8)));
-            }
+            preparedStatement=connection.prepareStatement (req);
+            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(2,id);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getFloat (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getString (7),
+                        result.getInt (8)
 
-        }catch (SQLException ex){System.out.println("error");}
-        return myList;
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    public List<Orders> Rechercherstatus(String status)
+    {
+
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select * from orders where Status = ?  ";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            preparedStatement.setString (1,status);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getFloat (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getString (7),
+                        result.getInt (8)
+
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    public  List<Orders> selectOrderByUser (String id)
+    {
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select * from orders where UserName=?";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            preparedStatement.setString (1,id);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getFloat (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getString (7),
+                        result.getInt (8)
+
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
 
     }
 }
