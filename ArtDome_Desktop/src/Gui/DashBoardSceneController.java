@@ -1,7 +1,5 @@
 package Gui;
 
-import Services.OrdersCRUD;
-import Tools.Charts;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,20 +7,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.chart.Chart;
 import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author tfifha youssef
@@ -39,7 +32,7 @@ public class DashBoardSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("OrderDash.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("DashOrdersCart/OrderDash.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Orders");
         dialogStage.setScene(scene);
         dialogStage.show();

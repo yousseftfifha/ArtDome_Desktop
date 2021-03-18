@@ -15,7 +15,7 @@ public class PaymentTest extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("../Gui/payement.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Gui/OrdersCart/payement.fxml"));
 
         Scene scene = new Scene(root);
         primaryStage.setTitle("ArtDome - Payment");

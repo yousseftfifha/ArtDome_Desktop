@@ -2,13 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
+      <change afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/Orders.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/orders.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddExposition.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddExpositionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddReservation_expo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/AddReservation_expoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CartItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/CheckOutScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashPendOrd.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashPendOrderSceneController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/artdome/Artdome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Artdome.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OeuvreItem$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OeuvreItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OeuvreItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrderDash.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrderDashController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PayementController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PendingOrderScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/PendingOrderSceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/catégorie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/chart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/payement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersCRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/PaymentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tests/PaymentTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/AddExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddExposition.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/AddExpositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddExpositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/AddReservation_expo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/AddReservation_expoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CatégorieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/CatégorieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/ChartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/CheckOutScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/DashPendOrd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashOrdersCart/DashPendOrd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/DashPendOrderSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashOrdersCart/DashPendOrderSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/Oeuvre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OeuvreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OeuvreItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OeuvreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrderDash.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashOrdersCart/OrderDash.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrderDashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashOrdersCart/OrderDashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PayementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/PayementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PendingOrderScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PendingOrderSceneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/catégorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/catégorie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/chart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/chart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/PaymentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +274,11 @@
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\GFX" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\Oeuvre" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\Exposition" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\DashOrdersCart" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\Orders" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui.Orders" />
     </key>
   </component>
   <component name="RunManager" selected="Application.FxTest">
@@ -280,15 +337,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -385,6 +440,9 @@
       <workItem from="1615536237946" duration="6135000" />
       <workItem from="1615840051363" duration="4903000" />
       <workItem from="1615894807370" duration="18272000" />
+      <workItem from="1616008903882" duration="2195000" />
+      <workItem from="1616066135454" duration="1467000" />
+      <workItem from="1616068516918" duration="13647000" />
     </task>
     <servers />
   </component>

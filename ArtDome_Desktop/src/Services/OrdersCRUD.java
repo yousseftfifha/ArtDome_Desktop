@@ -162,7 +162,7 @@ public class OrdersCRUD {
         return list;
     }
     public List<Orders> readAllOrders() {
-        String req = "select * from orders";
+        String req = "select * from orders order by OrderDate  ";
 
         List<Orders> list=new ArrayList<> ();
         try {

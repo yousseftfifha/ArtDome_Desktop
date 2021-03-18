@@ -65,7 +65,7 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("CartItem.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/CartView.fxml")));
         dialogStage.setTitle("ArtDome - Cart");
         dialogStage.setScene(scene);
         dialogStage.show();
@@ -105,7 +105,7 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("CheckOutScene.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
         dialogStage.show();
@@ -116,7 +116,7 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("OeuvreItem.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
         dialogStage.show();
@@ -127,9 +127,10 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("AddExposition.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddExposition.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
         dialogStage.show();
+
     }
 }
