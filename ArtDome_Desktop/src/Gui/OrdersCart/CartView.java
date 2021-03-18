@@ -154,10 +154,10 @@ public class CartView implements Initializable {
 
             VBox btn = new VBox ();
 
-            JFXButton ADD1_btn = new JFXButton ("+");
+            JFXButton ADD1_btn = new JFXButton ("+ Increase");
             ADD1_btn.setStyle ("-fx-background-color: none; -fx-text-fill: #03568b; -fx-border-color: #03568b;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
 
-            JFXButton Remove1_btn = new JFXButton ("-");
+            JFXButton Remove1_btn = new JFXButton ("- Decrease");
             Remove1_btn.setStyle ("-fx-background-color: none; -fx-background-color: none; -fx-text-fill: #03568b; -fx-border-color: #03568b;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
 
 
