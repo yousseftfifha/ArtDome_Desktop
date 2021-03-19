@@ -104,23 +104,23 @@ public class DashBoardOrders  implements Initializable {
         //Container.setPadding(new Insets (30,30,30,30));
         HBox titre = new HBox ();
         Label OrderID = new Label ("OrderID");
-        OrderID.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        OrderID.setStyle ("-fx-alignment : center;   -fx-font-size: 17; -fx-text-fill: #ffffff ");
         Label UserName = new Label ("UserName");
-        UserName.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        UserName.setStyle ("-fx-alignment : center;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
         Label DueAmount = new Label ("DueAmount");
-        DueAmount.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        DueAmount.setStyle ("-fx-alignment : center;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
         Label InnoNumber = new Label ("InnoNumber");
-        InnoNumber.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        InnoNumber.setStyle ("-fx-alignment : center;   -fx-font-size: 17; -fx-text-fill: #ffffff ");
         Label TotalQty = new Label ("TotalQty");
-        TotalQty.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        TotalQty.setStyle ("-fx-alignment : center;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
         Label OrderDate = new Label ("OrderDate");
-        OrderDate.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        OrderDate.setStyle ("-fx-alignment : center;   -fx-font-size: 17; -fx-text-fill: #ffffff ");
         Label Status = new Label ("Status");
-        Status.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        Status.setStyle ("-fx-alignment : center;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
 
 
         Label update = new Label ("Action");
-        update.setStyle ("-fx-alignment : center; -fx-font-weight:bold;  -fx-font-size: 17; -fx-text-fill: #ffffff ");
+        update.setStyle ("-fx-alignment : center;   -fx-font-size: 17; -fx-text-fill: #ffffff ");
 
         OrderID.setMinWidth (200);
         UserName.setMinWidth (200);
@@ -168,31 +168,31 @@ public class DashBoardOrders  implements Initializable {
 
             Label OrderIDl = new Label (String.valueOf (orders.getOrderID ()));
             OrderIDl.setMinWidth (200);
-            OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             Label UserNamel = new Label (orders.getUserName ());
             UserNamel.setMinWidth (200);
-            UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             Label DueAmountl = new Label (String.valueOf (orders.getDueAmount ()));
             DueAmountl.setMinWidth (200);
-            DueAmountl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            DueAmountl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label InnoNumberl = new Label (String.valueOf (orders.getInnoNumber ()));
             InnoNumberl.setMinWidth (200);
-            InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             Label TotalQtyl = new Label (String.valueOf (orders.getTotalQty ()));
             TotalQtyl.setMinWidth (200);
-            TotalQtyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            TotalQtyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             Label OrderDatel = new Label (String.valueOf (orders.getOrderDate ()));
             OrderDatel.setMinWidth (200);
-            OrderDatel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            OrderDatel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label Statusl = new Label (orders.getStatus ());
             Statusl.setMinWidth (200);
-            Statusl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            Statusl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             VBox btn = new VBox ();
 
