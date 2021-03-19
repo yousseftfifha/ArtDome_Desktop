@@ -136,7 +136,7 @@ public class OrdersController implements Initializable {
         titre.getChildren ().add (Status);
         titre.getChildren ().add (update);
 
-        titre.setStyle ("-fx-background-color : linear-gradient(to top right, #ff7f50, #6a5acd)");
+        titre.setStyle ("-fx-background-color : linear-gradient(to top right, #eecda3, #ef629f)");
 
         Container.getChildren ().add (titre);
         Label sep = new Label("   ");
@@ -164,37 +164,37 @@ public class OrdersController implements Initializable {
 
             Label OrderIDl = new Label (String.valueOf (orders.getOrderID ()));
             OrderIDl.setMinWidth (200);
-            OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             Label UserNamel = new Label (orders.getUserName ());
             UserNamel.setMinWidth (200);
-            UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label DueAmountl = new Label (String.valueOf (orders.getDueAmount ()));
             DueAmountl.setMinWidth (200);
-            DueAmountl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            DueAmountl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label InnoNumberl = new Label (String.valueOf (orders.getInnoNumber ()));
             InnoNumberl.setMinWidth (200);
-            InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             Label TotalQtyl = new Label (String.valueOf (orders.getTotalQty ()));
             TotalQtyl.setMinWidth (200);
-            TotalQtyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            TotalQtyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-size: 17;");
 
             Label OrderDatel = new Label (String.valueOf (orders.getOrderDate ()));
             OrderDatel.setMinWidth (200);
-            OrderDatel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            OrderDatel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-size: 17;");
 
             Label Statusl = new Label (orders.getStatus ());
             Statusl.setMinWidth (200);
-            Statusl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            Statusl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
             VBox btn = new VBox ();
 
             JFXButton showDetails = new JFXButton ("Show Details");
             showDetails.setMinWidth (200);
-            showDetails.setStyle ("-fx-background-color: none; -fx-text-fill: #03568b; -fx-border-color: #03568b;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
+            showDetails.setStyle ("-fx-background-color: none; -fx-text-fill: #2d91d4; -fx-border-color: #9f3685;-fx-border-width: 2; -fx-font-weight:bold;  -fx-font-size: 20");
 
             Label space = new Label("");
             space.setMinHeight(20);
@@ -286,27 +286,27 @@ public class OrdersController implements Initializable {
 
                         Label OrderIDl = new Label (String.valueOf (orders.getOrderId ()));
                         OrderIDl.setMinWidth (100);
-                        OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+                        OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
                         Label UserNamel = new Label (orders.getUserName ());
                         UserNamel.setMinWidth (200);
-                        UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+                        UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-size: 17;");
 
                         Label InnoNumberl = new Label (String.valueOf (orders.getInnoNumber ()));
                         InnoNumberl.setMinWidth (150);
-                        InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+                        InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
                         Label Quantiyl = new Label (String.valueOf (orders.getQuantity ()));
                         Quantiyl.setMinWidth (100);
-                        Quantiyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+                        Quantiyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
                         Label OeuvreIDl = new Label (String.valueOf (orders.getOeuvreID ()));
                         OeuvreIDl.setMinWidth (100);
-                        OeuvreIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+                        OeuvreIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
                         Label Statusl = new Label (orders.getStatus ());
                         Statusl.setMinWidth (150);
-                        Statusl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+                        Statusl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
                         Hb.getChildren ().add (OrderIDl);
 
@@ -453,6 +453,27 @@ public class OrdersController implements Initializable {
     private void Click(ActionEvent actionEvent) throws Exception {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         List<Orders> ordersList1=ordersCRUD.Rechercherstatus (String.valueOf (status.getValue ()));
+        ShowOrders (ordersList1);
+    }
+
+    @FXML
+    private void sort(ActionEvent actionEvent) throws Exception {
+        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        List<Orders> ordersList1=ordersCRUD.sortbyorderdate ();
+        ShowOrders (ordersList1);
+    }
+
+    @FXML
+    private void sort1(ActionEvent actionEvent) throws Exception {
+        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        List<Orders> ordersList1=ordersCRUD.sortbyquantity ();
+        ShowOrders (ordersList1);
+    }
+
+    @FXML
+    private void sort2(ActionEvent actionEvent) throws Exception {
+        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        List<Orders> ordersList1=ordersCRUD.sortbyDueAmount ();
         ShowOrders (ordersList1);
     }
 }

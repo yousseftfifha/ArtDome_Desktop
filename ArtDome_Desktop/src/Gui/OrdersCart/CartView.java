@@ -140,19 +140,19 @@ public class CartView implements Initializable {
 
             Label CartIDL = new Label (cart.getCartId ());
             CartIDL.setPrefWidth (300);
-            CartIDL.setStyle (" -fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            CartIDL.setStyle (" -fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label OeuvreIDl = new Label (String.valueOf (cart.getOeuvreID ()));
             OeuvreIDl.setMinWidth (100);
-            OeuvreIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            OeuvreIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label QuantityL = new Label (String.valueOf (cart.getQuantity ()));
             QuantityL.setMinWidth (100);
-            QuantityL.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            QuantityL.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             Label NomOeuvreL = new Label (cart.getNomOeuvre ());
             NomOeuvreL.setMinWidth (200);
-            NomOeuvreL.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
+            NomOeuvreL.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;   -fx-font-size: 17;");
 
             VBox btn = new VBox ();
 
@@ -212,7 +212,20 @@ public class CartView implements Initializable {
                             tray.setMessage(message);
                             tray.setNotificationType(NotificationType.SUCCESS);
                             tray.showAndDismiss (Duration.millis (3200));
-
+                    if (cart.getQuantity ()==0){
+                        cartCRUD.DeletOeuvreCart (cart.getOeuvreID ());
+                        Node source = (Node) event.getSource ();
+                        dialogStage = (Stage) source.getScene ().getWindow ();
+                        dialogStage.close ();
+                        try {
+                            scene = new Scene (FXMLLoader.load (getClass ().getResource ("CartView.fxml")));
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
+                        dialogStage.setTitle ("ArtDome - Home");
+                        dialogStage.setScene (scene);
+                        dialogStage.show ();
+                    }
                     try {
                         ShowCart ();
                     } catch (Exception ex) {

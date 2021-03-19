@@ -456,4 +456,82 @@ public class OrdersCRUD {
         return list;
 
     }
+    public  List<Orders> sortbyorderdate ()
+    {
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select * from orders order by OrderDate desc";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getFloat (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getString (7),
+                        result.getInt (8)
+
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    public  List<Orders> sortbyDueAmount ()
+    {
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select * from orders order by DueAmount desc";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getFloat (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getString (7),
+                        result.getInt (8)
+
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
+    public  List<Orders> sortbyquantity ()
+    {
+        List<Orders> list =new ArrayList<>() ;
+        String req = "select * from orders order by TotalQty desc ";
+        try {
+            preparedStatement=connection.prepareStatement (req);
+            ResultSet result =preparedStatement.executeQuery() ;
+            while (result.next()){
+                list.add(new Orders (
+                        result.getInt(1),
+                        result.getString (2),
+                        result.getFloat (3),
+                        result.getInt (4),
+                        result.getInt (5),
+                        result.getString (6),
+                        result.getString (7),
+                        result.getInt (8)
+
+                ));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+
+    }
 }
