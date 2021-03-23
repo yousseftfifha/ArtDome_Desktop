@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="763.0" fitWidth="970.0" layoutY="-65.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/faza.jpg" />
+            <Image url="@../../GFX/faza.jpg" />
          </image>
       </ImageView>
       <PieChart fx:id="pie" layoutX="213.0" layoutY="116.0" />

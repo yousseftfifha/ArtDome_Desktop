@@ -39,6 +39,15 @@ public class User {
         this.numero = numero;
     }
 
+    public User(int id) {
+        this.id = id;
+    }
+
+    public User(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+
     public int getId() {
         return id;
     }

@@ -26,7 +26,7 @@ public class Cart {
         NomOeuvre = nomOeuvre;
     }
 
-    public Cart(String cartId, int oeuvreID, int quantity, String nomOeuvre) {
+    public Cart(String cartId, int oeuvreID, String nomOeuvre, int quantity) {
         CartId = cartId;
         OeuvreID = oeuvreID;
         Quantity = quantity;

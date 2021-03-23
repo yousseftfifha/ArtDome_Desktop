@@ -162,7 +162,7 @@
             </ImageView>
             <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="694.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/refresh.png" />
+                  <Image url="@../../GFX/refresh.png" />
                </image>
             </ImageView>
             <Button fx:id="ReservationButton" blendMode="DIFFERENCE" layoutX="45.0" layoutY="459.0" mnemonicParsing="false" onAction="#Reserver" prefHeight="26.0" prefWidth="134.0" text="Réservations" textAlignment="RIGHT">

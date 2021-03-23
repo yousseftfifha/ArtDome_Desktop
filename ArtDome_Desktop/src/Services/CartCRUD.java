@@ -71,7 +71,7 @@ public class CartCRUD {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                list.add(new Cart (resultSet.getString (1), resultSet.getInt (2), resultSet.getInt (3),resultSet.getString (4)));
+                list.add(new Cart (resultSet.getString (1), resultSet.getInt (2), resultSet.getString (3),resultSet.getInt (4)));
             }
 
         } catch (SQLException ex) {
@@ -227,7 +227,7 @@ public class CartCRUD {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                Cart cart=new Cart (resultSet.getString (1),resultSet.getInt (2),resultSet.getInt (3),resultSet.getString (4));
+                Cart cart=new Cart (resultSet.getString (1),resultSet.getInt (2),resultSet.getString (3),resultSet.getInt (4));
                 Oeuvre oeuvre=new Oeuvre (resultSet.getInt(5), resultSet.getString (6), resultSet.getInt (7));
                 list.put (cart,oeuvre);
             }
