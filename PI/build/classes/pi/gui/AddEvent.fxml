@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.gui.AddEventController">
+   <children>
+      <ImageView fitHeight="595.0" fitWidth="784.0">
+         <image>
+            <Image url="@../image/faza.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab834bbd" height="533.0" layoutX="43.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="699.0" />
+      <VBox layoutX="112.0" layoutY="60.0" prefHeight="200.0" prefWidth="170.0" spacing="15.0">
+         <children>
+            <Label text="Nom">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Thème">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Etat">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Date">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Nombre max de participants">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Code éspace">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Image">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Video">
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="297.0" layoutY="52.0" prefHeight="256.0" prefWidth="163.0" spacing="8.0">
+         <children>
+            <TextField fx:id="tfnom">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TextField>
+            <TextField fx:id="tftheme" prefHeight="25.0" prefWidth="154.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TextField>
+            <ComboBox fx:id="tfetat" prefHeight="25.0" prefWidth="166.0" visibleRowCount="2">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ComboBox>
+            <DatePicker fx:id="tfdate">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </DatePicker>
+            <Spinner fx:id="tfnbmax" editable="true" prefHeight="25.0" prefWidth="164.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Spinner>
+            <TextField fx:id="tfcodeespace">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#addimage" prefHeight="25.0" prefWidth="165.0" text="Feuilleter" />
+            <Button mnemonicParsing="false" onAction="#addvideo" prefHeight="25.0" prefWidth="169.0" text="Feuilleter" />
+         </children>
+      </VBox>
+      <TableView fx:id="tve" blendMode="MULTIPLY" layoutX="56.0" layoutY="330.0" onMouseClicked="#getfromtv" prefHeight="222.0" prefWidth="672.0">
+         <columns>
+            <TableColumn fx:id="colnom" prefWidth="66.0" text="Nom" />
+            <TableColumn fx:id="coltheme" prefWidth="69.0" text="Théme" />
+            <TableColumn fx:id="coletat" prefWidth="56.0" text="Etat" />
+            <TableColumn fx:id="coldate" prefWidth="77.0" text="Date" />
+            <TableColumn fx:id="colnbpart" prefWidth="142.0" text="Nombre de participants" />
+            <TableColumn fx:id="colnbmax" prefWidth="168.0" text="Nombre max de participants" />
+            <TableColumn fx:id="colcodeespace" prefWidth="116.0" text="Code éspace" />
+            <TableColumn fx:id="colimage" prefWidth="75.0" text="Image" />
+            <TableColumn fx:id="colvideo" prefWidth="71.0" text="Video" />
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <VBox layoutX="555.0" layoutY="75.0" prefHeight="200.0" prefWidth="117.0" spacing="30.0">
+         <children>
+            <Button fx:id="AddButton" blendMode="DIFFERENCE" mnemonicParsing="false" onAction="#AddEvent" prefHeight="29.0" prefWidth="122.0" text=" Ajouter" textAlignment="RIGHT" textFill="#949255">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <graphic>
+                  <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/add.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="UpdateButton" blendMode="DIFFERENCE" mnemonicParsing="false" onAction="#UpdateEvent" prefHeight="29.0" prefWidth="121.0" text=" Modifier" textAlignment="RIGHT" textFill="#949255">
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/refresh.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="DeleteButton" blendMode="DIFFERENCE" mnemonicParsing="false" onAction="#DeleteEvent" prefHeight="29.0" prefWidth="119.0" text=" Supprimer" textAlignment="RIGHT" textFill="#949255">
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView blendMode="MULTIPLY" fitHeight="19.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/delete.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ReservationButton" blendMode="DIFFERENCE" mnemonicParsing="false" onAction="#Reserver" prefHeight="25.0" prefWidth="140.0" text=" Réserver" textFill="#949255">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/reservation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+         </children>
+      </VBox>
+      <TextField fx:id="tfcodeee" layoutX="577.0" layoutY="42.0" prefWidth="149.0" visible="false" />
+      <TextField fx:id="tfimage" layoutX="63.0" layoutY="40.0" visible="false" />
+      <TextField fx:id="tfvideo" layoutX="82.0" layoutY="301.0" visible="false" />
+   </children>
+</AnchorPane>
