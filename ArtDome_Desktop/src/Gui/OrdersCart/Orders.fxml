@@ -208,7 +208,7 @@
          </image>
       </ImageView>
       <JFXButton layoutX="672.0" layoutY="176.0" onAction="#searchOrder" text="Search" />
-      <JFXTextField fx:id="search" layoutX="754.0" layoutY="176.0" />
+      <JFXTextField fx:id="search" layoutX="754.0" layoutY="176.0" onInputMethodTextChanged="#type" />
       <JFXComboBox fx:id="status" layoutX="938.0" layoutY="175.0" onAction="#Click" prefHeight="26.0" prefWidth="135.0" />
       <JFXButton layoutX="1115.0" layoutY="146.0" onAction="#sort" text="Sort by OrderDate" />
       <JFXButton layoutX="1115.0" layoutY="168.0" onAction="#sort1" text="Sort by Quantity" />

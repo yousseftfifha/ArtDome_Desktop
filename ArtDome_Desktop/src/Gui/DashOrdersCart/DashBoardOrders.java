@@ -506,9 +506,6 @@ public class DashBoardOrders  implements Initializable {
         Charts CC;
         try {
             CC = new Charts ("statistique commandes","statut commandes ");
-            CC.pack();
-            CC.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            CC.setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(DashBoardSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }

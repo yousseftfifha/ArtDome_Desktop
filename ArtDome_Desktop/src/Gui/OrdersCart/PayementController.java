@@ -59,8 +59,7 @@ public class PayementController implements Initializable {
     private TextField Card;
     @FXML
     private TextField CVC;
-    @FXML
-    private JFXDatePicker Date;
+
 
 
     /**

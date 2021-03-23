@@ -152,19 +152,19 @@ public class OrdersCRUD {
                 } catch (MessagingException e) {
                     e.printStackTrace ();
                 }
-                SMS sendtext=new SMS ();
-                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
-                HttpConfig httpConfig = HttpConfig.defaultConfig();
-                VonageClient client = new VonageClient .Builder()
-                        .apiKey("049842c0")
-                        .apiSecret("Ecc52Nxze8uDZvhQ")
-                        .httpConfig(httpConfig)
-                        .build();
-
-                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
-                        "ArtDome",
-                        "21620245989",
-                        message));
+//                SMS sendtext=new SMS ();
+//                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+//                HttpConfig httpConfig = HttpConfig.defaultConfig();
+//                VonageClient client = new VonageClient .Builder()
+//                        .apiKey("8f52a2c6")
+//                        .apiSecret("967AQN7qPzUl5BB6")
+//                        .httpConfig(httpConfig)
+//                        .build();
+//
+//                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
+//                        "ArtDome",
+//                        "21620245989",
+//                        message));
 
             }
         });

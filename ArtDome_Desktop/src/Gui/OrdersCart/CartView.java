@@ -182,14 +182,7 @@ public class CartView implements Initializable {
                     CartCRUD cartCRUD=new CartCRUD ();
                     List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
                     cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
-                    String title = "Cart ";
-                    String message = "you have updated the quantity of the product";
 
-                    TrayNotification tray = new TrayNotification();
-                    tray.setTitle(title);
-                    tray.setMessage(message);
-                    tray.setNotificationType(NotificationType.SUCCESS);
-                    tray.showAndDismiss (Duration.millis (3200));
 
                     try {
                         ShowCart ();
@@ -204,14 +197,6 @@ public class CartView implements Initializable {
                     CartCRUD cartCRUD=new CartCRUD ();
                     List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
                     cartCRUD.updateQuantity1(LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
-                    String title = "Cart ";
-                            String message = "you have updated the quantity of the product";
-
-                            TrayNotification tray = new TrayNotification();
-                            tray.setTitle(title);
-                            tray.setMessage(message);
-                            tray.setNotificationType(NotificationType.SUCCESS);
-                            tray.showAndDismiss (Duration.millis (3200));
                     if (cart.getQuantity ()==0){
                         cartCRUD.DeletOeuvreCart (cart.getOeuvreID ());
                         Node source = (Node) event.getSource ();

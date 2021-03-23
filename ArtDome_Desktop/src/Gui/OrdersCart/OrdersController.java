@@ -20,6 +20,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -90,9 +91,11 @@ public class OrdersController implements Initializable {
         scrollPane.setHbarPolicy (ScrollPane.ScrollBarPolicy.NEVER);
 
         AnchorPane.setTopAnchor (scrollPane, 0.);
+        AnchorPane.setRightAnchor(scrollPane, 0.0);
+        AnchorPane.setLeftAnchor(scrollPane, 0.0);
+        AnchorPane.setBottomAnchor(scrollPane, 0.0);
         Container.setMinWidth (1000);
         Container.setMinWidth (400);
-
         content.setRightAnchor (scrollPane, 0.);
         content.setBottomAnchor (scrollPane, 0.);
         content.setLeftAnchor (scrollPane, 0.);
@@ -475,5 +478,13 @@ public class OrdersController implements Initializable {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
         List<Orders> ordersList1=ordersCRUD.sortbyDueAmount ();
         ShowOrders (ordersList1);
+    }
+
+    @FXML
+    private void type(InputMethodEvent inputMethodEvent) throws Exception {
+        String recherche=search.getText ();
+        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        List<Orders> ordersList=ordersCRUD.Rechercher (Integer.parseInt (recherche));
+        ShowOrders (ordersList);
     }
 }

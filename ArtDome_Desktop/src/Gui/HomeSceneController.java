@@ -17,7 +17,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -41,6 +45,8 @@ public class HomeSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
         CartCRUD cartCRUD=new CartCRUD ();
         int i=cartCRUD.count ();
         CartNumber.setText (""+i);
@@ -68,6 +74,7 @@ public class HomeSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/CartView.fxml")));
         dialogStage.setTitle("ArtDome - Cart");
         dialogStage.setScene(scene);
+//        dialogStage.sizeToScene();
         dialogStage.show();
     }
 
@@ -90,8 +97,7 @@ public class HomeSceneController implements Initializable {
             int i=cartCRUD.count ();
             CartNumber.setText (""+i);
         String title = "Cart ";
-        String message = "Vous avez ajouter deux oeuvre: "+cart.getListOeuvre ().get (0).getNomOeuvre ()+" et "+cart.getListOeuvre ().get (1).getNomOeuvre ();
-
+        String message = "Vous avez ajouter tous les oeuvre: ";
         TrayNotification tray = new TrayNotification();
         tray.setTitle(title);
         tray.setMessage(message);
@@ -108,6 +114,7 @@ public class HomeSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+//        dialogStage.setFullScreen(true);
         dialogStage.show();
     }
 
