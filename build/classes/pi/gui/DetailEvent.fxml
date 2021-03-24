@@ -186,14 +186,14 @@
             </ImageView>
          </children>
       </Pane>
-      <VBox layoutX="293.0" layoutY="313.0" prefHeight="202.0" prefWidth="139.0" spacing="20.0">
+      <VBox layoutX="293.0" layoutY="313.0" prefHeight="202.0" prefWidth="149.0" spacing="20.0">
          <children>
             <Label text="Artiste" />
             <Label text="Thème" />
             <Label text="Etat" />
             <Label text="Date" />
             <Label text="Code éspace" />
-            <Label text="Nombre de place restant" />
+            <Label text="Nombre de places restantes" />
          </children>
       </VBox>
       <MediaView fx:id="video" fitHeight="200.0" fitWidth="300.0" layoutX="643.0" layoutY="378.0" preserveRatio="false" />
@@ -202,7 +202,7 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <VBox layoutX="458.0" layoutY="313.0" prefHeight="200.0" prefWidth="146.0" spacing="20.0">
+      <VBox layoutX="460.0" layoutY="313.0" prefHeight="200.0" prefWidth="146.0" spacing="20.0">
          <children>
             <Label fx:id="lbartiste" text="Label" />
             <Label fx:id="lbtheme" text="Label" />
@@ -214,7 +214,7 @@
       </VBox>
       <TextField fx:id="codeev" layoutX="27.0" layoutY="300.0" visible="false" />
       <ImageView fx:id="image" fitHeight="192.0" fitWidth="346.0" layoutX="619.0" layoutY="167.0" pickOnBounds="true" />
-      <JFXButton fx:id="tfreserver" layoutX="399.0" layoutY="551.0" onAction="#reserverE" text="Réserver">
+      <JFXButton fx:id="tfreserver" layoutX="480.0" layoutY="549.0" onAction="#reserverE" text="Réserver">
          <font>
             <Font size="13.0" />
          </font></JFXButton>

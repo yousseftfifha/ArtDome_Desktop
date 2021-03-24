@@ -56,6 +56,7 @@ import pi.services.EventMethods;
 import pi.services.ReservationMethods;
 import pi.tools.PDFreservation;
 import static pi.tools.Print.printNode;
+import pi.tools.QRcode;
 import pi.tools.SendMail;
 import pidev.entities.Client;
 import pidev.entities.Event;
@@ -200,6 +201,8 @@ public class AddReservationController implements Initializable {
         tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
         //tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndDismiss (Duration.millis (5200));
+        QRcode qrc=new QRcode();
+        qrc.QRcode();
             tfnomclient.clear();
             tfprenom.clear();
             tftelephone.clear();
