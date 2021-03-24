@@ -200,7 +200,7 @@
             </JFXButton>
          </children>
       </VBox>
-      <JFXButton fx:id="btnPDF" layoutX="885.0" layoutY="164.0" onAction="#GetPDF" prefHeight="33.0" prefWidth="96.0" ripplerFill="#bfadf8" text="   PDF" textFill="#5b5858">
+      <JFXButton fx:id="btnPDF" layoutX="840.0" layoutY="164.0" onAction="#GetPDF" prefHeight="33.0" prefWidth="96.0" ripplerFill="#bfadf8" text="   PDF" textFill="#5b5858">
          <font>
             <Font size="13.0" />
          </font>
@@ -279,5 +279,17 @@
             </Label>
          </children>
       </VBox>
+      <JFXButton fx:id="btnExcel" layoutX="935.0" layoutY="164.0" onAction="#GetExcel" prefHeight="33.0" prefWidth="96.0" ripplerFill="#bfadf8" text="   EXCEL" textFill="#5b5858">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/icons8_500px_64px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

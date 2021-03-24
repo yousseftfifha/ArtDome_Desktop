@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
@@ -35,7 +36,9 @@ import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
+import jxl.write.WriteException;
 import pi.services.ReservationMethods;
+import pi.tools.Excel;
 import pi.tools.PDFreservation;
 import pi.tools.SendMail;
 import pidev.entities.Client;
@@ -88,6 +91,8 @@ public class ReservationBackController implements Initializable {
     private TextField tfemail;
     @FXML
     private Spinner<Integer> tfnbplace;
+    @FXML
+    private JFXButton btnExcel;
 
     /**
      * Initializes the controller class.
@@ -204,6 +209,22 @@ public class ReservationBackController implements Initializable {
    
     }});
         emailExecutor.shutdown();}
+
+    @FXML
+    private void GetExcel(ActionEvent event) {
+                
+        try {
+            Excel ex=new Excel();
+            ex.Excel();
+        } catch (SQLException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (WriteException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (IOException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        }
+      
+    }
 
 
 
