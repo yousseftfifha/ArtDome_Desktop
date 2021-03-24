@@ -36,7 +36,7 @@ public class QRcode {
         ResultSet rs = st.executeQuery(query);
             
             while (rs.next()) {
-            	QRcode.generate_qr("Reservation n°"+rs.getInt("code_reservation"), "Reservation n "+rs.getInt("code_reservation")+" ,De "+rs.getInt("nb_place")+" place(s) " +"au nom du "+rs.getString("nom")+" "+ rs.getString("prenom"));
+            	QRcode.generate_qr("Reservation n°"+rs.getInt("code_reservation"), "Reservation n "+rs.getInt("code_reservation")+" ,De "+rs.getInt("nb_place")+" place(s) " +"au nom de "+rs.getString("nom")+" "+ rs.getString("prenom"));
             }
 		} catch (Exception e) {
 			// TODO: handle exception
