@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pidev/entities/Event.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/tools/MyConnection.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/ReservationBack.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/EventReservationController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/ListEventController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/EventReservation.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/style.css</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/PI.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/ChartController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/services/ReservationMethods.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/services/EventMethods.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/tools/PDFreservation.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/tools/Print.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/tools/SendMail.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/AddReservationController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pidev/entities/User.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pidev/entities/Reservation.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/ReservationBackController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/DetailEventController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pi/gui/AddEventController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/PI/src/pidev/entities/Client.java</file>
+        </group>
+    </open-files>
+</project-private>
