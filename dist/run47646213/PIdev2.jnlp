@@ -8,8 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PIdev2.jar" size="1191859" download="eager" />
-    <jar href="lib\TrayNotification-5393c3a54f.jar" size="42522" download="eager" />
+    <jar href="PIdev2.jar" size="1188609" download="eager" />
     <jar href="lib\apache-commons-net.jar" size="460010" download="eager" />
     <jar href="lib\commons-net-3.8.0.jar" size="307305" download="eager" />
     <jar href="lib\controlsfx-8.0.1.jar" size="296347" download="eager" />
@@ -17,10 +16,7 @@
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />
     <jar href="lib\jfoenix-8.0.2.jar" size="2442326" download="eager" />
     <jar href="lib\jfreechart-1.5.0.jar" size="1559088" download="eager" />
-    <jar href="lib\jxl.jar" size="725735" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
-    <jar href="lib\notification-4.4.6.jar" size="2462" download="eager" />
-    <jar href="lib\poi-4.0.1.jar" size="2718209" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PIdev2" >
     <param name="requiredFXVersion" value="8.0+"/>

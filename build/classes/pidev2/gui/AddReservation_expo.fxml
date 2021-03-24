@@ -215,7 +215,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="mail" blendMode="DIFFERENCE" layoutX="672.0" layoutY="438.0" mnemonicParsing="false" onAction="#mailing" prefHeight="26.0" prefWidth="167.0" text="Envoyer un mail ?">
+      <Button fx:id="mail" blendMode="DIFFERENCE" layoutX="678.0" layoutY="438.0" mnemonicParsing="false" onAction="#mailing" prefHeight="26.0" prefWidth="167.0" text="Envoyer un mail ?">
          <effect>
             <Glow level="0.19">
                <input>

@@ -9,6 +9,7 @@ import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -25,9 +26,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import jxl.write.WriteException;
 import pidev2.entities.User;
 import pidev2.entities.reservation_expo;
 import pidev2.services.ReservationEMethods;
+import pidev2.tools.Excel;
 import pidev2.tools.PDFreservation;
 
 /**
@@ -79,6 +82,8 @@ public class Reservation_expoBackController implements Initializable {
     private TextField code_client2;
     @FXML
     private Button refresh3;
+    @FXML
+    private Button excel;
 
     /**
      * Initializes the controller class.
@@ -191,6 +196,24 @@ public class Reservation_expoBackController implements Initializable {
         showReservationE();
         searchReservationBack.clear();
     }
+
+    @FXML
+    private void Excel(ActionEvent event) {
+        
+           
+        try {
+            Excel ex=new Excel();
+            ex.Excel();
+        } catch (SQLException ex1) {
+            Logger.getLogger(Reservation_expoBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (WriteException ex1) {
+            Logger.getLogger(Reservation_expoBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (IOException ex1) {
+            Logger.getLogger(Reservation_expoBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        }
+      
+    }  
+    
 
    
     

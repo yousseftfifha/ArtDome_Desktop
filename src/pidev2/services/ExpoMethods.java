@@ -145,7 +145,7 @@ public class ExpoMethods {
            rs= st.executeQuery(req);
            while(rs.next()){
                float p=((rs.getInt("nb_participant")*100)/rs.getInt("nb_max_participant"));
-               data.add(new PieChart.Data (rs.getString("nom_expo"),p));
+               data.add(new PieChart.Data (rs.getString("nom_expo")+ " "+ p + " %",p));
            }
 
         } catch (SQLException ex) {

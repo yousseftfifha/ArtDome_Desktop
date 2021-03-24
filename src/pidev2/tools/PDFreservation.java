@@ -6,6 +6,7 @@
 package pidev2.tools;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +32,7 @@ public class PDFreservation {
         ReservationEMethods rm = new ReservationEMethods ();
         List<reservation_expo> res=rm.getReservationEList();
         List<User> re=rm.getUserListe();
-        PdfWriter.getInstance(document, new FileOutputStream (new File ("Réservation.pdf")));
+        PdfWriter.getInstance(document, new FileOutputStream (new File ("C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo/Réservation.pdf")));
         document.open();
         PDFreservation pdf=new PDFreservation ();
         for (reservation_expo r:res) {
@@ -70,7 +71,7 @@ public class PDFreservation {
         ReservationEMethods rm = new ReservationEMethods ();
         List<reservation_expo> res=rm.getReservationEList();
         List<User> re=rm.getUserListe();
-        PdfWriter.getInstance(document, new FileOutputStream (new File ("Réservation.pdf")));
+        PdfWriter.getInstance(document, new FileOutputStream (new File ("C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo\\Réservation.pdf")));
         document.open();
         PDFreservation pdf=new PDFreservation ();
         for (reservation_expo r:res) {
@@ -100,5 +101,6 @@ public class PDFreservation {
 
         } }
         document.close ();
+        Desktop.getDesktop().open(new File("C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo\\Réservation.pdf"));
     }
 }

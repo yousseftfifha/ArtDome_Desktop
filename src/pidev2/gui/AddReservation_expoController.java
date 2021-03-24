@@ -5,12 +5,15 @@
  */
 package pidev2.gui;
 
+import com.github.plushaze.traynotification.notification.TrayNotification;
 import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.ObservableList;
@@ -28,7 +31,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.swing.JOptionPane;
 import pidev2.entities.User;
 import pidev2.entities.reservation_expo;
@@ -184,6 +189,7 @@ public class AddReservation_expoController implements Initializable {
          @FXML
     private void mailing(ActionEvent event) {
         mail();
+        
     }
        
        public void mail(){
@@ -194,19 +200,32 @@ public class AddReservation_expoController implements Initializable {
             int codeClient=Integer.valueOf(code_client.getText());
             int nbplace= nb_place.getValue();
              String mail = email.getText();
-                            String msg= "Bonjour Mme/Mr "+nom_client+" "+prenom_client+","
+                            String msg= "Bonjour Mme/Mr "+nom+" "+prenom+","
                     + "C'est un plaisir de vous accueillir lors de notre exposition."
-                    + "Vous avez bien réservé "+nb_place+ " place(s)."
+                    + "Vous avez bien réservé "+nbplace+ " place(s)."
                     + "Nous avons hâte de vous accueillir."
                     +"Bonne journée."
                     ;
             SendMail sm= new SendMail();
-        try {
-            sm.sendMail(mail, "Réservation exposition confirmée", msg);
-       } catch (MessagingException ex) {
-            Logger.getLogger(AddReservation_expoController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+             ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
+        emailExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    sm.sendMail (mail, "Réservation exposition confirmée", msg);
+                } catch (AddressException e) {
+                    e.printStackTrace ();
+                } catch (MessagingException e) {
+                    e.printStackTrace ();
+                }
+                }
+//        try {
+//            sm.sendMail(mail, "Réservation exposition confirmée", msg);
+//       } catch (MessagingException ex) {
+//            Logger.getLogger(AddReservation_expoController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
            
+       });
        }
        
        @FXML
@@ -237,7 +256,11 @@ public class AddReservation_expoController implements Initializable {
 //            Logger.getLogger(AddReservation_expoController.class.getName()).log(Level.SEVERE, null, ex);
 //        }
      showUser(Integer.parseInt(code_client.getText().trim()));
-     
+      TrayNotification tray = new TrayNotification();
+        tray.setTitle("Réservation ajoutée");
+        tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
+        //tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss (Duration.millis (5200));
      //mail();
             
     }
