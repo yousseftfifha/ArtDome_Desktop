@@ -244,6 +244,7 @@ public class EventMethods {
                float p=((rs.getInt("nb_participant")*100)/rs.getInt("nb_max_part"));
                data.add(new PieChart.Data (rs.getString("nom_event")+"  "+p+" %",p));
                
+               
            }
 
         } catch (SQLException ex) {

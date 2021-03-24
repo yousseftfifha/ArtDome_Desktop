@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PI.jar" size="921903" download="eager" />
+    <jar href="PI.jar" size="921977" download="eager" />
     <jar href="lib\TrayNotification-5393c3a54f.jar" size="42522" download="eager" />
     <jar href="lib\commons-net-3.8.0.jar" size="307305" download="eager" />
     <jar href="lib\controlsfx-8.0.1.jar" size="296347" download="eager" />
