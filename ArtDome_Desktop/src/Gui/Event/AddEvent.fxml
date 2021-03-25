@@ -62,9 +62,7 @@
                            <bumpInput>
                               <Shadow />
                            </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
+
                         </Lighting>
                      </effect>
                   </ImageView>
@@ -81,9 +79,7 @@
                            <bumpInput>
                               <Shadow />
                            </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
+
                         </Lighting>
                      </effect>
                   </ImageView>
@@ -100,9 +96,7 @@
                            <bumpInput>
                               <Shadow />
                            </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
+
                         </Lighting>
                      </effect>
                   </ImageView>

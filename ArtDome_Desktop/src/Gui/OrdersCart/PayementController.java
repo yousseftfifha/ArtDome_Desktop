@@ -12,6 +12,7 @@ import Services.OrdersCRUD;
 import Tools.MyConnection;
 import Tools.Payment;
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +21,13 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -95,9 +98,11 @@ public class PayementController implements Initializable {
             @Override
             public void run() {
                 Payment P=new Payment();
+
                 P.RetrieveCustomer ();
                 Integer Dueamount = Integer.parseInt(montant.getText());
                 P.payement (Dueamount);
+
                 try {
                     Desktop.getDesktop().browse(new URL("https://dashboard.stripe.com/test/customers/cus_J4vLHqM4VkGLnH?fbclid=IwAR0Qq32Mve6E-ETXw1HRGN8U35vckgJQz4-Sq11Ht5Xw2-Egv-ebZwNLq6Y").toURI());
                 } catch (IOException e) {
@@ -108,8 +113,6 @@ public class PayementController implements Initializable {
             }
         });
         emailExecutor.shutdown();
-
-
         Node source = (Node) event.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();

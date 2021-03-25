@@ -107,3 +107,32 @@
 /*.scroll-pane > .corner {*/
 /*    -fx-background-color: black;*/
 /*}*/
+.blog-btn{
+    -fx-background-image: url('../GFX/blogger.png');
+    -fx-background-color: linear-gradient(to top right, #ff7f50, #6a5acd);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-border-style: solid ,solid;
+    -fx-border : solid 21px #f0f;
+    -fx-border-color: #ffffff;
+}
+
+.blog-btn:hover{
+    -fx-background-image: url('../GFX/blogger.png');
+    -fx-background-color: #a93000;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-border-style: solid ,solid;
+    -fx-border : solid 21px #f0f;
+    -fx-border-color: #ffffff;
+}
+
+.blog-btn:focused{
+    -fx-background-image: url('../GFX/blogger.png');
+    -fx-background-color: #ED701B;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-border-style: solid ,solid;
+    -fx-border : solid 21px #f0f;
+    -fx-border-color: #ffffff;
+}
