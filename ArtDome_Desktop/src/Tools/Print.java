@@ -1,16 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Tools;
 
-import javafx.print.*;
+import java.lang.reflect.InvocationTargetException;
+import javafx.print.PageLayout;
+import javafx.print.PageOrientation;
+import javafx.print.Paper;
+import javafx.print.Printer;
+import javafx.print.PrinterAttributes;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.transform.Scale;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
- * @author tfifha youssef
+ *
+ * @author HP
  */
 public class Print {
-    public static void printNode(final Node node) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+      public static void printNode(final Node node) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         Printer printer = Printer.getDefaultPrinter();
         PageLayout pageLayout
                 = printer.createPageLayout(Paper.A3, PageOrientation.LANDSCAPE, Printer.MarginType.DEFAULT);
@@ -20,9 +30,9 @@ public class Print {
                 = pageLayout.getPrintableWidth() / node.getBoundsInParent().getWidth();
         double scaleY
                 = pageLayout.getPrintableHeight() / node.getBoundsInParent().getHeight();
-        double scaleZ
+         double scaleZ
                 = pageLayout.getPrintableWidth()+pageLayout.getPrintableHeight() / node.getBoundsInParent().getDepth();
-
+        
         Scale scale = new Scale(scaleX, scaleY, scaleZ);
         node.getTransforms().add(scale);
 

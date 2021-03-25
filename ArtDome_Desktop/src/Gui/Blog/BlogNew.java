@@ -1,10 +1,6 @@
 package Gui.Blog;
 
 import Entities.Blog;
-import Entities.Event;
-import Entities.User;
-import Services.CartCRUD;
-import Services.EventMethods;
 import Services.blogService;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,8 +18,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
 
 /**

@@ -5,7 +5,6 @@
  */
 package Services;
 
-//import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -90,7 +89,7 @@ public class EventMethods {
     
         public Event getEventDetail(int id){
          Event e = null;
-         String req = "SELECT e.code_event, e.nom_event, e.theme_event, e.etat, e.date, e.nb_participant, e.nb_max_part, e.image, e.video, e.code_espace, u.nom, u.prenom from event e JOIN user u ON e.code_artiste=u.id_user";
+         String req = "SELECT e.code_event, e.nom_event, e.theme_event, e.etat, e.date, e.nb_participant, e.nb_max_part, e.image, e.video, e.code_espace, u.nom, u.prenom from event e JOIN user u ON e.code_artiste=u.ID";
          
          try {
             st = cnx.createStatement();
@@ -242,7 +241,9 @@ public class EventMethods {
            rs= st.executeQuery(req);
            while(rs.next()){
                float p=((rs.getInt("nb_participant")*100)/rs.getInt("nb_max_part"));
-               data.add(new PieChart.Data (rs.getString("nom_event"),p));
+               data.add(new PieChart.Data (rs.getString("nom_event")+"  "+p+" %",p));
+               
+               
            }
 
         } catch (SQLException ex) {

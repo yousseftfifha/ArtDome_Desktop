@@ -27,5 +27,6 @@
     <orderEntry type="library" name="twilio-8.9.0-jar-with-dependencies" level="project" />
     <orderEntry type="library" name="commons-net-3.8.0" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.11" level="project" />
+    <orderEntry type="library" name="jxl" level="project" />
   </component>
 </module>

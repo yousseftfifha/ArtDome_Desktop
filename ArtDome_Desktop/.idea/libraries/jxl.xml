@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jxl">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../java/jar_files/GHADGOUD/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../java/jar_files/GHADGOUD/notification-4.4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../java/jar_files/GHADGOUD/poi-4.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../java/jar_files/GHADGOUD/TrayNotification-5393c3a54f.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../java/jar_files/GHADGOUD/zxing-1.7-javase.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../java/jar_files/GHADGOUD/zxing-core-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -186,7 +186,12 @@
             </JFXButton>
          </children>
       </VBox>
-      <PieChart fx:id="pie" layoutX="422.0" layoutY="182.0" prefHeight="388.0" prefWidth="482.0" />
+      <PieChart fx:id="pie" layoutX="428.0" layoutY="232.0" prefHeight="348.0" prefWidth="430.0" />
       <TextField fx:id="code" layoutX="252.0" layoutY="157.0" visible="false" />
+      <Label layoutX="547.0" layoutY="182.0" prefHeight="29.0" prefWidth="241.0" text="Reservations Chart" textFill="#b85d5d">
+         <font>
+            <Font name="Georgia" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

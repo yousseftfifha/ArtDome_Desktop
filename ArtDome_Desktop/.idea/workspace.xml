@@ -2,30 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
-      <change afterPath="$PROJECT_DIR$/src/Entities/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GFX/blogger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GFX/eye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Blog/AddBlog.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Blog/AddBlogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/blogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jxl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Event/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tools/Excel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tools/QRcode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArtDome_Desktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArtDome_Desktop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Facture.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Facture.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/AddBlog.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/Chart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/Chart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ChartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ChartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ReservationBack.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ReservationBack.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ReservationBackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ReservationBackController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/PayementController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/PayementController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/PayementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/PayementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/EventMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/EventMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDFreservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDFreservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/Print.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/Print.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/Chart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/Chart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ChartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/DetailEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/DetailEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/EventReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/EventReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ListEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ListEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ListEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ListEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ReservationBack.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ReservationBack.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ReservationBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ReservationBackController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/PayementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/PayementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EventMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EventMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ReservationMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ReservationMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/FTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/FTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/PDFreservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/PDFreservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Print.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/SendMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/SendMail.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +234,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/GFX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Tools" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -233,11 +251,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Tools" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Services" />
+      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\Event" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\GFX" />
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\Blog" />
-      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Entities" />
-      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Services" />
-      <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Tests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\esprit\3A\PiDev\Quality-Overflow\ArtDome_Desktop\src\Gui\Oeuvre" />
@@ -377,9 +395,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.FxTest" />
+        <item itemvalue="Application.DashFxTest" />
         <item itemvalue="Database Script.blog.sql" />
         <item itemvalue="Application.PI" />
-        <item itemvalue="Application.DashFxTest" />
         <item itemvalue="Application.Example" />
       </list>
     </recent_temporary>
@@ -456,7 +474,7 @@
       <workItem from="1616597329655" duration="664000" />
       <workItem from="1616610135907" duration="1687000" />
       <workItem from="1616617321985" duration="5413000" />
-      <workItem from="1616669527538" duration="5220000" />
+      <workItem from="1616669527538" duration="9934000" />
     </task>
     <servers />
   </component>

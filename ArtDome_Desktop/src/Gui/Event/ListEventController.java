@@ -5,11 +5,11 @@
  */
 package Gui.Event;
 
+import Services.EventMethods;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,14 +19,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import Services.EventMethods;
+
 import static Tools.Print.printNode;
 import Entities.Event;
 
@@ -67,6 +66,8 @@ public class ListEventController implements Initializable {
     private TextField tfRech;
     @FXML
     private JFXButton btnRech;
+    @FXML
+    private JFXButton refresh;
 
     /**
      * Initializes the controller class.
@@ -137,6 +138,11 @@ public class ListEventController implements Initializable {
 
         listev.setItems(eventl);
         
+    }
+
+    @FXML
+    private void refresh(ActionEvent event) {
+        showEventlist();
     }
 
 

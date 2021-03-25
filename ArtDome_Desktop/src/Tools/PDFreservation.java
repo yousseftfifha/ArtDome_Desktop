@@ -6,6 +6,7 @@
 package Tools;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,43 +23,6 @@ import Entities.Reservation;
  */
 public class PDFreservation {
   
-//    public void ReservationPDF() throws FileNotFoundException, DocumentException, MalformedURLException, IOException
-//    {
-//        Document document = new Document();
-//
-//        ReservationMethods rm = new ReservationMethods ();
-//        List<Reservation> res=rm.getReservationList();
-//        PdfWriter.getInstance(document, new FileOutputStream (new File ("Réservation.pdf")));
-//        document.open();
-//        PDFreservation pdf=new PDFreservation ();
-//        for (Reservation r:res) {
-//
-//            Paragraph reservation = new Paragraph ("Réservation n°"+ r.getCode_reservation());
-//            reservation.setAlignment (Element.ALIGN_CENTER);
-//            document.add (reservation);
-//            Paragraph code = new Paragraph ("Code : " + r.getCode_event());
-//            code.setAlignment (Element.ALIGN_LEFT);
-//            Paragraph nom = new Paragraph ("Nom : " + r.getC().getNom());
-//            nom.setAlignment (Element.ALIGN_LEFT);
-//            Paragraph prenom = new Paragraph ("Prenom : " + r.getC().getPrenom());
-//            prenom.setAlignment (Element.ALIGN_LEFT);
-//            Paragraph telephone = new Paragraph ("Télèphone : " + r.getC().getNumero());
-//            telephone.setAlignment (Element.ALIGN_LEFT);
-//            Paragraph  email = new Paragraph ("Email : " + r.getC().getEmail());
-//            email.setAlignment (Element.ALIGN_LEFT);
-//            Paragraph nbp = new Paragraph ("Nombre de place réservées : " + r.getNb_place());
-//            nbp.setAlignment (Element.ALIGN_LEFT);
-//            document.add (code);
-//            document.add (nom);
-//            document.add (prenom);
-//            document.add (telephone);
-//            document.add (email);
-//            document.add (nbp);
-//
-//
-//        }
-//        document.close ();
-//    }
     
      public void ReservationPDFback() throws FileNotFoundException, DocumentException, MalformedURLException, IOException
     {
@@ -66,6 +30,7 @@ public class PDFreservation {
 
         ReservationMethods rm = new ReservationMethods ();
         List<Reservation> res=rm.listeResC();
+        System.out.println (res);
         PdfWriter.getInstance(document, new FileOutputStream (new File ("Réservation.pdf")));
         document.open();
         PDFreservation pdf=new PDFreservation ();
@@ -96,5 +61,6 @@ public class PDFreservation {
 
         }
         document.close ();
+        Desktop.getDesktop().open(new File("Réservation.pdf"));
     }
 }

@@ -5,6 +5,7 @@
  */
 package Gui.Event;
 
+import Services.EventMethods;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +19,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.TextField;
-import Services.EventMethods;
 
 /**
  * FXML Controller class
@@ -54,6 +54,9 @@ public class ChartController implements Initializable {
         // TODO
        EventMethods e=new EventMethods();
        pie.setData(e.getData());
+       
+       
+       
         
     }  
 

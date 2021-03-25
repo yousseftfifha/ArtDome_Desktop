@@ -5,34 +5,23 @@
  */
 package Gui.Event;
 
+import Services.EventMethods;
+import Services.ReservationMethods;
+import com.github.plushaze.traynotification.notification.TrayNotification;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
+
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.print.PageLayout;
-import javafx.print.PageOrientation;
-import javafx.print.Paper;
-import javafx.print.Printer;
-import javafx.print.PrinterAttributes;
-import javafx.print.PrinterJob;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
@@ -41,23 +30,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Scale;
 import javafx.util.Duration;
-import javax.mail.MessagingException;
-import org.controlsfx.control.Notifications;
-import Services.EventMethods;
-import Services.ReservationMethods;
-import Tools.PDFreservation;
+
 import static Tools.Print.printNode;
-import Tools.SendMail;
-import Entities.Client;
-import Entities.Event;
+import Tools.QRcode;
 import Entities.Reservation;
-import Entities.User;
 
 /**
  * FXML Controller class
@@ -122,7 +101,9 @@ public class AddReservationController implements Initializable {
     private JFXButton refresh;
     /**
      * Initializes the controller class.
+     * 
      */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -188,13 +169,16 @@ public class AddReservationController implements Initializable {
             EventMethods em = new EventMethods();
             em.UpdatenbplaceEvent(nb_place, code_event);
             rm.AddReservation(r);
-                  Notifications.create()
-                  .title("Réservation")
-                  .text("Réservation ajoutée")
-                  .graphic(null)
-                  .hideAfter(Duration.seconds(5))
-                  .position(Pos.BOTTOM_RIGHT)
-                  .showConfirm();
+            showReservation();
+            
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle("Réservation ajoutée");
+        tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
+        //tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss (Duration.millis (5200));
+        
+        QRcode qrc=new QRcode();
+        qrc.QRcode();
             tfnomclient.clear();
             tfprenom.clear();
             tftelephone.clear();
