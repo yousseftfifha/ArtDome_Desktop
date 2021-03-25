@@ -150,8 +150,8 @@ public class AddEventController implements Initializable {
         
       ObservableList<String> list = tfetat.getItems();
       //Adding items to the combo box
-      list.add("Réel");
-      list.add("En ligne");
+      list.add("Physique");
+      list.add("Digital");
       
       ObservableList<String> listT = tftheme.getItems();
       //Adding items to the combo box

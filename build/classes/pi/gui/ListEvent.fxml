@@ -203,7 +203,7 @@
          </effect>
       </TableView>
       <TextField fx:id="tfcode" layoutX="311.0" layoutY="172.0" visible="false" />
-      <JFXButton fx:id="btnimp" layoutX="957.0" layoutY="160.0" onAction="#ImpEv" text="Imprimer" />
+      <JFXButton fx:id="btnimp" layoutX="899.0" layoutY="160.0" onAction="#ImpEv" text="Imprimer" />
       <TextField fx:id="tfRech" layoutX="525.0" layoutY="272.0" />
       <JFXButton fx:id="btnRech" layoutX="686.0" layoutY="268.0" onAction="#RechEvent" text="Rechercher">
          <graphic>
@@ -217,5 +217,6 @@
             <Font size="13.0" />
          </font>
       </JFXButton>
+      <JFXButton fx:id="refresh" layoutX="979.0" layoutY="160.0" onAction="#refresh" text="Refresh" />
    </children>
 </AnchorPane>

@@ -33,6 +33,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
@@ -182,6 +183,7 @@ public class ReservationBackController implements Initializable {
             String nom_client = tfnomclient.getText();
            String prenom_client = tfprenom.getText();
            int nb_place = tfnbplace.getValue();
+           if(event.getButton()== MouseButton.SECONDARY){
                         String msg= "Bonjour Mme/Mr "+nom_client+" "+prenom_client+","
                     + "C'est un plaisir de vous accueillir lors de notre événement."
                     + "Vous avez bien réservé "+nb_place+ " place(s)."
@@ -209,6 +211,7 @@ public class ReservationBackController implements Initializable {
    
     }});
         emailExecutor.shutdown();}
+    }
 
     @FXML
     private void GetExcel(ActionEvent event) {
@@ -225,6 +228,7 @@ public class ReservationBackController implements Initializable {
         }
       
     }
+
 
 
 

@@ -131,7 +131,7 @@ public class ReservationMethods {
      
      public ObservableList<Reservation> SearchReservation(int search ){
          ObservableList<Reservation> Reservationlist = FXCollections.observableArrayList();
-         String req ="select * from reservation WHERE code_reservation='"+search+"'";
+         String req ="select * from reservation WHERE code_reservation='"+search+"' or nb_place='"+search+"'";
          try {
            st = cnx.createStatement();
            rs= st.executeQuery(req);
@@ -168,9 +168,8 @@ public class ReservationMethods {
         }
         return Reservationlist;
      }
-     
-     
-      public ObservableList<Reservation> listeResC(){   
+          
+                public ObservableList<Reservation> listeResC(){   
      ObservableList<Reservation> infoclient = FXCollections.observableArrayList();
      String req ="Select r.code_reservation, r.nb_place, r.code_event, u.nom, u.prenom, u.email, u.numero FROM reservation r INNER JOIN user u ON r.code_client = u.id_user ORDER BY code_reservation DESC";
    try {
@@ -188,5 +187,7 @@ public class ReservationMethods {
         }             
     return infoclient;
  }
+     
+     
      
 }

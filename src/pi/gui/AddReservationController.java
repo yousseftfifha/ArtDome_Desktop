@@ -126,7 +126,9 @@ public class AddReservationController implements Initializable {
     private JFXButton refresh;
     /**
      * Initializes the controller class.
+     * 
      */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -192,15 +194,14 @@ public class AddReservationController implements Initializable {
             EventMethods em = new EventMethods();
             em.UpdatenbplaceEvent(nb_place, code_event);
             rm.AddReservation(r);
-//        String title = "Welcome "+u.get (0).getEmail ()+" to ArtDome ";
-//        String message = "ArtDome is a Desktop application that provides to artists the opportunity to" +
-//                "share their works and gain money";
-
+            showReservation();
+            
         TrayNotification tray = new TrayNotification();
         tray.setTitle("Réservation ajoutée");
         tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
         //tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndDismiss (Duration.millis (5200));
+        
         QRcode qrc=new QRcode();
         qrc.QRcode();
             tfnomclient.clear();

@@ -67,6 +67,8 @@ public class ListEventController implements Initializable {
     private TextField tfRech;
     @FXML
     private JFXButton btnRech;
+    @FXML
+    private JFXButton refresh;
 
     /**
      * Initializes the controller class.
@@ -137,6 +139,11 @@ public class ListEventController implements Initializable {
 
         listev.setItems(eventl);
         
+    }
+
+    @FXML
+    private void refresh(ActionEvent event) {
+        showEventlist();
     }
 
 
