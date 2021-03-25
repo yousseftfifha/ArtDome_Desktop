@@ -46,7 +46,7 @@ public class PIdev2 extends Application {
 //        primaryStage.show();
 
  try {
-            Parent root = FXMLLoader.load(getClass().getResource("Reservation_expoBack.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("AddReservation_expo.fxml"));
             Scene scene = new Scene(root);
             
             primaryStage.setTitle("ArtDome");

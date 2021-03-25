@@ -39,6 +39,7 @@ import pidev2.entities.User;
 import pidev2.entities.reservation_expo;
 import pidev2.services.ReservationEMethods;
 import static pidev2.tools.Print.printNode;
+import pidev2.tools.QRcode;
 import pidev2.tools.SendMail;
 
 /**
@@ -261,6 +262,9 @@ public class AddReservation_expoController implements Initializable {
         tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
         //tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndDismiss (Duration.millis (5200));
+        
+        QRcode qrc=new QRcode();
+        qrc.QRcode();
      //mail();
             
     }
