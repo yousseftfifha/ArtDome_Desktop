@@ -20,6 +20,16 @@ public class User {
     public User() {
     }
 
+    public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.datenaissance = datenaissance;
+        this.ville = ville;
+        this.email = email;
+        this.numero = numero;
+    }
+
     public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero, String image, String role) {
         this.id = id;
         this.nom = nom;

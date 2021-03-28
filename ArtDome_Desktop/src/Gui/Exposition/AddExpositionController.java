@@ -7,6 +7,7 @@ package Gui.Exposition;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.util.Date;
@@ -18,7 +19,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -30,7 +33,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import Entities.Exposition;
+import Entities.Oeuvre;
 import Services.ExpoMethods;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -85,7 +90,23 @@ public class AddExpositionController implements Initializable {
     private Button DeleteButton;
     @FXML
     private Button ReservationButton;
+    @FXML
+    private Button charts;
+    @FXML
+    private TextField searchExpo;
+    @FXML
+    private Button recherche;
+    @FXML
+    private TableView<Oeuvre> tvoeuvre;
+    @FXML
+    private TableColumn<Oeuvre, Integer> colcodeoeuvre;
+    @FXML
+    private TableColumn<Oeuvre, String> colnomoeuvre;
+    @FXML
+    private Button refresh;
 
+    Stage dialogStage = new Stage();
+    Scene scene;
     /**
      * Initializes the controller class.
      */
@@ -107,6 +128,9 @@ public class AddExpositionController implements Initializable {
       
     }  
     
+    
+    
+
        @FXML
     private void AddExpo(ActionEvent event) {
 //          int code = Integer.valueOf(code_expo.getText());
@@ -125,6 +149,8 @@ public class AddExpositionController implements Initializable {
             
             expoc.AddExpo(expo);
             showExpo();
+            
+
     }
     
     
@@ -145,6 +171,18 @@ public class AddExpositionController implements Initializable {
         tve.setItems(expolist);
     } 
       
+      
+       public void showOeuvre(int oeuvre){
+        ExpoMethods ex=new ExpoMethods();
+        ObservableList<Oeuvre> oeuvrelist = ex.getOeuvreList(oeuvre);
+        colcodeoeuvre.setCellValueFactory(new PropertyValueFactory<Oeuvre, Integer>("ID_Oeuvre"));
+        colnomoeuvre.setCellValueFactory(new PropertyValueFactory<Oeuvre, String>("NomOeuvre"));
+       
+        
+        
+        tvoeuvre.setItems(oeuvrelist);
+    }
+      
          @FXML
     private void getfromtv(MouseEvent event) {
         
@@ -158,6 +196,12 @@ public class AddExpositionController implements Initializable {
             nb_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_participant(), 5000));
             nb_max_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_max_participant(), 5000));
             code_oeuvre.setText(" "+ev.getCode_oeuvre());
+            
+            showOeuvre(Integer.parseInt(code_expo.getText().trim()));
+            
+          
+            
+            
     }
 
     
@@ -205,7 +249,111 @@ public class AddExpositionController implements Initializable {
         }
         
     }
-    
-    
-    
+
+    @FXML
+    private void charts(ActionEvent event) {
+        
+        try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("chartExposition.fxml"));
+            Parent root = loader.load();
+            ChartExpositionController c = loader.getController();
+            code_expo.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ChartExpositionController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void search(ActionEvent event) {
+        
+        String s=searchExpo.getText();
+        ExpoMethods em=new ExpoMethods();
+        ObservableList<Exposition> eventl = em.SearchExpo(s);
+        colcode.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_expo"));
+        colnom.setCellValueFactory(new PropertyValueFactory<Exposition, String>("nom_expo"));
+        coltheme.setCellValueFactory(new PropertyValueFactory<Exposition, String>("theme_expo"));
+        colespace.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_espace"));
+        colartiste.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_artiste"));
+        coldate.setCellValueFactory(new PropertyValueFactory<Exposition, Date>("date_expo"));
+        colnb.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("nb_participant"));
+        colnbmax.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("nb_max_participant"));
+        coloeuvre.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_oeuvre"));
+        tve.setItems(eventl);
+        
+        
+        
+    }
+
+    @FXML
+    private void refreshExpo(ActionEvent event) {
+        
+        showExpo();
+        searchExpo.clear();
+        
+    }
+    @FXML
+    private void handleOrder(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+//        dialogStage.setFullScreen(true);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void GoToOeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void goToExpos(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+
+    }
+
+    @FXML
+    private void gotoevent(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/ListEvent.fxml")));
+        dialogStage.setTitle("ArtDome - Event");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotoblog(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Blog/BlogShow.fxml")));
+        dialogStage.setTitle("ArtDome - Blog");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+
+
+
+
+
+
 }

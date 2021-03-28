@@ -13,10 +13,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import Entities.Exposition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
+import Entities.Exposition;
+import Entities.Oeuvre;
 import Tools.MyConnection;
 
 /**
@@ -56,6 +57,9 @@ public class ExpoMethods {
             
         }
         
+        
+
+        
     }
         public ObservableList<Exposition> getExpoList(){
         ObservableList<Exposition> expolist = FXCollections.observableArrayList();
@@ -73,6 +77,26 @@ public class ExpoMethods {
         }
         return expolist;
     }
+        
+        public ObservableList<Oeuvre> getOeuvreList(int code){
+        ObservableList<Oeuvre> oeuvrelist = FXCollections.observableArrayList();
+         String req = "SELECT * from exposition JOIN oeuvre on code_oeuvre=ID_Oeuvre where code_exposition='"+code+"'";
+        try {
+            st = cnx.createStatement();
+           rs= st.executeQuery(req);
+           while(rs.next()){
+               oeuvrelist.add(new Oeuvre(rs.getInt("ID_Oeuvre"), rs.getString("NomOeuvre") ));
+           }
+
+        } catch (SQLException ex) {
+           System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return oeuvrelist;
+    }
+     
+        
+        
         
         
         
@@ -112,5 +136,63 @@ public class ExpoMethods {
               Logger.getLogger(ExpoMethods.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
+             
+                   public ObservableList<PieChart.Data> getData(){
+        ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+         String req = "SELECT nom_expo, nb_participant, nb_max_participant from exposition ";
+        try {
+            st = cnx.createStatement();
+           rs= st.executeQuery(req);
+           while(rs.next()){
+               float p=((rs.getInt("nb_participant")*100)/rs.getInt("nb_max_participant"));
+               data.add(new PieChart.Data (rs.getString("nom_expo")+ " "+ p + " %",p));
+           }
+
+        } catch (SQLException ex) {
+           System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return data;
+    }
+                   
+                   
+                    public ObservableList<Exposition> SearchExpo(String search ){
+         ObservableList<Exposition> expolist = FXCollections.observableArrayList();
+         String req ="select * from exposition WHERE nom_expo='"+search+"' or theme_expo= '"+search+"'";
+         try {
+            st = cnx.createStatement();
+           rs= st.executeQuery(req);
+           while(rs.next()){
+               expolist.add(new Exposition (rs.getInt("code_expo"), rs.getString("nom_expo"), rs.getString("theme_expo"), rs.getInt("code_espace"), rs.getInt("code_artiste"), rs.getDate("date_expo"), rs.getInt("nb_participant"), rs.getInt("nb_max_participant"), rs.getInt("code_oeuvre") ));
+           }
+
+        } catch (SQLException ex) {
+           System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return expolist;
+     }
+           
+                    
+//                     public ObservableList<oeuvre> Searchoeuvre(String search ){
+//         ObservableList<Exposition> expolist = FXCollections.observableArrayList();
+//         String req ="select * from exposition WHERE nom_expo='"+search+"' or theme_expo= '"+search+"'";
+//         try {
+//            st = cnx.createStatement();
+//           rs= st.executeQuery(req);
+//           while(rs.next()){
+//               expolist.add(new Exposition (rs.getInt("code_expo"), rs.getString("nom_expo"), rs.getString("theme_expo"), rs.getInt("code_espace"), rs.getInt("code_artiste"), rs.getDate("date_expo"), rs.getInt("nb_participant"), rs.getInt("nb_max_participant"), rs.getInt("code_oeuvre") ));
+//           }
+//
+//        } catch (SQLException ex) {
+//           System.out.println("Probléme");
+//            System.out.println(ex.getMessage());
+//        }
+//        return expolist;
+//     }
+       
+                    
+                    
+                    
     
 }

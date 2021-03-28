@@ -26,6 +26,11 @@ public class Oeuvre {
     public Oeuvre() {
     }
 
+    public Oeuvre(int ID_Oeuvre, String nomOeuvre) {
+        this.ID_Oeuvre = ID_Oeuvre;
+        NomOeuvre = nomOeuvre;
+    }
+
     public Oeuvre(int ID_Oeuvre, String nomOeuvre, double prixOeuvre) {
         this.ID_Oeuvre = ID_Oeuvre;
         NomOeuvre = nomOeuvre;

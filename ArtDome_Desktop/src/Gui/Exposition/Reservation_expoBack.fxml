@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="585.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Exposition.Reservation_expoBackController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@../style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../GFX/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="682.0" layoutY="95.0" text="Since 2021" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="752.0" layoutY="31.0" text="Board" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="673.0" layoutY="31.0" text="Dash" textFill="#f01717">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fd746c;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="Navigation List" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton fx:id="OrdersB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotohome" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Users" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/icons8_Share_64px.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/projects.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/reliabilty.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/projections.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/icons8_Workflow_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="Forum" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Forum" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/agencies.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoorders" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <TextField fx:id="cod" layoutX="132.0" layoutY="64.0" visible="false" />
+      <Button fx:id="refresh3" layoutX="961.0" layoutY="206.0" mnemonicParsing="false" onAction="#refreshReserBack" prefHeight="26.0" prefWidth="30.0" text="." />
+      <Label layoutX="332.0" layoutY="399.0" prefHeight="18.0" prefWidth="106.0" text="code client :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="970.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../GFX/refresh.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="264.0" layoutY="160.0" mnemonicParsing="false" onAction="#backtoreservation" text="exposition" />
+      <Button layoutX="834.0" layoutY="207.0" mnemonicParsing="false" onAction="#backtoreservation" text="recherche" />
+      <Button layoutX="589.0" layoutY="173.0" mnemonicParsing="false" onAction="#pdf" text="PDF" />
+      <Button layoutX="530.0" layoutY="173.0" mnemonicParsing="false" onAction="#Excel" text="EXCEL" />
+      <TextField fx:id="code_client2" layoutX="445.0" layoutY="396.0" />
+      <TextField fx:id="searchReservationBack" layoutX="662.0" layoutY="207.0" />
+      <TableView fx:id="tveR1" layoutX="652.0" layoutY="281.0" onMouseClicked="#GetFromReservationBack" prefHeight="205.0" prefWidth="364.0">
+         <columns>
+            <TableColumn fx:id="colcode1" prefWidth="181.6000213623047" text="Code réservation" />
+            <TableColumn fx:id="colnombreplace" prefWidth="182.39996337890625" text="nombre de place" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tvUser2" layoutX="251.0" layoutY="544.0" prefHeight="92.0" prefWidth="781.0">
+         <columns>
+            <TableColumn fx:id="colcodeclient2" minWidth="0.0" prefWidth="0.0" text="code client" />
+            <TableColumn fx:id="colnomClient2" prefWidth="121.59995079040527" text="nom client" />
+            <TableColumn fx:id="colprenomClient2" prefWidth="140.00003051757812" text="prenom client" />
+            <TableColumn fx:id="coledatenaissance2" prefWidth="134.39996337890625" text="date de naissance" />
+            <TableColumn fx:id="colville2" prefWidth="80.79995727539062" text="ville" />
+            <TableColumn fx:id="colemail2" prefWidth="183.99993896484375" text="email" />
+            <TableColumn fx:id="coltelephone2" prefWidth="138.4000244140625" text="numero" />
+         </columns>
+
+      </TableView>
+   </children>
+</AnchorPane>

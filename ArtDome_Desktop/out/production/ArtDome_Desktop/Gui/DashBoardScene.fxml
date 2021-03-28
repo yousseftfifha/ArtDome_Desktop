@@ -120,7 +120,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Exposition" textFill="WHITE">
+                <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotooexpo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Exposition" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
                     </font>
