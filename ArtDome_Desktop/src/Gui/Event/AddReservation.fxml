@@ -9,7 +9,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
@@ -19,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="AnRes" prefHeight="595.0" prefWidth="771.0" style="-fx-background-color: #ffff;" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Event.AddReservationController">
+<AnchorPane id="AnchorPane" fx:id="AnRes" prefHeight="595.0" prefWidth="771.0" style="-fx-background-color: #ffff;" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Event.AddReservationController">
    <children>
       <TextField fx:id="tfcodeeereservation" layoutX="315.0" layoutY="42.0" />
       <VBox layoutX="595.0" layoutY="169.0" prefHeight="175.0" prefWidth="163.0" spacing="8.0">

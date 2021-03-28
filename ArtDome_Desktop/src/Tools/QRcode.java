@@ -44,7 +44,7 @@ public class QRcode {
 	}
 	public static void generate_qr(String image_name,String qrCodeData) {
         try {
-            String filePath = "C:/Users/HP/Documents/NetBeansProjects/Réservations/"+image_name+".png";
+            String filePath = image_name+".png";
             String charset = "UTF-8"; // or "ISO-8859-1"
             Map < EncodeHintType, ErrorCorrectionLevel > hintMap = new HashMap < EncodeHintType, ErrorCorrectionLevel > ();
             hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);

@@ -161,7 +161,8 @@ public class DetailEventController implements Initializable {
     private void EvList(ActionEvent event) {
             try {
             
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListEvent.fxml"));
+            FXMLLoader loader =
+                    new FXMLLoader(getClass().getResource("ListEvent.fxml"));
             Parent root = loader.load();
             ListEventController c = loader.getController();
             codeev.getScene().setRoot(root);

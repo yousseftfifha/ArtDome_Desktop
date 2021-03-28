@@ -18,7 +18,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -28,6 +30,7 @@ import javafx.scene.layout.AnchorPane;
 
 import static Tools.Print.printNode;
 import Entities.Event;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -35,7 +38,8 @@ import Entities.Event;
  * @author HP
  */
 public class ListEventController implements Initializable {
-
+    Stage dialogStage = new Stage();
+    Scene scene;
     @FXML
     private TableView<Event> listev;
     @FXML
@@ -89,9 +93,11 @@ public class ListEventController implements Initializable {
     }
 
     @FXML
-    private void evlist(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("DetailEvent.fxml"));
+    private void evlist(MouseEvent event) throws IOException {
+
+       try{
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("DetailEvent.fxml"));
             Parent root = loader.load();
             Event ev= listev.getSelectionModel().getSelectedItem();
             EventMethods em=new EventMethods();
@@ -110,11 +116,11 @@ public class ListEventController implements Initializable {
             apc.setImage(ev.getImage());
             apc.setVideo(ev.getVideo());
             tfcode.getScene().setRoot(root);
-            
+
         } catch (IOException ex) {
             Logger.getLogger(ListEventController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
 

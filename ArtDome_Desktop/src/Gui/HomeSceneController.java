@@ -146,7 +146,7 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/AddEvent.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/ListEvent.fxml")));
         dialogStage.setTitle("ArtDome - Event");
         dialogStage.setScene(scene);
         dialogStage.show();

@@ -37,6 +37,7 @@ import javafx.util.Duration;
 import static Tools.Print.printNode;
 import Tools.QRcode;
 import Entities.Reservation;
+import tray.notification.NotificationType;
 
 /**
  * FXML Controller class
@@ -170,13 +171,12 @@ public class AddReservationController implements Initializable {
             em.UpdatenbplaceEvent(nb_place, code_event);
             rm.AddReservation(r);
             showReservation();
-            
-        TrayNotification tray = new TrayNotification();
+
+        tray.notification.TrayNotification tray = new tray.notification.TrayNotification ();
         tray.setTitle("Réservation ajoutée");
         tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
-        //tray.setNotificationType(NotificationType.SUCCESS);
-        tray.showAndDismiss (Duration.millis (5200));
-        
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss (Duration.millis (3200));
         QRcode qrc=new QRcode();
         qrc.QRcode();
             tfnomclient.clear();
