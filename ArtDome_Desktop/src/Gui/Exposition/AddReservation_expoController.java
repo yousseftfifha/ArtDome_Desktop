@@ -163,7 +163,7 @@ public class AddReservation_expoController implements Initializable {
         ReservationEMethods ex=new ReservationEMethods();
         ObservableList<User> userlist = ex.getUserList(user);
         
-        colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("id_user"));
+        colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
         colnomClient.setCellValueFactory(new PropertyValueFactory<User, String>("nom"));
         colprenomClient.setCellValueFactory(new PropertyValueFactory<User, String>("prenom"));
         coledatenaissance.setCellValueFactory(new PropertyValueFactory<User, Date>("datenaissance"));

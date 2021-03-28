@@ -295,13 +295,13 @@
       <Button layoutX="277.0" layoutY="507.0" mnemonicParsing="false" onAction="#print" text="imprimer" />
       <Button layoutX="923.0" layoutY="507.0" mnemonicParsing="false" onAction="#mailing" text="Envoyer un mail?" />
       <TextField fx:id="searchReservation" layoutX="750.0" layoutY="201.0" />
-      <TableView fx:id="tveR" layoutX="738.0" layoutY="255.0" prefHeight="200.0" prefWidth="294.0">
+      <TableView fx:id="tveR" layoutX="738.0" layoutY="255.0" onMouseClicked="#getfromtv" prefHeight="200.0" prefWidth="294.0">
         <columns>
           <TableColumn fx:id="colcode" prefWidth="135.20001220703125" text="Code réservation" />
           <TableColumn fx:id="colnbPlace" minWidth="0.0" prefWidth="159.2000732421875" text="Nombre de place" />
         </columns>
       </TableView>
-      <TableView fx:id="tvUser" layoutX="261.0" layoutY="546.0" prefHeight="122.0" prefWidth="788.0">
+      <TableView fx:id="tvUser" layoutX="261.0" layoutY="546.0" onMouseClicked="#getfromtvUser" prefHeight="122.0" prefWidth="788.0">
         <columns>
            <TableColumn fx:id="colcodeclient2" minWidth="0.0" prefWidth="0.0" text="code client" />
            <TableColumn fx:id="colnomClient" prefWidth="158.39998626708984" text="nom client" />

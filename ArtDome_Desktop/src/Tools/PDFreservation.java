@@ -71,7 +71,7 @@ public class PDFreservation {
         ReservationEMethods rm = new ReservationEMethods ();
         List<reservation_expo> res=rm.getReservationEList();
         List<User> re=rm.getUserListe();
-        PdfWriter.getInstance(document, new FileOutputStream (new File ("C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo\\Réservation.pdf")));
+        PdfWriter.getInstance(document, new FileOutputStream (new File ("Réservation.pdf")));
         document.open();
         PDFreservation pdf=new PDFreservation ();
         for (reservation_expo r:res) {
@@ -101,6 +101,6 @@ public class PDFreservation {
 
         } }
         document.close ();
-        Desktop.getDesktop().open(new File("C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo\\Réservation.pdf"));
+        Desktop.getDesktop().open(new File("Réservation.pdf"));
     }
 }

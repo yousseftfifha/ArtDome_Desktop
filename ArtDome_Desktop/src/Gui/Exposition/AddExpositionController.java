@@ -175,9 +175,9 @@ public class AddExpositionController implements Initializable {
        public void showOeuvre(int oeuvre){
         ExpoMethods ex=new ExpoMethods();
         ObservableList<Oeuvre> oeuvrelist = ex.getOeuvreList(oeuvre);
-        colcodeoeuvre.setCellValueFactory(new PropertyValueFactory<Oeuvre, Integer>("ID_Oeuvre"));
+           System.out.println (oeuvrelist);
         colnomoeuvre.setCellValueFactory(new PropertyValueFactory<Oeuvre, String>("NomOeuvre"));
-       
+        colcodeoeuvre.setCellValueFactory (new PropertyValueFactory<Oeuvre,Integer> ("ID_Oeuvre"));
         
         
         tvoeuvre.setItems(oeuvrelist);

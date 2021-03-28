@@ -129,7 +129,6 @@ public class OeuvreItem implements Initializable {
             Label nomque = new Label (m.getNomOeuvre ());
             nomque.setPrefWidth (280);
             nomque.setStyle ("-fx-padding : 20 20 0 35;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
-
             URL l_url = new URL ("http://localhost:8080/artdome/" + m.getImageOeuvre ());
             BufferedImage imae = ImageIO.read (l_url);
             Image imge = SwingFXUtils.toFXImage (imae, null);

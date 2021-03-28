@@ -297,13 +297,14 @@
       </VBox>
       <Button layoutX="663.0" layoutY="699.0" mnemonicParsing="false" onAction="#charts" text="Statistiques des expositionston" />
       <Button layoutX="846.0" layoutY="371.0" mnemonicParsing="false" onAction="#search" text="recherche" />
-      <TextField fx:id="search" layoutX="277.0" layoutY="371.0" prefHeight="26.0" prefWidth="554.0" />
+      <TextField fx:id="searchExpo" layoutX="277.0" layoutY="371.0" prefHeight="26.0" prefWidth="554.0" />
       <TableView fx:id="tvoeuvre" layoutX="266.0" layoutY="590.0" prefHeight="146.0" prefWidth="308.0">
         <columns>
           <TableColumn fx:id="colnomoeuvre" prefWidth="307.20001220703125" text="nom oeuvre" />
+            <TableColumn fx:id="colcodeoeuvre" prefWidth="307.20001220703125" text="nom oeuvre" />
         </columns>
       </TableView>
-      <TableView fx:id="tve" layoutX="257.0" layoutY="411.0" prefHeight="178.0" prefWidth="811.0">
+      <TableView fx:id="tve" layoutX="257.0" layoutY="411.0" onMouseClicked="#getfromtv" prefHeight="178.0" prefWidth="811.0">
         <columns>
           <TableColumn fx:id="colcode" prefWidth="75.0" text="code expo" />
           <TableColumn fx:id="colnom" prefWidth="75.0" text="nom espo" />

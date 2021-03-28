@@ -126,7 +126,7 @@ public class ReservationEMethods {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               userlist.add(new User( rs.getInt("id_user"),rs.getString("nom"), rs.getString("prenom"), rs.getDate("datenaissance"), rs.getString("ville"), rs.getString("email"), rs.getInt("numero")));
+               userlist.add(new User( rs.getInt("ID"),rs.getString("nom"), rs.getString("prenom"), rs.getDate("datenaissance"), rs.getString("ville"), rs.getString("email"), rs.getInt("numero")));
            }
 
         } catch (SQLException ex) {

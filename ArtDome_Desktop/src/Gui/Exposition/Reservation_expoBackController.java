@@ -182,7 +182,7 @@ public class Reservation_expoBackController implements Initializable {
             ReservationEMethods em=new ReservationEMethods();
         ObservableList<User> eventl = em.getUserList(Integer.parseInt(code_client2.getText().trim()));
         
-          colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("id_user"));
+          colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
         colnomClient2.setCellValueFactory(new PropertyValueFactory<User, String>("nom"));
         colprenomClient2.setCellValueFactory(new PropertyValueFactory<User, String>("prenom"));
         coledatenaissance2.setCellValueFactory(new PropertyValueFactory<User, Date>("datenaissance"));
