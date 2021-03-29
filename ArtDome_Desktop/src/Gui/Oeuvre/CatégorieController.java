@@ -5,8 +5,7 @@
  */
 package Gui.Oeuvre;
 
-import Entities.Oeuvre;
-import Services.CatégorieCRUD;
+import Services.CatégorieServices;
 import Entities.catégorie;
 import java.io.IOException;
 //import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
@@ -14,7 +13,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.Instant;
 import java.time.ZoneId;
-import static java.util.Collections.list;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -30,7 +28,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
+
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -86,7 +84,7 @@ public class CatégorieController implements Initializable {
     private TextField tfnomcategorie;
     
     
-    CatégorieCRUD cc = new CatégorieCRUD();
+    CatégorieServices cc = new CatégorieServices ();
     @FXML
     private Button btnoeuv;
     @FXML
@@ -125,7 +123,7 @@ public class CatégorieController implements Initializable {
             String nomcategorie= tfnomcategorie.getText();
             Date dateajout= java.sql.Date.valueOf(dtcat.getValue());
            
-            CatégorieCRUD cc = new CatégorieCRUD();
+            CatégorieServices cc = new CatégorieServices ();
             catégorie C = new catégorie(type , description, nomcategorie,dateajout);
             cc.AddCategorie(C);
              List list=cc.readAll();
@@ -163,7 +161,7 @@ public class CatégorieController implements Initializable {
             String nomcategorie= tfnomcategorie.getText();
             Date dateajout= java.sql.Date.valueOf(dtcat.getValue());
             
-            CatégorieCRUD cc = new CatégorieCRUD();
+            CatégorieServices cc = new CatégorieServices ();
             catégorie C = new catégorie(idcategorie, type , description, nomcategorie,dateajout);
             cc.UpdateCategorie(C, idcategorie);
            
@@ -186,7 +184,7 @@ public class CatégorieController implements Initializable {
     private void DeleteCategorie(ActionEvent event) {
         int C = Integer.parseInt(tfidcategorie.getText().trim());
             System.out.println(C);
-           CatégorieCRUD cc = new CatégorieCRUD();
+           CatégorieServices cc = new CatégorieServices ();
             cc.Deletecategorie(C);
             List list=cc.readAll();
             ulist= FXCollections.observableArrayList(list);
@@ -221,7 +219,7 @@ public class CatégorieController implements Initializable {
     private void searchc(ActionEvent event) throws SQLException {
               String search= tfsearchc.getText();
         System.out.println(search);
-       CatégorieCRUD CC= new  CatégorieCRUD();
+       CatégorieServices CC= new CatégorieServices ();
         ObservableList<catégorie> list = CC.Searchc(search);
             ulist= FXCollections.observableArrayList(list);
            colidcategorie.setCellValueFactory(new PropertyValueFactory<>("ID_Cat"));

@@ -5,7 +5,6 @@
  */
 package Services;
 
-import Entities.Oeuvre;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -16,21 +15,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import Tools.MyConnection;
 import Entities.catégorie;
 import java.util.List;
 import java.util.ArrayList;
 
-public class CatégorieCRUD {
+public class CatégorieServices {
       private Connection cnx;
     private PreparedStatement ste;
     private ResultSet rs;
     private Statement st;
 
-    public CatégorieCRUD() {
+    public CatégorieServices() {
        
        cnx = MyConnection.getInstance().getConnection();
     }
@@ -47,7 +43,7 @@ public class CatégorieCRUD {
            }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;}
            
@@ -63,7 +59,7 @@ public class CatégorieCRUD {
            }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return name;}
 
@@ -117,7 +113,7 @@ String req ="UPDATE categorie set  Type=? , Description=? , NomCat=?, DateCat=? 
               System.out.println("yeeey");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);}
+              Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);}
           }
 
     public ObservableList<catégorie> Searchc(String search) {

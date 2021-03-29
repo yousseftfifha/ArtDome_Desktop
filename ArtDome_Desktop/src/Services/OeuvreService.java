@@ -26,13 +26,13 @@ import javafx.scene.chart.PieChart;
  *
  * @author user
  */
-public class OeuvreCRUD implements Ioeuvre {
+public class OeuvreService implements Ioeuvre {
       private Statement ste;
     private PreparedStatement pst;
     private ResultSet rs;
     private Connection cnx;
 
-    public OeuvreCRUD() {
+    public OeuvreService() {
          cnx = MyConnection.getInstance().getConnection();
     }
     
@@ -52,7 +52,7 @@ public class OeuvreCRUD implements Ioeuvre {
               pst.setString(8, o.getEmailArtiste());
               pst.executeUpdate();
           } catch (SQLException ex) {
-              Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);
           }
 
         
@@ -78,7 +78,7 @@ public class OeuvreCRUD implements Ioeuvre {
            }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -96,7 +96,7 @@ public class OeuvreCRUD implements Ioeuvre {
            }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -109,7 +109,7 @@ public class OeuvreCRUD implements Ioeuvre {
               System.out.println("yeeey");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(OeuvreCRUD.class.getName()).log(Level.SEVERE, null, ex);}
+              Logger.getLogger(OeuvreService.class.getName()).log(Level.SEVERE, null, ex);}
           }
         
         public void UpdateOeuvre(Oeuvre o,int ov)

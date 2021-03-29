@@ -5,7 +5,7 @@
  */
 package Gui.Event;
 
-import Services.EventMethods;
+import Services.EventService;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -52,7 +52,7 @@ public class ChartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-       EventMethods e=new EventMethods();
+       EventService e=new EventService ();
        pie.setData(e.getData());
        
        

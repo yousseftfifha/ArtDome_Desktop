@@ -28,5 +28,9 @@
     <orderEntry type="library" name="commons-net-3.8.0" level="project" />
     <orderEntry type="library" name="controlsfx-8.40.11" level="project" />
     <orderEntry type="library" name="jxl" level="project" />
+    <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
+    <orderEntry type="library" name="jfoenix-8.0.2" level="project" />
+    <orderEntry type="library" name="controlsfx-9.0.0" level="project" />
+    <orderEntry type="library" name="fontawesomefx-commons-9.1.2" level="project" />
   </component>
 </module>

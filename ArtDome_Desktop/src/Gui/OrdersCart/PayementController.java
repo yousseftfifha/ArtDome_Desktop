@@ -7,12 +7,10 @@ package Gui.OrdersCart;
 
 import Entities.Orders;
 import Entities.User;
-import Services.CartCRUD;
+import Services.CartServices;
 import Services.OrdersCRUD;
 import Tools.MyConnection;
 import Tools.Payment;
-import com.jfoenix.controls.JFXDatePicker;
-import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,13 +19,11 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -73,10 +69,10 @@ public class PayementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         MyConnection myConnection = MyConnection.getInstance ();
-        CartCRUD cartCRUD=new CartCRUD ();
+        CartServices cartServices =new CartServices ();
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
 
-        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        List<User> LoggedInUser= cartServices.readLoggedInUser ();
         List<Orders> LastOrder=ordersCRUD.readprice();
         usermail.setText (LoggedInUser.get (0).getEmail ());
         montant.setText (String.valueOf (((int) LastOrder.get (0).getDueAmount ())));

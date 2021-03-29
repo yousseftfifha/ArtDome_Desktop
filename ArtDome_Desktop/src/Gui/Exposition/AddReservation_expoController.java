@@ -5,6 +5,7 @@
  */
 package Gui.Exposition;
 
+import Tools.QRcodeE;
 import com.github.plushaze.traynotification.notification.TrayNotification;
 import com.itextpdf.text.DocumentException;
 import java.io.IOException;
@@ -267,8 +268,8 @@ public class AddReservation_expoController implements Initializable {
         //tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndDismiss (Duration.millis (5200));
         
-        QRcode qrc=new QRcode();
-        qrc.QRcode();
+        QRcodeE qrc=new QRcodeE ();
+        qrc.QRcodeE();
      //mail();
             
     }

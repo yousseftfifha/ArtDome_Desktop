@@ -7,7 +7,6 @@ package Gui.Exposition;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.DriverManager;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.util.Date;
@@ -34,7 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import Entities.Exposition;
 import Entities.Oeuvre;
-import Services.ExpoMethods;
+import Services.ExpoService;
 import javafx.stage.Stage;
 
 /**
@@ -144,7 +143,7 @@ public class AddExpositionController implements Initializable {
             int nbMaxP = nb_max_participant.getValue();
             int oeuvre = Integer.valueOf(code_oeuvre.getText());
             
-            ExpoMethods expoc = new ExpoMethods();
+            ExpoService expoc = new ExpoService ();
             Exposition expo = new Exposition(nom,theme,espace,artiste,date,nbP,nbMaxP,oeuvre);
             
             expoc.AddExpo(expo);
@@ -155,7 +154,7 @@ public class AddExpositionController implements Initializable {
     
     
       public void showExpo(){
-        ExpoMethods ex=new ExpoMethods();
+        ExpoService ex=new ExpoService ();
         ObservableList<Exposition> expolist = ex.getExpoList();
         colcode.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_expo"));
         colnom.setCellValueFactory(new PropertyValueFactory<Exposition, String>("nom_expo"));
@@ -173,7 +172,7 @@ public class AddExpositionController implements Initializable {
       
       
        public void showOeuvre(int oeuvre){
-        ExpoMethods ex=new ExpoMethods();
+        ExpoService ex=new ExpoService ();
         ObservableList<Oeuvre> oeuvrelist = ex.getOeuvreList(oeuvre);
            System.out.println (oeuvrelist);
         colnomoeuvre.setCellValueFactory(new PropertyValueFactory<Oeuvre, String>("NomOeuvre"));
@@ -216,7 +215,7 @@ public class AddExpositionController implements Initializable {
             int nb_part = nb_participant.getValue();
             int nb_max_part = nb_max_participant.getValue();
             int oeuvre = Integer.parseInt(code_oeuvre.getText().trim());
-            ExpoMethods ex = new ExpoMethods();
+            ExpoService ex = new ExpoService ();
             Exposition e= new Exposition(nom, theme, espace, artiste, date, nb_part, nb_max_part, oeuvre);
             ex.UpdateExpo(e,codeee);
             showExpo();
@@ -227,7 +226,7 @@ public class AddExpositionController implements Initializable {
         
         int codeee = Integer.parseInt(code_expo.getText().trim());
 //        Integer.parseInt(line.toString())
-        ExpoMethods ex = new ExpoMethods();
+        ExpoService ex = new ExpoService ();
             ex.DeleteExpo(codeee);
         showExpo();
     }
@@ -269,7 +268,7 @@ public class AddExpositionController implements Initializable {
     private void search(ActionEvent event) {
         
         String s=searchExpo.getText();
-        ExpoMethods em=new ExpoMethods();
+        ExpoService em=new ExpoService ();
         ObservableList<Exposition> eventl = em.SearchExpo(s);
         colcode.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_expo"));
         colnom.setCellValueFactory(new PropertyValueFactory<Exposition, String>("nom_expo"));
@@ -310,7 +309,7 @@ public class AddExpositionController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/OeuvreItem.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
         dialogStage.show();
@@ -322,7 +321,7 @@ public class AddExpositionController implements Initializable {
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
-        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setTitle("ArtDome - Expo");
         dialogStage.setScene(scene);
         dialogStage.show();
 

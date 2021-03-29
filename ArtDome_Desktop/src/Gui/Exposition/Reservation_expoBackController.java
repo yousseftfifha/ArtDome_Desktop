@@ -5,6 +5,7 @@
  */
 package Gui.Exposition;
 
+import Tools.ExcelE;
 import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -161,7 +162,7 @@ public class Reservation_expoBackController implements Initializable {
         ReservationEMethods ex=new ReservationEMethods();
         ObservableList<User> userlist = ex.getUserList(user);
         
-        colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("id_user"));
+        colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
         colnomClient2.setCellValueFactory(new PropertyValueFactory<User, String>("nom"));
         colprenomClient2.setCellValueFactory(new PropertyValueFactory<User, String>("prenom"));
         coledatenaissance2.setCellValueFactory(new PropertyValueFactory<User, Date>("datenaissance"));
@@ -182,7 +183,7 @@ public class Reservation_expoBackController implements Initializable {
             ReservationEMethods em=new ReservationEMethods();
         ObservableList<User> eventl = em.getUserList(Integer.parseInt(code_client2.getText().trim()));
         
-          colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
+          colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("id"));
         colnomClient2.setCellValueFactory(new PropertyValueFactory<User, String>("nom"));
         colprenomClient2.setCellValueFactory(new PropertyValueFactory<User, String>("prenom"));
         coledatenaissance2.setCellValueFactory(new PropertyValueFactory<User, Date>("datenaissance"));
@@ -206,8 +207,8 @@ public class Reservation_expoBackController implements Initializable {
         
            
         try {
-            Excel ex=new Excel();
-            ex.Excel();
+            ExcelE ex=new ExcelE ();
+            ex.ExcelE();
         } catch (SQLException ex1) {
             Logger.getLogger(Reservation_expoBackController.class.getName()).log(Level.SEVERE, null, ex1);
         } catch (WriteException ex1) {

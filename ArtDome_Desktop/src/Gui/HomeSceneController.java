@@ -3,7 +3,7 @@ package Gui;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.User;
-import Services.CartCRUD;
+import Services.CartServices;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -17,11 +17,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -47,11 +43,11 @@ public class HomeSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        CartCRUD cartCRUD=new CartCRUD ();
-        int i=cartCRUD.count ();
+        CartServices cartServices =new CartServices ();
+        int i= cartServices.count ();
         CartNumber.setText (""+i);
 
-        List<User> u=cartCRUD.readLoggedInUser ();
+        List<User> u= cartServices.readLoggedInUser ();
         String title = "Welcome "+u.get (0).getEmail ()+" to ArtDome ";
         String message = "ArtDome is a Desktop application that provides to artists the opportunity to" +
                 "share their works and gain money";
@@ -81,20 +77,20 @@ public class HomeSceneController implements Initializable {
     @FXML
     private void AddToCart(ActionEvent actionEvent) {
 
-            CartCRUD cartCRUD=new CartCRUD ();
+            CartServices cartServices =new CartServices ();
 
 //            List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
 //            List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
-            List<Oeuvre> oeuvres=cartCRUD.readOeuvre ();
+            List<Oeuvre> oeuvres= cartServices.readOeuvre ();
 
-            List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+            List<User> LoggedInUser= cartServices.readLoggedInUser ();
             Cart cart=new Cart(LoggedInUser.get (0));
              cart.setOeuvre1 (oeuvres);
             for (Oeuvre oeuvre :cart.getListOeuvre ()){
-                cartCRUD.AddCart (cart,oeuvre);
+                cartServices.AddCart (cart,oeuvre);
             }
 
-            int i=cartCRUD.count ();
+            int i= cartServices.count ();
             CartNumber.setText (""+i);
         String title = "Cart ";
         String message = "Vous avez ajouter tous les oeuvre: ";
@@ -159,6 +155,18 @@ public class HomeSceneController implements Initializable {
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("Blog/BlogShow.fxml")));
         dialogStage.setTitle("ArtDome - Blog");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+
+    @FXML
+    private void gotoprofile(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("User/Profile.fxml")));
+        dialogStage.setTitle("ArtDome - User");
         dialogStage.setScene(scene);
         dialogStage.show();
     }

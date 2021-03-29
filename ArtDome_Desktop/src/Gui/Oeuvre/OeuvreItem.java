@@ -3,7 +3,7 @@ package Gui.Oeuvre;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.User;
-import Services.CartCRUD;
+import Services.CartServices;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.embed.swing.SwingFXUtils;
@@ -55,8 +55,8 @@ public class OeuvreItem implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        CartCRUD cartCRUD = new CartCRUD ();
-        int i = cartCRUD.count ();
+        CartServices cartServices = new CartServices ();
+        int i = cartServices.count ();
         CartNumber1.setText ("" + i);
         try {
 
@@ -74,7 +74,7 @@ public class OeuvreItem implements Initializable {
         }
 
         // get Elements to display
-        CartCRUD ser = new CartCRUD ();
+        CartServices ser = new CartServices ();
         List<Oeuvre> myList = new ArrayList<Oeuvre> ();
         myList = ser.readOeuvre ();
 
@@ -156,11 +156,11 @@ public class OeuvreItem implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     int i=0;
-                    CartCRUD cartCRUD = new CartCRUD ();
-                    List<User> LoggedInUser = cartCRUD.readLoggedInUser ();
+                    CartServices cartServices = new CartServices ();
+                    List<User> LoggedInUser = cartServices.readLoggedInUser ();
                     Cart cart = new Cart (LoggedInUser.get (0));
-                    List<Cart> cartList=cartCRUD.readAll ();
-                    cartCRUD.AddCart (cart, m);
+                    List<Cart> cartList= cartServices.readAll ();
+                    cartServices.AddCart (cart, m);
                     String title = "Cart ";
                     String message = "Vous avez ajouter une oeuvre: " + m.getNomOeuvre ();
 
@@ -209,7 +209,7 @@ public class OeuvreItem implements Initializable {
 //                        tray.showAndDismiss (Duration.millis (3200));
 //                    }
 
-                    int z = cartCRUD.count ();
+                    int z = cartServices.count ();
                     CartNumber1.setText ("" + z);
 
                     try {

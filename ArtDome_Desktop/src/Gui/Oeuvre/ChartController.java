@@ -17,7 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
-import Services.OeuvreCRUD;
+import Services.OeuvreService;
 
 /**
  * FXML Controller class
@@ -37,7 +37,7 @@ public class ChartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-               OeuvreCRUD o =new   OeuvreCRUD();
+               OeuvreService o =new OeuvreService ();
        pie.setData(o.getData());
         
     }    

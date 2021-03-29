@@ -1,13 +1,13 @@
 package Gui.OrdersCart;
 
-import Entities.Cart;
 import Entities.Orders;
 import Entities.PendingOrders;
 import Entities.User;
 import Gui.Oeuvre.OeuvreItem;
-import Services.CartCRUD;
+import Services.CartServices;
 import Services.OrdersCRUD;
 import Tools.Print;
+import Tools.SingeltonNavigation;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -21,7 +21,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -33,7 +32,7 @@ import tray.notification.TrayNotification;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -61,8 +60,8 @@ public class OrdersController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         try {
-            CartCRUD cartCRUD = new CartCRUD ();
-            List<User> LoggedInUser = cartCRUD.readLoggedInUser ();
+            CartServices cartServices = new CartServices ();
+            List<User> LoggedInUser = cartServices.readLoggedInUser ();
             OrdersCRUD ordersCRUD = new OrdersCRUD ();
             List<Orders> ordersList = ordersCRUD.selectOrderByUser (LoggedInUser.get (0).getEmail ());
             ShowOrders (ordersList);
@@ -487,4 +486,5 @@ public class OrdersController implements Initializable {
         List<Orders> ordersList=ordersCRUD.Rechercher (Integer.parseInt (recherche));
         ShowOrders (ordersList);
     }
+
 }

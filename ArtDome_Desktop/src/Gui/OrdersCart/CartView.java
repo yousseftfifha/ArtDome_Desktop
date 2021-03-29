@@ -3,7 +3,7 @@ package Gui.OrdersCart;
 import Entities.Cart;
 import Entities.User;
 import Gui.Oeuvre.OeuvreItem;
-import Services.CartCRUD;
+import Services.CartServices;
 import Services.OrdersCRUD;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
@@ -68,9 +68,9 @@ public class CartView implements Initializable {
         }
 
         // get Elements to display
-        CartCRUD cartCRUD = new CartCRUD ();
+        CartServices cartServices = new CartServices ();
         List<Cart> myList = new ArrayList<Cart> ();
-        myList = cartCRUD.readAll ();
+        myList = cartServices.readAll ();
 
         VBox Container = new VBox ();  // main container for all data specific to a materiel
 
@@ -179,9 +179,9 @@ public class CartView implements Initializable {
             ADD1_btn.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    CartCRUD cartCRUD=new CartCRUD ();
-                    List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
-                    cartCRUD.updateQuantity (LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
+                    CartServices cartServices =new CartServices ();
+                    List<User> LoggedInUser= cartServices.readLoggedInUser ();
+                    cartServices.updateQuantity (LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
 
 
                     try {
@@ -194,11 +194,11 @@ public class CartView implements Initializable {
             Remove1_btn.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    CartCRUD cartCRUD=new CartCRUD ();
-                    List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
-                    cartCRUD.updateQuantity1(LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
+                    CartServices cartServices =new CartServices ();
+                    List<User> LoggedInUser= cartServices.readLoggedInUser ();
+                    cartServices.updateQuantity1(LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
                     if (cart.getQuantity ()==0){
-                        cartCRUD.DeletOeuvreCart (cart.getOeuvreID ());
+                        cartServices.DeletOeuvreCart (cart.getOeuvreID ());
                         Node source = (Node) event.getSource ();
                         dialogStage = (Stage) source.getScene ().getWindow ();
                         dialogStage.close ();
@@ -219,7 +219,7 @@ public class CartView implements Initializable {
                 }
             });
             if (cart.getQuantity ()==0){
-                cartCRUD.DeletOeuvreCart (cart.getOeuvreID ());
+                cartServices.DeletOeuvreCart (cart.getOeuvreID ());
                 ShowCart ();
                 String title = "Cart ";
                 String message = "you have removed  the product from cart";
@@ -300,8 +300,8 @@ public class CartView implements Initializable {
     @FXML
     private void check(ActionEvent actionEvent) throws IOException, MessagingException, URISyntaxException, DocumentException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        CartCRUD cartCRUD=new CartCRUD ();
-        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        CartServices cartServices =new CartServices ();
+        List<User> LoggedInUser= cartServices.readLoggedInUser ();
         ordersCRUD.AddFromCart (LoggedInUser.get (0).getId ());
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();

@@ -11,16 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+
 import javax.swing.JOptionPane;
 import Tools.MyConnection;
 import Entities.Client;
@@ -31,14 +27,14 @@ import Entities.User;
  *
  * @author HP
  */
-public class EventMethods {
+public class EventService {
       private Connection cnx;
     private PreparedStatement ste;
     private ResultSet rs;
     private Statement st;
 
    
-    public EventMethods() {
+    public EventService() {
         cnx = MyConnection.getInstance().getConnection();
     }
     
@@ -154,7 +150,7 @@ public class EventMethods {
               System.out.println("Event supprimé");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(EventMethods.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
     
@@ -254,7 +250,7 @@ public class EventMethods {
     }
  public ObservableList<Client> getArtiste(int idArtiste){   
      ObservableList<Client> infoArtiste = FXCollections.observableArrayList();
-     String req ="Select nom, prenom, email, numero FROM user INNER JOIN client a ON user.ID = client.id_user WHERE client.id_user="+idArtiste+"";
+     String req ="Select nom, prenom, email, numero FROM user INNER JOIN client a ON user.ID = client.ID WHERE client.ID="+idArtiste+"";
    try {
            st = cnx.createStatement();
            rs= st.executeQuery(req);

@@ -6,7 +6,6 @@
 package Services;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,10 +14,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
-import javafx.util.Duration;
+
 import javax.swing.JOptionPane;
-import org.controlsfx.control.Notifications;
+
 import Tools.MyConnection;
 import Entities.Client;
 import Entities.Reservation;
@@ -108,7 +106,7 @@ public class ReservationMethods {
               System.out.println("Reservation supprimée");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(EventMethods.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
 //    

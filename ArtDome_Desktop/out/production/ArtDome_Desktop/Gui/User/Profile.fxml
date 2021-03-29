@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchor" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.User.ProfileController">
+    <children>
+        <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@../style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="628.0" layoutY="42.0" text="Dash" textFill="#f01717">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+                <Label layoutX="637.0" layoutY="95.0" text="Since 2021" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="709.0" layoutY="42.0" text="Board" textFill="WHITE">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+                <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../GFX/logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+            <children>
+                <Label prefHeight="30.0" prefWidth="252.0" text="Navigation List" textFill="#171717">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets left="40.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets top="60.0" />
+                    </VBox.margin>
+                </Label>
+                <JFXButton fx:id="home" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#HandleHomeBtn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/home.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profile">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/icons8_Share_64px.png" />
+                            </image>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/projects.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/reliabilty.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/projections.png" />
+                            </image>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/icons8_Workflow_64px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="Forum" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Forum">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/agencies.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+                <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleOrdBTn" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </JFXButton>
+            </children>
+        </VBox>
+        <ScrollPane layoutX="251.0" layoutY="150.0" prefHeight="469.0" prefWidth="1019.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="150.0">
+   
+   
+            <Pane layoutX="29.0" layoutY="22.0" prefHeight="526.0" prefWidth="995.0" style="-fx-background-color: #fff;">
+                <children>
+                    <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+                    <Label layoutX="123.0" layoutY="18.0" text="Profile" textFill="#3a1c9d">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="725.0" layoutY="33.0" textFill="#aeacac">
+                        <font>
+                            <Font name="System Bold" size="36.0" />
+                        </font>
+                    </Label>
+               <AnchorPane layoutX="199.0" layoutY="18.0" opacity="0.8" prefHeight="455.0" prefWidth="743.0" style="-fx-background-color: #ffffff;">
+                  <children>
+                     <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="20.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@loginicon/icons8_Encrypt_50px_1.png" />
+                        </image>
+                     </ImageView>
+                     <JFXPasswordField fx:id="Tmdp" focusColor="#2c3033" layoutX="89.0" layoutY="401.0" prefHeight="31.0" prefWidth="271.0" promptText="Mot de passe" unFocusColor="#2c3033" />
+                     <Label layoutX="86.0" layoutY="361.0" text="MOT DE PASSE" textFill="#2c3033">
+                        <font>
+                           <Font name="System Bold" size="19.0" />
+                        </font>
+                     </Label>
+                     <JFXTextField fx:id="Tprenom" focusColor="#d9d2d2c6" labelFloat="true" layoutX="22.0" layoutY="151.0" prefHeight="39.0" prefWidth="135.0" promptText="Prénom">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </JFXTextField>
+                     <JFXTextField fx:id="TNom" focusColor="#dbd3d3b5" labelFloat="true" layoutX="233.0" layoutY="150.0" prefHeight="42.0" prefWidth="135.0" promptText="Nom">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </JFXTextField>
+                     <JFXTextField fx:id="Tnum" focusColor="#d9d2d2bc" labelFloat="true" layoutX="234.0" layoutY="221.0" prefHeight="39.0" prefWidth="135.0" promptText="Numéro de Tél">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </JFXTextField>
+                     <JFXTextField fx:id="Temail" focusColor="#d9d2d2c6" labelFloat="true" layoutX="21.0" layoutY="291.0" prefHeight="39.0" prefWidth="135.0" promptText="Email">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </JFXTextField>
+                     <JFXTextField fx:id="Tville" focusColor="#d9d2d2c6" labelFloat="true" layoutX="234.0" layoutY="289.0" prefHeight="39.0" prefWidth="135.0" promptText="Ville">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </JFXTextField>
+                     <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="160.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../carRent.ajoutvehiculIcon/icons8_Important_Mail_50px.png" />
+                        </image>
+                     </ImageView>
+                     <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="371.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../carRent.ajoutvehiculIcon/icons8_Address_50px.png" />
+                        </image>
+                     </ImageView>
+                     <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="371.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../carRent.ajoutvehiculIcon/icons8_Phone_50px.png" />
+                        </image>
+                     </ImageView>
+                     <JFXButton fx:id="Bupdate" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="456.0" layoutY="94.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Update">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                        <graphic>
+                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../GFX/icons8_Share_64px.png" />
+                              </image>
+                              <viewport>
+                                 <Rectangle2D />
+                              </viewport>
+                           </ImageView>
+                        </graphic>
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
+                     </JFXButton>
+                     <DatePicker fx:id="date" layoutX="14.0" layoutY="234.0" />
+                  </children>
+               </AnchorPane>
+               <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="51.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@loginicon/icons8_Encrypt_50px_1.png" />
+                  </image>
+               </ImageView>
+   
+                </children>
+                <effect>
+                    <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+                </effect>
+            </Pane>
+
+        </ScrollPane>
+        <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+    </children>
+</AnchorPane>

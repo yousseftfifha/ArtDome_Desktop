@@ -212,6 +212,7 @@
         <JFXComboBox fx:id="status" layoutX="938.0" layoutY="175.0" onAction="#Click" prefHeight="26.0" prefWidth="135.0" />
       <JFXButton layoutX="1106.0" layoutY="176.0" onAction="#GenererPdf" text="Generer un PDF" />
       <JFXButton layoutX="454.0" layoutY="176.0" onAction="#stats" text="statistique" />
+      <JFXButton layoutX="1221.0" layoutY="176.0" onAction="#GenererExcel" text="Generer un Excel" />
     </children>
 
 </AnchorPane>

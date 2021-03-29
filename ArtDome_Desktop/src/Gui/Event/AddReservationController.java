@@ -5,9 +5,8 @@
  */
 package Gui.Event;
 
-import Services.EventMethods;
+import Services.EventService;
 import Services.ReservationMethods;
-import com.github.plushaze.traynotification.notification.TrayNotification;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -167,7 +166,7 @@ public class AddReservationController implements Initializable {
 //            User u=new User(nom_client, prenom_client, email, telephone);
             //Client c=new Client(u);
             Reservation r= new Reservation(nb_place,code_event);
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             em.UpdatenbplaceEvent(nb_place, code_event);
             rm.AddReservation(r);
             showReservation();
@@ -202,7 +201,7 @@ public class AddReservationController implements Initializable {
 //            Client c=new Client(u);
             Reservation r= new Reservation( nb_place);
             rm.UpdateReservation(r,codeee_r);
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             if((Integer.parseInt(tfnbpupdate.getText().trim())-nb_place)>0)
                 em.UpdatenbplaceEvent((Integer.parseInt(tfnbpupdate.getText().trim())-nb_place), codeee_r);
             else
@@ -225,7 +224,7 @@ public class AddReservationController implements Initializable {
 //        String email = tfemail.getText();
         ReservationMethods rm = new ReservationMethods();
         rm.DeleteReservation(codeee);
-        EventMethods em = new EventMethods();
+        EventService em = new EventService ();
         em.UpdatenbplaceEvent((-nb_place), codeee);
         showReservation();            
 

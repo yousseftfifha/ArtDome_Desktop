@@ -24,13 +24,13 @@ import Tools.MyConnection;
  *
  * @author Oumaima
  */
-public class ExpoMethods {
+public class ExpoService {
       private Connection cnx;
     private PreparedStatement ste;
     private ResultSet rs;
         private Statement st;
 
-    public ExpoMethods() {
+    public ExpoService() {
          cnx = MyConnection.getInstance().getConnection();
     }
     
@@ -133,7 +133,7 @@ public class ExpoMethods {
               System.out.println("exposition supprimée");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(ExpoMethods.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(ExpoService.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
              

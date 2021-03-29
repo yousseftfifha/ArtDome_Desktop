@@ -4,10 +4,7 @@ import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.User;
 import Tools.MyConnection;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,14 +16,14 @@ import java.util.logging.Logger;
 /**
  * @author tfifha youssef
  */
-public class CartCRUD {
+public class CartServices {
     private Statement statement;
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
 
-    public CartCRUD() {
+    public CartServices() {
         connection = MyConnection.getInstance ().getConnection ();
     }
     public void AddCart(Cart cart,Oeuvre oeuvre){
@@ -75,7 +72,7 @@ public class CartCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -91,7 +88,7 @@ public class CartCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -172,7 +169,7 @@ public class CartCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -193,7 +190,7 @@ public class CartCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -214,7 +211,7 @@ public class CartCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -233,7 +230,7 @@ public class CartCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -250,7 +247,7 @@ public class CartCRUD {
                 count++;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return count;
 
@@ -267,7 +264,7 @@ public class CartCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }

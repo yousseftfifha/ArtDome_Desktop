@@ -1,9 +1,17 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Entities;
-
-import java.util.Date;
+import java.io.File;
+import java.sql.Date;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
- * @author tfifha youssef
+ *
+ * @author asus
  */
 public class User {
     int id;
@@ -15,12 +23,12 @@ public class User {
     int numero;
     String image;
     String role;
-    String mdp;
+    String  mdp;
 
     public User() {
     }
 
-    public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero) {
+    public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero,String mdp) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -28,6 +36,17 @@ public class User {
         this.ville = ville;
         this.email = email;
         this.numero = numero;
+        this.mdp=mdp;
+    }
+
+    public User(String nom, String prenom, Date datenaissance, String ville, String email, int numero, String mdp) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.datenaissance = datenaissance;
+        this.ville = ville;
+        this.email = email;
+        this.numero = numero;
+        this.mdp = mdp;
     }
 
     public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero, String image, String role) {
@@ -42,6 +61,25 @@ public class User {
         this.role = role;
     }
 
+    public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.datenaissance = datenaissance;
+        this.ville = ville;
+        this.email = email;
+        this.numero = numero;
+    }
+
+    public User(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+
+    public User(int id) {
+        this.id = id;
+    }
+
     public User(String nom, String prenom, String email, int numero) {
         this.nom = nom;
         this.prenom = prenom;
@@ -49,14 +87,12 @@ public class User {
         this.numero = numero;
     }
 
-    public User(int id) {
-        this.id = id;
+    public User(String image) {
+        this.image = image;
     }
 
-    public User(String nom, String prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
-    }
+    
+    
 
     public int getId() {
         return id;
@@ -68,6 +104,14 @@ public class User {
 
     public String getNom() {
         return nom;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
     }
 
     public void setNom(String nom) {
@@ -119,7 +163,7 @@ public class User {
     }
 
     public void setImage(String image) {
-        this.image = image;
+       this.image=image;
     }
 
     public String getRole() {
@@ -130,15 +174,34 @@ public class User {
         this.role = role;
     }
 
-    public String getMdp() {
-        return mdp;
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + this.id;
+        return hash;
     }
 
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final User other = (User) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Users{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", datenaissance=" + datenaissance + ", ville=" + ville + ", email=" + email + ", numero=" + numero + ", image=" + image + ", role=" + role + '}';
+    }
+    
 }
-

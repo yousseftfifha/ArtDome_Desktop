@@ -20,7 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import Services.ExpoMethods;
+import Services.ExpoService;
 import javafx.stage.Stage;
 
 /**
@@ -45,7 +45,7 @@ public class ChartExpositionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-         ExpoMethods e=new ExpoMethods();
+         ExpoService e=new ExpoService ();
        piechart.setData(e.getData());
     }    
 

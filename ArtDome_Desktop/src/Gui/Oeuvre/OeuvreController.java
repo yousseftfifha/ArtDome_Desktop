@@ -10,7 +10,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.Instant;
 import java.time.ZoneId;
-import static java.util.Collections.list;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -27,8 +26,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import Services.OeuvreCRUD;
-import Entities.Oeuvre;
+import Services.OeuvreService;
 import Entities.catégorie;
 import Tools.SendEmail;
 import Tools.PDFOeuvre;
@@ -38,7 +36,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -53,7 +50,7 @@ import javafx.stage.FileChooser;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 import javax.swing.JOptionPane;
-import Services.CatégorieCRUD;
+import Services.CatégorieServices;
 import javafx.stage.Stage;
 
 /**
@@ -76,7 +73,7 @@ public class OeuvreController implements Initializable {
     /**
      * Initializes the controller class.
      */
-   OeuvreCRUD oc = new OeuvreCRUD();
+   OeuvreService oc = new OeuvreService ();
     ObservableList<Oeuvre> ulist= FXCollections.observableArrayList();
     @FXML
     private TableView<Oeuvre> table;
@@ -161,7 +158,7 @@ public class OeuvreController implements Initializable {
             
       ObservableList<String> Combo = cbcat.getItems();
       //Adding items to the combo box
-      CatégorieCRUD e=new CatégorieCRUD();
+      CatégorieServices e=new CatégorieServices ();
       Combo.addAll(e.readName());
 
     }  
@@ -181,7 +178,7 @@ public class OeuvreController implements Initializable {
             
            Oeuvre o = new Oeuvre(nomO,prixO,idA,date,ImageO,NomC,Email);
             
-            OeuvreCRUD oc = new OeuvreCRUD();
+            OeuvreService oc = new OeuvreService ();
             oc.AddOeuvrePst(o);
             List list=oc.readAll();
             ulist= FXCollections.observableArrayList(list);
@@ -244,7 +241,7 @@ public class OeuvreController implements Initializable {
             cbcat.setValue(ev.getNomCat());
            tfimage.setText(""+ev.getImageOeuvre());
             dpdateo.setValue(Instant.ofEpochMilli((ev.getDateOeuvre()).getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
-            OeuvreCRUD o=new OeuvreCRUD();
+            OeuvreService o=new OeuvreService ();
             catégorie c=o.readAllJ(ev.getID_Oeuvre());
              type.setText(c.getType());
             descripton.setText(c.getDescription());
@@ -265,7 +262,7 @@ public class OeuvreController implements Initializable {
                 
         int o = Integer.parseInt(tfidoeuvre.getText().trim());
 //        Integer.parseInt(line.toString())
-        OeuvreCRUD OC= new OeuvreCRUD();
+        OeuvreService OC= new OeuvreService ();
             OC.DeleteOeuvre(o);
       List list=oc.readAll();
             ulist= FXCollections.observableArrayList(list);
@@ -298,7 +295,7 @@ public class OeuvreController implements Initializable {
             String NomC = cbcat.getValue();
             String ImageO =tfimage.getText();
             Date date = java.sql.Date.valueOf(dpdateo.getValue());
-           OeuvreCRUD OC= new OeuvreCRUD();
+           OeuvreService OC= new OeuvreService ();
            Oeuvre ov = new Oeuvre(idO,nomO,PrixO,idA,date,Email,NomC,ImageO);
            OC.UpdateOeuvre(ov,idO);
            
@@ -341,7 +338,7 @@ public class OeuvreController implements Initializable {
     private void searcho(ActionEvent event) throws SQLException {
         String search= tfsearch.getText();
         System.out.println(search);
-        OeuvreCRUD OC= new OeuvreCRUD();
+        OeuvreService OC= new OeuvreService ();
         ObservableList<Oeuvre> list = OC.Searcho(search);
               col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
             col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
@@ -449,8 +446,8 @@ public class OeuvreController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/AddEvent.fxml")));
-        dialogStage.setTitle("ArtDome DashBoard - Orders");
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Event");
         dialogStage.setScene(scene);
         dialogStage.show();
     }
@@ -460,7 +457,7 @@ public class OeuvreController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/Oeuvre.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/Oeuvre.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
         dialogStage.setScene(scene);
         dialogStage.show();

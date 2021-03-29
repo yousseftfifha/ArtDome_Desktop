@@ -5,14 +5,6 @@ import Tools.MyConnection;
 import Tools.PDF;
 import Tools.SendEmail;
 import com.itextpdf.text.DocumentException;
-import com.teknikindustries.bulksms.SMS;
-import com.twilio.Twilio;
-import com.twilio.rest.api.v2010.account.Message;
-import com.vonage.client.HttpConfig;
-import com.vonage.client.VonageClient;
-import com.vonage.client.sms.SmsSubmissionResponse;
-import com.vonage.client.sms.SmsSubmissionResponseMessage;
-import com.vonage.client.sms.messages.TextMessage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -54,7 +46,7 @@ public class OrdersCRUD {
         int quantitytot=0;
         int oeuvreid=0;
         int qua=0;
-        CartCRUD cartCRUD = new CartCRUD ();
+        CartServices cartServices = new CartServices ();
 //        List<Cart> carts = cartCRUD.selectCartById (cart.getCartId ());
 ////        List<Oeuvre> oeuvres = cartCRUD.ReadAllOeuvrse();
 //
@@ -67,8 +59,8 @@ public class OrdersCRUD {
 //        }
         ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
 
-        Map<Cart,Oeuvre> cartOeuvreMap=cartCRUD.ReadAllOeuvrse ();
-        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        Map<Cart,Oeuvre> cartOeuvreMap= cartServices.ReadAllOeuvrse ();
+        List<User> LoggedInUser= cartServices.readLoggedInUser ();
         for(Cart i : cartOeuvreMap.keySet()){
             total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
             String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
@@ -86,7 +78,7 @@ public class OrdersCRUD {
                 preparedStatement.setInt (7,1);
 
                 preparedStatement.executeUpdate ();
-                cartCRUD.DeletCart (i.getCartId ());
+                cartServices.DeletCart (i.getCartId ());
 
 
             } catch (SQLException throwables) {
@@ -184,7 +176,7 @@ public class OrdersCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -200,7 +192,7 @@ public class OrdersCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -218,7 +210,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -246,7 +238,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -272,7 +264,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -356,7 +348,7 @@ public class OrdersCRUD {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -396,7 +388,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -424,7 +416,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -451,7 +443,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -477,7 +469,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -503,7 +495,7 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
@@ -529,9 +521,10 @@ public class OrdersCRUD {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CartCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
 
     }
+
 }

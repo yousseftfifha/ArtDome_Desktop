@@ -23,7 +23,7 @@ public class FxTest extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("../Gui/HomeScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Gui/User/Login.fxml"));
 
         Scene scene = new Scene(root);
         primaryStage.setTitle("ArtDome - Home");

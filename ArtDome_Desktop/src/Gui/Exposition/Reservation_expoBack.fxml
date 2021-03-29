@@ -200,7 +200,6 @@
             <Image url="@../../GFX/refresh.png" />
          </image>
       </ImageView>
-      <Button layoutX="264.0" layoutY="160.0" mnemonicParsing="false" onAction="#backtoreservation" text="exposition" />
       <Button layoutX="834.0" layoutY="207.0" mnemonicParsing="false" onAction="#backtoreservation" text="recherche" />
       <Button layoutX="589.0" layoutY="173.0" mnemonicParsing="false" onAction="#pdf" text="PDF" />
       <Button layoutX="530.0" layoutY="173.0" mnemonicParsing="false" onAction="#Excel" text="EXCEL" />

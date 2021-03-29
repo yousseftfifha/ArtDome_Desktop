@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 //import javax.swing.text.Document;
-import Services.OeuvreCRUD;
+import Services.OeuvreService;
 
 /**
  *
@@ -30,7 +30,7 @@ public class PDFOeuvre {
     {
         Document document = new Document();
 
-        OeuvreCRUD oc = new  OeuvreCRUD ();
+        OeuvreService oc = new OeuvreService ();
         List<Oeuvre> res=oc.readAll();
         PdfWriter.getInstance(document, new FileOutputStream (new File ("Oeuvre.pdf")));
         document.open();

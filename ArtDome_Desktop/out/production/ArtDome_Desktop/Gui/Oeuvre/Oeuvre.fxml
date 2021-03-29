@@ -205,14 +205,7 @@
             <TableColumn fx:id="coldate" prefWidth="173.0" text="Date Ajout" />
             <TableColumn fx:id="colnomcat" minWidth="0.0" prefWidth="0.0" text="NomCategorie" />
         </columns>
-         <effect>
-            <Lighting bumpInput="$null">
 
-            </Lighting>
-         </effect>
-         <cursor>
-            <Cursor fx:constant="NONE" />
-         </cursor>
       </TableView>
       <Button fx:id="btndelete" layoutX="543.0" layoutY="253.0" mnemonicParsing="false" onAction="#deleteO" prefHeight="31.0" prefWidth="115.0" text="DELETE" textFill="#7357e1" />
       <Button fx:id="btnupdate" layoutX="543.0" layoutY="210.0" mnemonicParsing="false" onAction="#UpdateO" prefHeight="31.0" prefWidth="115.0" text="UPDATE" textFill="#736de1" />

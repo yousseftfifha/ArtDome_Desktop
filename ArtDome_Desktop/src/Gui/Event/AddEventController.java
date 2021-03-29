@@ -6,7 +6,7 @@
 package Gui.Event;
 
 
-import Services.EventMethods;
+import Services.EventService;
 import com.jfoenix.controls.JFXButton;
 import java.io.File;
 import java.io.IOException;
@@ -160,7 +160,7 @@ public class AddEventController implements Initializable {
             int code_espace = Integer.parseInt(tfcodeespace.getText().trim());
             String image = tfimage.getText();
             String video = tfvideo.getText();
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             Event e= new Event(nom, theme, etat, date, nb_max_part, image, video, code_espace);
             //Event e = new Event(00,nom,theme,etat,date,0,nb_max_part,image,video,12,13);
             em.AddEvent(e);
@@ -177,7 +177,7 @@ public class AddEventController implements Initializable {
 
 //        ImageView iv1 = new ImageView();
 //        iv1.setImage(new Image("flower.png"));
-        EventMethods em=new EventMethods();
+        EventService em=new EventService ();
         ObservableList<Event> eventlist = em.getEventList();
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coltheme.setCellValueFactory(new PropertyValueFactory<Event, String>("theme_event"));
@@ -217,7 +217,7 @@ public class AddEventController implements Initializable {
             int code_espace = Integer.parseInt(tfcodeespace.getText().trim());
             String image = tfimage.getText();
             String video = tfvideo.getText();
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             Event e= new Event(nom, theme, etat, date, nb_max_part, image, video, code_espace);
             em.UpdateEvent(e,codeee);
             showEvent();
@@ -234,7 +234,7 @@ public class AddEventController implements Initializable {
         
         int codeee = Integer.parseInt(tfcodeee.getText().trim());
 //        Integer.parseInt(line.toString())
-        EventMethods em = new EventMethods();
+        EventService em = new EventService ();
             em.DeleteEvent(codeee);
         showEvent();
     }
@@ -314,7 +314,7 @@ public class AddEventController implements Initializable {
     @FXML
     private void SearchEvent(ActionEvent event) {
         String s=search.getText();
-        EventMethods em=new EventMethods();
+        EventService em=new EventService ();
         ObservableList<Event> eventl = em.SearchEvent(s);
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coltheme.setCellValueFactory(new PropertyValueFactory<Event, String>("theme_event"));

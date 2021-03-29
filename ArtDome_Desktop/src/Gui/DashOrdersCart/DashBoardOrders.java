@@ -2,14 +2,11 @@ package Gui.DashOrdersCart;
 
 import Entities.Orders;
 import Entities.PendingOrders;
-import Entities.User;
 import Gui.DashBoardSceneController;
+import Gui.Event.ReservationBackController;
 import Gui.Oeuvre.OeuvreItem;
-import Services.CartCRUD;
 import Services.OrdersCRUD;
-import Tools.Charts;
-import Tools.PDF;
-import Tools.Print;
+import Tools.*;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -28,16 +25,17 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jxl.write.WriteException;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -508,6 +506,20 @@ public class DashBoardOrders  implements Initializable {
             CC = new Charts ("statistique commandes","statut commandes ");
         } catch (Exception ex) {
             Logger.getLogger(DashBoardSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void GenererExcel(ActionEvent actionEvent) {
+        try {
+            ExcelOrders ex=new ExcelOrders();
+            ex.ExcelOrders ();
+        } catch (SQLException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (WriteException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (IOException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
         }
     }
 }

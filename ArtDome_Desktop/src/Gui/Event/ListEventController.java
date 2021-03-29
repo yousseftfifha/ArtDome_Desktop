@@ -5,7 +5,7 @@
  */
 package Gui.Event;
 
-import Services.EventMethods;
+import Services.EventService;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -18,7 +18,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -85,7 +84,7 @@ public class ListEventController implements Initializable {
     
     public void showEventlist(){
 
-        EventMethods em=new EventMethods();
+        EventService em=new EventService ();
         ObservableList<Event> eventlist = em.getEventList();
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coletat.setCellValueFactory(new PropertyValueFactory<Event, String>("etat"));
@@ -100,7 +99,7 @@ public class ListEventController implements Initializable {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("DetailEvent.fxml"));
             Parent root = loader.load();
             Event ev= listev.getSelectionModel().getSelectedItem();
-            EventMethods em=new EventMethods();
+            EventService em=new EventService ();
             //em.getEventDetail(ev.getU().getId());
             DetailEventController apc = loader.getController();
             apc.setCodeev(""+ev.getCode_event());
@@ -137,7 +136,7 @@ public class ListEventController implements Initializable {
     @FXML
     private void RechEvent(ActionEvent event) {
         String s=tfRech.getText();
-        EventMethods em=new EventMethods();
+        EventService em=new EventService ();
         ObservableList<Event> eventl = em.SearchEventF(s);
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coletat.setCellValueFactory(new PropertyValueFactory<Event, String>("etat"));

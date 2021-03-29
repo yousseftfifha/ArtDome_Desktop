@@ -88,4 +88,15 @@ public class DashBoardSceneController implements Initializable {
         dialogStage.setScene(scene);
         dialogStage.show();
     }
+
+    @FXML
+    private void gotouser(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("User/User.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }
