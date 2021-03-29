@@ -303,10 +303,10 @@ public class AddReservation_expoController implements Initializable {
     private void DeleteReservationE(ActionEvent event) {
                 int codeee = Integer.parseInt(codeeeReservation.getText().trim());
 //        Integer.parseInt(line.toString())
-            String nom= nom_client.getText();
-            String prenom = prenom_client.getText();
-            int tel =  Integer.parseInt(telephone.getText().trim());
-            String mail = email.getText();
+//            String nom= nom_client.getText();
+//            String prenom = prenom_client.getText();
+//            int tel =  Integer.parseInt(telephone.getText().trim());
+//            String mail = email.getText();
             int nbplace = nb_place.getValue();
         ReservationEMethods em = new ReservationEMethods();
             em.DeleteExpo(codeee);

@@ -34,7 +34,7 @@ public class QRcode {
  public void QRcode(){
     try {
         Connection cx = MyConnection.getInstance().getConnection();
-        String query = "Select r.code_reservationE, r.nb_place, u.nom, u.prenom, u.email, u.numero FROM reservation r INNER JOIN user u ON r.code_client = u.id_user ORDER BY code_reservationE DESC";
+        String query = "Select r.code_reservationE, r.nb_place, u.nom, u.prenom, u.email, u.numero FROM reservation_expo r INNER JOIN user u ON r.code_client = u.id_user ORDER BY code_reservationE DESC";
         Statement st = cx.createStatement();
         ResultSet rs = st.executeQuery(query);
             

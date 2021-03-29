@@ -204,10 +204,10 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <TableView fx:id="tvoeuvre" blendMode="DIFFERENCE" layoutX="67.0" layoutY="524.0" prefHeight="170.0" prefWidth="331.0">
+      <TableView fx:id="tvoeuvre" blendMode="DIFFERENCE" layoutX="67.0" layoutY="524.0" prefHeight="170.0" prefWidth="292.0">
         <columns>
           <TableColumn fx:id="colcodeoeuvre" minWidth="0.0" prefWidth="0.0" text="code oeuvre" />
-          <TableColumn fx:id="colnomoeuvre" prefWidth="330.3999969482422" text="nom oeuvre" />
+          <TableColumn fx:id="colnomoeuvre" prefWidth="291.1999969482422" text="nom oeuvre" />
         </columns>
          <effect>
             <Glow level="0.32">
