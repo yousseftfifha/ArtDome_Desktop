@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/Tests/FxTest.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>28</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/esprit/trying/JavaFXApplication6/src/Gui/CatégorieController.java</file>
-            <file>file:/D:/esprit/trying/JavaFXApplication6/src/Tests/FxTest.java</file>
-            <file>file:/D:/esprit/trying/JavaFXApplication6/src/Gui/OeuvreController.java</file>
+            <file>file:/D:/esprit/projet/artdome/src/Gui/Oeuvre/OeuvreItem.java</file>
+            <file>file:/D:/esprit/projet/artdome/src/Gui/User/UserController.java</file>
+            <file>file:/D:/esprit/projet/artdome/src/Tests/Exemple.java</file>
+            <file>file:/D:/esprit/projet/artdome/src/Tests/FxTest.java</file>
+            <file>file:/D:/esprit/projet/artdome/src/Gui/Event/ReservationBackController.java</file>
+            <file>file:/D:/esprit/projet/artdome/src/Gui/OrdersCart/CartView.java</file>
+            <file>file:/D:/esprit/projet/artdome/nbproject/jfx-impl.xml</file>
+            <file>file:/D:/esprit/projet/artdome/src/Gui/HomeSceneController.java</file>
         </group>
     </open-files>
 </project-private>

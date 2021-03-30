@@ -2,143 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Personne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashBoardSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherEmployee.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherEndroit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservationController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservationController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjouterEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjouterEndroit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjouterEndroitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjouterEndroitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/FXMLDocument.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipal.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/1-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/54657-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/65404-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/65405-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Account_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Add_Administrator_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Add_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Add_User_Group_Man_Man_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Admin_Settings_Male_50px_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Admin_Settings_Male_50px_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Agreement_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Alarm_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Alarm_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Delete_Document_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Edit_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Find_User_Male_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_ID_Verified_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_List_52px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Male_User_50px_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Management_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Menu_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Notification_50px_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Queue_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_Administrator_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_Administrator_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_User_Group_Man_Man_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_User_Group_Man_Man_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_User_Group_Man_Man_50px_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Search_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Shutdown_48px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/icons8_Traffic_Jam_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/images.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/MenuPrincipalIcon/img_211019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierEndroit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierEndroitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierEndroitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/Picture1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/afficherClient.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/hs_err_pid15904.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/loginicon/Image de fond_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/loginicon/icons8_Encrypt_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/loginicon/icons8_Error_48px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/loginicon/icons8_Male_User_50px_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Personne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/DashBoardScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashBoardScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEmployee.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEndroit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEndroitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEndroitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/FXMLDocument.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipal.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/1-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/54657-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/65404-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/65405-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Account_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Add_Administrator_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Add_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Add_User_Group_Man_Man_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Admin_Settings_Male_50px_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Admin_Settings_Male_50px_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Agreement_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Alarm_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Alarm_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Delete_Document_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Edit_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Find_User_Male_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_ID_Verified_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_List_52px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Male_User_50px_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Management_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Menu_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Notification_50px_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Queue_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_Administrator_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_Administrator_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_User_Group_Man_Man_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_User_Group_Man_Man_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Remove_User_Group_Man_Man_50px_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Search_Property_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Shutdown_48px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/icons8_Traffic_Jam_50px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/images.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/MenuPrincipalIcon/img_211019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/Picture1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/afficherClient.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/hs_err_pid15904.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/loginicon/Image de fond_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/loginicon/icons8_Encrypt_50px_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/loginicon/icons8_Error_48px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/loginicon/icons8_Male_User_50px_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ReservationMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ReservationMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -438,17 +302,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="blog.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="56a7db6a-fdc2-4b64-b740-f882c8773e43/schema/artdome/table/blog.sql" />
       <script-mode>FILE</script-mode>
@@ -587,7 +440,8 @@
       <workItem from="1617052484968" duration="946000" />
       <workItem from="1617108630066" duration="6186000" />
       <workItem from="1617123604709" duration="5351000" />
-      <workItem from="1617133940592" duration="304000" />
+      <workItem from="1617133940592" duration="465000" />
+      <workItem from="1617136912279" duration="16000" />
     </task>
     <servers />
   </component>

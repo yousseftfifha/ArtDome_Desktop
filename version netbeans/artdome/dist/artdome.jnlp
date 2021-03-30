@@ -8,8 +8,10 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="artdome.jar" size="1059563" download="eager" />
+    <jar href="artdome.jar" size="20715026" download="eager" />
     <jar href="lib\Bulk_SMS_Library.jar" size="3292" download="eager" />
+    <jar href="lib\GMapsFX-8.0.0.jar" size="3893601" download="eager" />
+    <jar href="lib\TrayNotification-5393c3a54f.jar" size="42522" download="eager" />
     <jar href="lib\TrayNotification.jar" size="41019" download="eager" />
     <jar href="lib\activation.jar" size="124332" download="eager" />
     <jar href="lib\client-4.0.1.jar" size="305386" download="eager" />
@@ -20,6 +22,9 @@
     <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
     <jar href="lib\commons-net-3.8.0.jar" size="307305" download="eager" />
     <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\fontawesomefx-commons-9.1.2.jar" size="24064" download="eager" />
+    <jar href="lib\fontawesomefx-controls-9.1.2.jar" size="4173" download="eager" />
     <jar href="lib\gradle-wrapper.jar" size="58910" download="eager" />
     <jar href="lib\gson-2.8.2.jar" size="232932" download="eager" />
     <jar href="lib\httpclient-4.5.1.jar" size="732765" download="eager" />
@@ -41,10 +46,18 @@
     <jar href="lib\jjwt-impl-0.11.2.jar" size="78853" download="eager" />
     <jar href="lib\jjwt-jackson-0.11.2.jar" size="8400" download="eager" />
     <jar href="lib\jsoup-1.10.2.jar" size="350645" download="eager" />
+    <jar href="lib\jxl.jar" size="725735" download="eager" />
+    <jar href="lib\logback-classic-1.2.1.jar" size="310442" download="eager" />
+    <jar href="lib\logback-core-1.2.1.jar" size="473113" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.21-bin.jar" size="827942" download="eager" />
+    <jar href="lib\notification-4.4.6.jar" size="2462" download="eager" />
+    <jar href="lib\poi-4.0.1.jar" size="2718209" download="eager" />
+    <jar href="lib\slf4j-api-1.7.23.jar" size="41105" download="eager" />
     <jar href="lib\slf4j-api-1.7.30.jar" size="41472" download="eager" />
     <jar href="lib\stripe-java-7.22.0.jar" size="495686" download="eager" />
     <jar href="lib\twilio-8.8.0.jar" size="4202400" download="eager" />
+    <jar href="lib\zxing-1.7-javase.jar" size="22002" download="eager" />
+    <jar href="lib\zxing-core-2.0.jar" size="432773" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="Tests.DashFxTest"  name="artdome" />
   <update check="always"/>

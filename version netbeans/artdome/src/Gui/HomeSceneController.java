@@ -3,7 +3,8 @@ package Gui;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.User;
-import Services.CartCRUD;
+import Entities.UserHolder;
+import Services.CartServices;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -12,16 +13,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -47,12 +45,11 @@ public class HomeSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        CartCRUD cartCRUD=new CartCRUD ();
-        int i=cartCRUD.count ();
+        CartServices cartServices =new CartServices ();
+        int i= cartServices.count ();
         CartNumber.setText (""+i);
-
-        List<User> u=cartCRUD.readLoggedInUser ();
-        String title = "Welcome "+u.get (0).getEmail ()+" to ArtDome ";
+        UserHolder holder = UserHolder.getInstance();
+        String title = "Welcome "+holder.getUser().getEmail ()+" to ArtDome ";
         String message = "ArtDome is a Desktop application that provides to artists the opportunity to" +
                 "share their works and gain money";
 
@@ -74,6 +71,7 @@ public class HomeSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/CartView.fxml")));
         dialogStage.setTitle("ArtDome - Cart");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
 //        dialogStage.sizeToScene();
         dialogStage.show();
     }
@@ -81,20 +79,19 @@ public class HomeSceneController implements Initializable {
     @FXML
     private void AddToCart(ActionEvent actionEvent) {
 
-            CartCRUD cartCRUD=new CartCRUD ();
+            CartServices cartServices =new CartServices ();
 
 //            List<Oeuvre> oeuvre1=cartCRUD.selectOeuvreById (1);
 //            List<Oeuvre> oeuvre2=cartCRUD.selectOeuvreById (2);
-            List<Oeuvre> oeuvres=cartCRUD.readOeuvre ();
-
-            List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
-            Cart cart=new Cart(LoggedInUser.get (0));
+            List<Oeuvre> oeuvres= cartServices.readOeuvre ();
+        UserHolder holder = UserHolder.getInstance();
+            Cart cart=new Cart(holder.getUser());
              cart.setOeuvre1 (oeuvres);
             for (Oeuvre oeuvre :cart.getListOeuvre ()){
-                cartCRUD.AddCart (cart,oeuvre);
+                cartServices.AddCart (cart,oeuvre);
             }
 
-            int i=cartCRUD.count ();
+            int i= cartServices.count ();
             CartNumber.setText (""+i);
         String title = "Cart ";
         String message = "Vous avez ajouter tous les oeuvre: ";
@@ -114,6 +111,7 @@ public class HomeSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
 //        dialogStage.setFullScreen(true);
         dialogStage.show();
     }
@@ -126,6 +124,7 @@ public class HomeSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -134,9 +133,10 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddExposition.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
 
     }
@@ -146,9 +146,47 @@ public class HomeSceneController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/AddEvent.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/ListEvent.fxml")));
         dialogStage.setTitle("ArtDome - Event");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotoblog(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Blog/BlogShow.fxml")));
+        dialogStage.setTitle("ArtDome - Blog");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+
+    @FXML
+    private void gotoprofile(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("User/Profile.fxml")));
+        dialogStage.setTitle("ArtDome - User");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void location(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Endroit/AfficherReservation.fxml")));
+        dialogStage.setTitle("ArtDome - Location");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 }

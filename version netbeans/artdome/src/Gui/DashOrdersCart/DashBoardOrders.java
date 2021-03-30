@@ -2,14 +2,11 @@ package Gui.DashOrdersCart;
 
 import Entities.Orders;
 import Entities.PendingOrders;
-import Entities.User;
 import Gui.DashBoardSceneController;
+import Gui.Event.ReservationBackController;
 import Gui.Oeuvre.OeuvreItem;
-import Services.CartCRUD;
 import Services.OrdersCRUD;
-import Tools.Charts;
-import Tools.PDF;
-import Tools.Print;
+import Tools.*;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -28,16 +25,19 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jxl.write.WriteException;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
+import javafx.scene.image.Image;
 
-import javax.swing.*;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -509,5 +509,67 @@ public class DashBoardOrders  implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(DashBoardSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void GenererExcel(ActionEvent actionEvent) {
+        try {
+            ExcelOrders ex=new ExcelOrders();
+            ex.ExcelOrders ();
+        } catch (SQLException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (WriteException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (IOException ex1) {
+            Logger.getLogger(ReservationBackController.class.getName()).log(Level.SEVERE, null, ex1);
+        }
+    }
+
+    @FXML
+    private void gotouser(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/User.fxml")));
+        dialogStage.setTitle("ArtDome - User");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotooeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/Oeuvre.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotoexpo(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/Reservation_expoBack.fxml")));
+        dialogStage.setTitle("ArtDome - Exposition");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotoevent(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
+        dialogStage.setTitle("ArtDome - Event");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
     }
 }

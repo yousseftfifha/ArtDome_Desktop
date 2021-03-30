@@ -5,35 +5,25 @@
  */
 package Gui.Event;
 
+import Services.EventService;
+import Services.ReservationMethods;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
+
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.print.PageLayout;
-import javafx.print.PageOrientation;
-import javafx.print.Paper;
-import javafx.print.Printer;
-import javafx.print.PrinterAttributes;
-import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -41,23 +31,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Scale;
+import javafx.stage.Stage;
 import javafx.util.Duration;
-import javax.mail.MessagingException;
-import org.controlsfx.control.Notifications;
-import Services.EventMethods;
-import Services.ReservationMethods;
-import Tools.PDFreservation;
+
 import static Tools.Print.printNode;
-import Tools.SendMail;
-import Entities.Client;
-import Entities.Event;
+import Tools.QRcode;
 import Entities.Reservation;
-import Entities.User;
+import tray.notification.NotificationType;
 
 /**
  * FXML Controller class
@@ -65,7 +48,8 @@ import Entities.User;
  * @author HP
  */
 public class AddReservationController implements Initializable {
-
+    Stage dialogStage = new Stage ();
+    Scene scene;
     @FXML
     private TextField tfnomclient;
     @FXML
@@ -122,7 +106,9 @@ public class AddReservationController implements Initializable {
     private JFXButton refresh;
     /**
      * Initializes the controller class.
+     * 
      */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -185,16 +171,18 @@ public class AddReservationController implements Initializable {
 //            User u=new User(nom_client, prenom_client, email, telephone);
             //Client c=new Client(u);
             Reservation r= new Reservation(nb_place,code_event);
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             em.UpdatenbplaceEvent(nb_place, code_event);
             rm.AddReservation(r);
-                  Notifications.create()
-                  .title("Réservation")
-                  .text("Réservation ajoutée")
-                  .graphic(null)
-                  .hideAfter(Duration.seconds(5))
-                  .position(Pos.BOTTOM_RIGHT)
-                  .showConfirm();
+            showReservation();
+
+        tray.notification.TrayNotification tray = new tray.notification.TrayNotification ();
+        tray.setTitle("Réservation ajoutée");
+        tray.setMessage("Une réservation a été ajoutée, veuillez la confirmer");
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss (Duration.millis (3200));
+        QRcode qrc=new QRcode();
+        qrc.QRcode();
             tfnomclient.clear();
             tfprenom.clear();
             tftelephone.clear();
@@ -218,7 +206,7 @@ public class AddReservationController implements Initializable {
 //            Client c=new Client(u);
             Reservation r= new Reservation( nb_place);
             rm.UpdateReservation(r,codeee_r);
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             if((Integer.parseInt(tfnbpupdate.getText().trim())-nb_place)>0)
                 em.UpdatenbplaceEvent((Integer.parseInt(tfnbpupdate.getText().trim())-nb_place), codeee_r);
             else
@@ -241,7 +229,7 @@ public class AddReservationController implements Initializable {
 //        String email = tfemail.getText();
         ReservationMethods rm = new ReservationMethods();
         rm.DeleteReservation(codeee);
-        EventMethods em = new EventMethods();
+        EventService em = new EventService ();
         em.UpdatenbplaceEvent((-nb_place), codeee);
         showReservation();            
 
@@ -291,7 +279,89 @@ public class AddReservationController implements Initializable {
             tftelephone.clear();
             tfemail.clear();
     }
+    @FXML
+    private void home(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
+        dialogStage.setTitle("ArtDome - Home");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
+    @FXML
+    private void profile(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/Profile.fxml")));
+        dialogStage.setTitle("ArtDome - Profile");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void oeuvre(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void event(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/ListEvent.fxml")));
+        dialogStage.setTitle("ArtDome - Event");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void expo(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/AddReservation_expo.fxml")));
+        dialogStage.setTitle("ArtDome - Exposition");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void blog(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Blog/BlogShow.fxml")));
+        dialogStage.setTitle("ArtDome - Blog");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void orders(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../OrdersCart/Orders.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
 
 }

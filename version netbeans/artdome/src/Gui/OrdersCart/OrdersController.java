@@ -1,13 +1,14 @@
 package Gui.OrdersCart;
 
-import Entities.Cart;
 import Entities.Orders;
 import Entities.PendingOrders;
 import Entities.User;
+import Entities.UserHolder;
 import Gui.Oeuvre.OeuvreItem;
-import Services.CartCRUD;
+import Services.CartServices;
 import Services.OrdersCRUD;
 import Tools.Print;
+import Tools.SingeltonNavigation;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -21,7 +22,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -33,7 +33,7 @@ import tray.notification.TrayNotification;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -61,10 +61,9 @@ public class OrdersController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         try {
-            CartCRUD cartCRUD = new CartCRUD ();
-            List<User> LoggedInUser = cartCRUD.readLoggedInUser ();
+            UserHolder holder = UserHolder.getInstance();
             OrdersCRUD ordersCRUD = new OrdersCRUD ();
-            List<Orders> ordersList = ordersCRUD.selectOrderByUser (LoggedInUser.get (0).getEmail ());
+            List<Orders> ordersList = ordersCRUD.selectOrderByUser (holder.getUser().getEmail ());
             ShowOrders (ordersList);
         } catch (Exception ex) {
             Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
@@ -487,4 +486,37 @@ public class OrdersController implements Initializable {
         List<Orders> ordersList=ordersCRUD.Rechercher (Integer.parseInt (recherche));
         ShowOrders (ordersList);
     }
+    @FXML
+    private void profile(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../User/Profile.fxml")));
+        dialogStage.setTitle ("ArtDome - Profile");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void event(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Event/ListEvent.fxml")));
+        dialogStage.setTitle ("ArtDome - Event");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void blog(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Blog/BlogShow.fxml")));
+        dialogStage.setTitle ("ArtDome - Blog");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
 }

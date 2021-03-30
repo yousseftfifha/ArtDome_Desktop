@@ -6,6 +6,7 @@
 package Gui.Event;
 
 
+import Services.EventService;
 import com.jfoenix.controls.JFXButton;
 import java.io.File;
 import java.io.IOException;
@@ -13,26 +14,22 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.Month;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.chart.PieChart;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -43,21 +40,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.renderer.category.BarRenderer;
-import org.jfree.data.general.PieDataset;
-import org.jfree.data.jdbc.JDBCCategoryDataset;
-import Services.EventMethods;
-import Tools.MyConnection;
 import Entities.Event;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -70,6 +56,8 @@ public class AddEventController implements Initializable {
      * Initializes the controller class.
      */    
     private Connection cnx;
+    Stage dialogStage = new Stage ();
+    Scene scene;
     private PreparedStatement ste;
     private ResultSet rs;
     private Statement st;
@@ -150,8 +138,8 @@ public class AddEventController implements Initializable {
         
       ObservableList<String> list = tfetat.getItems();
       //Adding items to the combo box
-      list.add("Réel");
-      list.add("En ligne");
+      list.add("Physique");
+      list.add("Digital");
       
       ObservableList<String> listT = tftheme.getItems();
       //Adding items to the combo box
@@ -178,7 +166,7 @@ public class AddEventController implements Initializable {
             int code_espace = Integer.parseInt(tfcodeespace.getText().trim());
             String image = tfimage.getText();
             String video = tfvideo.getText();
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             Event e= new Event(nom, theme, etat, date, nb_max_part, image, video, code_espace);
             //Event e = new Event(00,nom,theme,etat,date,0,nb_max_part,image,video,12,13);
             em.AddEvent(e);
@@ -195,7 +183,7 @@ public class AddEventController implements Initializable {
 
 //        ImageView iv1 = new ImageView();
 //        iv1.setImage(new Image("flower.png"));
-        EventMethods em=new EventMethods();
+        EventService em=new EventService ();
         ObservableList<Event> eventlist = em.getEventList();
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coltheme.setCellValueFactory(new PropertyValueFactory<Event, String>("theme_event"));
@@ -235,7 +223,7 @@ public class AddEventController implements Initializable {
             int code_espace = Integer.parseInt(tfcodeespace.getText().trim());
             String image = tfimage.getText();
             String video = tfvideo.getText();
-            EventMethods em = new EventMethods();
+            EventService em = new EventService ();
             Event e= new Event(nom, theme, etat, date, nb_max_part, image, video, code_espace);
             em.UpdateEvent(e,codeee);
             showEvent();
@@ -252,7 +240,7 @@ public class AddEventController implements Initializable {
         
         int codeee = Integer.parseInt(tfcodeee.getText().trim());
 //        Integer.parseInt(line.toString())
-        EventMethods em = new EventMethods();
+        EventService em = new EventService ();
             em.DeleteEvent(codeee);
         showEvent();
     }
@@ -332,7 +320,7 @@ public class AddEventController implements Initializable {
     @FXML
     private void SearchEvent(ActionEvent event) {
         String s=search.getText();
-        EventMethods em=new EventMethods();
+        EventService em=new EventService ();
         ObservableList<Event> eventl = em.SearchEvent(s);
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coltheme.setCellValueFactory(new PropertyValueFactory<Event, String>("theme_event"));
@@ -345,13 +333,88 @@ public class AddEventController implements Initializable {
         tve.setItems(eventl);
     }
 
-   
 
+    @FXML
+    private void home(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
+        dialogStage.setTitle("ArtDome - Home");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
+    @FXML
+    private void profile(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/Profile.fxml")));
+        dialogStage.setTitle("ArtDome - Profile");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
+    @FXML
+    private void oeuvre(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
+    @FXML
+    private void event(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/ListEvent.fxml")));
+        dialogStage.setTitle("ArtDome - Event");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
+    @FXML
+    private void expo(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/AddReservation_expo.fxml")));
+        dialogStage.setTitle("ArtDome - Exposition");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
-    
-    
+    @FXML
+    private void blog(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Blog/BlogShow.fxml")));
+        dialogStage.setTitle("ArtDome - Blog");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void orders(ActionEvent actionEvent)  throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../OrdersCart/Orders.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 }

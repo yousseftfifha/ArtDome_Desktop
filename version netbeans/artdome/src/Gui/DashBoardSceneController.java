@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
@@ -35,6 +37,7 @@ public class DashBoardSceneController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("DashOrdersCart/DashBoardOrders.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Orders");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -54,5 +57,65 @@ public class DashBoardSceneController implements Initializable {
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndDismiss (Duration.millis (3200));
+    }
+
+    @FXML
+    private void gotoevent(ActionEvent actionEvent) throws IOException {
+            Node source = (Node) actionEvent.getSource();
+            dialogStage = (Stage) source.getScene().getWindow();
+            dialogStage.close();
+            scene = new Scene (FXMLLoader.load(getClass().getResource("Event/AddEvent.fxml")));
+            dialogStage.setTitle("ArtDome DashBoard - Orders");
+            dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+            dialogStage.show();
+    }
+
+    @FXML
+    private void gotoOeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/Oeuvre.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotooexpo(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/Reservation_expoBack.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotouser(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("User/User.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void endroit(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Endroit/AfficherEndroit.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Endroit");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
     }
 }

@@ -18,7 +18,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -28,9 +30,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import Entities.Exposition;
-import Services.ExpoMethods;
+import Entities.Oeuvre;
+import Services.ExpoService;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -85,7 +90,23 @@ public class AddExpositionController implements Initializable {
     private Button DeleteButton;
     @FXML
     private Button ReservationButton;
+    @FXML
+    private Button charts;
+    @FXML
+    private TextField searchExpo;
+    @FXML
+    private Button recherche;
+    @FXML
+    private TableView<Oeuvre> tvoeuvre;
+    @FXML
+    private TableColumn<Oeuvre, Integer> colcodeoeuvre;
+    @FXML
+    private TableColumn<Oeuvre, String> colnomoeuvre;
+    @FXML
+    private Button refresh;
 
+    Stage dialogStage = new Stage();
+    Scene scene;
     /**
      * Initializes the controller class.
      */
@@ -107,6 +128,9 @@ public class AddExpositionController implements Initializable {
       
     }  
     
+    
+    
+
        @FXML
     private void AddExpo(ActionEvent event) {
 //          int code = Integer.valueOf(code_expo.getText());
@@ -120,16 +144,18 @@ public class AddExpositionController implements Initializable {
             int nbMaxP = nb_max_participant.getValue();
             int oeuvre = Integer.valueOf(code_oeuvre.getText());
             
-            ExpoMethods expoc = new ExpoMethods();
+            ExpoService expoc = new ExpoService ();
             Exposition expo = new Exposition(nom,theme,espace,artiste,date,nbP,nbMaxP,oeuvre);
             
             expoc.AddExpo(expo);
             showExpo();
+            
+
     }
     
     
       public void showExpo(){
-        ExpoMethods ex=new ExpoMethods();
+        ExpoService ex=new ExpoService ();
         ObservableList<Exposition> expolist = ex.getExpoList();
         colcode.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_expo"));
         colnom.setCellValueFactory(new PropertyValueFactory<Exposition, String>("nom_expo"));
@@ -145,6 +171,18 @@ public class AddExpositionController implements Initializable {
         tve.setItems(expolist);
     } 
       
+      
+       public void showOeuvre(int oeuvre){
+        ExpoService ex=new ExpoService ();
+        ObservableList<Oeuvre> oeuvrelist = ex.getOeuvreList(oeuvre);
+           System.out.println (oeuvrelist);
+        colnomoeuvre.setCellValueFactory(new PropertyValueFactory<Oeuvre, String>("NomOeuvre"));
+        colcodeoeuvre.setCellValueFactory (new PropertyValueFactory<Oeuvre,Integer> ("ID_Oeuvre"));
+        
+        
+        tvoeuvre.setItems(oeuvrelist);
+    }
+      
          @FXML
     private void getfromtv(MouseEvent event) {
         
@@ -158,6 +196,12 @@ public class AddExpositionController implements Initializable {
             nb_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_participant(), 5000));
             nb_max_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_max_participant(), 5000));
             code_oeuvre.setText(" "+ev.getCode_oeuvre());
+            
+            showOeuvre(Integer.parseInt(code_expo.getText().trim()));
+            
+          
+            
+            
     }
 
     
@@ -172,7 +216,7 @@ public class AddExpositionController implements Initializable {
             int nb_part = nb_participant.getValue();
             int nb_max_part = nb_max_participant.getValue();
             int oeuvre = Integer.parseInt(code_oeuvre.getText().trim());
-            ExpoMethods ex = new ExpoMethods();
+            ExpoService ex = new ExpoService ();
             Exposition e= new Exposition(nom, theme, espace, artiste, date, nb_part, nb_max_part, oeuvre);
             ex.UpdateExpo(e,codeee);
             showExpo();
@@ -183,7 +227,7 @@ public class AddExpositionController implements Initializable {
         
         int codeee = Integer.parseInt(code_expo.getText().trim());
 //        Integer.parseInt(line.toString())
-        ExpoMethods ex = new ExpoMethods();
+        ExpoService ex = new ExpoService ();
             ex.DeleteExpo(codeee);
         showExpo();
     }
@@ -205,7 +249,116 @@ public class AddExpositionController implements Initializable {
         }
         
     }
-    
-    
-    
+
+    @FXML
+    private void charts(ActionEvent event) {
+        
+        try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("chartExposition.fxml"));
+            Parent root = loader.load();
+            ChartExpositionController c = loader.getController();
+            code_expo.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ChartExpositionController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    private void search(ActionEvent event) {
+        
+        String s=searchExpo.getText();
+        ExpoService em=new ExpoService ();
+        ObservableList<Exposition> eventl = em.SearchExpo(s);
+        colcode.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_expo"));
+        colnom.setCellValueFactory(new PropertyValueFactory<Exposition, String>("nom_expo"));
+        coltheme.setCellValueFactory(new PropertyValueFactory<Exposition, String>("theme_expo"));
+        colespace.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_espace"));
+        colartiste.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_artiste"));
+        coldate.setCellValueFactory(new PropertyValueFactory<Exposition, Date>("date_expo"));
+        colnb.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("nb_participant"));
+        colnbmax.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("nb_max_participant"));
+        coloeuvre.setCellValueFactory(new PropertyValueFactory<Exposition, Integer>("code_oeuvre"));
+        tve.setItems(eventl);
+        
+        
+        
+    }
+
+    @FXML
+    private void refreshExpo(ActionEvent event) {
+        
+        showExpo();
+        searchExpo.clear();
+        
+    }
+    @FXML
+    private void handleOrder(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
+        dialogStage.setTitle("ArtDome - Orders");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+//        dialogStage.setFullScreen(true);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void GoToOeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
+        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void goToExpos(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
+        dialogStage.setTitle("ArtDome - Expo");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+
+    }
+
+    @FXML
+    private void gotoevent(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/ListEvent.fxml")));
+        dialogStage.setTitle("ArtDome - Event");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void gotoblog(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Blog/BlogShow.fxml")));
+        dialogStage.setTitle("ArtDome - Blog");
+        dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+
+
+
+
+
+
 }

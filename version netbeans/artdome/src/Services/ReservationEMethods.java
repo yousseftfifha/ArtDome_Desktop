@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import Entities.User;
 import Entities.reservation_expo;
 import Tools.MyConnection;
 
@@ -35,16 +36,12 @@ public class ReservationEMethods {
      
      
       public void AddReservationE(reservation_expo r){
-        String req ="INSERT INTO reservation_expo (code_client, nom_client, prenom_client, telephone, email, nb_place, code_expo)"+"values (?,?,?,?,?,?,?)";
+        String req ="INSERT INTO reservation_expo (code_client, nb_place, code_expo)"+"values (?,?,?)";
         try {
             ste = cnx.prepareStatement(req);
             ste.setInt(1, r.getCode_client());
-            ste.setString(2, r.getNom_client());
-            ste.setString(3, r.getPrenom_client());
-            ste.setInt(4, r.getTelephone());
-            ste.setString(5, r.getEmail());
-            ste.setInt(6, r.getNb_place());
-            ste.setInt(7, r.getCode_expo());
+            ste.setInt(2, r.getNb_place());
+            ste.setInt(3, r.getCode_expo());
 
             ste.executeUpdate();
             System.out.println("Reservation d'exposition ajoutée");
@@ -63,7 +60,7 @@ public class ReservationEMethods {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               ReservationElist.add(new reservation_expo(rs.getInt("code_reservationE"),rs.getString("nom_client"), rs.getString("prenom_client"), rs.getInt("telephone"), rs.getString("email"), rs.getInt("nb_place")));
+               ReservationElist.add(new reservation_expo(rs.getInt("code_reservationE"), rs.getInt("code_client"), rs.getInt("nb_place")));
            }
 
         } catch (SQLException ex) {
@@ -71,6 +68,24 @@ public class ReservationEMethods {
             System.out.println(ex.getMessage());
         }
         return ReservationElist;
+    }
+       
+       
+             public ObservableList<User> getUserListe(){
+        ObservableList<User> userlist = FXCollections.observableArrayList();
+         String req = "SELECT * from reservation_expo JOIN user on code_client=ID";
+        try {
+            st = cnx.createStatement();
+           rs= st.executeQuery(req);
+           while(rs.next()){
+               userlist.add(new User( rs.getInt("ID"),rs.getString("nom"), rs.getString("prenom"), rs.getDate("datenaissance"), rs.getString("ville"), rs.getString("email"), rs.getInt("numero")));
+           }
+
+        } catch (SQLException ex) {
+           System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return userlist;
     }
        
          public void DeleteExpo(int codeee){
@@ -82,19 +97,16 @@ public class ReservationEMethods {
               System.out.println("Réservation d'exposition supprimée");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(ExpoMethods.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(ReservationEMethods.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
          
            public void UpdateReservation(reservation_expo r,int codeee ){
-        String req ="UPDATE reservation_expo set nom_client=? , prenom_client=? , telephone=? , email=? , nb_place=? WHERE code_reservationE =" +codeee+ " ";
+        String req ="UPDATE reservation_expo set code_client=? , nb_place=? WHERE code_reservationE =" +codeee+ " ";
         try {
             ste = cnx.prepareStatement(req);
-            ste.setString(1, r.getNom_client());
-            ste.setString(2, r.getPrenom_client());
-            ste.setInt(3, r.getTelephone());
-            ste.setString(4, r.getEmail());
-            ste.setInt(5, r.getNb_place());
+            ste.setInt(1, r.getCode_client());
+            ste.setInt(2, r.getNb_place());
             
             ste.executeUpdate();
             System.out.println("Réservation d'exposition modifiée");
@@ -106,5 +118,41 @@ public class ReservationEMethods {
         }
         
      }
+           
+               public ObservableList<User> getUserList(int code){
+        ObservableList<User> userlist = FXCollections.observableArrayList();
+         String req = "SELECT * from reservation_expo JOIN user on code_client=ID where ID='"+code+"'";
+        try {
+            st = cnx.createStatement();
+           rs= st.executeQuery(req);
+           while(rs.next()){
+               userlist.add(new User( rs.getInt("ID"),rs.getString("nom"), rs.getString("prenom"), rs.getDate("datenaissance"), rs.getString("ville"), rs.getString("email"), rs.getInt("numero")));
+           }
+
+        } catch (SQLException ex) {
+           System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return userlist;
+    }
+               
+               
+                          public ObservableList<reservation_expo> SearchReservation(int search ){
+         ObservableList<reservation_expo> Reserlist = FXCollections.observableArrayList();
+         String req ="select * from reservation_expo WHERE code_reservationE='"+search+"' or nb_place= '"+search+"'";
+         try {
+            st = cnx.createStatement();
+           rs= st.executeQuery(req);
+           while(rs.next()){
+               Reserlist.add(new reservation_expo (rs.getInt("code_reservationE"), rs.getInt("code_client"),rs.getInt("nb_place"), rs.getInt("code_expo") ));
+           }
+
+        } catch (SQLException ex) {
+           System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return Reserlist;
+     }
+     
     
 }

@@ -6,7 +6,6 @@
 package Services;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,10 +14,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
-import javafx.util.Duration;
+
 import javax.swing.JOptionPane;
-import org.controlsfx.control.Notifications;
+
 import Tools.MyConnection;
 import Entities.Client;
 import Entities.Reservation;
@@ -40,7 +38,7 @@ public class ReservationMethods {
         cnx = MyConnection.getInstance().getConnection();
     }
      public void AddReservation(Reservation r){
-        String req ="INSERT INTO reservation (nb_place, code_event)"+"values (?,?)";
+        String req ="INSERT INTO reservationEvent (nb_place, code_event)"+"values (?,?)";
         try {
             ste = cnx.prepareStatement(req);
             ste.setInt(1, r.getNb_place());
@@ -100,7 +98,7 @@ public class ReservationMethods {
    
     public void DeleteReservation(int codeee){
           try {
-              String req = "DELETE from reservation WHERE code_reservation =" +codeee+ " ";
+              String req = "DELETE from reservationEvent WHERE code_reservation =" +codeee+ " ";
               
               st = cnx.createStatement();
               st.executeUpdate(req);
@@ -108,12 +106,12 @@ public class ReservationMethods {
               System.out.println("Reservation supprimée");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(EventMethods.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
 //    
      public void UpdateReservation(Reservation r,int codeee ){
-        String req ="UPDATE reservation set nb_place=? WHERE code_reservation =" +codeee+ " ";
+        String req ="UPDATE reservationEvent set nb_place=? WHERE code_reservation =" +codeee+ " ";
         try {
             ste = cnx.prepareStatement(req);
             ste.setInt(1, r.getNb_place());
@@ -131,7 +129,7 @@ public class ReservationMethods {
      
      public ObservableList<Reservation> SearchReservation(int search ){
          ObservableList<Reservation> Reservationlist = FXCollections.observableArrayList();
-         String req ="select * from reservation WHERE code_reservation='"+search+"'";
+         String req ="select * from reservationEvent WHERE code_reservation='"+search+"' or nb_place='"+search+"'";
          try {
            st = cnx.createStatement();
            rs= st.executeQuery(req);
@@ -151,7 +149,7 @@ public class ReservationMethods {
      
           public ObservableList<Reservation> SearchReservationB(int search ){
          ObservableList<Reservation> Reservationlist = FXCollections.observableArrayList();
-         String req ="select * from reservation WHERE code_reservation='"+search+"' or code_event='"+search+"'";
+         String req ="select * from reservationEvent WHERE code_reservation='"+search+"' or code_event='"+search+"'";
          try {
            st = cnx.createStatement();
            rs= st.executeQuery(req);
@@ -168,11 +166,10 @@ public class ReservationMethods {
         }
         return Reservationlist;
      }
-     
-     
-      public ObservableList<Reservation> listeResC(){   
+          
+                public ObservableList<Reservation> listeResC(){   
      ObservableList<Reservation> infoclient = FXCollections.observableArrayList();
-     String req ="Select r.code_reservation, r.nb_place, r.code_event, u.nom, u.prenom, u.email, u.numero FROM reservation r INNER JOIN user u ON r.code_client = u.id_user ORDER BY code_reservation DESC";
+     String req ="Select r.code_reservation, r.nb_place, r.code_event, u.nom, u.prenom, u.email, u.numero FROM reservationEvent r INNER JOIN user u ON r.code_client = u.ID ORDER BY code_reservation DESC";
    try {
            st = cnx.createStatement();
            rs= st.executeQuery(req);
@@ -188,5 +185,7 @@ public class ReservationMethods {
         }             
     return infoclient;
  }
+     
+     
      
 }

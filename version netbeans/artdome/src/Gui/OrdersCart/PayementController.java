@@ -7,11 +7,13 @@ package Gui.OrdersCart;
 
 import Entities.Orders;
 import Entities.User;
-import Services.CartCRUD;
+import Entities.UserHolder;
+import Services.CartServices;
 import Services.OrdersCRUD;
 import Tools.MyConnection;
+import javafx.scene.image.Image;
+
 import Tools.Payment;
-import com.jfoenix.controls.JFXDatePicker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -70,16 +72,15 @@ public class PayementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         MyConnection myConnection = MyConnection.getInstance ();
-        CartCRUD cartCRUD=new CartCRUD ();
+        CartServices cartServices =new CartServices ();
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
-
-        List<User> LoggedInUser=cartCRUD.readLoggedInUser ();
+        UserHolder holder = UserHolder.getInstance();
         List<Orders> LastOrder=ordersCRUD.readprice();
-        usermail.setText (LoggedInUser.get (0).getEmail ());
+        usermail.setText (holder.getUser().getEmail ());
         montant.setText (String.valueOf (((int) LastOrder.get (0).getDueAmount ())));
-        First.setText (LoggedInUser.get (0).getPrenom ());
-        Last.setText (LoggedInUser.get (0).getNom ());
-        Number.setText (String.valueOf (LoggedInUser.get (0).getNumero ()));
+        First.setText (holder.getUser().getPrenom ());
+        Last.setText (holder.getUser().getNom ());
+        Number.setText (String.valueOf (holder.getUser().getNumero ()));
         Card.setText ("**** **** **** 5556");
         CVC.setText ("101");
 
@@ -95,9 +96,11 @@ public class PayementController implements Initializable {
             @Override
             public void run() {
                 Payment P=new Payment();
+
                 P.RetrieveCustomer ();
                 Integer Dueamount = Integer.parseInt(montant.getText());
                 P.payement (Dueamount);
+
                 try {
                     Desktop.getDesktop().browse(new URL("https://dashboard.stripe.com/test/customers/cus_J4vLHqM4VkGLnH?fbclid=IwAR0Qq32Mve6E-ETXw1HRGN8U35vckgJQz4-Sq11Ht5Xw2-Egv-ebZwNLq6Y").toURI());
                 } catch (IOException e) {
@@ -108,14 +111,13 @@ public class PayementController implements Initializable {
             }
         });
         emailExecutor.shutdown();
-
-
         Node source = (Node) event.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         String title = "Payement succesful";
         String message = "You payment  has been Approved";
 
@@ -137,6 +139,7 @@ public class PayementController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -148,6 +151,7 @@ public class PayementController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -159,7 +163,51 @@ public class PayementController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
+    }
+    @FXML
+    private void profile(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../User/Profile.fxml")));
+        dialogStage.setTitle ("ArtDome - Profile");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void event(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Event/ListEvent.fxml")));
+        dialogStage.setTitle ("ArtDome - Event");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void blog(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Blog/BlogShow.fxml")));
+        dialogStage.setTitle ("ArtDome - Blog");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void expo(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Exposition/AddReservation_expo.fxml")));
+        dialogStage.setTitle ("ArtDome - Exposition");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
     }
 }
 

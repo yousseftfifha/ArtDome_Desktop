@@ -66,7 +66,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Users" textFill="#5b5858">
+            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#profile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profile" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -102,7 +102,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
+            <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#event" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -120,7 +120,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
+            <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#expo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -138,7 +138,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
+            <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#blog" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -268,7 +268,7 @@
       </VBox>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="922.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../GFX/click%20to%20pay.png" />
+            <Image url="@../../GFX/click%20to%20pay.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="158.0" fitWidth="231.0" layoutX="922.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
