@@ -21,6 +21,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import Services.ExpoService;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -70,6 +71,7 @@ public class ChartExpositionController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
 //        dialogStage.setFullScreen(true);
         dialogStage.show();
     }
@@ -82,6 +84,7 @@ public class ChartExpositionController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -93,6 +96,7 @@ public class ChartExpositionController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
 
     }
@@ -105,6 +109,7 @@ public class ChartExpositionController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("Event/ListEvent.fxml")));
         dialogStage.setTitle("ArtDome - Event");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -116,6 +121,7 @@ public class ChartExpositionController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("Blog/BlogShow.fxml")));
         dialogStage.setTitle("ArtDome - Blog");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 }

@@ -226,6 +226,7 @@ Stage dialogStage = new Stage();
                             }
                             dialogStage.setTitle("ArtDome - User");
                             dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
                             Alert alert=new Alert (Alert.AlertType.WARNING);
                             alert.setTitle ("Delete User");
                             alert.setHeaderText ("User");
@@ -314,6 +315,7 @@ Stage dialogStage = new Stage();
         scene = new Scene (FXMLLoader.load(getClass().getResource("../DashBoardScene.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 

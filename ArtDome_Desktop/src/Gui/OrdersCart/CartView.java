@@ -2,6 +2,7 @@ package Gui.OrdersCart;
 
 import Entities.Cart;
 import Entities.User;
+import Entities.UserHolder;
 import Gui.Oeuvre.OeuvreItem;
 import Services.CartServices;
 import Services.OrdersCRUD;
@@ -16,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -179,9 +181,8 @@ public class CartView implements Initializable {
             ADD1_btn.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    CartServices cartServices =new CartServices ();
-                    List<User> LoggedInUser= cartServices.readLoggedInUser ();
-                    cartServices.updateQuantity (LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
+                    UserHolder holder = UserHolder.getInstance();
+                    cartServices.updateQuantity (holder.getUser().getEmail (),cart.getOeuvreID ());
 
 
                     try {
@@ -194,9 +195,8 @@ public class CartView implements Initializable {
             Remove1_btn.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    CartServices cartServices =new CartServices ();
-                    List<User> LoggedInUser= cartServices.readLoggedInUser ();
-                    cartServices.updateQuantity1(LoggedInUser.get (0).getEmail (),cart.getOeuvreID ());
+                    UserHolder holder = UserHolder.getInstance();
+                    cartServices.updateQuantity1(holder.getUser().getEmail (),cart.getOeuvreID ());
                     if (cart.getQuantity ()==0){
                         cartServices.DeletOeuvreCart (cart.getOeuvreID ());
                         Node source = (Node) event.getSource ();
@@ -300,15 +300,15 @@ public class CartView implements Initializable {
     @FXML
     private void check(ActionEvent actionEvent) throws IOException, MessagingException, URISyntaxException, DocumentException {
         OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        CartServices cartServices =new CartServices ();
-        List<User> LoggedInUser= cartServices.readLoggedInUser ();
-        ordersCRUD.AddFromCart (LoggedInUser.get (0).getId ());
+        UserHolder holder = UserHolder.getInstance();
+        ordersCRUD.AddFromCart (holder.getUser().getId ());
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("payement.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
         String title = "Order ";
         String message = "You Order  has been Added";
@@ -318,5 +318,38 @@ public class CartView implements Initializable {
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndDismiss (Duration.millis (3200));
+    }
+
+    @FXML
+    private void profile(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../User/Profile.fxml")));
+        dialogStage.setTitle ("ArtDome - Profile");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void event(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Event/ListEvent.fxml")));
+        dialogStage.setTitle ("ArtDome - Event");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void blog(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Blog/BlogShow.fxml")));
+        dialogStage.setTitle ("ArtDome - Blog");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
     }
 }

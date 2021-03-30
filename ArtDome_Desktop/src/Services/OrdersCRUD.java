@@ -60,7 +60,7 @@ public class OrdersCRUD {
         ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
 
         Map<Cart,Oeuvre> cartOeuvreMap= cartServices.ReadAllOeuvrse ();
-        List<User> LoggedInUser= cartServices.readLoggedInUser ();
+        UserHolder holder = UserHolder.getInstance();
         for(Cart i : cartOeuvreMap.keySet()){
             total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
             String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
@@ -70,7 +70,7 @@ public class OrdersCRUD {
             try {
                 preparedStatement = connection.prepareStatement(request);
                 preparedStatement.setInt (1,orID);
-                preparedStatement.setString (2,LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom ());
+                preparedStatement.setString (2,holder.getUser().getNom ()+" "+holder.getUser().getPrenom ());
                 preparedStatement.setInt (3,nombreAleatoire);
                 preparedStatement.setInt (4,cartOeuvreMap.get (i).getID_Oeuvre ());
                 preparedStatement.setInt (5,i.getQuantiy ());
@@ -87,15 +87,16 @@ public class OrdersCRUD {
 
 
         }
+
         List<PendingOrders> pendingOrdersList=new ArrayList<> ();
-        PendingOrders pendingOrders=new PendingOrders (orID,LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom (),nombreAleatoire,oeuvreid,qua,"pending",1);
+        PendingOrders pendingOrders=new PendingOrders (orID,holder.getUser().getNom ()+" "+holder.getUser().getPrenom (),nombreAleatoire,oeuvreid,qua,"pending",1);
         pendingOrdersList.add (pendingOrders);
         String request1="INSERT INTO orders(OrderID,UserName,DueAmount,InnoNumber,TotalQty,OrderDate,Status,AddressId)"+"VALUES(?,?,?,?,?,?,?,?) ";
 
         try {
             preparedStatement = connection.prepareStatement(request1);
             preparedStatement.setInt (1,orID);
-            preparedStatement.setString (2,LoggedInUser.get (0).getEmail ());
+            preparedStatement.setString (2,holder.getUser().getEmail ());
             preparedStatement.setFloat (3,total_prix);
             preparedStatement.setInt (4,nombreAleatoire);
             preparedStatement.setInt (5,quantitytot);
@@ -110,7 +111,8 @@ public class OrdersCRUD {
             System.out.println ("Probleme lors de l'ajout du l'order");
             throwables.printStackTrace ();
         }
-        Orders orders= new Orders (orID,LoggedInUser.get (0).getEmail (),total_prix,nombreAleatoire,quantitytot,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME), "pending", 1);
+
+        Orders orders= new Orders (orID,holder.getUser().getEmail (),total_prix,nombreAleatoire,quantitytot,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME), "pending", 1);
         List<Orders> ordersList=new ArrayList<> ();
         ordersList.add (orders);
         PDF pdf=new PDF ();
@@ -123,11 +125,12 @@ public class OrdersCRUD {
                 // no application registered for PDFs
             }
         }
+
         String message="Bonjour Mr/Mme " +System.lineSeparator()+
                 "Vous avez ajouter une nouvelle commande a " +ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME)+
                 System.lineSeparator()+
                 " Order ID: "+orID+
-                " User: "+LoggedInUser.get (0).getNom ()+" "+LoggedInUser.get (0).getPrenom ()+
+                " User: "+holder.getUser().getNom ()+" "+holder.getUser().getPrenom ()+
                 " prix a payer: "+total_prix+
                 " quantite total: "+quantitytot+
                 " status: Pending "

@@ -9,6 +9,8 @@ import Tools.SendEmail;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.scene.image.Image;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.net.URL;
@@ -80,6 +82,7 @@ private void valider (ActionEvent event)throws IOException{
         scene = new Scene (FXMLLoader.load(getClass().getResource("passwordReset.fxml")));
         dialogStage.setTitle("ArtDome - User");
         dialogStage.setScene(scene);
+dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
 //                            resetController.setUpdate(true);
         

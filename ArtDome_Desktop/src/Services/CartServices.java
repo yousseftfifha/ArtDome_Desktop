@@ -3,6 +3,7 @@ package Services;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.User;
+import Entities.UserHolder;
 import Tools.MyConnection;
 
 import java.sql.*;
@@ -28,9 +29,11 @@ public class CartServices {
     }
     public void AddCart(Cart cart,Oeuvre oeuvre){
         String request="INSERT INTO CART(CartId,OeuvreId,NomOeuvre,Quantity)"+"VALUES(?,?,?,?) ";
+        UserHolder holder = UserHolder.getInstance();
+
         try {
             preparedStatement = connection.prepareStatement(request);
-            preparedStatement.setString (1,cart.getLoggedInUser ().getEmail ());
+            preparedStatement.setString (1, holder.getUser().getEmail ());
             preparedStatement.setInt (2,oeuvre.getID_Oeuvre ());
             preparedStatement.setString (3,oeuvre.getNomOeuvre ());
             preparedStatement.setInt (4,1);
