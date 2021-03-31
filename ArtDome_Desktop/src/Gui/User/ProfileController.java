@@ -6,9 +6,9 @@
 package Gui.User;
 
 import Entities.User;
-import Entities.UserHolder;
+import Tools.UserHolder;
+import Services.UserService;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
@@ -22,8 +22,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -108,9 +109,45 @@ public class ProfileController implements Initializable {
         dialogStage.show ();
     }
     @FXML
-    private void update(ActionEvent event)throws IOException {
+    private void update(ActionEvent event){
+        try{
+            String x1=String.valueOf(date.getValue());
+            Date x = java.sql.Date.valueOf(x1);
+            int i = Integer.parseInt(Tnum.getText().trim());
+            //int idd = Integer.parseInt(Tid.getText().trim());
+            UserHolder holder = UserHolder.getInstance();
 
-        
+            User u = new User(holder.getUser().getId(),TNom.getText(),Tprenom.getText(),x,Tville.getText(),Temail.getText(),i,Tmdp.getText());
+            UserService crd = new UserService ();
+            crd.UpdateUser(u);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("UPDATE AVEC SUCCES");
+            alert.setHeaderText(null);
+            alert.setContentText("L'utilisateur "+u.getPrenom()+" "+u.getNom()+" a été mis a jour avec succès");
+            alert.showAndWait();
+        }
+
+        catch(RuntimeException ex)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR," Les informations sont Invalides ou incompletes Veuillez les verifiers ", ButtonType.CLOSE);
+            alert.showAndWait();
+        }
+
+    }
+
+    @FXML
+    private void delete (ActionEvent event) throws IOException {
+        UserHolder holder = UserHolder.getInstance();
+        UserService crd = new UserService ();
+        crd.DeleteUser(holder.getUser().getId());
+        Node source = (Node) event.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Login.fxml")));
+        dialogStage.setTitle("ArtDome - Cart");
+        dialogStage.setScene(scene);
+        dialogStage.show();
+
     }
     @FXML
     private void profile(ActionEvent actionEvent) throws IOException {

@@ -35,7 +35,7 @@
                   <Image url="@loginicon/icons8_Male_User_50px_5.png" />
                </image>
             </ImageView>
-            <Label layoutX="75.0" layoutY="35.0" text="NOUVEL EMPLOYE" textFill="#2c3033">
+            <Label layoutX="75.0" layoutY="35.0" text="Nouveau Utilisateur" textFill="#2c3033">
                <font>
                   <Font size="19.0" />
                </font>
@@ -65,7 +65,7 @@
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField focusColor="#2c3033" layoutX="89.0" layoutY="455.0" prefHeight="31.0" prefWidth="271.0" promptText="Confirmer Mot de passe" unFocusColor="#2c3033" />
+            <JFXPasswordField fx:id="tmdp2" focusColor="#2c3033" layoutX="89.0" layoutY="455.0" prefHeight="31.0" prefWidth="271.0" promptText="Confirmer Mot de passe" unFocusColor="#2c3033" />
             <JFXButton fx:id="BAjout" layoutX="90.0" layoutY="504.0" onAction="#handleBAjout" prefHeight="50.0" prefWidth="271.0" ripplerFill="RED" style="-fx-background-color: #FF0000;" text="SIGN UP" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
@@ -87,6 +87,16 @@
                </image>
             </ImageView>
             <DatePicker fx:id="date" layoutX="20.0" layoutY="241.0" />
+            <Label fx:id="LBerror" layoutX="13.0" layoutY="441.0" prefHeight="21.0" prefWidth="362.0" textFill="#ff0202">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="erreur" fitHeight="28.0" fitWidth="26.0" layoutX="13.0" layoutY="441.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../MotoRent-master/src/carRent/loginicon/icons8_Error_48px.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Label layoutX="143.0" layoutY="337.0" prefHeight="72.0" prefWidth="302.0" text="WELCOME TO ArtDome" textFill="#ffe1e1">

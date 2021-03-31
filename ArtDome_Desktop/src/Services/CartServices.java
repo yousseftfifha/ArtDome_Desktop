@@ -3,7 +3,7 @@ package Services;
 import Entities.Cart;
 import Entities.Oeuvre;
 import Entities.User;
-import Entities.UserHolder;
+import Tools.UserHolder;
 import Tools.MyConnection;
 
 import java.sql.*;

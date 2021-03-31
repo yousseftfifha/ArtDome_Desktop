@@ -14,9 +14,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import Gui.HomeSceneController;
 import Entities.User;
-import Services.UserCRUD;
+import Services.UserService;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
@@ -70,7 +69,7 @@ Arrays.sort(downloadedFiles, new Comparator<File>() {
            User u = new User();
            u.setImage(path);
 
-        UserCRUD crd = new UserCRUD();
+        UserService crd = new UserService ();
         crd.updateImage(u);
         }
     }

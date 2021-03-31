@@ -6,7 +6,7 @@
 package Gui.OrdersCart;
 
 import Entities.Orders;
-import Entities.UserHolder;
+import Tools.UserHolder;
 import Services.CartServices;
 import Services.OrdersService;
 import Tools.MyConnection;

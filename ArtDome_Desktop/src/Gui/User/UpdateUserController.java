@@ -6,9 +6,8 @@
 package Gui.User;
 
 import Entities.User;
-import Services.UserCRUD;
+import Services.UserService;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -66,7 +65,7 @@ private boolean update;
         int i = Integer.parseInt(Tnum.getText().trim());
         int idd = Integer.parseInt(Tid.getText().trim());
         User u = new User(idd,TNom.getText(),Tprenom.getText(),x,Tville.getText(),Temail.getText(),i,Tmdp.getText());
-        UserCRUD crd = new UserCRUD();
+        UserService crd = new UserService ();
         crd.UpdateUser(u);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("UPDATE AVEC SUCCES");

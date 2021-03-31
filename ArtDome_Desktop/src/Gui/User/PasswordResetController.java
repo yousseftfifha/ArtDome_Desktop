@@ -5,6 +5,8 @@
  */
 package Gui.User;
 
+import Services.UserService;
+import Tools.emailHolder;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -15,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -44,10 +47,16 @@ public class PasswordResetController implements Initializable {
 
     @FXML
     private void Mdp(ActionEvent event) {
-       /* if (Tmdp.getText().equals(Tmdp2.getText()))
-            UserCRUD crd = new UserCRUD();
-                            crd.updateMdp();
-*/
+        if (Tmdp.getText().equals(Tmdp2.getText())){
+            emailHolder holder = emailHolder.getInstance();
+            UserService crd = new UserService ();
+            crd.updateMdp(holder.getMail(),Tmdp.getText());
+
+        }else{
+            erreur.setOpacity(1);
+            LBerror.setTextFill(Color.BLACK);
+            LBerror.setText("Mot de passe incorrect !");
+        }
     }
 
     /*void setUpdate(boolean b) {

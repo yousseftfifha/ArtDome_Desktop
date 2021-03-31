@@ -6,12 +6,10 @@
 package Gui.User;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,9 +21,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import Entities.User;
-import Services.UserCRUD;
+import Services.UserService;
 import java.sql.Date;
 import javax.mail.MessagingException;
 
@@ -40,6 +41,8 @@ public class SignUpController implements Initializable {
     @FXML
     private JFXPasswordField Tmdp;
     @FXML
+    private JFXPasswordField tmdp2;
+    @FXML
     private JFXTextField Tprenom;
     @FXML
     private JFXTextField TNom;
@@ -53,6 +56,11 @@ public class SignUpController implements Initializable {
     private JFXTextField Tville;
     @FXML
     private JFXButton BAjout;
+    @FXML
+    private Label LBerror;
+    @FXML
+    private ImageView erreur;
+
 
     /**
      * Initializes the controller class.
@@ -65,18 +73,19 @@ public class SignUpController implements Initializable {
     @FXML
     private void handleBAjout(ActionEvent event) throws MessagingException {
         try{
-            
-        String x1=String.valueOf(date.getValue());
-        Date x = java.sql.Date.valueOf(x1);
-        int i = Integer.parseInt(Tnum.getText().trim());
-        User u = new User(TNom.getText(),Tprenom.getText(),x,Tville.getText(),Temail.getText(),i,Tmdp.getText());
-        UserCRUD crd = new UserCRUD();
-        crd.AddUser(u);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("AJOUT AVEC SUCCES");
-        alert.setHeaderText(null);
-        alert.setContentText("L'employé "+u.getPrenom()+" "+u.getNom()+" a été ajouté avec succès");
-        alert.showAndWait();
+
+                String x1 = String.valueOf (date.getValue ());
+                Date x = java.sql.Date.valueOf (x1);
+                int i = Integer.parseInt (Tnum.getText ().trim ());
+                User u = new User (TNom.getText (), Tprenom.getText (), x, Tville.getText (), Temail.getText (), i, Tmdp.getText ());
+                UserService crd = new UserService ();
+                crd.AddUser (u);
+                Alert alert = new Alert (Alert.AlertType.INFORMATION);
+                alert.setTitle ("AJOUT AVEC SUCCES");
+                alert.setHeaderText (null);
+                alert.setContentText ("L'employé " + u.getPrenom () + " " + u.getNom () + " a été ajouté avec succès");
+                alert.showAndWait ();
+
         }
         /*catch(SQLException ex)
         {

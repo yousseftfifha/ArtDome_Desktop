@@ -2,7 +2,7 @@ package Gui.OrdersCart;
 
 import Entities.Orders;
 import Entities.PendingOrders;
-import Entities.UserHolder;
+import Tools.UserHolder;
 import Gui.Oeuvre.OeuvreItem;
 import Services.OrdersService;
 import Tools.Print;

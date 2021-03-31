@@ -30,9 +30,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import Tools.MyConnection;
 import Entities.User;
-import Entities.UserHolder;
-import javafx.scene.Parent;
-import javafx.scene.Node;
+import Tools.UserHolder;
+
 /**
  * FXML Controller class
  *

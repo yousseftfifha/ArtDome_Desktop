@@ -24,30 +24,31 @@ import java.util.ArrayList;
  *
  * @author asus
  */
-public class UserCRUD {
+public class UserService {
      private Statement statement;
     private final Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet rs;
     
   
-    public UserCRUD() {
+    public UserService() {
         connection = MyConnection.getInstance ().getConnection ();
     }
     
     public void AddUser (User u) throws MessagingException{
-                String request="INSERT INTO user(nom,prenom,datenaissance,ville,email,numero,mdp)"+"VALUES(?,?,?,?,?,?,?) ";
-try {
+        String request="INSERT INTO user(nom,prenom,datenaissance,ville,email,numero,role,mdp)"+"VALUES(?,?,?,?,?,?,?,?) ";
+        try {
 
             preparedStatement = connection.prepareStatement(request);
             preparedStatement.setString (1,u.getNom());
             preparedStatement.setString (2,u.getPrenom());
-            preparedStatement.setString(3,String.valueOf(u.getDatenaissance())); 
+            preparedStatement.setString(3,String.valueOf(u.getDatenaissance()));
             preparedStatement.setString (4,u.getVille());
             preparedStatement.setString (5,u.getEmail());
             preparedStatement.setInt (6,u.getNumero());
-            preparedStatement.setString (7,u.getMdp());
-            
+            preparedStatement.setString (7,"user");
+
+            preparedStatement.setString (8,u.getMdp());
             preparedStatement.executeUpdate ();
             System.out.println ("succes");
            
@@ -85,20 +86,20 @@ try {
         
         
     }
-    public void updateMdp (String email,String mdp){
-        
-       String req = "UPDATE user SET email='"+mdp+"' WHERE email="+email;
-       try{
-        Statement st= connection.createStatement();
-        st.executeUpdate(req);
-            
+
+        public void updateMdp (String email,String mdp){
+
+            String req = "UPDATE user SET mdp='" + mdp + "' WHERE email='" + email + "' ";
+            try {
+                Statement st = connection.createStatement ();
+                st.executeUpdate (req);
+
+            } catch (SQLException ex) {
+
+                Logger.getLogger (UserService.class.getName ()).log (Level.SEVERE, null, ex);
+
+            }
         }
-         catch (SQLException ex)
-         {
-             
-            System.out.println(ex);
-        }
-    }
             
     public void updateImage (User u){
      String req ="UPDATE user SET image='"+u.getImage()+ "'WHERE ID="+u.getId()  ;
@@ -142,7 +143,7 @@ try {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(UserCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }

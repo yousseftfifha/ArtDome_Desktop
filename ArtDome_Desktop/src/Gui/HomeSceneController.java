@@ -2,8 +2,7 @@ package Gui;
 
 import Entities.Cart;
 import Entities.Oeuvre;
-import Entities.User;
-import Entities.UserHolder;
+import Tools.UserHolder;
 import Services.CartServices;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;

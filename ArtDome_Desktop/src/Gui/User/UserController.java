@@ -5,9 +5,8 @@
  */
 package Gui.User;
 import java.awt.image.BufferedImage;
-import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.util.Date;
+
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.sql.Connection;
@@ -17,12 +16,10 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.css.CssParser;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import java.time.LocalDate;
 
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,17 +39,10 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import Services.UserCRUD;
+import Services.UserService;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import Tools.Download;
 
 import javax.imageio.ImageIO;
-import java.io.File;
 import java.util.List;
 
 /**
@@ -112,7 +102,7 @@ Stage dialogStage = new Stage();
     
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
-        UserCRUD crd = new UserCRUD ();
+        UserService crd = new UserService ();
         List<User> UserList = crd.readUser();
         list.addAll(UserList);
         ID.setCellValueFactory(new PropertyValueFactory<>("id")); 
@@ -214,7 +204,7 @@ Stage dialogStage = new Stage();
                         deleteIcon.setOnMouseClicked((MouseEvent event) -> {
                             user = UserT.getSelectionModel().getSelectedItem();
                             System.out.println(user.toString ());
-                            UserCRUD crd = new UserCRUD();
+                            UserService crd = new UserService ();
                             crd.DeleteUser(user.getId());
                             Node source = (Node) event.getSource();
                             dialogStage = (Stage) source.getScene().getWindow();

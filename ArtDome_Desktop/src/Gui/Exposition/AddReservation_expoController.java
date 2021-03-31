@@ -5,7 +5,7 @@
  */
 package Gui.Exposition;
 
-import Entities.UserHolder;
+import Tools.UserHolder;
 import Tools.QRcodeE;
 import com.github.plushaze.traynotification.notification.TrayNotification;
 

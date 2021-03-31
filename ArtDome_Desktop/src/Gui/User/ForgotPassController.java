@@ -6,6 +6,7 @@
 package Gui.User;
 
 import Tools.SendEmail;
+import Tools.emailHolder;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -23,6 +24,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -66,13 +69,22 @@ public class ForgotPassController implements Initializable {
     private void sendmail(ActionEvent event)throws MessagingException {
      
         String message ="votre code de verification est : "+randomCode;
-        try{
+        ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
+        emailExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
                     SendEmail.sendMail (Temail.getText(),"Code de verification",message);
+                } catch (AddressException e) {
+                    e.printStackTrace ();
+                } catch (MessagingException e) {
+                    e.printStackTrace ();
+                }
 
-        }
-        catch (AddressException ex){
-            System.out.println(ex);
-        }
+            }
+        });
+        emailExecutor.shutdown();
+
 }
     
 @FXML
@@ -84,6 +96,9 @@ private void valider (ActionEvent event)throws IOException{
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
+        String mail= Temail.getText();
+        emailHolder holder = emailHolder.getInstance();
+        holder.setMail(mail);
 //                            resetController.setUpdate(true);
         
     }
