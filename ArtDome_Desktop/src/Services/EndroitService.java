@@ -9,6 +9,6 @@ package Services;
  *
  * @author ASUS
  */
-public class EndroitCRUD {
+public class EndroitService {
     
 }

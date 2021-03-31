@@ -20,7 +20,7 @@ import Entities.ReservationE;
  *
  * @author ASUS
  */
-public class ReservationCRUD {
+public class ReservationService {
     
       public int PrixTotal() throws SQLException {
        ReservationE r = new ReservationE();

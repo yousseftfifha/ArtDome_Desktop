@@ -1334,6 +1334,7 @@ SELECT|mysql.user
     <column id="368" parent="256" name="role">
       <Position>9</Position>
       <DataType>varchar(30)|0s</DataType>
+      <DefaultExpression>&apos;user&apos;</DefaultExpression>
     </column>
     <column id="369" parent="256" name="mdp">
       <Position>10</Position>

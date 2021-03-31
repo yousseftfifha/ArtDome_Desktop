@@ -29,14 +29,14 @@ import java.util.logging.Logger;
 /**
  * @author tfifha youssef
  */
-public class OrdersCRUD {
+public class OrdersService {
     private Statement statement;
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
 
-    public OrdersCRUD() {
+    public OrdersService() {
         connection = MyConnection.getInstance ().getConnection ();
     }
     public void AddFromCart(int UserID) throws MessagingException, DocumentException, IOException, URISyntaxException {

@@ -1,6 +1,6 @@
 package Tools;
 
-import Services.OrdersCRUD;
+import Services.OrdersService;
 import javax.swing.JFrame;
 
 import javafx.collections.FXCollections;
@@ -13,19 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PiePlot;
-import org.jfree.chart.plot.PiePlot3D;
-import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.general.PieDataset;
-import org.jfree.data.xml.PieDatasetHandler;
-import org.jfree.util.Rotation;
 
-import java.sql.SQLException;
-import java.util.Locale;
-import javax.swing.*;
 import java.sql.SQLException;
 
 /**
@@ -70,12 +58,12 @@ public class Charts extends JFrame {
     }
     //The method sets the data to the pie-chart.
     private ObservableList<PieChart.Data> getChartData() throws SQLException {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        OrdersService ordersService =new OrdersService ();
 
         ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-        list.addAll(new PieChart.Data("Confirmed", ordersCRUD.getCount ("confirmed")),
-                new PieChart.Data("Cancelled", ordersCRUD.getCount ("cancelled")),
-                new PieChart.Data("Pending", ordersCRUD.getCount ("pending"))
+        list.addAll(new PieChart.Data("Confirmed", ordersService.getCount ("confirmed")),
+                new PieChart.Data("Cancelled", ordersService.getCount ("cancelled")),
+                new PieChart.Data("Pending", ordersService.getCount ("pending"))
 
         );
 

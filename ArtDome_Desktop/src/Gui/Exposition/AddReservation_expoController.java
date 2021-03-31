@@ -7,7 +7,7 @@ package Gui.Exposition;
 
 import Tools.QRcodeE;
 import com.github.plushaze.traynotification.notification.TrayNotification;
-import com.itextpdf.text.DocumentException;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
@@ -39,12 +39,12 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
-import javax.swing.JOptionPane;
+
 import Entities.User;
 import Entities.reservation_expo;
-import Services.ReservationEMethods;
+import Services.ReservationEService;
 import static Tools.Print.printNode;
-import Tools.QRcode;
+
 import Tools.SendMail;
 
 /**
@@ -162,7 +162,7 @@ public class AddReservation_expoController implements Initializable {
         
     }
          public void showUser(int user){
-        ReservationEMethods ex=new ReservationEMethods();
+        ReservationEService ex=new ReservationEService ();
         ObservableList<User> userlist = ex.getUserList(user);
         
         colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
@@ -181,7 +181,7 @@ public class AddReservation_expoController implements Initializable {
     
     
        public void showReservationE(){
-           ReservationEMethods rem=new ReservationEMethods();
+           ReservationEService rem=new ReservationEService ();
         ObservableList<reservation_expo> Reservationlist = rem.getReservationEList();
         colcode.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_reservationE"));
        // colcodeclient.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_client"));
@@ -245,7 +245,7 @@ public class AddReservation_expoController implements Initializable {
             int nbplace= nb_place.getValue();
 //            int tel = Integer.valueOf(telephone.getText());
             //String mail = email.getText();
-            ReservationEMethods rm = new ReservationEMethods();
+            ReservationEService rm = new ReservationEService ();
             reservation_expo r= new reservation_expo(codeClient,nbplace);
             rm.AddReservationE(r);
             showReservationE();
@@ -285,7 +285,7 @@ public class AddReservation_expoController implements Initializable {
             String mail = email.getText();
             int codeClient=Integer.valueOf(code_client.getText());
             int nbplace = nb_place.getValue();
-            ReservationEMethods rm = new ReservationEMethods();
+            ReservationEService rm = new ReservationEService ();
             reservation_expo r= new reservation_expo(codeClient,nbplace);
             rm.UpdateReservation(r,codeee_r);
             showReservationE();
@@ -314,7 +314,7 @@ public class AddReservation_expoController implements Initializable {
             int tel =  Integer.parseInt(telephone.getText().trim());
             String mail = email.getText();
             int nbplace = nb_place.getValue();
-        ReservationEMethods em = new ReservationEMethods();
+        ReservationEService em = new ReservationEService ();
             em.DeleteExpo(codeee);
         showReservationE();
 //          String msg= "Bonjour Mme/Mr "+nom_client+" "+prenom+","
@@ -362,7 +362,7 @@ public class AddReservation_expoController implements Initializable {
         
         int s= Integer.parseInt(searchReservation.getText().trim());
         
-        ReservationEMethods em=new ReservationEMethods();
+        ReservationEService em=new ReservationEService ();
         ObservableList<reservation_expo> eventl = em.SearchReservation(s);
         colcode.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_reservationE"));
         colnbPlace.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("nb_place"));
@@ -383,7 +383,7 @@ public class AddReservation_expoController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("OrdersCart/Orders.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../OrdersCart/Orders.fxml")));
         dialogStage.setTitle("ArtDome - Orders");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -396,7 +396,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/OeuvreItem.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -408,7 +408,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/AddReservation_expo.fxml")));
         dialogStage.setTitle("ArtDome - Oeuvre");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -421,7 +421,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/ListEvent.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/ListEvent.fxml")));
         dialogStage.setTitle("ArtDome - Event");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -433,15 +433,48 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Blog/BlogShow.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Blog/BlogShow.fxml")));
         dialogStage.setTitle("ArtDome - Blog");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
-  
 
- 
 
+    @FXML
+    private void home(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
+        dialogStage.setTitle("ArtDome - Home");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void profile(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/Profile.fxml")));
+        dialogStage.setTitle("ArtDome - Profile");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void Location(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Endroit/AfficherReservation.fxml")));
+        dialogStage.setTitle("ArtDome - Endroit");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
 }

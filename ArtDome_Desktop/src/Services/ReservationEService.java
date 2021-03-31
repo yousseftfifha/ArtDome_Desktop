@@ -22,14 +22,14 @@ import Tools.MyConnection;
  *
  * @author Oumaima
  */
-public class ReservationEMethods {
+public class ReservationEService {
     
     private Connection cnx;
     private PreparedStatement ste;
     private ResultSet rs;
     private Statement st;
     
-     public ReservationEMethods() {
+     public ReservationEService() {
         cnx = MyConnection.getInstance().getConnection();
     }
      
@@ -97,7 +97,7 @@ public class ReservationEMethods {
               System.out.println("Réservation d'exposition supprimée");
           } catch (SQLException ex) {
               System.out.println("Probléme");
-              Logger.getLogger(ReservationEMethods.class.getName()).log(Level.SEVERE, null, ex);
+              Logger.getLogger(ReservationEService.class.getName()).log(Level.SEVERE, null, ex);
           }
     }
          

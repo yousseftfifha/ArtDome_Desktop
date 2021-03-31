@@ -226,5 +226,6 @@
          </padding>
       </JFXButton>
       <JFXTextField fx:id="CartNumber" editable="false" layoutX="1076.0" layoutY="159.0" prefHeight="26.0" prefWidth="48.0" />
+      <JFXButton layoutX="1190.0" layoutY="159.0" onAction="#logout" text="Logout" />
    </children>
 </AnchorPane>
