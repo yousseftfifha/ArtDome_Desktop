@@ -28,13 +28,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import jxl.write.WriteException;
 import Entities.User;
 import Entities.reservation_expo;
-import Services.ReservationEMethods;
-import Tools.Excel;
+import Services.ReservationEService;
 import Tools.PDFreservation;
 
 /**
@@ -100,7 +100,7 @@ public class Reservation_expoBackController implements Initializable {
     }  
     
       public void showReservationE(){
-           ReservationEMethods rem=new ReservationEMethods();
+           ReservationEService rem=new ReservationEService ();
         ObservableList<reservation_expo> Reservationlist = rem.getReservationEList();
         colcode1.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_reservationE"));
        // colcodeclient.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_client"));
@@ -148,7 +148,7 @@ public class Reservation_expoBackController implements Initializable {
         
           int s= Integer.parseInt(searchReservationBack.getText().trim());
         
-        ReservationEMethods em=new ReservationEMethods();
+        ReservationEService em=new ReservationEService ();
         ObservableList<reservation_expo> eventl = em.SearchReservation(s);
         colcode1.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_reservationE"));
         colnombreplace.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("nb_place"));
@@ -159,7 +159,7 @@ public class Reservation_expoBackController implements Initializable {
     }
     
      public void showUser(int user){
-        ReservationEMethods ex=new ReservationEMethods();
+        ReservationEService ex=new ReservationEService ();
         ObservableList<User> userlist = ex.getUserList(user);
         
         colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
@@ -180,7 +180,7 @@ public class Reservation_expoBackController implements Initializable {
          reservation_expo r= (reservation_expo) tveR1.getSelectionModel().getSelectedItem();
             
             code_client2.setText(""+r.getCode_client());
-            ReservationEMethods em=new ReservationEMethods();
+            ReservationEService em=new ReservationEService ();
         ObservableList<User> eventl = em.getUserList(Integer.parseInt(code_client2.getText().trim()));
         
           colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("id"));
@@ -220,27 +220,73 @@ public class Reservation_expoBackController implements Initializable {
     }
 
     @FXML
-    private void gotohome(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../DashBoardScene.fxml")));
-        dialogStage.setTitle ("ArtDome - Home");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
+    private void gotoevent(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Event");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
     }
-
+    @FXML
+    private void showOrders(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashOrdersCart/DashBoardOrders.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Orders");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+    @FXML
+    private void gotoOeuvre(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/Oeuvre.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 
     @FXML
-    private void gotoorders(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("DashBoardOrders.fxml")));
-        dialogStage.setTitle ("ArtDome - Orders");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
+    private void gotooexpo(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/Reservation_expoBack.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
     }
-   
-    
+
+    @FXML
+    private void gotouser(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/User.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void endroit(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Endroit/AfficherEndroit.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Endroit");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
 }

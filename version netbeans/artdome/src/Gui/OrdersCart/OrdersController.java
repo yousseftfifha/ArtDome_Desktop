@@ -2,13 +2,10 @@ package Gui.OrdersCart;
 
 import Entities.Orders;
 import Entities.PendingOrders;
-import Entities.User;
 import Entities.UserHolder;
 import Gui.Oeuvre.OeuvreItem;
-import Services.CartServices;
-import Services.OrdersCRUD;
+import Services.OrdersService;
 import Tools.Print;
-import Tools.SingeltonNavigation;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -33,7 +30,6 @@ import tray.notification.TrayNotification;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -62,8 +58,8 @@ public class OrdersController implements Initializable {
 
         try {
             UserHolder holder = UserHolder.getInstance();
-            OrdersCRUD ordersCRUD = new OrdersCRUD ();
-            List<Orders> ordersList = ordersCRUD.selectOrderByUser (holder.getUser().getEmail ());
+            OrdersService ordersService = new OrdersService ();
+            List<Orders> ordersList = ordersService.selectOrderByUser (holder.getUser().getEmail ());
             ShowOrders (ordersList);
         } catch (Exception ex) {
             Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
@@ -88,11 +84,11 @@ public class OrdersController implements Initializable {
         ScrollPane scrollPane = new ScrollPane (Container);
         scrollPane.setMinSize (1000, 400);
         scrollPane.setHbarPolicy (ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setVbarPolicy (ScrollPane.ScrollBarPolicy.NEVER);
+
 
         AnchorPane.setTopAnchor (scrollPane, 0.);
-        AnchorPane.setRightAnchor(scrollPane, 0.0);
-        AnchorPane.setLeftAnchor(scrollPane, 0.0);
-        AnchorPane.setBottomAnchor(scrollPane, 0.0);
+     
         Container.setMinWidth (1000);
         Container.setMinWidth (400);
         content.setRightAnchor (scrollPane, 0.);
@@ -211,8 +207,8 @@ public class OrdersController implements Initializable {
             showDetails.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    OrdersCRUD ordersCRUD = new OrdersCRUD ();
-                    List<PendingOrders> ordersList = ordersCRUD.selectPendById (orders.getOrderID ());
+                    OrdersService ordersService = new OrdersService ();
+                    List<PendingOrders> ordersList = ordersService.selectPendById (orders.getOrderID ());
 
 
                     VBox Container = new VBox ();  // main container for all data specific to a materiel
@@ -444,8 +440,8 @@ public class OrdersController implements Initializable {
     @FXML
     private void searchOrder(ActionEvent actionEvent) throws Exception {
         String recherche=search.getText ();
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList=ordersCRUD.Rechercher (Integer.parseInt (recherche));
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList= ordersService.Rechercher (Integer.parseInt (recherche));
         ShowOrders (ordersList);
 
 
@@ -453,37 +449,37 @@ public class OrdersController implements Initializable {
 
     @FXML
     private void Click(ActionEvent actionEvent) throws Exception {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList1=ordersCRUD.Rechercherstatus (String.valueOf (status.getValue ()));
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList1= ordersService.Rechercherstatus (String.valueOf (status.getValue ()));
         ShowOrders (ordersList1);
     }
 
     @FXML
     private void sort(ActionEvent actionEvent) throws Exception {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList1=ordersCRUD.sortbyorderdate ();
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList1= ordersService.sortbyorderdate ();
         ShowOrders (ordersList1);
     }
 
     @FXML
     private void sort1(ActionEvent actionEvent) throws Exception {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList1=ordersCRUD.sortbyquantity ();
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList1= ordersService.sortbyquantity ();
         ShowOrders (ordersList1);
     }
 
     @FXML
     private void sort2(ActionEvent actionEvent) throws Exception {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList1=ordersCRUD.sortbyDueAmount ();
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList1= ordersService.sortbyDueAmount ();
         ShowOrders (ordersList1);
     }
 
     @FXML
     private void type(InputMethodEvent inputMethodEvent) throws Exception {
         String recherche=search.getText ();
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList=ordersCRUD.Rechercher (Integer.parseInt (recherche));
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList= ordersService.Rechercher (Integer.parseInt (recherche));
         ShowOrders (ordersList);
     }
     @FXML
@@ -519,4 +515,14 @@ public class OrdersController implements Initializable {
         dialogStage.show ();
     }
 
+    @FXML
+    private void Location(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Endroit/AfficherReservation.fxml")));
+        dialogStage.setTitle ("ArtDome - Endroit");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
 }

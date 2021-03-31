@@ -266,7 +266,7 @@ String chemin = "";
             oblist.clear();
             ResultSet rs;
 
-            rs = con.createStatement().executeQuery("SELECT r.id_reservation,r.idclient,r.prix_total,r.Cautionnement,r.matricule,r.date_debut,r.date_fin, c.nom  ,c.prenom  FROM reservation r INNER JOIN client as c ON r.idclient = c.idclient where id_reservation='" + idres1.getText() + "'");
+            rs = con.createStatement().executeQuery("SELECT r.id_reservation,r.idclient,r.prix_total,r.Cautionnement,r.matricule,r.date_debut,r.date_fin, c.nom  ,c.prenom  FROM reservation r INNER JOIN user as c ON r.idclient = c.ID where id_reservation='" + idres1.getText() + "'");
 
             System.out.println("f");
             while (rs.next())
@@ -282,7 +282,7 @@ String chemin = "";
             col_cautionnement.setCellValueFactory(new PropertyValueFactory<>("Cautionnement"));
             col_prix_final.setCellValueFactory(new PropertyValueFactory<>("prix_total"));
             col_id_res.setCellValueFactory(new PropertyValueFactory<>("id_reservation"));
-            col_id_client.setCellValueFactory(new PropertyValueFactory<>("idclient"));
+            col_id_client.setCellValueFactory(new PropertyValueFactory<>("id_client"));
             col_matricule.setCellValueFactory(new PropertyValueFactory<>("matricule"));
             col_date_debut.setCellValueFactory(new PropertyValueFactory<>("date_debut"));
             col_date_fin.setCellValueFactory(new PropertyValueFactory<>("date_fin"));

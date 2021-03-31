@@ -91,7 +91,7 @@ public class ProfileController implements Initializable {
         Node source = (Node) event.getSource ();
         dialogStage = (Stage) source.getScene ().getWindow ();
         dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../User/Profile.fxml")));
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../HomeScene.fxml")));
         dialogStage.setTitle ("ArtDome - Profile");
         dialogStage.setScene (scene);
         dialogStage.show ();
@@ -150,7 +150,7 @@ public class ProfileController implements Initializable {
         Node source = (Node) actionEvent.getSource ();
         dialogStage = (Stage) source.getScene ().getWindow ();
         dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Oeuvre/Oeuvre.fxml")));
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Oeuvre/OeuvreItem.fxml")));
         dialogStage.setTitle ("ArtDome - Oeuvre");
         dialogStage.setScene (scene);
         dialogStage.show ();
@@ -163,6 +163,17 @@ public class ProfileController implements Initializable {
         dialogStage.close ();
         scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Exposition/AddReservation_expo.fxml")));
         dialogStage.setTitle ("ArtDome - Exposition");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void location(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Endroit/AfficherReservation.fxml")));
+        dialogStage.setTitle ("ArtDome - Endroit");
         dialogStage.setScene (scene);
         dialogStage.show ();
     }

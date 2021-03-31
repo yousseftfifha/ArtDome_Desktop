@@ -267,7 +267,7 @@ public class OeuvreItem implements Initializable {
         Node source = (Node) actionEvent.getSource ();
         dialogStage = (Stage) source.getScene ().getWindow ();
         dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../OrdersCart/payement.fxml")));
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../OrdersCart/Orders.fxml")));
         dialogStage.setTitle ("ArtDome - payment");
         dialogStage.setScene (scene);
         dialogStage.show ();
@@ -346,6 +346,17 @@ public class OeuvreItem implements Initializable {
         dialogStage.close ();
         scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Blog/BlogShow.fxml")));
         dialogStage.setTitle ("ArtDome - Blog");
+        dialogStage.setScene (scene);
+        dialogStage.show ();
+    }
+
+    @FXML
+    private void location(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource ();
+        dialogStage = (Stage) source.getScene ().getWindow ();
+        dialogStage.close ();
+        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Endroit/AfficherReservation.fxml")));
+        dialogStage.setTitle ("ArtDome - Endroit");
         dialogStage.setScene (scene);
         dialogStage.show ();
     }

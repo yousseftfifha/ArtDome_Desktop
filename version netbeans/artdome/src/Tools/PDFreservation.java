@@ -13,11 +13,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 import Entities.User;
 import Entities.reservation_expo;
-import Services.ReservationEMethods;
+import Services.ReservationEService;
 
 /**
  *
@@ -29,7 +28,7 @@ public class PDFreservation {
     {
         Document document = new Document();
 
-        ReservationEMethods rm = new ReservationEMethods ();
+        ReservationEService rm = new ReservationEService ();
         List<reservation_expo> res=rm.getReservationEList();
         List<User> re=rm.getUserListe();
         PdfWriter.getInstance(document, new FileOutputStream (new File ("C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo/Réservation.pdf")));
@@ -68,7 +67,7 @@ public class PDFreservation {
     {
         Document document = new Document();
 
-        ReservationEMethods rm = new ReservationEMethods ();
+        ReservationEService rm = new ReservationEService ();
         List<reservation_expo> res=rm.getReservationEList();
         List<User> re=rm.getUserListe();
         PdfWriter.getInstance(document, new FileOutputStream (new File ("Réservation.pdf")));

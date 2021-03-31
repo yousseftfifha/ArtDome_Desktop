@@ -171,5 +171,6 @@
             </children>
         </VBox>
       <PieChart fx:id="chart" layoutX="334.0" layoutY="176.0" />
+      <JFXButton layoutX="1188.0" layoutY="163.0" onAction="#logout" text="Logout" />
     </children>
 </AnchorPane>

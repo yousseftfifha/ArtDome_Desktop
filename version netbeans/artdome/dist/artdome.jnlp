@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="artdome.jar" size="20715026" download="eager" />
+    <jar href="artdome.jar" size="21192983" download="eager" />
     <jar href="lib\Bulk_SMS_Library.jar" size="3292" download="eager" />
     <jar href="lib\GMapsFX-8.0.0.jar" size="3893601" download="eager" />
     <jar href="lib\TrayNotification-5393c3a54f.jar" size="42522" download="eager" />
@@ -59,6 +59,6 @@
     <jar href="lib\zxing-1.7-javase.jar" size="22002" download="eager" />
     <jar href="lib\zxing-core-2.0.jar" size="432773" download="eager" />
   </resources>
-  <jfx:javafx-desc  width="800" height="600" main-class="Tests.DashFxTest"  name="artdome" />
+  <jfx:javafx-desc  width="800" height="600" main-class="Tests.FxTest"  name="artdome" />
   <update check="always"/>
 </jnlp>

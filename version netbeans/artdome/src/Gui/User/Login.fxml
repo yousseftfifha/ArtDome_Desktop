@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.User.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.User.LoginController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="584.0" prefWidth="967.0" style="-fx-background-color: #2C3033;">
          <children>
-            <ImageView fitHeight="590.0" fitWidth="536.0" focusTraversable="true" layoutY="1.0" mouseTransparent="true" opacity="0.3" pickOnBounds="true">
+            <ImageView fitHeight="590.0" fitWidth="536.0" focusTraversable="true" mouseTransparent="true" opacity="0.3" pickOnBounds="true">
                <image>
                   <Image url="@../../GFX/faza.jpg" />
                </image>

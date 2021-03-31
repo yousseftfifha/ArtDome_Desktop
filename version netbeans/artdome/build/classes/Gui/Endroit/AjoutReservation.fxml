@@ -226,6 +226,6 @@
             <Font size="18.0" />
          </font>
       </JFXTextField>
-      <JFXDatePicker fx:id="datef" defaultColor="TOMATO" layoutX="762.0" layoutY="424.0" prefHeight="39.0" prefWidth="338.0" promptText="Date Fin" />
+      <DatePicker fx:id="datef" layoutX="762.0" layoutY="424.0" prefHeight="39.0" prefWidth="338.0" promptText="Date Fin" />
    </children>
 </AnchorPane>

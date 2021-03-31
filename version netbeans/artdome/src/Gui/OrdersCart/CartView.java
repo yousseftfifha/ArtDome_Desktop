@@ -1,11 +1,10 @@
 package Gui.OrdersCart;
 
 import Entities.Cart;
-import Entities.User;
 import Entities.UserHolder;
 import Gui.Oeuvre.OeuvreItem;
 import Services.CartServices;
-import Services.OrdersCRUD;
+import Services.OrdersService;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -299,9 +298,9 @@ public class CartView implements Initializable {
 
     @FXML
     private void check(ActionEvent actionEvent) throws IOException, MessagingException, URISyntaxException, DocumentException {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        OrdersService ordersService =new OrdersService ();
         UserHolder holder = UserHolder.getInstance();
-        ordersCRUD.AddFromCart (holder.getUser().getId ());
+        ordersService.AddFromCart (holder.getUser().getId ());
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();

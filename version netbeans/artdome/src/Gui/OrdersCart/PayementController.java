@@ -6,10 +6,9 @@
 package Gui.OrdersCart;
 
 import Entities.Orders;
-import Entities.User;
 import Entities.UserHolder;
 import Services.CartServices;
-import Services.OrdersCRUD;
+import Services.OrdersService;
 import Tools.MyConnection;
 import javafx.scene.image.Image;
 
@@ -73,9 +72,9 @@ public class PayementController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         MyConnection myConnection = MyConnection.getInstance ();
         CartServices cartServices =new CartServices ();
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
+        OrdersService ordersService =new OrdersService ();
         UserHolder holder = UserHolder.getInstance();
-        List<Orders> LastOrder=ordersCRUD.readprice();
+        List<Orders> LastOrder= ordersService.readprice();
         usermail.setText (holder.getUser().getEmail ());
         montant.setText (String.valueOf (((int) LastOrder.get (0).getDueAmount ())));
         First.setText (holder.getUser().getPrenom ());

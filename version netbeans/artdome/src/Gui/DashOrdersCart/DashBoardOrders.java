@@ -5,7 +5,7 @@ import Entities.PendingOrders;
 import Gui.DashBoardSceneController;
 import Gui.Event.ReservationBackController;
 import Gui.Oeuvre.OeuvreItem;
-import Services.OrdersCRUD;
+import Services.OrdersService;
 import Tools.*;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
@@ -66,8 +66,8 @@ public class DashBoardOrders  implements Initializable {
 
         try {
 
-            OrdersCRUD ordersCRUD = new OrdersCRUD ();
-            List<Orders> ordersList = ordersCRUD.readAllOrders ();
+            OrdersService ordersService = new OrdersService ();
+            List<Orders> ordersList = ordersService.readAllOrders ();
             ShowOrders (ordersList);
         } catch (Exception ex) {
             Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
@@ -224,10 +224,10 @@ public class DashBoardOrders  implements Initializable {
             Valider.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    OrdersCRUD ordersCRUD=new OrdersCRUD ();
-                    ordersCRUD.updateOrderStatus(orders.getOrderID (),"confirmed");
+                    OrdersService ordersService =new OrdersService ();
+                    ordersService.updateOrderStatus(orders.getOrderID (),"confirmed");
                     try {
-                        List<Orders> ordersList = ordersCRUD.readAllOrders ();
+                        List<Orders> ordersList = ordersService.readAllOrders ();
                         ShowOrders (ordersList);
                     } catch (Exception ex) {
                         Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
@@ -237,10 +237,10 @@ public class DashBoardOrders  implements Initializable {
             Cancel.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    OrdersCRUD ordersCRUD=new OrdersCRUD ();
-                    ordersCRUD.updateOrderStatus(orders.getOrderID (),"cancelled");
+                    OrdersService ordersService =new OrdersService ();
+                    ordersService.updateOrderStatus(orders.getOrderID (),"cancelled");
                     try {
-                        List<Orders> ordersList = ordersCRUD.readAllOrders ();
+                        List<Orders> ordersList = ordersService.readAllOrders ();
                         ShowOrders (ordersList);
                     } catch (Exception ex) {
                         Logger.getLogger (OeuvreItem.class.getName ()).log (Level.SEVERE, null, ex);
@@ -251,8 +251,8 @@ public class DashBoardOrders  implements Initializable {
             showDetails.setOnAction (new EventHandler<ActionEvent> () {
                 @Override
                 public void handle(ActionEvent event) {
-                    OrdersCRUD ordersCRUD = new OrdersCRUD ();
-                    List<PendingOrders> ordersList = ordersCRUD.selectPendById (orders.getOrderID ());
+                    OrdersService ordersService = new OrdersService ();
+                    List<PendingOrders> ordersList = ordersService.selectPendById (orders.getOrderID ());
 
 
                     VBox Container = new VBox ();  // main container for all data specific to a materiel
@@ -422,28 +422,7 @@ public class DashBoardOrders  implements Initializable {
     }
 
 
-    @FXML
-    private void gotohome(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../DashBoardScene.fxml")));
-        dialogStage.setTitle ("ArtDome - Home");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
 
-
-    @FXML
-    private void gotoorders(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("DashBoardOrders.fxml")));
-        dialogStage.setTitle ("ArtDome - Orders");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
 
     @FXML
     private void print(ActionEvent actionEvent) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
@@ -463,8 +442,8 @@ public class DashBoardOrders  implements Initializable {
     @FXML
     private void searchOrder(ActionEvent actionEvent) throws Exception {
         String recherche=search.getText ();
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList=ordersCRUD.Rechercher (Integer.parseInt (recherche));
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList= ordersService.Rechercher (Integer.parseInt (recherche));
         ShowOrders (ordersList);
 
 
@@ -472,8 +451,8 @@ public class DashBoardOrders  implements Initializable {
 
     @FXML
     private void Click(ActionEvent actionEvent) throws Exception {
-        OrdersCRUD ordersCRUD=new OrdersCRUD ();
-        List<Orders> ordersList1=ordersCRUD.Rechercherstatus (String.valueOf (status.getValue ()));
+        OrdersService ordersService =new OrdersService ();
+        List<Orders> ordersList1= ordersService.Rechercherstatus (String.valueOf (status.getValue ()));
         ShowOrders (ordersList1);
     }
 
@@ -526,50 +505,72 @@ public class DashBoardOrders  implements Initializable {
     }
 
     @FXML
-    private void gotouser(ActionEvent actionEvent) throws IOException {
+    private void gotoevent(ActionEvent actionEvent) throws IOException {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/User.fxml")));
-        dialogStage.setTitle("ArtDome - User");
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Event");
         dialogStage.setScene(scene);
-dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
-
     @FXML
-    private void gotooeuvre(ActionEvent actionEvent) throws IOException {
+    private void showOrders(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashOrdersCart/DashBoardOrders.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Orders");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+    @FXML
+    private void gotoOeuvre(ActionEvent actionEvent) throws IOException {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/Oeuvre.fxml")));
-        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
         dialogStage.setScene(scene);
         dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
     @FXML
-    private void gotoexpo(ActionEvent actionEvent)throws IOException {
+    private void gotooexpo(ActionEvent actionEvent) throws IOException {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/Reservation_expoBack.fxml")));
-        dialogStage.setTitle("ArtDome - Exposition");
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
         dialogStage.setScene(scene);
-dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
     @FXML
-    private void gotoevent(ActionEvent actionEvent) throws IOException {
+    private void gotouser(ActionEvent actionEvent) throws IOException {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
-        dialogStage.setTitle("ArtDome - Event");
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/User.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
         dialogStage.setScene(scene);
-dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void endroit(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Endroit/AfficherEndroit.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - Endroit");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 }

@@ -2,7 +2,7 @@ package Tools;
 
 import Entities.Orders;
 import Entities.PendingOrders;
-import Services.OrdersCRUD;
+import Services.OrdersService;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -24,9 +24,9 @@ import java.util.List;
 public class PDF {
     public void pdfGeneration() throws FileNotFoundException, DocumentException, MalformedURLException, IOException, URISyntaxException {
         Document document = new Document();
-        OrdersCRUD ordersCRUD = new OrdersCRUD ();
-        List<Orders> order=ordersCRUD.readAllOrders ();
-        List<PendingOrders> pendingOrders=ordersCRUD.readAllpendingOrders ();
+        OrdersService ordersService = new OrdersService ();
+        List<Orders> order= ordersService.readAllOrders ();
+        List<PendingOrders> pendingOrders= ordersService.readAllpendingOrders ();
         PdfWriter.getInstance(document, new FileOutputStream (new File ("orders.pdf")));
         document.open();
         document.addTitle("Orders");
