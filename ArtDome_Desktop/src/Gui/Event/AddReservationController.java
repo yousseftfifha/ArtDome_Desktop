@@ -153,7 +153,7 @@ public class AddReservationController implements Initializable {
 
         public void showReservation(){
         ReservationMethods rm=new ReservationMethods();
-        ObservableList<Reservation> Reservationlist = rm.listeResC();
+        ObservableList<Reservation> Reservationlist = rm.listeReservationFront ();
         colcoder.setCellValueFactory(new PropertyValueFactory<Reservation, Integer>("code_reservation"));
         colnbplace.setCellValueFactory(new PropertyValueFactory<Reservation, Integer>("nb_place"));
         tvr.setItems(Reservationlist);

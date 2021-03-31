@@ -88,7 +88,7 @@ public class OrdersController implements Initializable {
 
 
         AnchorPane.setTopAnchor (scrollPane, 0.);
-     
+
         Container.setMinWidth (1000);
         Container.setMinWidth (400);
         content.setRightAnchor (scrollPane, 0.);

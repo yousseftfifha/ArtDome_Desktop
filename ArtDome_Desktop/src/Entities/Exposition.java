@@ -26,6 +26,10 @@ public class Exposition {
     public Exposition() {
     }
 
+    public Exposition(int code_artiste) {
+        this.code_artiste = code_artiste;
+    }
+
     public Exposition(int code_expo, String nom_expo, String theme_expo, int code_espace, int code_artiste, Date date_expo, int nb_participant, int nb_max_participant, int code_oeuvre) {
         this.code_expo = code_expo;
         this.nom_expo = nom_expo;

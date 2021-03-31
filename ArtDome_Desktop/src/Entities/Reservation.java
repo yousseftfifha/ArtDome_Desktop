@@ -18,6 +18,11 @@ public class Reservation {
     public Reservation() {
     }
 
+    public Reservation(int code_reservation, int nb_place, int code_event) {
+        this.code_reservation = code_reservation;
+        this.nb_place = nb_place;
+        this.code_event = code_event;
+    }
 //    public Reservation(String nom_client, String prenom_client, int telephone, String email, int nb_place, int code_event) {
 //        this.nom_client = nom_client;
 //        this.prenom_client = prenom_client;

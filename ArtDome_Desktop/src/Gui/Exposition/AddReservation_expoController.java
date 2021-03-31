@@ -5,6 +5,7 @@
  */
 package Gui.Exposition;
 
+import Entities.UserHolder;
 import Tools.QRcodeE;
 import com.github.plushaze.traynotification.notification.TrayNotification;
 
@@ -123,7 +124,11 @@ public class AddReservation_expoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
          nb_place.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 5000));
-         showReservationE(); 
+         showReservationE();
+        UserHolder holder = UserHolder.getInstance();
+        int id =holder.getUser ().getId ();
+        code_client.setText(""+id);
+
     }    
     
     public void setTfcodeeeEvent(String codeeeExpo) {
@@ -163,9 +168,11 @@ public class AddReservation_expoController implements Initializable {
     }
          public void showUser(int user){
         ReservationEService ex=new ReservationEService ();
-        ObservableList<User> userlist = ex.getUserList(user);
+             UserHolder holder = UserHolder.getInstance();
+             int id =holder.getUser ().getId ();
+        ObservableList<User> userlist = ex.getUserList(id);
         
-        colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("ID"));
+        colcodeclient2.setCellValueFactory(new PropertyValueFactory<User, Integer>("id"));
         colnomClient.setCellValueFactory(new PropertyValueFactory<User, String>("nom"));
         colprenomClient.setCellValueFactory(new PropertyValueFactory<User, String>("prenom"));
         coledatenaissance.setCellValueFactory(new PropertyValueFactory<User, Date>("datenaissance"));
@@ -182,7 +189,7 @@ public class AddReservation_expoController implements Initializable {
     
        public void showReservationE(){
            ReservationEService rem=new ReservationEService ();
-        ObservableList<reservation_expo> Reservationlist = rem.getReservationEList();
+        ObservableList<reservation_expo> Reservationlist = rem.getReservationEListFront ();
         colcode.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_reservationE"));
        // colcodeclient.setCellValueFactory(new PropertyValueFactory<reservation_expo, Integer>("code_client"));
 //        colnomClient.setCellValueFactory(new PropertyValueFactory<reservation_expo, String>("nom_client"));
@@ -309,10 +316,10 @@ public class AddReservation_expoController implements Initializable {
     private void DeleteReservationE(ActionEvent event) {
                 int codeee = Integer.parseInt(codeeeReservation.getText().trim());
 //        Integer.parseInt(line.toString())
-            String nom= nom_client.getText();
-            String prenom = prenom_client.getText();
-            int tel =  Integer.parseInt(telephone.getText().trim());
-            String mail = email.getText();
+//            String nom= nom_client.getText();
+//            String prenom = prenom_client.getText();
+//            int tel =  Integer.parseInt(telephone.getText().trim());
+           // String mail = email.getText();
             int nbplace = nb_place.getValue();
         ReservationEService em = new ReservationEService ();
             em.DeleteExpo(codeee);

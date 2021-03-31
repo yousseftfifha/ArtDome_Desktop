@@ -91,8 +91,10 @@ public class LoginController implements Initializable {
                    
                 Stage stage = new Stage();
                 stage.setTitle("ArtDome");
-                 
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../Gui/DashBoardScene.fxml."))));
+                    User u = new User (resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getDate(4),resultSet.getString(5),resultSet.getString(6),resultSet.getInt(7),resultSet.getString(10));
+                    UserHolder holder = UserHolder.getInstance();
+                    holder.setUser(u);
                 stage.show();
                 BValider.getScene().getWindow().hide();
                 }

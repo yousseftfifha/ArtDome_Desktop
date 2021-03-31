@@ -11,8 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import Entities.Orders;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -190,7 +194,24 @@ public class ExpoService {
 //        }
 //        return expolist;
 //     }
-       
+public List<String> combofill ()
+{
+    List<String> list =new ArrayList<> () ;
+    String req = "select ID from user ";
+    try {
+        st = cnx.createStatement();
+        rs= st.executeQuery(req);
+        while (rs.next()){
+            list.add(
+                    rs.getString (1)
+            );
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return list;
+
+}
                     
                     
                     

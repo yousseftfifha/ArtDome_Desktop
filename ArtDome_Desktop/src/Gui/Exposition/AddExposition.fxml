@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
@@ -227,17 +228,17 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Label>
-            <Label text="nombre participant:">
-               <font>
-                  <Font name="System Bold Italic" size="13.0" />
-               </font>
-            </Label>
             <Label text="nombre max de participant:">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Label>
-            <Label text="code oeuvre:">
+            <Label text="nombre de participant">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label text="code oeuvre:" visible="false">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
@@ -283,8 +284,8 @@
          <children>
             <TextField fx:id="nom_expo" />
             <ComboBox fx:id="theme_expo" prefWidth="150.0" />
-            <TextField fx:id="code_artiste" />
             <TextField fx:id="code_espace" />
+            <JFXComboBox fx:id="code_artiste" prefHeight="26.0" prefWidth="152.0" />
          </children>
       </VBox>
       <VBox layoutX="743.0" layoutY="217.0" prefHeight="102.0" prefWidth="180.0">
@@ -292,7 +293,7 @@
             <DatePicker fx:id="date_expo" prefHeight="26.0" prefWidth="181.0" />
             <Spinner fx:id="nb_participant" prefHeight="26.0" prefWidth="182.0" />
             <Spinner fx:id="nb_max_participant" prefHeight="26.0" prefWidth="185.0" />
-            <TextField fx:id="code_oeuvre" />
+            <TextField fx:id="code_oeuvre" visible="false" />
          </children>
       </VBox>
       <Button layoutX="743.0" layoutY="168.0" mnemonicParsing="false" onAction="#charts" text="Statistiques des expositionston" />
@@ -314,7 +315,7 @@
             <TableColumn fx:id="coldate" prefWidth="75.0" text="date expo" />
             <TableColumn fx:id="colnb" prefWidth="150.39996337890625" text="nombre participant max" />
             <TableColumn fx:id="colnbmax" prefWidth="116.79998779296875" text="nombre participant" />
-            <TableColumn fx:id="coloeuvre" prefWidth="87.2000732421875" text="code oeuvre" />
+            <TableColumn fx:id="coloeuvre" prefWidth="87.2000732421875" text="code oeuvre" visible="false" />
         </columns>
       </TableView>
    </children>

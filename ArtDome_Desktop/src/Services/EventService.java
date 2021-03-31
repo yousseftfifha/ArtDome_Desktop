@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import Entities.UserHolder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -39,7 +41,9 @@ public class EventService {
     }
     
     public void AddEvent(Event e){
-        String req ="INSERT INTO event (nom_event, theme_event, etat, date, nb_max_part, image, video, code_espace)"+"values (?,?,?,?,?,?,?,?)";
+        UserHolder holder = UserHolder.getInstance();
+        int id=holder.getUser ().getId () ;
+        String req ="INSERT INTO event (nom_event, theme_event, etat, date, nb_max_part, image, video, code_espace,code_artiste)"+"values (?,?,?,?,?,?,?,?,?)";
         try {
             ste = cnx.prepareStatement(req);
             ste.setString(1, e.getNom_event());
@@ -51,6 +55,8 @@ public class EventService {
             ste.setString(6, e.getImage());
             ste.setString(7, e.getVideo());
             ste.setInt(8, e.getCode_espace());
+            ste.setInt(9, id);
+
             //ste.setInt(10, e.getCode_artiste());
             ste.executeUpdate();
             JOptionPane.showMessageDialog(null, "Evènement ajouté", "", JOptionPane.INFORMATION_MESSAGE);
@@ -77,6 +83,25 @@ public class EventService {
 
         } catch (SQLException ex) {
            System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return eventlist;
+    }
+    public ObservableList<Event> getEventListBACK(){
+        ObservableList<Event> eventlist = FXCollections.observableArrayList();
+        UserHolder holder = UserHolder.getInstance();
+        int id =holder.getUser ().getId ();
+        String req = "SELECT * from event where code_artiste='"+id+"' ORDER BY etat";
+        try {
+            st = cnx.createStatement();
+            rs= st.executeQuery(req);
+            while(rs.next()){
+                User u=new User(rs.getInt("code_artiste"));
+                eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"),rs.getInt("nb_participant"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"), u ));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Probléme");
             System.out.println(ex.getMessage());
         }
         return eventlist;
@@ -197,7 +222,9 @@ public class EventService {
           
      public ObservableList<Event> SearchEvent(String search ){
          ObservableList<Event> eventlist = FXCollections.observableArrayList();
-         String req ="select * from event WHERE nom_event='"+search+"' or theme_event= '"+search+"' or etat ='"+search+"'";
+         UserHolder holder = UserHolder.getInstance();
+         int id =holder.getUser ().getId ();
+         String req ="select * from event WHERE  code_artiste='"+id+"' and nom_event='"+search+"' or theme_event= '"+search+"' or etat ='"+search+"'";
          try {
             st = cnx.createStatement();
            rs= st.executeQuery(req);

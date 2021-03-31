@@ -2,22 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facture.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Facture.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Liste Reservation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Liste Reservation.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Orders.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Réservation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Réservation.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Réservation.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Réservation.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/orders.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Exposition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Exposition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Reservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddExposition.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/chartExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/chartExposition.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddExpositionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddExpositionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/EventService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ExpoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ExpoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationEService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationEService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ReservationMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/QRcodeE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/QRcodeE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Exposition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Exposition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddExposition.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/chartExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/chartExposition.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddExpositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddExpositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ExpoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ExpoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ReservationEService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ReservationEService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ReservationMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ReservationMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Excel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/QRcodeE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/QRcodeE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -472,7 +488,7 @@
       <workItem from="1617136912279" duration="16000" />
       <workItem from="1617137874180" duration="697000" />
       <workItem from="1617179872133" duration="6188000" />
-      <workItem from="1617186788947" duration="2330000" />
+      <workItem from="1617186788947" duration="10808000" />
     </task>
     <servers />
   </component>

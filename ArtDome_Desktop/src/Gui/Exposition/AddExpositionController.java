@@ -10,9 +10,12 @@ import java.net.URL;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,9 +60,11 @@ public class AddExpositionController implements Initializable {
     @FXML
     private ComboBox<String> theme_expo;
     @FXML
-    private DatePicker date_expo;
+    private JFXComboBox<String> code_artiste;
     @FXML
-    private TextField code_artiste;
+    private DatePicker date_expo;
+//    @FXML
+//    private TextField code_artiste;
     @FXML
     private TextField code_oeuvre;
     @FXML
@@ -119,7 +124,11 @@ public class AddExpositionController implements Initializable {
       list.add("peinture");
       list.add("sculture");
       list.add("autre..");
-      
+      ExpoService expoService=new ExpoService ();
+        ObservableList<String> Combo = code_artiste.getItems();
+          Combo.addAll(expoService.combofill ());
+
+
       nb_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0,5000));
       nb_max_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 5000));
       
@@ -137,7 +146,7 @@ public class AddExpositionController implements Initializable {
             String nom = nom_expo.getText();
             String theme = theme_expo.getValue();
             int espace = Integer.valueOf(code_espace.getText());
-            int artiste = Integer.valueOf(code_artiste.getText());
+            int artiste = Integer.valueOf(code_artiste.getValue ());
             
             Date date = java.sql.Date.valueOf(date_expo.getValue());
             int nbP = nb_participant.getValue();
@@ -191,7 +200,7 @@ public class AddExpositionController implements Initializable {
             nom_expo.setText(" "+ ev.getNom_expo());
             theme_expo.setValue(ev.getTheme_expo());
             code_espace.setText(" "+ev.getCode_espace());
-            code_artiste.setText(" "+ev.getCode_artiste());
+            code_artiste.setValue (" "+ev.getCode_artiste());
             date_expo.setValue(Instant.ofEpochMilli((ev.getDate_expo()).getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
             nb_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_participant(), 5000));
             nb_max_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_max_participant(), 5000));
@@ -211,7 +220,7 @@ public class AddExpositionController implements Initializable {
             String nom = nom_expo.getText();
             String theme = theme_expo.getValue();
             int espace = Integer.parseInt(code_espace.getText().trim());
-            int artiste = Integer.parseInt(code_artiste.getText().trim());
+            int artiste = Integer.parseInt(code_artiste.getValue ().trim());
             Date date = java.sql.Date.valueOf(date_expo.getValue());
             int nb_part = nb_participant.getValue();
             int nb_max_part = nb_max_participant.getValue();

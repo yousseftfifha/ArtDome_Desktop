@@ -184,7 +184,7 @@ public class AddEventController implements Initializable {
 //        ImageView iv1 = new ImageView();
 //        iv1.setImage(new Image("flower.png"));
         EventService em=new EventService ();
-        ObservableList<Event> eventlist = em.getEventList();
+        ObservableList<Event> eventlist = em.getEventListBACK ();
         colnom.setCellValueFactory(new PropertyValueFactory<Event, String>("nom_event"));
         coltheme.setCellValueFactory(new PropertyValueFactory<Event, String>("theme_event"));
         coletat.setCellValueFactory(new PropertyValueFactory<Event, String>("etat"));

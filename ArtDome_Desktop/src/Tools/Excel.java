@@ -40,7 +40,7 @@ public class Excel {
     public void Excel() throws SQLException, WriteException, IOException{
         
         WritableWorkbook myFirstWbook = null;
-        String requete = "Select r.code_reservation, r.nb_place, r.code_event, u.nom, u.prenom, u.email, u.numero FROM reservation r INNER JOIN user u ON r.code_client = u.id ORDER BY code_reservation DESC";
+        String requete = "Select r.code_reservation, r.nb_place, r.code_event, u.nom, u.prenom, u.email, u.numero FROM reservationevent r INNER JOIN user u ON r.code_client = u.id ORDER BY code_reservation DESC";
         Connection cx = MyConnection.getInstance().getConnection();
         Statement st = cx.createStatement();
         ResultSet rs = st.executeQuery(requete);

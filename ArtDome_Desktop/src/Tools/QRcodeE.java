@@ -34,7 +34,7 @@ public class QRcodeE {
  public void QRcodeE(){
     try {
         Connection cx = MyConnection.getInstance().getConnection();
-        String query = "Select r.code_reservationE, r.nb_place, u.nom, u.prenom, u.email, u.numero FROM reservation r INNER JOIN user u ON r.code_client = u.ID ORDER BY code_reservationE DESC";
+        String query = "Select r.code_reservationE, r.nb_place, u.nom, u.prenom, u.email, u.numero FROM reservation_expo r INNER JOIN user u ON r.code_client = u.ID ORDER BY code_reservationE DESC";
         Statement st = cx.createStatement();
         ResultSet rs = st.executeQuery(query);
             
@@ -48,7 +48,7 @@ public class QRcodeE {
 	}
 	public static void generate_qr(String image_name,String qrCodeData) {
         try {
-            String filePath = "C:\\Users\\Oumaima\\Documents\\NetBeansProjects\\RéservationExpo\\"+image_name+".png";
+            String filePath =image_name+".png";
             String charset = "UTF-8"; // or "ISO-8859-1"
             Map < EncodeHintType, ErrorCorrectionLevel > hintMap = new HashMap < EncodeHintType, ErrorCorrectionLevel > ();
             hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);

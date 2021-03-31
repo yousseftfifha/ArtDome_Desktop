@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import Entities.UserHolder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import Entities.User;
@@ -36,10 +38,12 @@ public class ReservationEService {
      
      
       public void AddReservationE(reservation_expo r){
+          UserHolder holder = UserHolder.getInstance();
+          int id =holder.getUser ().getId ();
         String req ="INSERT INTO reservation_expo (code_client, nb_place, code_expo)"+"values (?,?,?)";
         try {
             ste = cnx.prepareStatement(req);
-            ste.setInt(1, r.getCode_client());
+            ste.setInt(1, id);
             ste.setInt(2, r.getNb_place());
             ste.setInt(3, r.getCode_expo());
 
@@ -65,6 +69,24 @@ public class ReservationEService {
 
         } catch (SQLException ex) {
            System.out.println("Probléme");
+            System.out.println(ex.getMessage());
+        }
+        return ReservationElist;
+    }
+    public ObservableList<reservation_expo> getReservationEListFront(){
+        ObservableList<reservation_expo> ReservationElist = FXCollections.observableArrayList();
+        UserHolder holder = UserHolder.getInstance();
+        int id =holder.getUser ().getId ();
+        String req = "SELECT * from reservation_expo WHERE  code_client='"+id+"'";
+        try {
+            st = cnx.createStatement();
+            rs= st.executeQuery(req);
+            while(rs.next()){
+                ReservationElist.add(new reservation_expo(rs.getInt("code_reservationE"), rs.getInt("code_client"), rs.getInt("nb_place")));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Probléme");
             System.out.println(ex.getMessage());
         }
         return ReservationElist;
@@ -121,7 +143,7 @@ public class ReservationEService {
            
                public ObservableList<User> getUserList(int code){
         ObservableList<User> userlist = FXCollections.observableArrayList();
-         String req = "SELECT * from reservation_expo JOIN user on code_client=ID where ID='"+code+"'";
+         String req = "SELECT * from reservation_expo JOIN user on code_client=ID where ID='"+code+"' ";
         try {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
@@ -139,7 +161,9 @@ public class ReservationEService {
                
                           public ObservableList<reservation_expo> SearchReservation(int search ){
          ObservableList<reservation_expo> Reserlist = FXCollections.observableArrayList();
-         String req ="select * from reservation_expo WHERE code_reservationE='"+search+"' or nb_place= '"+search+"'";
+                              UserHolder holder = UserHolder.getInstance();
+                              int id =holder.getUser ().getId ();
+         String req ="select * from reservation_expo WHERE code_client='"+id+"' and code_reservationE='"+search+"' or nb_place= '"+search+"'";
          try {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
