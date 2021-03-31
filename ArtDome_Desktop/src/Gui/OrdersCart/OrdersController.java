@@ -84,11 +84,11 @@ public class OrdersController implements Initializable {
         ScrollPane scrollPane = new ScrollPane (Container);
         scrollPane.setMinSize (1000, 400);
         scrollPane.setHbarPolicy (ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setVbarPolicy (ScrollPane.ScrollBarPolicy.NEVER);
+
 
         AnchorPane.setTopAnchor (scrollPane, 0.);
-        AnchorPane.setRightAnchor(scrollPane, 0.0);
-        AnchorPane.setLeftAnchor(scrollPane, 0.0);
-        AnchorPane.setBottomAnchor(scrollPane, 0.0);
+     
         Container.setMinWidth (1000);
         Container.setMinWidth (400);
         content.setRightAnchor (scrollPane, 0.);

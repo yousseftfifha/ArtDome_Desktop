@@ -21,7 +21,7 @@
 
 <AnchorPane id="AnchorPane" minHeight="700.0" minWidth="1000.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Exposition.AddExpositionController">
    <children>
-      <Button layoutX="946.0" layoutY="711.0" mnemonicParsing="false" onAction="#Reserver" prefHeight="26.0" prefWidth="109.0" text="Réservations" />
+      <Button layoutX="937.0" layoutY="168.0" mnemonicParsing="false" onAction="#Reserver" prefHeight="26.0" prefWidth="109.0" text="Réservations" />
       <Button layoutX="931.0" layoutY="226.0" mnemonicParsing="false" onAction="#AddExpo" prefHeight="26.0" prefWidth="122.0" text="Ajouter" />
       <Button layoutX="931.0" layoutY="253.0" mnemonicParsing="false" onAction="#UpdateExpo" prefHeight="26.0" prefWidth="122.0" text="Modifier" />
       <Button layoutX="931.0" layoutY="284.0" mnemonicParsing="false" onAction="#DeleteExpo" prefHeight="26.0" prefWidth="122.0" text="Supprimer" />
@@ -255,7 +255,7 @@
             <Image url="@../../GFX/refresh.png" />
          </image>
       </ImageView>
-      <Label blendMode="DARKEN" contentDisplay="CENTER" layoutX="594.0" layoutY="136.0" text="Expositions" textAlignment="CENTER" textFill="#820d0d">
+      <Label blendMode="DARKEN" contentDisplay="CENTER" layoutX="309.0" layoutY="150.0" text="Expositions" textAlignment="CENTER" textFill="#820d0d">
          <font>
             <Font name="System Bold Italic" size="30.0" />
          </font>
@@ -274,7 +274,7 @@
             <Image url="@../../GFX/refresh.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="19.0" fitWidth="29.0" layoutX="946.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="19.0" fitWidth="29.0" layoutX="939.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../GFX/reservation.png" />
          </image>
@@ -295,7 +295,7 @@
             <TextField fx:id="code_oeuvre" />
          </children>
       </VBox>
-      <Button layoutX="663.0" layoutY="699.0" mnemonicParsing="false" onAction="#charts" text="Statistiques des expositionston" />
+      <Button layoutX="743.0" layoutY="168.0" mnemonicParsing="false" onAction="#charts" text="Statistiques des expositionston" />
       <Button layoutX="846.0" layoutY="371.0" mnemonicParsing="false" onAction="#search" text="recherche" />
       <TextField fx:id="searchExpo" layoutX="277.0" layoutY="371.0" prefHeight="26.0" prefWidth="554.0" />
       <TableView fx:id="tvoeuvre" layoutX="266.0" layoutY="590.0" prefHeight="146.0" prefWidth="308.0">
