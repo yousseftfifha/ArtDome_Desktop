@@ -135,4 +135,17 @@ String req ="UPDATE categorie set  Type=? , Description=? , NomCat=?, DateCat=? 
         }
         return list;
     }
+    public void Nombreoeuvre(String codeee ) {
+        String req = "UPDATE categorie set NbreOeuvre = (NbreOeuvre + 1) WHERE NomCat  = '" + codeee + "' ";
+        try {
+            ste = cnx.prepareStatement (req);
+            ste.executeUpdate ();
+            System.out.println ("nombre oeuvre modifié");
+
+        } catch (SQLException ex) {
+            System.out.println ("Probléme");
+            System.out.println (ex.getMessage ());
+
+        }
+    }
 }

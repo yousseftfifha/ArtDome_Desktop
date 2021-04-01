@@ -73,24 +73,6 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#users" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Users" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_Share_64px.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
             <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoOeuvre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Oeuvres" textFill="WHITE">
                <VBox.margin>
                   <Insets />
@@ -145,36 +127,6 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#showOrders" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="My Orders" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="OrdersB2" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#location" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Location" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
          </children>
       </VBox>
       <Button fx:id="btnadd" layoutX="543.0" layoutY="165.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="115.0" text="ADD" textFill="#6c68d7" />
@@ -202,15 +154,15 @@
       <TextField fx:id="tfimage" layoutX="364.0" layoutY="438.0" prefHeight="4.0" prefWidth="241.0" visible="false" />
       <Button fx:id="refresh" layoutX="1134.0" layoutY="147.0" mnemonicParsing="false" onAction="#refresh" prefHeight="31.0" prefWidth="92.0" text="REFRESH" />
       <TextField fx:id="type" layoutX="705.0" layoutY="269.0" />
-      <TextField fx:id="descripton" layoutX="705.0" layoutY="311.0" />
-      <VBox fx:id="vbox1" layoutX="277.0" layoutY="153.0" prefHeight="378.0" prefWidth="242.0">
+      <TextField fx:id="descripton" layoutX="705.0" layoutY="321.0" />
+      <VBox fx:id="vbox1" layoutX="277.0" layoutY="104.0" prefHeight="378.0" prefWidth="242.0">
          <children>
-            <Label text="Id Oeuvre" underline="true">
+            <Label text="Id Oeuvre" underline="true" visible="false">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="tfidoeuvre">
+            <TextField fx:id="tfidoeuvre" visible="false">
                <effect>
                   <ColorAdjust />
                </effect>
@@ -262,5 +214,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </VBox>
+      <Label layoutX="705.0" layoutY="245.0" text="type de categorie" />
+      <Label layoutX="708.0" layoutY="299.0" text="Description Categorie" />
    </children>
 </AnchorPane>

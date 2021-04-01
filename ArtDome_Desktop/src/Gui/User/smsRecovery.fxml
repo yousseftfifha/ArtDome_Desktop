@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.User.SmsRecoveryController">
+   <children>
+      <AnchorPane layoutY="7.0" prefHeight="550.0" prefWidth="394.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="16.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../MotoRent-master/src/carRent/loginicon/icons8_Encrypt_50px_1.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="BValider" layoutX="64.0" layoutY="457.0" onAction="#valider" prefHeight="42.0" prefWidth="271.0" ripplerFill="#1fe07c" style="-fx-background-color: #FF0000;" text="VALIDER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXPasswordField fx:id="Tcode" focusColor="#2c3033" layoutX="92.0" layoutY="359.0" prefHeight="31.0" prefWidth="271.0" unFocusColor="#2c3033" />
+            <Label layoutX="93.0" layoutY="127.0" text="Numero de Telephone" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Tnum" focusColor="#2c3033" layoutX="92.0" layoutY="177.0" prefHeight="31.0" prefWidth="271.0" unFocusColor="#2c3033">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="79.0" layoutY="310.0" text="Code de verification" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="37.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../MotoRent-master/src/carRent/loginicon/icons8_Male_User_50px_5.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LBerror" layoutX="36.0" layoutY="353.0" prefHeight="21.0" prefWidth="362.0" textFill="#ff0202">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="erreur" fitHeight="28.0" fitWidth="26.0" layoutX="8.0" layoutY="351.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../MotoRent-master/src/carRent/loginicon/icons8_Error_48px.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="Benvoyer" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="228.0" layoutY="232.0" onAction="#sendSms" prefHeight="43.0" prefWidth="130.0" ripplerFill="#3d02ff" text="Envoyer">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -100,7 +100,22 @@ public class UserService {
 
             }
         }
-            
+    public void updateRole (User u,String role) {
+//        String req = "UPDATE user SET role='"+u.getRole()+"' WHERE ID='"+u.getId()+"' ";
+        String req = "UPDATE user SET role='"+role+"' WHERE ID='"+u.getId()+"' ";
+
+        try{
+            Statement st= connection.createStatement();
+            st.executeUpdate(req);
+
+        }
+        catch (SQLException ex)
+        {
+
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }
     public void updateImage (User u){
      String req ="UPDATE user SET image='"+u.getImage()+ "'WHERE ID="+u.getId()  ;
       try {        
@@ -146,5 +161,20 @@ public class UserService {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
+    }
+    public void updateMdp2 (int numero,String mdp){
+
+        String req = "UPDATE user SET mdp='"+mdp+"' WHERE numero='"+numero+"' ";
+        try{
+            Statement st= connection.createStatement();
+            st.executeUpdate(req);
+
+        }
+        catch (SQLException ex)
+        {
+
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
     }
 }

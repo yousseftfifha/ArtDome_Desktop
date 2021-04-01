@@ -60,7 +60,7 @@
                         <Insets left="50.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoprofile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profile" textFill="#5b5858">
+                  <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#user" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profile" textFill="#5b5858">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -264,7 +264,7 @@
                         <Insets top="60.0" />
                      </VBox.margin>
                   </Label>
-                  <JFXButton fx:id="OrdersB11" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Home" textFill="WHITE">
+                  <JFXButton fx:id="OrdersB11" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#home" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Home" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -279,7 +279,7 @@
                         <Insets left="50.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="UserB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotouser" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Users" textFill="WHITE">
+                  <JFXButton fx:id="UserB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#user" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Users" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -287,60 +287,6 @@
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../GFX/icons8_Share_64px.png" />
-                           </image>
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="OeuvresB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoOeuvre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Oeuvres" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/projects.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="EventB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoevent" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Event" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/reliabilty.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="ExpositionB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotooexpo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Exposition" textFill="WHITE">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/projections.png" />
                            </image>
                            <viewport>
                               <Rectangle2D />

@@ -312,6 +312,7 @@
                            <Insets left="50.0" />
                         </padding>
                      </JFXButton>
+                     <JFXButton fx:id="Brequest" layoutX="291.0" layoutY="103.0" onAction="#request" text="Send Request" />
                   </children>
                </AnchorPane>
                <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="51.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">

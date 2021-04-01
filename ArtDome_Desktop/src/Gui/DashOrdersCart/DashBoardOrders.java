@@ -573,4 +573,16 @@ public class DashBoardOrders  implements Initializable {
         dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
+
+    @FXML
+    private void home(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashBoardScene.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - HOME");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 }

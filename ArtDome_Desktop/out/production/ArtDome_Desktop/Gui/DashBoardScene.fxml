@@ -84,60 +84,6 @@
                         <Insets left="50.0" />
                     </padding>
                 </JFXButton>
-                <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoOeuvre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Oeuvres" textFill="WHITE">
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <font>
-                        <Font size="13.0" />
-                    </font>
-                    <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../GFX/projects.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="50.0" />
-                    </padding>
-                </JFXButton>
-                <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoevent" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Event" textFill="WHITE">
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <font>
-                        <Font size="13.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../GFX/reliabilty.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="50.0" />
-                    </padding>
-                </JFXButton>
-                <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotooexpo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Exposition" textFill="WHITE">
-                    <font>
-                        <Font size="13.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../GFX/projections.png" />
-                            </image>
-                            <viewport>
-                                <Rectangle2D />
-                            </viewport>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="50.0" />
-                    </padding>
-                </JFXButton>
                 <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#showOrders" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="My Orders" textFill="WHITE">
                     <font>
                         <Font size="13.0" />
@@ -168,9 +114,18 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
+            <JFXButton fx:id="OrdersB21" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#LOGOUT" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="LOGOUT" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
             </children>
         </VBox>
       <PieChart fx:id="chart" layoutX="334.0" layoutY="176.0" />
       <JFXButton layoutX="1188.0" layoutY="163.0" onAction="#logout" text="Logout" />
+      <AnchorPane fx:id="content" layoutX="251.0" layoutY="146.0" prefHeight="477.0" prefWidth="966.0" />
     </children>
 </AnchorPane>

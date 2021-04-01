@@ -214,7 +214,7 @@ catch (Exception ex) {
     }
 
     @FXML
-    private void gotoprofile(ActionEvent actionEvent) throws IOException {
+    private void user(ActionEvent actionEvent) throws IOException {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
@@ -256,6 +256,42 @@ catch (Exception ex) {
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("../User/Login.fxml")));
         dialogStage.setTitle("ArtDome - Login");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void home(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashBoardScene.fxml")));
+        dialogStage.setTitle("ArtDome - Login");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void showOrders(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashOrdersCart/DashBoardOrders.fxml")));
+        dialogStage.setTitle("ArtDome - ORDERS");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void endroit(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Endroit/AfficherEndroit.fxml")));
+        dialogStage.setTitle("ArtDome - Endroit");
         dialogStage.setScene(scene);
         dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();

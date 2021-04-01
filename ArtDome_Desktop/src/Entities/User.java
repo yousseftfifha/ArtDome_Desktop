@@ -28,7 +28,24 @@ public class User {
     public User() {
     }
 
-    public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero,String mdp) {
+    public User(int id, String nom, String prenom, Date datenaissance, String email, String mdp) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.datenaissance = datenaissance;
+        this.email = email;
+        this.mdp = mdp;
+    }
+
+    public User(String nom, String prenom, String email, String role, int numero) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.numero = numero;
+        this.role = role;
+    }
+
+    public User(int id, String nom, String prenom, Date datenaissance, String ville, String email, int numero, String mdp) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;

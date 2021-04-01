@@ -6,8 +6,8 @@
 package Gui.User;
 
 import Entities.User;
-import Tools.UserHolder;
 import Services.UserService;
+import Tools.UserHolder;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -134,7 +134,14 @@ public class ProfileController implements Initializable {
         }
 
     }
+    @FXML
+    private void request (ActionEvent event )throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Request");
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("request.fxml"))));
+        stage.show();
 
+    }
     @FXML
     private void delete (ActionEvent event) throws IOException {
         UserHolder holder = UserHolder.getInstance();

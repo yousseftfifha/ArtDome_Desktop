@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="600.0" prefWidth="1452.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Oeuvre.CatégorieController">
+<AnchorPane id="AnchorPane" minWidth="-Infinity" prefHeight="600.0" prefWidth="1342.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Oeuvre.CatégorieController">
    <children>
       <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@../style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -66,24 +66,6 @@
                      <image>
                         <Image url="@../../GFX/home.png" />
                      </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#user" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Users" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_Share_64px.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
                   </ImageView>
                </graphic>
                <padding>
@@ -144,21 +126,6 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#showOrders" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="My Orders" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
          </children>
       </VBox>
       <TableView fx:id="tvcatégorie" layoutX="329.6000061035156" layoutY="361.6000061035156" onMouseClicked="#getfromghada" opacity="0.76" prefHeight="216.0" prefWidth="886.0" style="-fx-background-color: #44a3cc;">
@@ -171,10 +138,10 @@
             <TableColumn fx:id="colnbreoeuvre" prefWidth="168.0" text="Nombre des oeuvres" />
         </columns>
       </TableView>
-      <Button fx:id="btnaddc" layoutX="1107.0" layoutY="228.8000030517578" mnemonicParsing="false" onAction="#AddCategorie" prefHeight="31.0" prefWidth="103.0" text="ADD" textFill="#ea222c" />
-      <Button fx:id="btnupdatec" layoutX="1109.0" layoutY="265.6000061035156" mnemonicParsing="false" onAction="#UpdateCategorie" prefHeight="26.0" prefWidth="102.0" text="UPDATE" textFill="#ea222c" />
-      <Button fx:id="btndeletec" layoutX="1108.0" layoutY="297.6000061035156" mnemonicParsing="false" onAction="#DeleteCategorie" prefHeight="31.0" prefWidth="103.0" text="DELETE" textFill="#ea222c" />
-      <TextField fx:id="tfidcategorie" layoutX="448.6000061035156" layoutY="160.8000030517578" prefHeight="31.0" prefWidth="353.0">
+      <Button fx:id="btnaddc" layoutX="882.0" layoutY="208.8000030517578" mnemonicParsing="false" onAction="#AddCategorie" prefHeight="31.0" prefWidth="103.0" text="ADD" textFill="#ea222c" />
+      <Button fx:id="btnupdatec" layoutX="884.0" layoutY="245.60000610351562" mnemonicParsing="false" onAction="#UpdateCategorie" prefHeight="26.0" prefWidth="102.0" text="UPDATE" textFill="#ea222c" />
+      <Button fx:id="btndeletec" layoutX="883.0" layoutY="277.6000061035156" mnemonicParsing="false" onAction="#DeleteCategorie" prefHeight="31.0" prefWidth="103.0" text="DELETE" textFill="#ea222c" />
+      <TextField fx:id="tfidcategorie" layoutX="448.6000061035156" layoutY="160.8000030517578" prefHeight="31.0" prefWidth="353.0" visible="false">
          <effect>
             <Lighting>
                <bumpInput>
@@ -184,7 +151,7 @@
                         </Lighting>
          </effect>
       </TextField>
-      <Label graphicTextGap="7.0" layoutX="271.0" layoutY="160.0" text="ID_Cartégorie" underline="true">
+      <Label graphicTextGap="7.0" layoutX="271.0" layoutY="160.0" text="ID_Cartégorie" underline="true" visible="false">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -241,7 +208,9 @@
       </Label>
       <DatePicker fx:id="dtcat" layoutX="448.6000061035156" layoutY="297.6000061035156" prefHeight="31.0" prefWidth="353.0" />
       <Button fx:id="btnoeuv" layoutX="1107.0" layoutY="160.8000030517578" mnemonicParsing="false" onAction="#oeuvre" prefHeight="31.0" prefWidth="103.0" text="OEUVRE" />
-      <TextField fx:id="tfsearchc" layoutX="448.6000061035156" layoutY="330.3999938964844" prefHeight="31.0" prefWidth="769.0" />
-      <Button fx:id="btnsearchc" layoutX="1230.0" layoutY="330.3999938964844" mnemonicParsing="false" onAction="#searchc" prefHeight="31.0" prefWidth="104.0" text="SEARCH" />
+      <TextField fx:id="tfsearchc" layoutX="449.0" layoutY="331.0" prefHeight="31.0" prefWidth="646.0" />
+      <Button fx:id="btnsearchc" layoutX="1107.0" layoutY="329.0" mnemonicParsing="false" onAction="#searchc" prefHeight="31.0" prefWidth="104.0" text="SEARCH" />
+      <Button fx:id="btnaddc1" layoutX="1107.0" layoutY="247.0" mnemonicParsing="false" onAction="#excel" prefHeight="31.0" prefWidth="103.0" text="Excel" textFill="#ea222c" />
+      <Button fx:id="btnaddc11" layoutX="1107.0" layoutY="209.0" mnemonicParsing="false" onAction="#refresh" prefHeight="31.0" prefWidth="103.0" text="Refresh" textFill="#ea222c" />
    </children>
 </AnchorPane>

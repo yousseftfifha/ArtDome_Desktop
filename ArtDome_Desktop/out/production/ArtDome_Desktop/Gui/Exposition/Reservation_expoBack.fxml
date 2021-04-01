@@ -104,24 +104,6 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotouser" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Users" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_Share_64px.png" />
-                     </image>
-                     <viewport>
-                        <Rectangle2D />
-                     </viewport>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
             <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoOeuvre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Oeuvres" textFill="WHITE">
                <VBox.margin>
                   <Insets />
@@ -176,37 +158,8 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#showOrders" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="My Orders" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="OrdersB2" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#endroit" prefHeight="43.0" prefWidth="252.0" ripplerFill="#f26ade" text="Endroit" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
          </children>
       </VBox>
+      <Button layoutX="306.0" layoutY="173.0" mnemonicParsing="false" onAction="#addexpo" text="add exposition" />
    </children>
 </AnchorPane>

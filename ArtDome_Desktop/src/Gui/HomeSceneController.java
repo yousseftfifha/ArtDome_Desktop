@@ -2,8 +2,8 @@ package Gui;
 
 import Entities.Cart;
 import Entities.Oeuvre;
-import Tools.UserHolder;
 import Services.CartServices;
+import Tools.UserHolder;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -133,7 +133,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("Exposition/AddReservation_expo.fxml")));
-        dialogStage.setTitle("ArtDome - Oeuvre");
+        dialogStage.setTitle("ArtDome - Exposition");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
@@ -195,6 +195,18 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.close();
         scene = new Scene (FXMLLoader.load(getClass().getResource("User/Login.fxml")));
         dialogStage.setTitle("ArtDome - Login");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
+
+    @FXML
+    private void FORUM(ActionEvent actionEvent) throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("Forum/Cathegories.fxml")));
+        dialogStage.setTitle("ArtDome - Forum");
         dialogStage.setScene(scene);
         dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();

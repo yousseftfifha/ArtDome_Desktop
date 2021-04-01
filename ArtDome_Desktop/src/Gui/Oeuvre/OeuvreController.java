@@ -166,48 +166,48 @@ public class OeuvreController implements Initializable {
     @FXML
      public void ajouter(ActionEvent event) throws SQLException
     {
-           // int idO =Integer.parseInt(tfidoeuvre.getText());
-            String nomO =tfnom.getText();
-            double prixO =Double.valueOf(tfprix.getText());
-            int idA=Integer.parseInt(tfidartiste.getText());
-            String Email =tfmail.getText();
-            String NomC = cbcat.getValue();
-            String ImageO =tfimage.getText();
-            Date date = java.sql.Date.valueOf(dpdateo.getValue());
-            
-            
-            
-           Oeuvre o = new Oeuvre(nomO,prixO,idA,date,ImageO,NomC,Email);
-            
-            OeuvreService oc = new OeuvreService ();
-            oc.AddOeuvrePst(o);
-            List list=oc.readAll();
-            ulist= FXCollections.observableArrayList(list);
-            col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
-            col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
-            col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
-            col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
-            colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
-            colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
-            colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
-            coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
-            
-          
-            
-            table.setItems(ulist); 
-            
-            tfnom.clear();
-            tfprix.clear();
-            tfidartiste.clear();
-            tfmail.clear();
-            tfimage.clear();
-            String msg= "Bonjour Mme/Mr,"
-                    +" Votre oeuvre "+nomO+" a été bien ajoutée "
-                    + "Nous avons hâte de voir d'autres travaux"
-                    +" Bonne journée."
-                    ;
-            SendEmail sm= new SendEmail();
-             ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
+        // int idO =Integer.parseInt(tfidoeuvre.getText());
+        String nomO =tfnom.getText();
+        double prixO =Double.valueOf(tfprix.getText());
+        int idA=Integer.parseInt(tfidartiste.getText());
+        String Email =tfmail.getText();
+        String NomC = cbcat.getValue();
+        String ImageO =tfimage.getText();
+        Date date = java.sql.Date.valueOf(dpdateo.getValue());
+
+
+
+        Oeuvre o = new Oeuvre(nomO,prixO,idA,date,ImageO,NomC,Email);
+
+        OeuvreService oc = new OeuvreService();
+        oc.AddOeuvrePst(o);
+        List list=oc.readAll();
+        ulist= FXCollections.observableArrayList(list);
+        col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
+        col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
+        col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
+        col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
+        colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
+        colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
+
+
+
+        table.setItems(ulist);
+
+        tfnom.clear();
+        tfprix.clear();
+        tfidartiste.clear();
+        tfmail.clear();
+        tfimage.clear();
+        String msg= "Bonjour Mme/Mr,"
+                +" Votre oeuvre "+nomO+" a été bien ajoutée "
+                + "Nous avons hâte de voir d'autres travaux"
+                +" Bonne journée."
+                ;
+        SendEmail sm= new SendEmail();
+        ExecutorService emailExecutor = Executors.newSingleThreadExecutor();
         emailExecutor.execute(new Runnable() {
             @Override
             public void run() {
@@ -219,15 +219,17 @@ public class OeuvreController implements Initializable {
                     e.printStackTrace ();
                 }
 //        try {
-//            sm.sendMail(email, "Réservation confirmée", msg);
+//            sm.sendMail(email, "ajout confirmé", msg);
 //        } catch (MessagingException ex) {
 //            Logger.getLogger(AddReservationController.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-//         
-   
-    }});
+//
+
+            }});
         emailExecutor.shutdown();
-           
+        CatégorieServices CC = new CatégorieServices();
+
+        CC.Nombreoeuvre(NomC);
     }
      
         @FXML
@@ -285,6 +287,27 @@ public class OeuvreController implements Initializable {
             
     }
 
+    private void refresh() {
+
+        List list=oc.readAll();
+        ulist= FXCollections.observableArrayList(list);
+        col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
+        col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
+        col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
+        col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
+        colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
+        colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
+
+        table.setItems(ulist);
+        tfnom.clear();
+        tfprix.clear();
+        tfidartiste.clear();
+        tfmail.clear();
+        tfimage.clear();
+
+    }
     @FXML
     private void UpdateO(ActionEvent event)
     {  
@@ -299,26 +322,25 @@ public class OeuvreController implements Initializable {
            OeuvreService OC= new OeuvreService ();
            Oeuvre ov = new Oeuvre(idO,nomO,PrixO,idA,date,Email,NomC,ImageO);
            OC.UpdateOeuvre(ov,idO);
-           
-            List list=oc.readAll();
-            ulist= FXCollections.observableArrayList(list);
-                        col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
-            col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
-            col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
-            col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
-            colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
-            colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
-            colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
-            coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
-            
-            
-            table.setItems(ulist); 
-            
-            tfnom.clear();
-            tfprix.clear();
-            tfidartiste.clear();
-            tfmail.clear();
-            tfimage.clear();
+
+        List list=oc.readAll();
+        System.out.println (list);
+        ulist= FXCollections.observableArrayList(list);
+        col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
+        col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
+        col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
+        col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
+        colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
+        colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
+
+        table.setItems(ulist);
+        tfnom.clear();
+        tfprix.clear();
+        tfidartiste.clear();
+        tfmail.clear();
+        tfimage.clear();
     }
 
     @FXML
@@ -338,22 +360,19 @@ public class OeuvreController implements Initializable {
     @FXML
     private void searcho(ActionEvent event) throws SQLException {
         String search= tfsearch.getText();
-        System.out.println(search);
-        OeuvreService OC= new OeuvreService ();
+        OeuvreService OC= new OeuvreService();
         ObservableList<Oeuvre> list = OC.Searcho(search);
-              col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
-            col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
-            col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
-            col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
-            colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
-            colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
-            colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
-            coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
-             tfnom.clear();
-            tfprix.clear();
-            tfidartiste.clear();
-            tfmail.clear();
-            tfimage.clear();
+        System.out.println(search);
+
+        col_idO.setCellValueFactory(new PropertyValueFactory<>("ID_Oeuvre"));
+        col_nom.setCellValueFactory(new PropertyValueFactory<>("NomOeuvre"));
+        col_prix.setCellValueFactory(new PropertyValueFactory<>("PrixOeuvre"));
+        col_idA.setCellValueFactory(new PropertyValueFactory<>("ID_Artiste"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("EmailArtiste"));
+        colnomcat.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
+        colimage.setCellValueFactory(new PropertyValueFactory<>("ImageOeuvre"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("DateOeuvre"));
+        table.setItems(list);
             
     }
 
@@ -413,7 +432,7 @@ public class OeuvreController implements Initializable {
         File selectedFile = fc.showOpenDialog(null);
         if(selectedFile != null)
         {
-            tfimage.setText(selectedFile.getAbsolutePath());
+            tfimage.setText(selectedFile.getName ());
         }else {
             System.out.println(" Picture file is not valid");
         }
@@ -450,7 +469,7 @@ public class OeuvreController implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Event");
         dialogStage.setScene(scene);
-dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
     }
 
@@ -481,7 +500,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashBoardScene.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../EspaceArtiste.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Home");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));

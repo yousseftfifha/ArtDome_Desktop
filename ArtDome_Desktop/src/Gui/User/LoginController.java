@@ -5,6 +5,7 @@
  */
 package Gui.User;
 
+import Tools.UserHolder;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -30,7 +31,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import Tools.MyConnection;
 import Entities.User;
-import Tools.UserHolder;
 
 /**
  * FXML Controller class
@@ -97,6 +97,17 @@ public class LoginController implements Initializable {
                 stage.show();
                 BValider.getScene().getWindow().hide();
                 }
+                else if (resultSet.getString(9).equals("artiste")){
+
+                    Stage stage = new Stage();
+                    stage.setTitle("ArtDome");
+                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../Gui/EspaceArtiste.fxml."))));
+                    User u = new User (resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getDate(4),resultSet.getString(5),resultSet.getString(6),resultSet.getInt(7),resultSet.getString(10));
+                    UserHolder holder = UserHolder.getInstance();
+                    holder.setUser(u);
+                    stage.show();
+                    BValider.getScene().getWindow().hide();
+                }
                 else {
                     User u = new User (resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getDate(4),resultSet.getString(5),resultSet.getString(6),resultSet.getInt(7),resultSet.getString(10));
                     UserHolder holder = UserHolder.getInstance();
@@ -126,7 +137,7 @@ public class LoginController implements Initializable {
    private void forgotPassword (ActionEvent event)throws IOException{
         Stage stage = new Stage();
         stage.setTitle("Mot de passe Oublié");
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("forgotPass.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("chooseMethod.fxml"))));
         stage.show();
         
        

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="753.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Forum.TopicsController">
+   <children>
+      <ImageView fitHeight="753.0" fitWidth="1025.0">
+         <image>
+            <Image url="@../image/faza.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3f4ff" height="702.0" layoutX="31.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="966.0" />
+      <Label layoutX="433.0" layoutY="51.0" prefHeight="56.0" prefWidth="131.0" text="Creer un sujet">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="55.0" layoutY="43.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="67.0" text="Retour">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="55.0" layoutY="43.0">
+         <image>
+            <Image url="@../image/retour.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="post" layoutX="84.0" layoutY="421.0" onMouseClicked="#getfromtv" prefHeight="272.0" prefWidth="860.0">
+        <columns>
+          <TableColumn fx:id="titre" prefWidth="287.0" text="Sujet" />
+          <TableColumn fx:id="topic" prefWidth="287.0" text="Auteur" />
+            <TableColumn fx:id="date" prefWidth="287.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button fx:id="Ajouter" layoutX="768.0" layoutY="200.0" mnemonicParsing="false" onAction="#Addtopic" prefHeight="36.0" prefWidth="183.0" text="Creer un nouveau sujet">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="sujet" layoutX="166.0" layoutY="182.0" prefHeight="36.0" prefWidth="397.0" />
+      <Button fx:id="Recherche" layoutX="852.0" layoutY="377.0" mnemonicParsing="false" onAction="#Searchtopic" prefHeight="36.0" prefWidth="92.0" text="Recherche">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="84.0" layoutY="182.0" prefHeight="36.0" prefWidth="75.0" text="Titre du sujet" />
+      <TextArea fx:id="description" layoutX="166.0" layoutY="229.0" prefHeight="136.0" prefWidth="423.0" />
+      <TextField fx:id="searchTopic" layoutX="84.0" layoutY="377.0" prefHeight="36.0" prefWidth="761.0" />
+      <Label layoutX="84.0" layoutY="225.0" prefHeight="36.0" prefWidth="75.0" text="Description" />
+      <Label layoutX="84.0" layoutY="128.0" prefHeight="36.0" prefWidth="75.0" text="Nom" />
+      <TextField fx:id="auteur" layoutX="166.0" layoutY="128.0" prefHeight="36.0" prefWidth="397.0" />
+      <Button fx:id="Supprimer" layoutX="768.0" layoutY="261.0" mnemonicParsing="false" onAction="#Deletetop" prefHeight="36.0" prefWidth="183.0" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="Modifier" layoutX="768.0" layoutY="325.0" mnemonicParsing="false" onAction="#Updatetop" prefHeight="36.0" prefWidth="183.0" text="Modifier">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="605.0" layoutY="128.0" prefHeight="36.0" prefWidth="55.0" text="ID" />
+      <TextField fx:id="id" layoutX="660.0" layoutY="128.0" prefHeight="36.0" prefWidth="285.0" />
+   </children>
+</AnchorPane>

@@ -289,4 +289,15 @@ public class Reservation_expoBackController implements Initializable {
         dialogStage.show();
     }
 
+    @FXML
+    private void addexpo(ActionEvent actionEvent)throws IOException {
+        Node source = (Node) actionEvent.getSource();
+        dialogStage = (Stage) source.getScene().getWindow();
+        dialogStage.close();
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/AddExposition.fxml")));
+        dialogStage.setTitle("ArtDome DashBoard - ADD exposition");
+        dialogStage.setScene(scene);
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.show();
+    }
 }

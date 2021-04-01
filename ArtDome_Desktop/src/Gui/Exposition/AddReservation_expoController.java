@@ -5,8 +5,8 @@
  */
 package Gui.Exposition;
 
-import Tools.UserHolder;
 import Tools.QRcodeE;
+import Tools.UserHolder;
 import com.github.plushaze.traynotification.notification.TrayNotification;
 
 import java.io.IOException;

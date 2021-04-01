@@ -116,7 +116,7 @@ public class AjouterEndroitController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashBoardScene.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
         dialogStage.getIcons ().add (new Image ("GFX/logo.png"));

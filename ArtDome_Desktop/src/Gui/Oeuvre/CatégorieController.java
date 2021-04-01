@@ -15,6 +15,8 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import Tools.ExcelOeuvre;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -37,6 +39,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
+import jxl.write.WriteException;
 //import services.OeuvreCRUD;
 
 
@@ -237,7 +240,7 @@ public class CatégorieController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Event/AddEvent.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/AddEvent.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Orders");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -249,7 +252,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("Oeuvre/Oeuvre.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/Oeuvre.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -260,7 +263,7 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("DashOrdersCart/DashBoardOrders.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../DashOrdersCart/DashBoardOrders.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Orders");
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
@@ -301,5 +304,31 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.setScene(scene);
 dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
+    }
+
+    @FXML
+    private void excel(ActionEvent actionEvent) throws SQLException, IOException, WriteException {
+
+
+            ExcelOeuvre ex=new ExcelOeuvre();
+            ex.ExcelOeuvre();
+
+    }
+
+    @FXML
+    private void refresh(ActionEvent actionEvent) {
+        List list=cc.readAll();
+        ulist= FXCollections.observableArrayList(list);
+        colidcategorie.setCellValueFactory(new PropertyValueFactory<>("ID_Cat"));
+        coltype.setCellValueFactory(new PropertyValueFactory<>("Type"));
+        coldescription.setCellValueFactory(new PropertyValueFactory<>("Description"));
+        colnomcategorie.setCellValueFactory(new PropertyValueFactory<>("NomCat"));
+        coltdateajout.setCellValueFactory(new PropertyValueFactory<>("DateCat"));
+        colnbreoeuvre.setCellValueFactory(new PropertyValueFactory<>("NbreOeuvre"));
+        tvcatégorie.setItems(ulist);
+        tfidcategorie.clear();
+        tftype.clear();
+        tfdescription.clear();
+        tfnomcategorie.clear();
     }
 }

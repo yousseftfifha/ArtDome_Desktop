@@ -1,32 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tools;
 
 import Entities.User;
 
 /**
- *
- * @author asus
+ * @author tfifha youssef
  */
-public final class UserHolder {
-  
-  private User user;
-  private final static UserHolder INSTANCE = new UserHolder();
-  
-  private UserHolder() {}
-  
-  public static UserHolder getInstance()
+public class UserHolder {
+    private User user;
+    private int numero;
+    private final static UserHolder INSTANCE = new UserHolder();
+
+    private UserHolder() {}
+
+    public static UserHolder getInstance()
     {   return INSTANCE;
     }
-  
-  public void setUser(User u) {
-    this.user = u;
-  }
-  
-  public User getUser() {
-    return this.user;
-  }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 }
