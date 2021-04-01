@@ -154,7 +154,7 @@ public class CathegoriesController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         dialogStage = (Stage) source.getScene().getWindow();
         dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/Oeuvre.fxml")));
+        scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
         dialogStage.setTitle("ArtDome DashBoard - Oeuvre");
         dialogStage.setScene(scene);
         dialogStage.getIcons ().add (new Image ("GFX/logo.png"));

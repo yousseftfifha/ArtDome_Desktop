@@ -125,6 +125,16 @@ public class ProfileController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("L'utilisateur "+u.getPrenom()+" "+u.getNom()+" a été mis a jour avec succès");
             alert.showAndWait();
+            holder.setUser (u);
+            holder.getUser();
+            TNom.setText(holder.getUser().getNom());
+            Tprenom.setText(holder.getUser().getPrenom());
+            date.setValue(holder.getUser().getDatenaissance().toLocalDate());
+            Tville.setText(holder.getUser().getVille());
+            Temail.setText(holder.getUser().getEmail());
+            Tnum.setText(String.valueOf(holder.getUser().getNumero()));
+            Tmdp.setText(holder.getUser().getMdp());
+
         }
 
         catch(RuntimeException ex)

@@ -125,7 +125,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <JFXTextField fx:id="prixjour" focusColor="#d9d2d2c6" labelFloat="true" layoutX="319.0" layoutY="405.0" prefHeight="39.0" prefWidth="318.0" promptText="Prix/Jour">
+            <JFXTextField fx:id="prixjour" focusColor="#0b0404c7" labelFloat="true" layoutX="319.0" layoutY="405.0" prefHeight="39.0" prefWidth="318.0" promptText="Prix/Jour">
                <font>
                   <Font size="18.0" />
                </font>
@@ -141,22 +141,22 @@
                </font>
             </Button>
             <Separator layoutX="416.0" layoutY="173.0" prefHeight="0.0" prefWidth="378.0" />
-            <JFXTextField fx:id="Type" focusColor="#d9d2d2c6" labelFloat="true" layoutX="319.0" layoutY="312.0" prefHeight="39.0" prefWidth="318.0" promptText="Type">
+            <JFXTextField fx:id="Type" focusColor="#000000c7" labelFloat="true" layoutX="319.0" layoutY="312.0" prefHeight="39.0" prefWidth="318.0" promptText="Type">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="position" focusColor="#d9d2d2c6" labelFloat="true" layoutX="319.0" layoutY="498.0" prefHeight="39.0" prefWidth="318.0" promptText="Position">
+            <JFXTextField fx:id="position" focusColor="#0b0404c7" labelFloat="true" layoutX="319.0" layoutY="498.0" prefHeight="39.0" prefWidth="318.0" promptText="Position">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="nbrch" focusColor="#d9d2d2c6" labelFloat="true" layoutX="730.0" layoutY="331.0" prefHeight="39.0" prefWidth="318.0" promptText="Nombre de chambres">
+            <JFXTextField fx:id="nbrch" focusColor="#0b0404c7" labelFloat="true" layoutX="730.0" layoutY="331.0" prefHeight="39.0" prefWidth="318.0" promptText="Nombre de chambres">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="Taille" focusColor="#d9d2d2c6" labelFloat="true" layoutX="730.0" layoutY="405.0" prefHeight="39.0" prefWidth="318.0" promptText="Taille">
+            <JFXTextField fx:id="Taille" focusColor="#0b0404c7" labelFloat="true" layoutX="730.0" layoutY="405.0" prefHeight="39.0" prefWidth="318.0" promptText="Taille">
                <font>
                   <Font size="18.0" />
                </font>
