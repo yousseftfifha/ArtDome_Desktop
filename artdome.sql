@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 08 avr. 2021 à 12:35
+-- Généré le :  jeu. 08 avr. 2021 à 19:23
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -99,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `UpdatedAt` date NOT NULL,
   `Id_User` int(11) NOT NULL,
   `id_blog` int(11) NOT NULL,
+  PRIMARY KEY (`id_comment`),
   KEY `fk_iduser` (`Id_User`),
   KEY `fk_idblog` (`id_blog`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -247,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `pending_orders` (
   `OeuvreID` int(11) DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
   `Status` varchar(30) DEFAULT NULL,
-  KEY `fk_order` (`OrderID`),
+  PRIMARY KEY (`OrderID`),
   KEY `fk_us` (`IDUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
