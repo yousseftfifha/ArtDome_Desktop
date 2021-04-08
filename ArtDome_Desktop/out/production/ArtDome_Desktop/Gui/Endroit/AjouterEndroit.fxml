@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -11,13 +8,34 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="781.0" prefWidth="980.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Endroit.AjouterEndroitController">
+<AnchorPane id="AnchorPane" prefHeight="782.0" prefWidth="798.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Endroit.AjouterEndroitController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="-4.0" prefHeight="781.0" prefWidth="980.0" stylesheets="@../style.css">
+      <AnchorPane id="AnchorPane" layoutX="-249.0" prefHeight="781.0" prefWidth="980.0" stylesheets="@../style.css">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="334.0" layoutX="248.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" width="805.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.6342105269432068" green="0.4122368395328522" blue="0.4122368395328522" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.9203703999519348" blue="0.9203703999519348" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
             <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@../style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="694.0" layoutY="101.0" text="Since 2021" textFill="WHITE">
@@ -25,7 +43,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="image" fitHeight="115.0" fitWidth="178.0" layoutX="333.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../GFX/logo.png" />
                      </image>
@@ -42,84 +60,6 @@
                   </Label>
                </children>
             </Pane>
-            <VBox layoutX="-1.0" layoutY="145.0" prefHeight="438.0" prefWidth="252.0" style="-fx-background-color: #fd746c;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
-               <children>
-                  <Label prefHeight="30.0" prefWidth="252.0" text="Navigation List" textFill="#171717">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets top="60.0" />
-                     </VBox.margin>
-                  </Label>
-                  <JFXButton fx:id="OrdersB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotohome" prefHeight="43.0" prefWidth="252.0" ripplerFill="#050409" text="Home">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/home.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoprofile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#050409" text="Users">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/icons8_Share_64px.png" />
-                           </image>
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoorders" prefHeight="43.0" prefWidth="252.0" ripplerFill="#050409" text="My Orders">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="OrdersB2" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#AjoutEndroit" prefHeight="43.0" prefWidth="252.0" ripplerFill="#050409" text="Endroit">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../GFX/icons8_US_Dollar_64px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </JFXButton>
-               </children>
-            </VBox>
             <Button layoutX="737.0" layoutY="631.0" mnemonicParsing="false" onAction="#AjoutEndroit" prefHeight="39.0" prefWidth="140.0" text="Ajouter">
                <font>
                   <Font size="18.0" />
@@ -141,7 +81,7 @@
                </font>
             </Button>
             <Separator layoutX="416.0" layoutY="173.0" prefHeight="0.0" prefWidth="378.0" />
-            <JFXTextField fx:id="Type" focusColor="#000000c7" labelFloat="true" layoutX="319.0" layoutY="312.0" prefHeight="39.0" prefWidth="318.0" promptText="Type">
+            <JFXTextField fx:id="Type" focusColor="#000000c7" labelFloat="true" layoutX="319.0" layoutY="312.0" prefHeight="39.0" prefWidth="318.0" promptText="Type" unFocusColor="#0b0000">
                <font>
                   <Font size="18.0" />
                </font>
@@ -151,7 +91,7 @@
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="nbrch" focusColor="#0b0404c7" labelFloat="true" layoutX="730.0" layoutY="331.0" prefHeight="39.0" prefWidth="318.0" promptText="Nombre de chambres">
+            <JFXTextField fx:id="nbrch" focusColor="#0b0404c7" labelFloat="true" layoutX="730.0" layoutY="338.0" prefHeight="39.0" prefWidth="318.0" promptText="Nombre de chambres">
                <font>
                   <Font size="18.0" />
                </font>

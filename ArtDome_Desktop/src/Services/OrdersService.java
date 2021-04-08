@@ -6,6 +6,11 @@ import Tools.PDF;
 import Tools.SendEmail;
 import Tools.UserHolder;
 import com.itextpdf.text.DocumentException;
+import com.teknikindustries.bulksms.SMS;
+import com.vonage.client.HttpConfig;
+import com.vonage.client.VonageClient;
+import com.vonage.client.sms.SmsSubmissionResponse;
+import com.vonage.client.sms.messages.TextMessage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -148,19 +153,19 @@ public class OrdersService {
                 } catch (MessagingException e) {
                     e.printStackTrace ();
                 }
-//                SMS sendtext=new SMS ();
-//                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
-//                HttpConfig httpConfig = HttpConfig.defaultConfig();
-//                VonageClient client = new VonageClient .Builder()
-//                        .apiKey("8f52a2c6")
-//                        .apiSecret("967AQN7qPzUl5BB6")
-//                        .httpConfig(httpConfig)
-//                        .build();
-//
-//                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
-//                        "ArtDome",
-//                        "21620245989",
-//                        message));
+                SMS sendtext=new SMS ();
+                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+                HttpConfig httpConfig = HttpConfig.defaultConfig();
+                VonageClient client = new VonageClient .Builder()
+                        .apiKey("8f52a2c6")
+                        .apiSecret("967AQN7qPzUl5BB6")
+                        .httpConfig(httpConfig)
+                        .build();
+
+                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
+                        "ArtDome",
+                        "21620245989",
+                        message));
 
             }
         });
