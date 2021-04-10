@@ -49,7 +49,7 @@ if (!$errors) {
 } else {
 	//display the errors message
 	for ($i=0; $i<count($errors); $i++) echo $errors[$i] . '<br/>';
-	echo '<a href="index.html">Back</a>';
+	echo '<a href="index.html.twig">Back</a>';
 	exit;
 }
 

@@ -43,11 +43,11 @@ class Orders
     private $totalqty;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="OrderDate", type="string", length=70, nullable=false)
+     * @ORM\Column(name="OrderDate", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
      */
-    private $orderdate;
+    private $orderdate = 'CURRENT_TIMESTAMP';
 
     /**
      * @var string
