@@ -40,6 +40,19 @@
     </table>
 
     <a href="{{ path('cart_new') }}">Create new</a>#}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="text-pageheader">
+                    <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.1s">
+                        Shop
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% set tot = 0 %}
+
     <section class="item content">
         <div class="container toparea">
             <div class="underlined-title">
@@ -60,6 +73,9 @@
                         <table id="edd_checkout_cart" class="ajaxed">
                             <thead>
                             <tr class="edd_cart_header_row">
+                                <th class="edd_cart_item_img">
+                                    Item Image
+                                </th>
                                 <th class="edd_cart_item_name">
                                     Item Name
                                 </th>
@@ -79,12 +95,16 @@
                             <tr class="edd_cart_item" id="edd_cart_item_0_25" data-download-id="25">
                                 <td class="edd_cart_item_name">
                                     <div class="edd_cart_item_image">
-                                        <img width="25" height="25" src="{{ asset('../Front/GFX/'cart.oeuvreid.imageoeuvre) }}" alt="">
+                                        <img width="25" height="25" src="{{app.request.basepath}}/Front/GFX/{{cart.oeuvreid.imageoeuvre}}" alt="">
                                     </div>
+                                </td>
+                                <td class="edd_cart_item_name">
                                     <span class="edd_checkout_cart_item_title">{{ cart.oeuvreid.nomoeuvre }}</span>
                                 </td>
                                 <td class="edd_cart_item_price">
                                     {{ cart.oeuvreid.prixoeuvre }}
+                                    {% set tot = tot+cart.oeuvreid.prixoeuvre %}
+
                                 </td>
                                 <td class="edd_cart_item_price">
                                     {{ cart.quantity }}
@@ -94,6 +114,7 @@
 
                                     <a href="{{ path('cart_show', {'idcart': cart.idcart}) }}">show</a>
                                     <a href="{{ path('cart_edit', {'idcart': cart.idcart}) }}">edit</a>
+
 
                                     </a>
                                 </td>
@@ -105,18 +126,15 @@
                             {% endfor %}
                             </tbody>
                             <tfoot>
-                            <tr class="edd_cart_footer_row">
-                                <th colspan="5">
-                                    <a class="edd-cart-saving-button edd-submit button " id="edd-save-cart-button" href="#">Save Cart</a>
-                                </th>
-                            </tr>
+
                             <tr class="edd_cart_footer_row edd_cart_discount_row" style="display:none;">
                                 <th colspan="5" class="edd_cart_discount">
                                 </th>
                             </tr>
                             <tr class="edd_cart_footer_row">
                                 <th colspan="5" class="edd_cart_total">
-                                    Total: <span class="edd_cart_amount" data-subtotal="11.99" data-total="11.99">$11.99</span>
+                                    Total: <span class="edd_cart_amount" data-subtotal="11.99" data-total="11.99"> {{ tot }}
+</span>
                                 </th>
                             </tr>
                             </tfoot>
@@ -128,11 +146,12 @@
                         <fieldset id="edd_purchase_submit">
                             <p id="edd_final_total_wrap">
                                 <strong>Purchase Total:</strong>
-                                <span class="edd_cart_amount" data-subtotal="11.99" data-total="11.99">$11.99</span>
+                                <span class="edd_cart_amount" data-subtotal="11.99" data-total="11.99">{{ tot }}</span>
                             </p>
                             <input type="hidden" name="edd_action" value="purchase">
                             <input type="hidden" name="edd-gateway" value="manual">
-                            <input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Purchase">
+
+                            <input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase"   value="Purchase">
                         </fieldset>
                     </form>
                 </div>

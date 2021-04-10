@@ -63,5 +63,82 @@ class Endroit
      */
     private $disponibilite;
 
+    public function getIdEndroit(): ?int
+    {
+        return $this->idEndroit;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getTaille(): ?int
+    {
+        return $this->taille;
+    }
+
+    public function setTaille(int $taille): self
+    {
+        $this->taille = $taille;
+
+        return $this;
+    }
+
+    public function getPrixJour(): ?int
+    {
+        return $this->prixJour;
+    }
+
+    public function setPrixJour(int $prixJour): self
+    {
+        $this->prixJour = $prixJour;
+
+        return $this;
+    }
+
+    public function getNbrch(): ?int
+    {
+        return $this->nbrch;
+    }
+
+    public function setNbrch(int $nbrch): self
+    {
+        $this->nbrch = $nbrch;
+
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?string $location): self
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    public function getDisponibilite(): ?string
+    {
+        return $this->disponibilite;
+    }
+
+    public function setDisponibilite(?string $disponibilite): self
+    {
+        $this->disponibilite = $disponibilite;
+
+        return $this;
+    }
+
 
 }

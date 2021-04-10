@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Cart;
+use App\Entity\Exposition;
+use App\Entity\Oeuvre;
+use App\Entity\User;
 use App\Form\CartType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,27 +32,39 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="cart_new", methods={"GET","POST"})
+     * @Route("/new/{idOeuvre}", name="cart_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Oeuvre $id): Response
     {
         $cart = new Cart();
-        $form = $this->createForm(CartType::class, $cart);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($cart);
-            $entityManager->flush();
+        $entityManager = $this->getDoctrine()->getManager();
+        $d=new \DateTime("2000-02-24");
+        $u=new User(0,"tfifha","youssef",$d,"ezzahra","youssef.tfifha@esprit.tn",20245989,null,"user","ww") ;
+        $cart->setIdUser($u);
+        $cart->setQuantity(1);
 
-            return $this->redirectToRoute('cart_index');
+
+        $product = $this->getDoctrine()
+            ->getRepository(Oeuvre::class)
+            ->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '
+            );
         }
+        $query = $entityManager->createQuery('SELECT u.nom FROM App\Entity\User u ');
+        $users = $query->getResult(); // array of CmsUser username and name values
+        echo $users[0]['nom'];
+        $cart->setOeuvreid($product);
+        $entityManager->merge($cart);
+        $entityManager->flush();
 
-        return $this->render('cart/new.html.twig', [
-            'cart' => $cart,
-            'form' => $form->createView(),
-        ]);
+        return $this->redirectToRoute('cart_index');
     }
+
+
 
     /**
      * @Route("/{idcart}", name="cart_show", methods={"GET"})
