@@ -35,12 +35,7 @@ class Orders
      */
     private $innonumber;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="TotalQty", type="integer", nullable=false)
-     */
-    private $totalqty;
+
 
     /**
      * @var \DateTime
@@ -57,7 +52,7 @@ class Orders
     private $status;
 
     /**
-     * @var \User
+     * @var User
      *
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
@@ -95,17 +90,7 @@ class Orders
         return $this;
     }
 
-    public function getTotalqty(): ?int
-    {
-        return $this->totalqty;
-    }
 
-    public function setTotalqty(int $totalqty): self
-    {
-        $this->totalqty = $totalqty;
-
-        return $this;
-    }
 
     public function getOrderdate(): ?\DateTimeInterface
     {

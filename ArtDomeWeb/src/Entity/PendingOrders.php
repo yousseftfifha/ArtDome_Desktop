@@ -21,12 +21,7 @@ class PendingOrders
      */
     private $idPendingorder;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="OrderID", type="integer", nullable=false)
-     */
-    private $orderid;
+
 
     /**
      * @var int|null
@@ -50,7 +45,7 @@ class PendingOrders
     private $status = 'Pending';
 
     /**
-     * @var \Oeuvre
+     * @var Oeuvre
      *
      * @ORM\ManyToOne(targetEntity="Oeuvre")
      * @ORM\JoinColumns({
@@ -60,7 +55,7 @@ class PendingOrders
     private $oeuvreid;
 
     /**
-     * @var \User
+     * @var User
      *
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
@@ -74,17 +69,7 @@ class PendingOrders
         return $this->idPendingorder;
     }
 
-    public function getOrderid(): ?int
-    {
-        return $this->orderid;
-    }
 
-    public function setOrderid(int $orderid): self
-    {
-        $this->orderid = $orderid;
-
-        return $this;
-    }
 
     public function getInnonumber(): ?int
     {

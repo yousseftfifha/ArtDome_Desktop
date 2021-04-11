@@ -54,9 +54,9 @@ class CartController extends AbstractController
                 'No product found for id '
             );
         }
-        $query = $entityManager->createQuery('SELECT u.nom FROM App\Entity\User u ');
-        $users = $query->getResult(); // array of CmsUser username and name values
-        echo $users[0]['nom'];
+//        $query = $entityManager->createQuery('SELECT u.nom FROM App\Entity\User u ');
+//        $users = $query->getResult(); // array of CmsUser username and name values
+//        echo $users[0]['nom'];
         $cart->setOeuvreid($product);
         $entityManager->merge($cart);
         $entityManager->flush();
