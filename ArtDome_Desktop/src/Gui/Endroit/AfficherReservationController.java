@@ -5,6 +5,7 @@
  */
 package Gui.Endroit;
 
+import Gui.HomeSceneController;
 import Tools.config;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -26,6 +27,8 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javafx.animation.FadeTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,6 +43,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -56,6 +60,10 @@ import tray.notification.TrayNotification;
 public class AfficherReservationController implements Initializable {
     Stage dialogStage = new Stage();
     Scene scene;
+    @FXML
+    private AnchorPane holderPane;
+    @FXML
+    AnchorPane home,oeuvre,event,profiles,expo,blog,orders,location,login,cart;
      @FXML
     private TableView<ReservationE> table;
     @FXML
@@ -304,7 +312,20 @@ String chemin = "";
 
 
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            home = FXMLLoader.load(getClass().getResource("../HomeScene.fxml"));
+            profiles = FXMLLoader.load(getClass().getResource("../User/Profile.fxml"));
+            oeuvre = FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml"));
+            event = FXMLLoader.load(getClass().getResource("../Event/ListEvent.fxml"));
+            expo = FXMLLoader.load(getClass().getResource("../Exposition/AddReservation_expo.fxml"));
+            blog = FXMLLoader.load(getClass().getResource("../Blog/BlogShow.fxml"));
+            orders = FXMLLoader.load(getClass().getResource("../OrdersCart/Orders.fxml"));
+            login = FXMLLoader.load(getClass().getResource("../User/Login.fxml"));
+            cart = FXMLLoader.load(getClass().getResource("../OrdersCart/CartView.fxml"));
 
+        } catch (IOException ex) {
+            Logger.getLogger(HomeSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
             Connection con =config.getInstance().getConnection();
 
@@ -353,113 +374,67 @@ String chemin = "";
 		new OpenWindow(contenu, chemin);
 
     }*/
-   @FXML
-   private void gotohome(ActionEvent actionEvent) throws IOException {
-       Node source = (Node) actionEvent.getSource();
-       dialogStage = (Stage) source.getScene().getWindow();
-       dialogStage.close();
-       scene = new Scene (FXMLLoader.load(getClass().getResource("../HomeScene.fxml")));
-       dialogStage.setTitle("ArtDome - Home");
-       dialogStage.setScene(scene);
-       dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-       dialogStage.show();
+   private void setNode(Node node) {
+       holderPane.getChildren().clear();
+       holderPane.getChildren().add((Node) node);
+
+       FadeTransition ft = new FadeTransition(Duration.millis(1500));
+       ft.setNode(node);
+       ft.setFromValue(0.1);
+       ft.setToValue(1);
+       ft.setCycleCount(1);
+       ft.setAutoReverse(false);
+       ft.play();
    }
-
     @FXML
-    private void gotooeuvre(ActionEvent actionEvent)throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml")));
-        dialogStage.setTitle("ArtDome - Oeuvre");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
+    private void profile(ActionEvent actionEvent) throws IOException {
+        setNode(profiles);
     }
 
     @FXML
-    private void gotoorders(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../OrdersCart/Orders.fxml")));
-        dialogStage.setTitle("ArtDome - Orders");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
+    private void order(ActionEvent actionEvent) throws IOException {
+        setNode(orders);
     }
 
     @FXML
-    private void gotoexpo(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../Exposition/AddExposition.fxml")));
-        dialogStage.setTitle("ArtDome - Exposition");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
-    }
-
-
-    @FXML
-    private void gotoADDBLOG(ActionEvent actionEvent)  throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("BlogNew.fxml")));
-        dialogStage.setTitle("ArtDome - New Blog");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
+    private void oeuvre(ActionEvent actionEvent) throws IOException {
+        setNode(oeuvre);
     }
 
     @FXML
-    private void gotoprofile(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/Profile.fxml")));
-        dialogStage.setTitle("ArtDome - Profile");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
+    private void expo(ActionEvent actionEvent) throws IOException {
+        setNode(expo);
     }
 
     @FXML
-    private void gotoevent(ActionEvent actionEvent)throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../Event/ListEvent.fxml")));
-        dialogStage.setTitle("ArtDome - Event");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
+    private void event(ActionEvent actionEvent) throws IOException {
+        setNode(event);
     }
 
     @FXML
-    private void gotoblog(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../Blog/BlogNew.fxml")));
-        dialogStage.setTitle("ArtDome - New Blog");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
-    }
+    private void blog(ActionEvent actionEvent) throws IOException {
+        setNode(blog);
 
+    }
+    @FXML
+    private void location(ActionEvent actionEvent)throws IOException {
+        setNode(location);
+    }
     @FXML
     private void logout(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource();
-        dialogStage = (Stage) source.getScene().getWindow();
-        dialogStage.close();
-        scene = new Scene (FXMLLoader.load(getClass().getResource("../User/Login.fxml")));
-        dialogStage.setTitle("ArtDome - Login");
-        dialogStage.setScene(scene);
-        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
-        dialogStage.show();
+        setNode(login);
+
     }
 
+
+    @FXML
+    private void cart(ActionEvent actionEvent) {
+        setNode(cart);
+    }
+
+    @FXML
+    private void home(ActionEvent actionEvent) {
+        setNode(home);
+
+    }
 }

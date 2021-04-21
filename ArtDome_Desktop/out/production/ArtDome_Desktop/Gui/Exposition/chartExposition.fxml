@@ -5,20 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Exposition.ChartExpositionController">
    <children>
-      <ImageView fitHeight="690.0" fitWidth="900.0" layoutX="-4.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../GFX/faza.jpg" />
-         </image>
-      </ImageView>
       <TextField fx:id="cod1" layoutX="180.0" layoutY="25.0" visible="false" />
-      <Button fx:id="exposition" layoutX="254.0" layoutY="154.0" mnemonicParsing="false" onAction="#backtoexpo" prefHeight="26.0" prefWidth="102.0" text="exposition" textFill="#bd2929">
+      <Button fx:id="exposition" layoutX="69.0" layoutY="96.0" mnemonicParsing="false" onAction="#backtoexpo" prefHeight="26.0" prefWidth="102.0" text="exposition" textFill="#bd2929">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -27,7 +20,7 @@
          </effect>
       </Button>
       <PieChart fx:id="piechart" layoutX="329.0" layoutY="268.0" />
-      <Label layoutX="354.0" layoutY="163.0" prefHeight="58.0" prefWidth="486.0" text="statistiques des réservations" textFill="#1c329ec6">
+      <Label layoutX="254.0" layoutY="126.0" prefHeight="58.0" prefWidth="486.0" text="statistiques des réservations" textFill="#1c329ec6">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>

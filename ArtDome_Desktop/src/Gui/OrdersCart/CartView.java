@@ -1,12 +1,14 @@
 package Gui.OrdersCart;
 
 import Entities.Cart;
+import Gui.HomeSceneController;
 import Gui.Oeuvre.OeuvreItem;
 import Services.CartServices;
 import Services.OrdersService;
 import Tools.UserHolder;
 import com.itextpdf.text.DocumentException;
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -45,14 +47,30 @@ public class CartView implements Initializable {
     private AnchorPane content;
     @FXML
     private AnchorPane root;
-
-
+    @FXML
+    private AnchorPane holderPane;
+    @FXML
+    AnchorPane home,oeuvre,event,profiles,expo,blog,orders,location,login,cart;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            home = FXMLLoader.load(getClass().getResource("../HomeScene.fxml"));
+            profiles = FXMLLoader.load(getClass().getResource("../User/Profile.fxml"));
+            oeuvre = FXMLLoader.load(getClass().getResource("../Oeuvre/OeuvreItem.fxml"));
+            event = FXMLLoader.load(getClass().getResource("../Event/ListEvent.fxml"));
+            expo = FXMLLoader.load(getClass().getResource("../Exposition/AddReservation_expo.fxml"));
+            blog = FXMLLoader.load(getClass().getResource("../Blog/BlogShow.fxml"));
+            orders = FXMLLoader.load(getClass().getResource("Orders.fxml"));
+            location = FXMLLoader.load(getClass().getResource("../Endroit/AfficherReservation.fxml"));
+            login = FXMLLoader.load(getClass().getResource("../User/Login.fxml"));
+            cart = FXMLLoader.load(getClass().getResource("CartView.fxml"));
 
+        } catch (IOException ex) {
+            Logger.getLogger(HomeSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
 
             ShowCart ();
@@ -252,49 +270,7 @@ public class CartView implements Initializable {
     }
 
 
-    @FXML
-    private void gotohome(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../HomeScene.fxml")));
-        dialogStage.setTitle ("ArtDome - Home");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
 
-    @FXML
-    private void gotooeuvre(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Oeuvre/OeuvreItem.fxml")));
-        dialogStage.setTitle ("ArtDome - Oeuvre");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
-
-    @FXML
-    private void gotoexpo(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Exposition/AddExposition.fxml")));
-        dialogStage.setTitle ("ArtDome - Exposition");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
-
-    @FXML
-    private void gotoorders(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("Orders.fxml")));
-        dialogStage.setTitle ("ArtDome - Orders");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
-    }
 
     @FXML
     private void check(ActionEvent actionEvent) throws IOException, MessagingException, URISyntaxException, DocumentException {
@@ -307,7 +283,7 @@ public class CartView implements Initializable {
         scene = new Scene (FXMLLoader.load(getClass().getResource("payement.fxml")));
         dialogStage.setTitle("ArtDome - Home");
         dialogStage.setScene(scene);
-dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
+        dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         dialogStage.show();
         String title = "Order ";
         String message = "You Order  has been Added";
@@ -319,36 +295,67 @@ dialogStage.getIcons ().add (new Image ("GFX/logo.png"));
         tray.showAndDismiss (Duration.millis (3200));
     }
 
+    private void setNode(Node node) {
+        holderPane.getChildren().clear();
+        holderPane.getChildren().add((Node) node);
+
+        FadeTransition ft = new FadeTransition(Duration.millis(1500));
+        ft.setNode(node);
+        ft.setFromValue(0.1);
+        ft.setToValue(1);
+        ft.setCycleCount(1);
+        ft.setAutoReverse(false);
+        ft.play();
+    }
     @FXML
     private void profile(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../User/Profile.fxml")));
-        dialogStage.setTitle ("ArtDome - Profile");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
+        setNode(profiles);
+    }
+
+    @FXML
+    private void order(ActionEvent actionEvent) throws IOException {
+        setNode(orders);
+    }
+
+    @FXML
+    private void oeuvre(ActionEvent actionEvent) throws IOException {
+        setNode(oeuvre);
+    }
+
+    @FXML
+    private void expo(ActionEvent actionEvent) throws IOException {
+        setNode(expo);
     }
 
     @FXML
     private void event(ActionEvent actionEvent) throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Event/ListEvent.fxml")));
-        dialogStage.setTitle ("ArtDome - Event");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
+        setNode(event);
     }
 
     @FXML
-    private void blog(ActionEvent actionEvent)throws IOException {
-        Node source = (Node) actionEvent.getSource ();
-        dialogStage = (Stage) source.getScene ().getWindow ();
-        dialogStage.close ();
-        scene = new Scene (FXMLLoader.load (getClass ().getResource ("../Blog/BlogShow.fxml")));
-        dialogStage.setTitle ("ArtDome - Blog");
-        dialogStage.setScene (scene);
-        dialogStage.show ();
+    private void blog(ActionEvent actionEvent) throws IOException {
+        setNode(blog);
+
+    }
+    @FXML
+    private void location(ActionEvent actionEvent)throws IOException {
+        setNode(location);
+    }
+    @FXML
+    private void logout(ActionEvent actionEvent) throws IOException {
+        setNode(login);
+
+    }
+
+
+    @FXML
+    private void cart(ActionEvent actionEvent) {
+        setNode(cart);
+    }
+
+    @FXML
+    private void home(ActionEvent actionEvent) {
+        setNode(home);
+
     }
 }

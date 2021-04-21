@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="anchor" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.HomeSceneController">
+<AnchorPane id="anchor" fx:id="holderPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.HomeSceneController">
    <children>
       <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -53,7 +53,7 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Label>
-            <JFXButton fx:id="OrdersB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
+            <JFXButton fx:id="OrdersB1" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#home" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Home" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoprofile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profile" textFill="#5b5858">
+            <JFXButton fx:id="UserB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#profile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Profile" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -86,7 +86,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#GoToOeuvre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
+            <JFXButton fx:id="OeuvresB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#oeuvre" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Oeuvres" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -104,7 +104,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoevent" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
+            <JFXButton fx:id="EventB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#event" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Event" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -122,7 +122,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#goToExpos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
+            <JFXButton fx:id="ExpositionB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#expo" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Exposition" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -140,7 +140,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#gotoblog" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
+            <JFXButton fx:id="BlogB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#blog" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Blog" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -155,22 +155,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="Forum" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#FORUM" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Forum" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../GFX/agencies.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleOrder" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
+            <JFXButton fx:id="OrdersB" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#order" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Orders" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
@@ -202,29 +187,33 @@
             </JFXButton>
          </children>
       </VBox>
-      <ImageView fitHeight="379.0" fitWidth="491.0" layoutX="547.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../GFX/samba.jpg" />
-         </image>
-      </ImageView>
-      <Text fill="#d51010" layoutX="303.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marble statue of a woman" />
-      <JFXTextArea layoutX="275.0" layoutY="211.0" prefHeight="346.0" prefWidth="252.0" text="The lively, varied manner in which the texture of the clothing is rendered suggests that this is a Greek original rather than a Roman copy. The crinkly linen of the chiton and the heavier wool of the himation (cloak) are carefully differentiated, and horizontal press folds add variety to the latter's surface. The drilled holes on the sleeves once held metal buttons. The upper part of the chiton is kept firmly in place by a cord that is crossed in back and slipped over the arms. This over-life size figure probably represents a goddess, and in the absence of other attributes, the shoulder cord may offer a clue to her identity. Although the huntress Artemis is often shown with such a cord, this more matronly figure may represent Themis, a goddess associated with custom and law. The head and neck were carved separately and provided with a rounded tenon that was set into the cavity at the top of the torso." />
-      <JFXButton fx:id="AddToCart" layoutX="333.0" layoutY="574.0" onAction="#AddToCart" prefHeight="30.0" prefWidth="163.0" text="Add To Cart" />
-      <JFXButton fx:id="MyCart" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="950.0" layoutY="151.0" onAction="#handleBtnOrder" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Cart" textFill="#5b5858">
-         <font>
-            <Font size="13.0" />
-         </font>
-         <graphic>
-            <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane fx:id="profiles" layoutX="275.0" layoutY="151.0">
+         <children>
+            <ImageView fitHeight="379.0" fitWidth="491.0" layoutX="272.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../GFX/shopping-cart.png" />
+                  <Image url="@../GFX/samba.jpg" />
                </image>
             </ImageView>
-         </graphic>
-         <padding>
-            <Insets left="50.0" />
-         </padding>
-      </JFXButton>
+            <Text fill="#d51010" layoutX="28.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marble statue of a woman" />
+            <JFXTextArea layoutY="60.0" prefHeight="346.0" prefWidth="252.0" text="The lively, varied manner in which the texture of the clothing is rendered suggests that this is a Greek original rather than a Roman copy. The crinkly linen of the chiton and the heavier wool of the himation (cloak) are carefully differentiated, and horizontal press folds add variety to the latter's surface. The drilled holes on the sleeves once held metal buttons. The upper part of the chiton is kept firmly in place by a cord that is crossed in back and slipped over the arms. This over-life size figure probably represents a goddess, and in the absence of other attributes, the shoulder cord may offer a clue to her identity. Although the huntress Artemis is often shown with such a cord, this more matronly figure may represent Themis, a goddess associated with custom and law. The head and neck were carved separately and provided with a rounded tenon that was set into the cavity at the top of the torso." />
+            <JFXButton fx:id="AddToCart" layoutX="58.0" layoutY="423.0" onAction="#AddToCart" prefHeight="30.0" prefWidth="163.0" text="Add To Cart" />
+            <JFXButton fx:id="MyCart" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="675.0" onAction="#cart" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="My Cart" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView accessibleText="Project List" fitHeight="16.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GFX/shopping-cart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </AnchorPane>
       <JFXTextField fx:id="CartNumber" editable="false" layoutX="1076.0" layoutY="159.0" prefHeight="26.0" prefWidth="48.0" />
       <JFXButton layoutX="1190.0" layoutY="159.0" onAction="#logout" text="Logout" />
    </children>

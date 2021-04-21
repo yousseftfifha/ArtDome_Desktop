@@ -1,7 +1,283 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
+      <change afterPath="$PROJECT_DIR$/src/aa.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.env.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/ArtDomeWeb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/commandlinetools/Symfony_08_04_2021_8_18_PM.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/dataSources/b0cafdeb-badd-46f6-b507-4877beeb9187.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/dataSources/b0cafdeb-badd-46f6-b507-4877beeb9187/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/bin/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/bundles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/dev/debug.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/dev/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/doctrine_migrations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/mailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/deprecations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/security.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/translation.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/preload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes/annotations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes/dev/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/Mona_lisa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/Print_icon-icons.com_55835.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/SRC-Network-Logo_FINAL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/Wikipedia-globe-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/a.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/agencies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blog1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blog2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blog3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blogger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/c.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/click to pay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/click.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/faza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/fazaaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_500px_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_Handshake_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_Share_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_US_Dollar_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_Workflow_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/projections.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/projects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/reliabilty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/reservation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/samba.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/samba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/sculture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/seo-social-web-network-internet_340_icon-icons.com_61497.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/shopping-cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/trash-can_38501.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/contact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/homeimg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product1-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product2-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product2-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/scorilo2-70x70.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/anim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/jquery-.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/shop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/CartController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/OeuvreController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/OrdersController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/PendingOrdersController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/indexController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Blog.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Categorie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Commentaire.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Endroit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Event.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Exposition.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Notification.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Oeuvre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Orders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/PendingOrders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Reservation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/ReservationExpo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Reservationevent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/CartType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/OeuvreType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/Orders1Type.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/OrdersType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/PendingOrders1Type.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/PendingOrdersType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/tests/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/translations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/chartExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/chartExposition.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Cathegories.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/CathegoriesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Forums.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/NewsubjetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Sujet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/SujetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Topics.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/TopicsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/hs_err_pid1232.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/newsubjet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/Orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/Orders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/Profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/DetailEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/DetailEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/DetailEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/DetailEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/EventReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/EventReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/EventReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/EventReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ListEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ListEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/ListEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ListEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/chartExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/chartExposition.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Cathegories.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/CathegoriesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Forums.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/NewsubjetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Sujet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/SujetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Topics.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/TopicsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/hs_err_pid1232.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/newsubjet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/Orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/Orders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/Profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/ProfileController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,8 +367,8 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -197,7 +473,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../java/jar_files/Nouveau dossier (2)/slf4j-api-1.7.23.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/material-dashboard-fx-master/material-dashboard-fx-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -210,7 +486,7 @@
     <property name="project.structure.proportion" value="0.1778697" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -457,6 +733,13 @@
       <workItem from="1617349806727" duration="6073000" />
       <workItem from="1617877325707" duration="1315000" />
       <workItem from="1617909493669" duration="401000" />
+      <workItem from="1618397916299" duration="726000" />
+      <workItem from="1618499803120" duration="256000" />
+      <workItem from="1618924239960" duration="647000" />
+      <workItem from="1618928961253" duration="631000" />
+      <workItem from="1618999297353" duration="6490000" />
+      <workItem from="1619005868364" duration="86000" />
+      <workItem from="1619005970271" duration="118000" />
     </task>
     <servers />
   </component>
@@ -512,17 +795,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java</url>
-          <line>311</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
