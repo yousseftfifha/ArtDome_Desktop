@@ -87,7 +87,7 @@ public class CartServices {
             statement = connection.createStatement();
             resultSet= statement.executeQuery(req);
             while(resultSet.next()){
-                list.add(new Oeuvre (resultSet.getInt (1), resultSet.getString (2),resultSet.getFloat (3),resultSet.getInt (4),resultSet.getString (6)));
+                list.add(new Oeuvre (resultSet.getInt (1), resultSet.getString (2),resultSet.getFloat (3),resultSet.getString (4)));
             }
 
         } catch (SQLException ex) {

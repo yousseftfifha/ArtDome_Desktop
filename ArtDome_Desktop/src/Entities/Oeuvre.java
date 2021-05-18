@@ -22,8 +22,18 @@ public class Oeuvre {
     private Date DateOeuvre;
     private String ImageOeuvre;
     private String NomCat;
-    private String EmailArtiste ; 
+    private String EmailArtiste ;
+    private String color ;
+
     public Oeuvre() {
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public Oeuvre(int ID_Oeuvre) {
@@ -46,6 +56,13 @@ public class Oeuvre {
         NomOeuvre = nomOeuvre;
         PrixOeuvre = prixOeuvre;
         this.ID_Artiste = ID_Artiste;
+        ImageOeuvre = imageOeuvre;
+    }
+
+    public Oeuvre(int ID_Oeuvre, String nomOeuvre, double prixOeuvre, String imageOeuvre) {
+        this.ID_Oeuvre = ID_Oeuvre;
+        NomOeuvre = nomOeuvre;
+        PrixOeuvre = prixOeuvre;
         ImageOeuvre = imageOeuvre;
     }
 
