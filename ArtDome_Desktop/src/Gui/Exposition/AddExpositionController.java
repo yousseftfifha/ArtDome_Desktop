@@ -154,7 +154,7 @@ public class AddExpositionController implements Initializable {
             int oeuvre = 0;
             
             ExpoService expoc = new ExpoService ();
-            Exposition expo = new Exposition(nom,theme,espace,artiste,date,nbP,nbMaxP,oeuvre);
+            Exposition expo = new Exposition(nom,theme,espace,artiste,date,nbMaxP);
             
             expoc.AddExpo(expo);
             showExpo();
@@ -202,10 +202,8 @@ public class AddExpositionController implements Initializable {
             code_espace.setText(" "+ev.getCode_espace());
             code_artiste.setValue (" "+ev.getCode_artiste());
             date_expo.setValue(Instant.ofEpochMilli((ev.getDate_expo()).getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
-            nb_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_participant(), 5000));
             nb_max_participant.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(ev.getNb_max_participant(), 5000));
-            code_oeuvre.setText(" "+ev.getCode_oeuvre());
-            
+
             showOeuvre(Integer.parseInt(code_expo.getText().trim()));
             
           
@@ -226,7 +224,7 @@ public class AddExpositionController implements Initializable {
             int nb_max_part = nb_max_participant.getValue();
             int oeuvre = Integer.parseInt(code_oeuvre.getText().trim());
             ExpoService ex = new ExpoService ();
-            Exposition e= new Exposition(nom, theme, espace, artiste, date, nb_part, nb_max_part, oeuvre);
+            Exposition e= new Exposition(nom, theme, espace, artiste, date, nb_max_part);
             ex.UpdateExpo(e,codeee);
             showExpo();
     }

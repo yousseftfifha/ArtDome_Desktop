@@ -189,7 +189,6 @@ public class AddEventController implements Initializable {
         coltheme.setCellValueFactory(new PropertyValueFactory<Event, String>("theme_event"));
         coletat.setCellValueFactory(new PropertyValueFactory<Event, String>("etat"));
         coldate.setCellValueFactory(new PropertyValueFactory<Event, Date>("date"));
-        colnbpart.setCellValueFactory(new PropertyValueFactory<Event, Integer>("nb_participant"));
         colnbmax.setCellValueFactory(new PropertyValueFactory<Event, Integer>("nb_max_part"));
         colcodeespace.setCellValueFactory(new PropertyValueFactory<Event, Integer>("code_espace"));
         colimage.setCellValueFactory(new PropertyValueFactory<Event, String>("image"));

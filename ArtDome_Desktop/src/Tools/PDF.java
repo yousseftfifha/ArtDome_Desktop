@@ -87,10 +87,9 @@ public class PDF {
         table.setHeaderRows(1);
         for (Orders o:order) {
             table.addCell(String.valueOf (o.getInnoNumber ()));
-            table.addCell(o.getUserName ());
+            table.addCell(String.valueOf (o.getIDUser ()));
             table.addCell(String.valueOf (o.getDueAmount ()));
             table.addCell(String.valueOf (o.getInnoNumber ()));
-            table.addCell(String.valueOf (o.getTotalQty ()));
             table.addCell(o.getOrderDate ());
             table.addCell(o.getStatus ());
         }
@@ -164,10 +163,9 @@ public class PDF {
         table.setHeaderRows(1);
         for (Orders o:ordersList) {
             table.addCell(String.valueOf (o.getInnoNumber ()));
-            table.addCell(o.getUserName ());
+            table.addCell(String.valueOf (o.getIDUser ()));
             table.addCell(String.valueOf (o.getDueAmount ()));
             table.addCell(String.valueOf (o.getInnoNumber ()));
-            table.addCell(String.valueOf (o.getTotalQty ()));
             table.addCell(o.getOrderDate ());
             table.addCell(o.getStatus ());
         }
@@ -199,8 +197,8 @@ public class PDF {
 
         table1.setHeaderRows(1);
         for (PendingOrders o:pendingOrdersList) {
-            table1.addCell(String.valueOf (o.getOrderId ()));
-            table1.addCell(o.getUserName ());
+            table1.addCell(String.valueOf (o.getID_PendingOrder ()));
+            table1.addCell(o.getIDUser ().getEmail ());
             table1.addCell(String.valueOf (o.getInnoNumber ()));
             table1.addCell(String.valueOf (o.getQuantity ()));
             table1.addCell(String.valueOf (o.getOeuvreID ()));

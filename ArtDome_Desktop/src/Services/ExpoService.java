@@ -39,7 +39,7 @@ public class ExpoService {
     }
     
        public void AddExpo(Exposition e){
-        String req ="INSERT INTO exposition (nom_expo,theme_expo,code_espace,code_artiste,date_expo,nb_participant,nb_max_participant,code_oeuvre)"+"values (?,?,?,?,?,?,?,?)";
+        String req ="INSERT INTO exposition (nom_expo,theme_expo,code_espace,code_artiste,date_expo,nb_max_participant)"+"values (?,?,?,?,?,?)";
         try {
             ste = cnx.prepareStatement(req);
 //            ste.setInt(1, e.getCode_expo());
@@ -48,10 +48,8 @@ public class ExpoService {
             ste.setInt(3, e.getCode_espace());
              ste.setInt(4, e.getCode_artiste());
             ste.setDate(5, (Date) e.getDate_expo());
-             ste.setInt(6, e.getNb_participant());
-            ste.setInt(7, e.getNb_max_participant());
-             ste.setInt(8, e.getCode_oeuvre());
-            
+            ste.setInt(6, e.getNb_max_participant());
+
             ste.executeUpdate();
             System.out.println("exposition ajoutée");
             
@@ -72,7 +70,7 @@ public class ExpoService {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               expolist.add(new Exposition (rs.getInt("code_expo"), rs.getString("nom_expo"), rs.getString("theme_expo"), rs.getInt("code_espace"), rs.getInt("code_artiste"), rs.getDate("date_expo"), rs.getInt("nb_participant"), rs.getInt("nb_max_participant"), rs.getInt("code_oeuvre") ));
+               expolist.add(new Exposition (rs.getInt("code_expo"), rs.getString("nom_expo"), rs.getString("theme_expo"), rs.getInt("code_espace"), rs.getInt("code_artiste"), rs.getDate("date_expo"), rs.getInt("nb_max_participant") ));
            }
 
         } catch (SQLException ex) {
@@ -105,7 +103,7 @@ public class ExpoService {
         
         
            public void UpdateExpo(Exposition e,int codeee ){
-        String req ="UPDATE exposition set nom_expo=? , theme_expo=? , code_espace=? , code_artiste=? , date_expo=? , nb_participant=? , nb_max_participant=? , code_oeuvre=? WHERE code_expo =" +codeee+ " ";
+        String req ="UPDATE exposition set nom_expo=? , theme_expo=? , code_espace=? , code_artiste=? , date_expo=? ,  nb_max_participant=?  WHERE code_expo =" +codeee+ " ";
         try {
             ste = cnx.prepareStatement(req);
             ste.setString(1, e.getNom_expo());
@@ -113,10 +111,8 @@ public class ExpoService {
             ste.setInt(3, e.getCode_espace());
             ste.setInt(4, e.getCode_artiste());
             ste.setDate(5, (Date) e.getDate_expo());
-            ste.setInt(6, e.getNb_participant());
-            ste.setInt(7, e.getNb_max_participant());
-            ste.setInt(8, e.getCode_oeuvre());
-            
+            ste.setInt(6, e.getNb_max_participant());
+
             ste.executeUpdate();
             System.out.println("Exposition modifié");
             
@@ -167,7 +163,7 @@ public class ExpoService {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               expolist.add(new Exposition (rs.getInt("code_expo"), rs.getString("nom_expo"), rs.getString("theme_expo"), rs.getInt("code_espace"), rs.getInt("code_artiste"), rs.getDate("date_expo"), rs.getInt("nb_participant"), rs.getInt("nb_max_participant"), rs.getInt("code_oeuvre") ));
+               expolist.add(new Exposition (rs.getInt("code_expo"), rs.getString("nom_expo"), rs.getString("theme_expo"), rs.getInt("code_espace"), rs.getInt("code_artiste"), rs.getDate("date_expo"),  rs.getInt("nb_max_participant") ));
            }
 
         } catch (SQLException ex) {

@@ -57,15 +57,16 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        TUser.setText ("youssef.tfifha@esprit.tn");
+        Tpassword.setText ("$argon2id$v=19$m=65536,t=4,p=1$UXVoTDhZYWJ6ZFhaeERNRA$i8ICl32AiKV6PmJSwh6uhUXJ6GzncvHKK7cRnmHAm+0");    }
 
     @FXML
     private void ChangerScene(ActionEvent event) throws IOException {
         try {
+
             String user = TUser.getText().toString();
             String password = Tpassword.getText().toString();
-            String sql = "SELECT * FROM user Where nom='" + user + "' and mdp='" + password + "'";
+            String sql = "SELECT * FROM user Where email='" + user + "' and password='" + password + "'";
           
 
             Connection con = MyConnection.getInstance().getConnection();

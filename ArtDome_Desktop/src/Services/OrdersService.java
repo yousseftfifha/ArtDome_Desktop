@@ -6,11 +6,6 @@ import Tools.PDF;
 import Tools.SendEmail;
 import Tools.UserHolder;
 import com.itextpdf.text.DocumentException;
-import com.teknikindustries.bulksms.SMS;
-import com.vonage.client.HttpConfig;
-import com.vonage.client.VonageClient;
-import com.vonage.client.sms.SmsSubmissionResponse;
-import com.vonage.client.sms.messages.TextMessage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
@@ -36,10 +31,10 @@ import java.util.logging.Logger;
  * @author tfifha youssef
  */
 public class OrdersService {
-    private Statement statement;
     private Connection connection;
-    private PreparedStatement preparedStatement;
-    private ResultSet resultSet;
+    private PreparedStatement ste;
+    private ResultSet rs;
+    private Statement st;
 
 
     public OrdersService() {
@@ -50,7 +45,7 @@ public class OrdersService {
         int orID = 1000 + (int)(Math.random() * ((9999 - 1000) + 1));
         float total_prix=0;
         int quantitytot=0;
-        int oeuvreid=0;
+        Oeuvre oeuvreid=null;
         int qua=0;
         CartServices cartServices = new CartServices ();
 //        List<Cart> carts = cartCRUD.selectCartById (cart.getCartId ());
@@ -69,21 +64,19 @@ public class OrdersService {
         UserHolder holder = UserHolder.getInstance();
         for(Cart i : cartOeuvreMap.keySet()){
             total_prix+=i.getQuantiy ()*cartOeuvreMap.get (i).getPrixOeuvre ();
-            String request="INSERT INTO pending_orders(OrderID,UserName,InnoNumber,OeuvreID,Quantity,Status,AddressID)"+"VALUES(?,?,?,?,?,?,?) ";
+            String request="INSERT INTO pending_orders(IDUser,InnoNumber,OeuvreID,Quantity,Status)"+"VALUES(?,?,?,?,?) ";
             quantitytot+=i.getQuantiy ();
-            oeuvreid=cartOeuvreMap.get (i).getID_Oeuvre ();
+            oeuvreid=cartOeuvreMap.get (i);
             qua=i.getQuantiy ();
             try {
-                preparedStatement = connection.prepareStatement(request);
-                preparedStatement.setInt (1,orID);
-                preparedStatement.setString (2,holder.getUser().getNom ()+" "+holder.getUser().getPrenom ());
-                preparedStatement.setInt (3,nombreAleatoire);
-                preparedStatement.setInt (4,cartOeuvreMap.get (i).getID_Oeuvre ());
-                preparedStatement.setInt (5,i.getQuantiy ());
-                preparedStatement.setString (6,"pending");
-                preparedStatement.setInt (7,1);
+                ste = connection.prepareStatement(request);
+                ste.setInt (1,holder.getUser().getId ());
+                ste.setInt (2,nombreAleatoire);
+                ste.setInt (3,cartOeuvreMap.get (i).getID_Oeuvre ());
+                ste.setInt (4,i.getQuantiy ());
+                ste.setString (5,"pending");
 
-                preparedStatement.executeUpdate ();
+                ste.executeUpdate ();
                 cartServices.DeletCart (i.getCartId ());
 
 
@@ -95,22 +88,19 @@ public class OrdersService {
         }
 
         List<PendingOrders> pendingOrdersList=new ArrayList<> ();
-        PendingOrders pendingOrders=new PendingOrders (orID,holder.getUser().getNom ()+" "+holder.getUser().getPrenom (),nombreAleatoire,oeuvreid,qua,"pending",1);
+        PendingOrders pendingOrders=new PendingOrders (holder.getUser(),nombreAleatoire,oeuvreid,qua,"pending");
         pendingOrdersList.add (pendingOrders);
-        String request1="INSERT INTO orders(OrderID,UserName,DueAmount,InnoNumber,TotalQty,OrderDate,Status,AddressId)"+"VALUES(?,?,?,?,?,?,?,?) ";
+        String request1="INSERT INTO orders(IDUser,DueAmount,InnoNumber,OrderDate,Status)"+"VALUES(?,?,?,?,?) ";
 
         try {
-            preparedStatement = connection.prepareStatement(request1);
-            preparedStatement.setInt (1,orID);
-            preparedStatement.setString (2,holder.getUser().getEmail ());
-            preparedStatement.setFloat (3,total_prix);
-            preparedStatement.setInt (4,nombreAleatoire);
-            preparedStatement.setInt (5,quantitytot);
-            preparedStatement.setString (6,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME) );
-            preparedStatement.setString (7,"pending");
-            preparedStatement.setInt (8,1);
+            ste = connection.prepareStatement(request1);
+            ste.setInt (1,holder.getUser().getId ());
+            ste.setFloat (2,total_prix);
+            ste.setInt (3,nombreAleatoire);
+            ste.setString (4,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME) );
+            ste.setString (5,"pending");
 
-            preparedStatement.executeUpdate ();
+            ste.executeUpdate ();
 
 
         } catch (SQLException throwables) {
@@ -118,7 +108,7 @@ public class OrdersService {
             throwables.printStackTrace ();
         }
 
-        Orders orders= new Orders (orID,holder.getUser().getEmail (),total_prix,nombreAleatoire,quantitytot,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME), "pending", 1);
+        Orders orders= new Orders (total_prix,nombreAleatoire,ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME), "pending");
         List<Orders> ordersList=new ArrayList<> ();
         ordersList.add (orders);
         PDF pdf=new PDF ();
@@ -153,19 +143,19 @@ public class OrdersService {
                 } catch (MessagingException e) {
                     e.printStackTrace ();
                 }
-                SMS sendtext=new SMS ();
-                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
-                HttpConfig httpConfig = HttpConfig.defaultConfig();
-                VonageClient client = new VonageClient .Builder()
-                        .apiKey("8f52a2c6")
-                        .apiSecret("967AQN7qPzUl5BB6")
-                        .httpConfig(httpConfig)
-                        .build();
-
-                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
-                        "ArtDome",
-                        "21620245989",
-                        message));
+//                SMS sendtext=new SMS ();
+//                sendtext.SendSMS("yousseftfifha","181JMT2499y","un nouveau evenement a ete cree !","216"+"20245989","https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+//                HttpConfig httpConfig = HttpConfig.defaultConfig();
+//                VonageClient client = new VonageClient .Builder()
+//                        .apiKey("8f52a2c6")
+//                        .apiSecret("967AQN7qPzUl5BB6")
+//                        .httpConfig(httpConfig)
+//                        .build();
+//
+//                SmsSubmissionResponse responses = client.getSmsClient().submitMessage(new TextMessage (
+//                        "ArtDome",
+//                        "21620245989",
+//                        message));
 
             }
         });
@@ -178,10 +168,12 @@ public class OrdersService {
 
         List<PendingOrders> list=new ArrayList<> ();
         try {
-            statement = connection.createStatement();
-            resultSet= statement.executeQuery(req);
-            while(resultSet.next()){
-                list.add(new PendingOrders (resultSet.getInt(1), resultSet.getString (2), resultSet.getInt (3),resultSet.getInt (4),resultSet.getInt (5),resultSet.getString (6),resultSet.getInt (7)));
+            st = connection.createStatement();
+            rs= st.executeQuery(req);
+            while(rs.next()){
+                User u=new User(rs.getInt("IDUser"));
+                Oeuvre o=new Oeuvre (rs.getInt ("OeuvreID"));
+                list.add(new PendingOrders (u, rs.getInt (3),o, rs.getInt (5), rs.getString (6)));
             }
 
         } catch (SQLException ex) {
@@ -194,10 +186,11 @@ public class OrdersService {
 
         List<Orders> list=new ArrayList<> ();
         try {
-            statement = connection.createStatement();
-            resultSet= statement.executeQuery(req);
-            while(resultSet.next()){
-                list.add(new Orders (resultSet.getInt(1), resultSet.getString (2), resultSet.getFloat (3),resultSet.getInt (4),resultSet.getInt (5),resultSet.getString (6),resultSet.getString (7),resultSet.getInt (8)));
+            st = connection.createStatement();
+            rs= st.executeQuery(req);
+
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
 
         } catch (SQLException ex) {
@@ -210,9 +203,9 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select OrderID from orders ";
         try {
-            preparedStatement=connection.prepareStatement (req);
+            ste=connection.prepareStatement (req);
 
-            ResultSet result =preparedStatement.executeQuery() ;
+            ResultSet result =ste.executeQuery() ;
             while (result.next()){
                 list.add(new Orders (
                         result.getInt(1)
@@ -230,21 +223,12 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select * from orders where OrderID=?";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setInt(1,id);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            ste.setInt(1,id);
+            rs= st.executeQuery(req);
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -257,20 +241,13 @@ public class OrdersService {
         List<PendingOrders> list =new ArrayList<>() ;
         String req = "select * from pending_orders where OrderID=?";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setInt(1,id);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new PendingOrders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getInt (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getInt (7)
-
-                ));
+            ste=connection.prepareStatement (req);
+            ste.setInt(1,id);
+            rs =ste.executeQuery() ;
+            while (rs.next()){
+                User u=new User(this.rs.getInt("IDUser"));
+                Oeuvre o=new Oeuvre (this.rs.getInt ("OeuvreID"));
+                list.add(new PendingOrders (u, this.rs.getInt (3),o, this.rs.getInt (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -282,22 +259,22 @@ public class OrdersService {
     {
         String req="UPDATE orders SET Status=? WHERE OrderID =?" ;
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setString (1,str); ;
-            preparedStatement.setInt (2,id) ;
+            ste=connection.prepareStatement (req);
+            ste.setString (1,str); ;
+            ste.setInt (2,id) ;
 
-            preparedStatement.executeUpdate() ;
+            ste.executeUpdate() ;
 
         } catch (SQLException ex) {
             System.out.println ("Probleme lors de l'update du statut de l'ordre");
         }
         String req1="UPDATE pending_orders SET Status=? WHERE OrderID =?" ;
         try {
-            preparedStatement=connection.prepareStatement (req1);
-            preparedStatement.setString (1,str); ;
-            preparedStatement.setInt (2,id) ;
+            ste=connection.prepareStatement (req1);
+            ste.setString (1,str); ;
+            ste.setInt (2,id) ;
 
-            preparedStatement.executeUpdate() ;
+            ste.executeUpdate() ;
 
         } catch (SQLException ex) {
             System.out.println ("Probleme lors de l'update de du statut du pending order");
@@ -307,9 +284,9 @@ public class OrdersService {
     {
         String req="DELETE  from orders where  OrderID =?" ;
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setInt(1,id);
-            preparedStatement.executeUpdate ();
+            ste=connection.prepareStatement (req);
+            ste.setInt(1,id);
+            ste.executeUpdate ();
 
         } catch (SQLException ex) {
             System.out.println ("Probleme lors de la supprision du panier");
@@ -317,9 +294,9 @@ public class OrdersService {
         }
         String req1="DELETE  from pending_orders where  OrderID =?" ;
         try {
-            preparedStatement=connection.prepareStatement (req1);
-            preparedStatement.setInt(1,id);
-            preparedStatement.executeUpdate ();
+            ste=connection.prepareStatement (req1);
+            ste.setInt(1,id);
+            ste.executeUpdate ();
 
         } catch (SQLException ex) {
             System.out.println ("Probleme lors de la supprision du panier");
@@ -332,11 +309,8 @@ public class OrdersService {
         ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
         String req = "SELECT Status  from orders ";
         try {
-            statement = connection.createStatement();
-            resultSet= statement.executeQuery(req);
-            while(resultSet.next()){
-                data.add(new PieChart.Data (resultSet.getString("Status"),1));
-            }
+            st = connection.createStatement();
+            rs = st.executeQuery(req);
 
         } catch (SQLException ex) {
             System.out.println("Probléme");
@@ -350,10 +324,11 @@ public class OrdersService {
 
         List<Orders> list=new ArrayList<> ();
         try {
-            statement = connection.createStatement();
-            resultSet= statement.executeQuery(req);
-            while(resultSet.next()){
-                list.add(new Orders (resultSet.getFloat (1)));
+            st = connection.createStatement();
+            rs = st.executeQuery(req);
+
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
 
         } catch (SQLException ex) {
@@ -379,22 +354,13 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select * from orders where OrderID = ? or InnoNumber=? ";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setInt(1,id);
-            preparedStatement.setInt(2,id);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            ste.setInt(1,id);
+            ste.setInt(2,id);
+            ResultSet result =ste.executeQuery() ;
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -408,21 +374,12 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select * from orders where Status = ?  ";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setString (1,status);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            ste.setString (1,status);
+            rs =ste.executeQuery() ;
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -430,26 +387,16 @@ public class OrdersService {
         return list;
 
     }
-    public  List<Orders> selectOrderByUser (String id)
+    public  List<Orders> selectOrderByUser (int id)
     {
         List<Orders> list =new ArrayList<>() ;
-        String req = "select * from orders where UserName=?";
+        String req = "select * from orders where IDUser='"+id+"'";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            preparedStatement.setString (1,id);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            rs= ste.executeQuery(req);
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -462,20 +409,11 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select * from orders order by OrderDate desc";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            rs= st.executeQuery(req);
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -488,20 +426,11 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select * from orders order by DueAmount desc";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            rs= st.executeQuery(req);
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);
@@ -514,20 +443,11 @@ public class OrdersService {
         List<Orders> list =new ArrayList<>() ;
         String req = "select * from orders order by TotalQty desc ";
         try {
-            preparedStatement=connection.prepareStatement (req);
-            ResultSet result =preparedStatement.executeQuery() ;
-            while (result.next()){
-                list.add(new Orders (
-                        result.getInt(1),
-                        result.getString (2),
-                        result.getFloat (3),
-                        result.getInt (4),
-                        result.getInt (5),
-                        result.getString (6),
-                        result.getString (7),
-                        result.getInt (8)
+            ste=connection.prepareStatement (req);
+            rs= st.executeQuery(req);
 
-                ));
+            while (rs.next()){
+                list.add(new Orders (this.rs.getInt (1), this.rs.getInt (2), this.rs.getFloat (3), this.rs.getInt (4), this.rs.getString (5), this.rs.getString (6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CartServices.class.getName()).log(Level.SEVERE, null, ex);

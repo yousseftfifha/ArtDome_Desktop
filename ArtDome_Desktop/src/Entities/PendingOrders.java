@@ -4,31 +4,30 @@ package Entities;
  * @author tfifha youssef
  */
 public class PendingOrders {
-    private int OrderId;
-    private String UserName;
+    private int ID_PendingOrder;
+    private User IDUser;
     private int InnoNumber;
-    private int OeuvreID;
+    private Oeuvre OeuvreID;
     private int Quantity;
     private String Status;
-    private int AddressID;
 
     public PendingOrders() {
     }
 
-    public int getOrderId() {
-        return OrderId;
+    public int getID_PendingOrder() {
+        return ID_PendingOrder;
     }
 
-    public void setOrderId(int orderId) {
-        OrderId = orderId;
+    public void setID_PendingOrder(int orderId) {
+        ID_PendingOrder = ID_PendingOrder;
     }
 
-    public String getUserName() {
-        return UserName;
+    public User getIDUser() {
+        return IDUser;
     }
 
-    public void setUserName(String userName) {
-        UserName = userName;
+    public void setIDUser(User IDUser) {
+        IDUser = IDUser;
     }
 
     public int getInnoNumber() {
@@ -39,11 +38,11 @@ public class PendingOrders {
         InnoNumber = innoNumber;
     }
 
-    public int getOeuvreID() {
+    public Oeuvre getOeuvreID() {
         return OeuvreID;
     }
 
-    public void setOeuvreID(int oeuvreID) {
+    public void setOeuvreID(Oeuvre oeuvreID) {
         OeuvreID = oeuvreID;
     }
 
@@ -63,34 +62,24 @@ public class PendingOrders {
         Status = status;
     }
 
-    public int getAddressID() {
-        return AddressID;
-    }
 
-    public void setAddressID(int addressID) {
-        AddressID = addressID;
-    }
-
-    public PendingOrders(int orderId, String userName, int innoNumber, int oeuvreID, int quantity, String status, int addressID) {
-        OrderId = orderId;
-        UserName = userName;
+    public PendingOrders(User IDUser, int innoNumber, Oeuvre oeuvreID, int quantity, String status) {
+        IDUser = IDUser;
         InnoNumber = innoNumber;
         OeuvreID = oeuvreID;
         Quantity = quantity;
         Status = status;
-        AddressID = addressID;
     }
 
     @Override
     public String toString() {
         return "PendingOrders{" +
-                "OrderId=" + OrderId +
-                ", UserName='" + UserName + '\'' +
+                "ID_PendingOrder=" + ID_PendingOrder +
+                ", UserName='" + IDUser + '\'' +
                 ", InnoNumber=" + InnoNumber +
                 ", OeuvreID=" + OeuvreID +
                 ", Quantity=" + Quantity +
                 ", Status='" + Status + '\'' +
-                ", AddressID=" + AddressID +
                 '}';
     }
 }

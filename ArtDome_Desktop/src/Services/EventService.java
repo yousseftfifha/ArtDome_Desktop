@@ -50,7 +50,6 @@ public class EventService {
             ste.setString(2, e.getTheme_event());
             ste.setString(3, e.getEtat());
             ste.setDate(4, (Date) e.getDate());
-            //ste.setInt(5, e.getNb_participant());
             ste.setInt(5, e.getNb_max_part());
             ste.setString(6, e.getImage());
             ste.setString(7, e.getVideo());
@@ -78,7 +77,7 @@ public class EventService {
            rs= st.executeQuery(req);
            while(rs.next()){
                User u=new User(rs.getInt("code_artiste"));
-               eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"),rs.getInt("nb_participant"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"), u ));
+               eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"), u ));
            }
 
         } catch (SQLException ex) {
@@ -97,7 +96,7 @@ public class EventService {
             rs= st.executeQuery(req);
             while(rs.next()){
                 User u=new User(rs.getInt("code_artiste"));
-                eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"),rs.getInt("nb_participant"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"), u ));
+                eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"), u ));
             }
 
         } catch (SQLException ex) {
@@ -110,14 +109,14 @@ public class EventService {
     
         public Event getEventDetail(int id){
          Event e = null;
-         String req = "SELECT e.code_event, e.nom_event, e.theme_event, e.etat, e.date, e.nb_participant, e.nb_max_part, e.image, e.video, e.code_espace, u.nom, u.prenom from event e JOIN user u ON e.code_artiste=u.ID";
+         String req = "SELECT e.code_event, e.nom_event, e.theme_event, e.etat, e.date,  e.nb_max_part, e.image, e.video, e.code_espace, u.nom, u.prenom from event e JOIN user u ON e.code_artiste=u.ID";
          
          try {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
                User u=new User(rs.getString("nom"), rs.getString("prenom"));
-               e=new Event(rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"),rs.getInt("nb_participant"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"),u);
+               e=new Event(rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace"),u);
                
                
            }
@@ -187,7 +186,6 @@ public class EventService {
             ste.setString(2, e.getTheme_event());
             ste.setString(3, e.getEtat());
             ste.setDate(4, (Date) e.getDate());
-            //ste.setInt(5, e.getNb_participant());
             ste.setInt(5, e.getNb_max_part());
             ste.setString(6, e.getImage());
             ste.setString(7, e.getVideo());
@@ -206,7 +204,7 @@ public class EventService {
      }
      
           public void UpdatenbplaceEvent(int nbplace,int codeee ){
-        String req ="UPDATE event set nb_participant= (nb_participant + " +nbplace+ ") WHERE code_event =" +codeee+ " ";
+        String req ="UPDATE event set nb_max_part= (event.nb_max_part - " +nbplace+ ") WHERE code_event =" +codeee+ " ";
         try {
             ste = cnx.prepareStatement(req);
             ste.executeUpdate();
@@ -229,7 +227,7 @@ public class EventService {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"),rs.getInt("nb_participant"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace") ));
+               eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace") ));
            }
 
         } catch (SQLException ex) {
@@ -246,7 +244,7 @@ public class EventService {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"),rs.getInt("nb_participant"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace") ));
+               eventlist.add(new Event (rs.getInt("code_event"), rs.getString("nom_event"), rs.getString("theme_event"), rs.getString("etat"), rs.getDate("date"), rs.getInt("nb_max_part"), rs.getString("image"), rs.getString("video"), rs.getInt("code_espace") ));
            }
 
         } catch (SQLException ex) {
@@ -258,13 +256,13 @@ public class EventService {
      
          public ObservableList<PieChart.Data> getData(){
         ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
-         String req = "SELECT nom_event, nb_participant, nb_max_part from event ";
+         String req = "SELECT count(nom_event), etat from event ";
         try {
             st = cnx.createStatement();
            rs= st.executeQuery(req);
            while(rs.next()){
-               float p=((rs.getInt("nb_participant")*100)/rs.getInt("nb_max_part"));
-               data.add(new PieChart.Data (rs.getString("nom_event")+"  "+p+" %",p));
+
+               data.add(new PieChart.Data (rs.getString("etat"),rs.getDouble (1)));
                
                
            }

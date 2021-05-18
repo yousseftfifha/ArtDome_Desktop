@@ -9,13 +9,11 @@ import java.util.Objects;
  */
 public class Orders {
     private int OrderID;
-    private String UserName;
+    private int IDUser;
     private float DueAmount;
     private int InnoNumber;
-    private int TotalQty;
     private String OrderDate;
     private String Status;
-    private int AddressID;
 
     public Orders(int orderID) {
         OrderID = orderID;
@@ -28,15 +26,20 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(int orderID, String userName, float dueAmount, int innoNumber, int totalQty, String orderDate, String status, int addressID) {
+    public Orders(int orderID, int IDUser, float dueAmount, int innoNumber, String orderDate, String status) {
         OrderID = orderID;
-        UserName = userName;
+        this.IDUser = IDUser;
         DueAmount = dueAmount;
         InnoNumber = innoNumber;
-        TotalQty = totalQty;
         OrderDate = orderDate;
         Status = status;
-        AddressID = addressID;
+    }
+
+    public Orders(float dueAmount, int innoNumber, String orderDate, String status) {
+        DueAmount = dueAmount;
+        InnoNumber = innoNumber;
+        OrderDate = orderDate;
+        Status = status;
     }
 
     public int getOrderID() {
@@ -47,12 +50,12 @@ public class Orders {
         OrderID = orderID;
     }
 
-    public String getUserName() {
-        return UserName;
+    public int getIDUser() {
+        return IDUser;
     }
 
-    public void setUserName(String userName) {
-        UserName = userName;
+    public void setIDUser(int IDUser) {
+        IDUser = IDUser;
     }
 
     public float getDueAmount() {
@@ -71,14 +74,6 @@ public class Orders {
         InnoNumber = innoNumber;
     }
 
-    public int getTotalQty() {
-        return TotalQty;
-    }
-
-    public void setTotalQty(int totalQty) {
-        TotalQty = totalQty;
-    }
-
     public String getOrderDate() {
         return OrderDate;
     }
@@ -95,13 +90,7 @@ public class Orders {
         Status = status;
     }
 
-    public int getAddressID() {
-        return AddressID;
-    }
 
-    public void setAddressID(int addressID) {
-        AddressID = addressID;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -115,13 +104,10 @@ public class Orders {
     public String toString() {
         return "Orders{" +
                 "OrderID=" + OrderID +
-                ", UserName='" + UserName + '\'' +
                 ", DueAmount=" + DueAmount +
                 ", InnoNumber=" + InnoNumber +
-                ", TotalQty=" + TotalQty +
                 ", OrderDate=" + OrderDate +
                 ", Status=" + Status +
-                ", AddressID=" + AddressID +
                 '}';
     }
 }

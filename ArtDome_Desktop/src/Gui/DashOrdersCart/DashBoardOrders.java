@@ -170,7 +170,7 @@ public class DashBoardOrders  implements Initializable {
             OrderIDl.setMinWidth (200);
             OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
-            Label UserNamel = new Label (orders.getUserName ());
+            Label UserNamel = new Label (String.valueOf (orders.getIDUser ()));
             UserNamel.setMinWidth (200);
             UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
@@ -182,9 +182,7 @@ public class DashBoardOrders  implements Initializable {
             InnoNumberl.setMinWidth (200);
             InnoNumberl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
 
-            Label TotalQtyl = new Label (String.valueOf (orders.getTotalQty ()));
-            TotalQtyl.setMinWidth (200);
-            TotalQtyl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000;  -fx-font-size: 17;");
+
 
             Label OrderDatel = new Label (String.valueOf (orders.getOrderDate ()));
             OrderDatel.setMinWidth (200);
@@ -326,11 +324,11 @@ public class DashBoardOrders  implements Initializable {
                         //HBOX
                         HBox Hb = new HBox ();
 
-                        Label OrderIDl = new Label (String.valueOf (orders.getOrderId ()));
+                        Label OrderIDl = new Label (String.valueOf (orders.getID_PendingOrder ()));
                         OrderIDl.setMinWidth (100);
                         OrderIDl.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
 
-                        Label UserNamel = new Label (orders.getUserName ());
+                        Label UserNamel = new Label (orders.getIDUser ().getEmail ());
                         UserNamel.setMinWidth (200);
                         UserNamel.setStyle ("-fx-alignment : center;-fx-text-fill: #000000; -fx-font-weight:bold;  -fx-font-size: 17;");
 
@@ -393,7 +391,6 @@ public class DashBoardOrders  implements Initializable {
             Hb.getChildren ().add (DueAmountl);
             Hb.getChildren ().add (InnoNumberl);
 
-            Hb.getChildren ().add (TotalQtyl);
 
             Hb.getChildren ().add (OrderDatel);
             Hb.getChildren ().add (Statusl);

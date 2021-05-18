@@ -42,7 +42,6 @@
             <TableColumn fx:id="coletat" prefWidth="56.0" text="Etat" />
             <TableColumn fx:id="coldate" prefWidth="77.0" text="Date" />
             <TableColumn fx:id="colcodeespace" prefWidth="116.0" text="Code éspace" />
-            <TableColumn fx:id="colnbpart" prefWidth="142.0" text="Nombre de participants" />
             <TableColumn fx:id="colnbmax" prefWidth="168.0" text="Nombre max de participants" />
             <TableColumn fx:id="colimage" prefWidth="75.0" text="Image" />
             <TableColumn fx:id="colvideo" prefWidth="71.0" text="Video" />

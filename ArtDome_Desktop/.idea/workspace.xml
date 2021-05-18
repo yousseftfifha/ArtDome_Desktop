@@ -2,205 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="setting the Directory of artDome Desktop">
-      <change afterPath="$PROJECT_DIR$/src/aa.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/ArtDomeWeb.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/commandlinetools/Symfony_08_04_2021_8_18_PM.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/dataSources/b0cafdeb-badd-46f6-b507-4877beeb9187.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/dataSources/b0cafdeb-badd-46f6-b507-4877beeb9187/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/bin/console" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/bin/phpunit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/bundles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/cache.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/dev/debug.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/dev/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/dev/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/doctrine.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/doctrine_migrations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/mailer.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/deprecations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/doctrine.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/prod/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/security.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/doctrine.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/twig.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/validator.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/test/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/translation.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/twig.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/packages/validator.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/preload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes/annotations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes/dev/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/routes/dev/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/config/services.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/phpunit.xml.dist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/Mona_lisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/Print_icon-icons.com_55835.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/SRC-Network-Logo_FINAL.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/Wikipedia-globe-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/a.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/agencies.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/b.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blog1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blog2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blog3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/blogger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/c.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/click to pay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/click.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/eye.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/faza.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/fazaaa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/gif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_500px_64px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_Handshake_64px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_Share_64px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_US_Dollar_64px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/icons8_Workflow_64px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/projections.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/projects.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/refresh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/reliabilty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/reservation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/samba.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/samba.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/sculture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/seo-social-web-network-internet_340_icon-icons.com_61497.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/shopping-cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/GFX/trash-can_38501.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/homeimg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product1-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product2-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product2-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/product3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/images/scorilo2-70x70.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/anim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/jquery-.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/js/validate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/Front/shop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/CartController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/OeuvreController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/OrdersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/PendingOrdersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Controller/indexController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Blog.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Categorie.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Commentaire.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Endroit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Event.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Exposition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Notification.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Oeuvre.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Orders.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/PendingOrders.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Reservation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/ReservationExpo.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/Reservationevent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Entity/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/CartType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/OeuvreType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/Orders1Type.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/OrdersType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/PendingOrders1Type.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Form/PendingOrdersType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/src/Repository/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/symfony.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/base.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/_delete_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/cart/show.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/_delete_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/oeuvre/show.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/_delete_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/orders/show.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/_delete_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/templates/pending_orders/show.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/tests/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArtDomeWeb/translations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56a7db6a-fdc2-4b64-b740-f882c8773e43.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Bulk_SMS_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Bulk_SMS_Library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/GMapsFX_8_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/GMapsFX_8_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/TrayNotification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/TrayNotification.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/client_6_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/client_6_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_net_3_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_net_3_8_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/controlsfx_9_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_9_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_commons_9_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_commons_9_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/httpclient_4_5_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/httpclient_4_5_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/itextpdf_5_4_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/itextpdf_5_4_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jar_files__1_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jar_files__1_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_4_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_4_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_23.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_9_0_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_9_0_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_19.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_10_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_10_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jxl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jxl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_21_bin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_21_bin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/stripe_java_7_22_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/stripe_java_7_22_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_jar_with_dependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/twilio_8_9_0_jar_with_dependencies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArtDome_Desktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArtDome_Desktop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catégorie.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Facture.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Liste Reservation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Oeuvre.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation n°4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation n°6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reservation n°9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Réservation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Réservation.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Exposition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Exposition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Oeuvre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Oeuvre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/PendingOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Entities/PendingOrders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/GFX/a.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/GFX/aaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/GFX/b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/GFX/c.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogNew.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Blog/BlogShow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/DashOrdersCart/DashBoardOrders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AfficherReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjoutReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjouterEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/AjouterEndroit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierEndroit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Endroit/ModifierReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/EspaceArtiste.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/EspaceArtiste.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddEventController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/AddReservationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/DetailEvent.fxml" afterDir="false" />
@@ -209,20 +94,11 @@
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/EventReservationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEvent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Event/ListEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddExpositionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddExpositionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/AddReservation_expoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/chartExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Exposition/chartExposition.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Cathegories.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/CathegoriesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Forums.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/NewsubjetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Sujet.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/SujetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/Topics.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/TopicsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/hs_err_pid1232.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Forum/newsubjet.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/HomeSceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/Oeuvre/OeuvreItem$1.class" afterDir="false" />
@@ -233,18 +109,63 @@
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/CartView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/Orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/Orders.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/OrdersController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/OrdersCart/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/Profile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/User/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Gui/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/CathegoryMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/EventService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ExpoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/ExpoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/OrdersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Services/SubjectMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArtDome_Desktop/Tools/PDF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArtDome_Desktop/aa.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Endroit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Endroit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Exposition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Exposition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Oeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Oeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/PendingOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/PendingOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/cathegories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/cathegories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/catégorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/catégorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GFX/a.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GFX/aaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GFX/b.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GFX/c.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogNew.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Blog/BlogShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashBoardSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/DashOrdersCart/DashBoardOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/DashOrdersCart/DashBoardOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEndroitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherEndroitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AfficherReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjoutReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/AjouterEndroitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/FXMLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/FXMLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierEndroitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/ModifierReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Endroit/OpenWindow2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Endroit/OpenWindow2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/EspaceArtiste.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/EspaceArtiste.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/EspaceArtiste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/EspaceArtiste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddReservation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddReservation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/AddReservationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Event/DetailEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/DetailEvent.fxml" afterDir="false" />
@@ -253,30 +174,615 @@
       <change beforePath="$PROJECT_DIR$/src/Gui/Event/EventReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/EventReservationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Event/ListEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ListEvent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Event/ListEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Event/ListEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddExpositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddExpositionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/AddReservation_expoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Exposition/chartExposition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Exposition/chartExposition.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Cathegories.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/CathegoriesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Forums.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/NewsubjetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Sujet.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/SujetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/Topics.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/TopicsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/hs_err_pid1232.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Forum/newsubjet.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/HomeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/CatégorieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/CatégorieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/ChartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Oeuvre/OeuvreItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/Orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/Orders.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/PayementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/PayementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/OrdersCart/payement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/OrdersCart/payement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/ChooseMethodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/ChooseMethodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/ForgotPassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/ForgotPassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/PasswordResetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/PasswordResetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/PasswrodResetFromNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/PasswrodResetFromNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/User/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/Profile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/User/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/RequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/SmsRecoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/SmsRecoveryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/User/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/CartServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CartServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/CathegoryMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/CatégorieServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CatégorieServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EndroitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EndroitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ExpoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ExpoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Ioeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Ioeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/NotificationCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/NotificationCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OeuvreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/SubjectMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/blogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/blogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/DashFxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/DashFxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/Exemple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Exemple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/FxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/FxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Charts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Charts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Download.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Download.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/ExcelOeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/ExcelOeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/ExcelOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/ExcelOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/MyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/MyConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/PDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/PDFOeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/PDFOeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/PRINTOeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/PRINTOeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/SingeltonNavigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/SingeltonNavigation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/UserHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/UserHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/emailHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/emailHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aa.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilisateur.txt" beforeDir="false" afterPath="$PROJECT_DIR$/utilisateur.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/Facture.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/built-jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Blog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Endroit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Exposition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Oeuvre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Orders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/PendingOrders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/Reservation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/ReservationE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/UserHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/catégorie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Entities/reservation_expo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/Print_icon-icons.com_55835.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/SRC-Network-Logo_FINAL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/Wikipedia-globe-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/agencies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/blog1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/blog2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/blog3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/blogger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/click to pay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/click.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/faza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/icons8_500px_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/icons8_Handshake_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/icons8_Share_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/icons8_US_Dollar_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/icons8_Workflow_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/projections.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/projects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/reliabilty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/reservation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/samba.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/samba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/seo-social-web-network-internet_340_icon-icons.com_61497.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/shopping-cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/GFX/trash-can_38501.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Blog/BlogNew.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Blog/BlogNew.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Blog/BlogShow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Blog/BlogShow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Blog/BlogShow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashBoardScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashBoardSceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashOrdersCart/DashBoardOrders$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashOrdersCart/DashBoardOrders$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashOrdersCart/DashBoardOrders$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashOrdersCart/DashBoardOrders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/DashOrdersCart/DashBoardOrders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AfficherEndroit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AfficherEndroitController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AfficherReservationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AjoutReservationController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AjoutReservationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AjouterEndroit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/AjouterEndroitController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/FXMLController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/FXMLDocument.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/ModifierEndroit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/ModifierEndroitController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/ModifierReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/ModifierReservationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/OpenWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/OpenWindow2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Endroit/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/AddEvent.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/AddEventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/AddReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/AddReservationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/Chart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/ChartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/DetailEvent.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/DetailEventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/EventReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/EventReservationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/ListEvent.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/ListEventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/ReservationBack.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/ReservationBackController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/ReservationBackController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Event/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/AddExposition.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/AddExpositionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/AddReservation_expo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/AddReservation_expoController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/AddReservation_expoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/ChartExpositionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/Reservation_expoBack.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/Reservation_expoBackController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Exposition/chartExposition.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/HomeScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/HomeSceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/CatégorieController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/ChartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/Oeuvre.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/OeuvreController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/OeuvreController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/OeuvreItem$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/OeuvreItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/OeuvreItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/catégorie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/Oeuvre/chart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/CartView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/CartView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/CartView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/CartView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/Orders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/OrdersController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/OrdersController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/PayementController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/PayementController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/OrdersCart/payement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/ForgotPassController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/ImageController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/ImageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/PasswordResetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/Profile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/ProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/SignUpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/UpdateUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/User.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/UserController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/forgotPass.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/image.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/passwordReset.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/User/updateUser.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Gui/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/CartServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/CatégorieServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/EndroitService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/EventService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/ExpoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/Ioeuvre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/OeuvreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/OrdersService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/OrdersService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/ReservationEService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/ReservationMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/ReservationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/UserCRUD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Services/blogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tests/DashFxTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tests/Example.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tests/FxTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tests/PaymentTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/Charts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/Download.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/Email.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/Excel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/ExcelE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/ExcelOrders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/FTP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/MyConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/PDF.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/PDFOeuvre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/PDFreservation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/PRINTOeuvre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/Payment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/Print.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/QRcode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/QRcodeE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/SendEmail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/SendMail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/SingeltonNavigation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Tools/config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Blog1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Capture d’écran (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Cover1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Cover2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Cover3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Cover4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Cover5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/DefaultCover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Default_event.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/EntrepriseAvatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Plumbing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/ProfileCover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (10).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (11).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (12).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (13).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (14).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (15).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (16).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (17).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (18).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (19).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (20).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (21).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (22).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (6).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (7).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (8).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/S (9).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Step(1)_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Step(1)_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Step(1)_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Step(1)_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/Wlpanas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/default_Pcover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/default_blog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/default_cover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/default_project.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/default_service.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/ent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/owl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/tak.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/tak_cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/tak_cover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/build/classes/Uploads/wallpaper1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/artdome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/artdome.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/artdome.jnlp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/Bulk_SMS_Library.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/GMapsFX-8.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/TrayNotification-5393c3a54f.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/TrayNotification.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/activation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/client-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/client-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/client-6.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/commons-codec-1.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/commons-io-2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/commons-net-3.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/controlsfx-8.40.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/fontawesomefx-8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/fontawesomefx-commons-9.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/fontawesomefx-controls-9.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/gson-2.8.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/httpclient-4.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/httpclient-4.5.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/httpcore-4.4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/itextpdf-5.4.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jackson-annotations-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jackson-core-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jackson-databind-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jackson-datatype-jsr310-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/javax.mail-1.4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jcommon-1.0.23.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jfoenix-8.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jfoenix-9.0.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jfreechart-1.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jjwt-api-0.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jjwt-impl-0.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jjwt-jackson-0.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jsoup-1.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/jxl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/logback-classic-1.2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/logback-core-1.2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/mysql-connector-java-5.1.21-bin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/notification-4.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/poi-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/slf4j-api-1.7.23.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/slf4j-api-1.7.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/stripe-java-7.22.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/twilio-8.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/zxing-1.7-javase.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/dist/lib/zxing-core-2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/configs/Run_as_WebStart.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/configs/Run_in_Browser.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/jfx-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/private/configs/Run_as_WebStart.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/private/configs/Run_in_Browser.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Blog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Endroit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Exposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Oeuvre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Orders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/PendingOrders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/Reservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/ReservationE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/UserHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/catégorie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Entities/reservation_expo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/1280px-Pierre-Auguste_Renoir_Le_Moulin_de_la_Galette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/Print_icon-icons.com_55835.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/SRC-Network-Logo_FINAL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/Wikipedia-globe-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/agencies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/blog1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/blog2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/blog3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/blogger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/click to pay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/click.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/eye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/faza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/icons8_500px_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/icons8_Handshake_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/icons8_Share_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/icons8_US_Dollar_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/icons8_Workflow_64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/projections.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/projects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/reliabilty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/reservation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/samba.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/samba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/seo-social-web-network-internet_340_icon-icons.com_61497.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/shopping-cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/GFX/trash-can_38501.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Blog/BlogNew.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Blog/BlogNew.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Blog/BlogShow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Blog/BlogShow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/DashBoardScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/DashBoardSceneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/DashOrdersCart/DashBoardOrders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/DashOrdersCart/DashBoardOrders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AfficherEndroit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AfficherEndroitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AfficherReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AfficherReservationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AjoutReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AjoutReservationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AjouterEndroit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/AjouterEndroitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/FXMLController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/FXMLDocument.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/ModifierEndroit.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/ModifierEndroitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/ModifierReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/ModifierReservationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/OpenWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/OpenWindow2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Endroit/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/AddEvent.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/AddEventController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/AddReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/AddReservationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/Chart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/ChartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/DetailEvent.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/DetailEventController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/EventReservation.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/EventReservationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/ListEvent.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/ListEventController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/ReservationBack.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/ReservationBackController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Event/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/AddExposition.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/AddExpositionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/AddReservation_expo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/AddReservation_expoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/ChartExpositionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/Reservation_expoBack.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/Reservation_expoBackController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Exposition/chartExposition.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/HomeScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/HomeSceneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/CatégorieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/ChartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/Oeuvre.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/OeuvreController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/OeuvreItem.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/OeuvreItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/catégorie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/Oeuvre/chart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/OrdersCart/CartView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/OrdersCart/CartView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/OrdersCart/Orders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/OrdersCart/OrdersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/OrdersCart/PayementController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/OrdersCart/payement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/ForgotPassController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/ImageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/PasswordResetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/Profile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/ProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/SignUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/SignUpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/UpdateUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/User.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/forgotPass.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/image.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/passwordReset.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/User/updateUser.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Gui/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/CartServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/CatégorieServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/EndroitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/EventService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/ExpoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/Ioeuvre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/OeuvreService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/OrdersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/ReservationEService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/ReservationMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/ReservationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/UserCRUD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Services/blogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tests/DashFxTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tests/Exemple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tests/FxTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tests/PaymentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/Charts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/Download.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/Email.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/Excel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/ExcelE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/ExcelOrders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/FTP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/MyConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/PDF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/PDFOeuvre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/PDFreservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/PRINTOeuvre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/Print.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/QRcode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/QRcodeE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/SendEmail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/SendMail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/SingeltonNavigation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Tools/config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Avatar9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Blog1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Capture d’écran (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Cover1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Cover2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Cover3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Cover4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Cover5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/DefaultCover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Default_event.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/EntrepriseAvatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Plumbing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/ProfileCover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (10).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (11).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (12).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (13).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (14).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (15).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (16).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (17).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (18).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (19).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (20).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (21).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (22).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (6).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (7).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (8).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/S (9).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Step(1)_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Step(1)_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Step(1)_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Step(1)_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/Wlpanas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/default_Pcover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/default_blog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/default_cover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/default_project.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/default_service.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/ent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/owl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/tak.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/tak_cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/tak_cover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/src/Uploads/wallpaper1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/version netbeans/artdome/utilisateur.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,8 +873,8 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -473,7 +979,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/material-dashboard-fx-master/material-dashboard-fx-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -486,7 +992,7 @@
     <property name="project.structure.proportion" value="0.1778697" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -578,6 +1084,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -729,17 +1246,9 @@
       <workItem from="1617313080832" duration="63000" />
       <workItem from="1617314201930" duration="1099000" />
       <workItem from="1617315405402" duration="23000" />
-      <workItem from="1617318033223" duration="367000" />
-      <workItem from="1617349806727" duration="6073000" />
-      <workItem from="1617877325707" duration="1315000" />
-      <workItem from="1617909493669" duration="401000" />
-      <workItem from="1618397916299" duration="726000" />
-      <workItem from="1618499803120" duration="256000" />
-      <workItem from="1618924239960" duration="647000" />
-      <workItem from="1618928961253" duration="631000" />
-      <workItem from="1618999297353" duration="6490000" />
-      <workItem from="1619005868364" duration="86000" />
-      <workItem from="1619005970271" duration="118000" />
+      <workItem from="1620994221648" duration="138000" />
+      <workItem from="1620994426284" duration="323000" />
+      <workItem from="1621343984143" duration="8416000" />
     </task>
     <servers />
   </component>
@@ -795,6 +1304,17 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Gui/OrdersCart/CartView.java</url>
+          <line>323</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">

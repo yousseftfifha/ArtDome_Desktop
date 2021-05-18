@@ -18,7 +18,6 @@ public class Event {
     private String theme_event;
     private String etat;
     private Date date;
-    private int nb_participant;
     private int nb_max_part;
     private String image;
     private String video;
@@ -28,13 +27,12 @@ public class Event {
     public Event() {
     }
 
-    public Event(int code_event, String nom_event, String theme_event, String etat, Date date, int nb_participant, int nb_max_part, String image, String video, int code_espace, User u) {
+    public Event(int code_event, String nom_event, String theme_event, String etat, Date date,  int nb_max_part, String image, String video, int code_espace, User u) {
         this.code_event = code_event;
         this.nom_event = nom_event;
         this.theme_event = theme_event;
         this.etat = etat;
         this.date = date;
-        this.nb_participant = nb_participant;
         this.nb_max_part = nb_max_part;
         this.image = image;
         this.video = video;
@@ -44,18 +42,6 @@ public class Event {
     
     
 
-    public Event(int code_event, String nom_event, String theme_event, String etat, Date date, int nb_max_part, String image, String video, int code_espace) {
-        this.code_event = code_event;
-        this.nom_event = nom_event;
-        this.theme_event = theme_event;
-        this.etat = etat;
-        this.date = date;
-        this.nb_max_part = nb_max_part;
-        this.image = image;
-        this.video = video;
-        this.code_espace = code_espace;
-        
-    }
 
     
     public Event(int code_event, String nom_event, String theme_event) {
@@ -75,13 +61,12 @@ public class Event {
         this.code_espace = code_espace;
     }
 
-    public Event(int code_event, String nom_event, String theme_event, String etat, Date date, int nb_participant, int nb_max_part, String image, String video, int code_espace) {
+    public Event(int code_event, String nom_event, String theme_event, String etat, Date date, int nb_max_part, String image, String video, int code_espace) {
         this.code_event = code_event;
         this.nom_event = nom_event;
         this.theme_event = theme_event;
         this.etat = etat;
         this.date = date;
-        this.nb_participant = nb_participant;
         this.nb_max_part = nb_max_part;
         this.image = image;
         this.video = video;
@@ -90,9 +75,9 @@ public class Event {
 
 
 
-    public Event(int code_event, int nb_participant) {
+    public Event(int code_event) {
         this.code_event = code_event;
-        this.nb_participant = nb_participant;
+
     }
 
     public User getU() {
@@ -104,9 +89,6 @@ public class Event {
     }
     
     
-    public Event(int code_event) {
-        this.code_event = code_event;
-    }
 
     public int getCode_event() {
         return code_event;
@@ -128,9 +110,6 @@ public class Event {
         return date;
     }
 
-    public int getNb_participant() {
-        return nb_participant;
-    }
 
     public int getNb_max_part() {
         return nb_max_part;
@@ -170,9 +149,6 @@ public class Event {
         this.date = date;
     }
 
-    public void setNb_participant(int nb_participant) {
-        this.nb_participant = nb_participant;
-    }
 
     public void setNb_max_part(int nb_max_part) {
         this.nb_max_part = nb_max_part;
@@ -192,7 +168,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" + "code_event=" + code_event + ", nom_event=" + nom_event + ", theme_event=" + theme_event + ", etat=" + etat + ", date=" + date + ", nb_participant=" + nb_participant + ", nb_max_part=" + nb_max_part + ", image=" + image + ", video=" + video + ", code_espace=" + code_espace + ", u=" + u + '}';
+        return "Event{" + "code_event=" + code_event + ", nom_event=" + nom_event + ", theme_event=" + theme_event + ", etat=" + etat + ", date=" + date +  ", nb_max_part=" + nb_max_part + ", image=" + image + ", video=" + video + ", code_espace=" + code_espace + ", u=" + u + '}';
     }
 
 
